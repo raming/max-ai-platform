@@ -1,0 +1,20 @@
+{
+  "id": "rip_acme_auto_sales_2025_10_05",
+  "clientId": "client_acme_auto_sales",
+  "resources": [
+    {
+      "kind": "supabase",
+      "supabase": {
+        "projectUrl": "https://YOUR_SUPABASE_PROJECT.supabase.co",
+        "anonKey": "{{SUPABASE_ANON_KEY}}",
+        "serviceRoleKey": "{{SUPABASE_SERVICE_ROLE_KEY}}",
+        "init": {
+          "tables": ["prompts", "documents"]
+        }
+      },
+      "options": {
+        "notes": "Initialize prompts and documents tables for client KB; store keys via token proxy; do not expose to browser."
+      }
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://max-ai/contracts/role.schema.json",
+  "title": "Role",
+  "type": "object",
+  "required": ["id", "name"],
+  "properties": {
+    "id": {"type": "string"},
+    "name": {"type": "string"},
+    "description": {"type": "string"}
+  },
+  "additionalProperties": false
+}

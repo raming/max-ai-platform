@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://max-ai/contracts/usage-event.schema.json",
+  "title": "UsageEvent",
+  "type": "object",
+  "required": ["id", "source", "metricKey", "quantity", "occurredAt", "clientId", "tenantId"],
+  "properties": {
+    "id": {"type": "string"},
+    "source": {"enum": ["retell", "twilio", "openrouter", "other"]},
+    "metricKey": {"type": "string"},
+    "quantity": {"type": "number", "minimum": 0},
+    "vendorCost": {"type": "number", "minimum": 0},
+    "currency": {"type": "string", "minLength": 3, "maxLength": 3},
+    "occurredAt": {"type": "string", "format": "date-time"},
+    "clientId": {"type": "string"},
+    "tenantId": {"type": "string"},
+    "agentId": {"type": "string"},
+    "idempotencyKey": {"type": "string"}
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,44 @@
+{
+  "id": "pack_1prompt_v1_8",
+  "name": "1Prompt",
+  "version": 18,
+  "description": "1Prompt v1.8 umbrella pack",
+  "variables": {
+    "client_name": "Acme Auto Sales",
+    "client_slug": "acme-auto-sales",
+    "retell_inbound_webhook_id": "{{uuid}}",
+    "contact_webhook_id": "{{uuid}}",
+    "opportunity_webhook_id": "{{uuid}}",
+    "twilio_number": "+15555550123",
+    "ghl_field_map": {
+      "business_name": "cf_business_name",
+      "company_description": "cf_company_description"
+    }
+  },
+  "artifacts": [
+    { "kind": "retell", "name": "inbound-agent", "artifactRef": "retell/inbound-agent.json", "required": true },
+    { "kind": "retell", "name": "outbound-agent", "artifactRef": "retell/outbound-agent.json", "required": true },
+    { "kind": "n8n", "name": "original - booking-function", "artifactRef": "n8n/booking-function.json", "required": true },
+    { "kind": "n8n", "name": "original - campaign-make-call-retel", "artifactRef": "n8n/campaign-make-call-retel.json", "required": true },
+    { "kind": "n8n", "name": "original - knowledgebase-update", "artifactRef": "n8n/knowledgebase-update.json", "required": true },
+    { "kind": "n8n", "name": "original - get-contact-detail-hl", "artifactRef": "n8n/get-contact-detail-hl.json", "required": true },
+    { "kind": "n8n", "name": "original - campaign-start", "artifactRef": "n8n/campaign-start.json", "required": true },
+    { "kind": "n8n", "name": "original - text-engine", "artifactRef": "n8n/text-engine.json", "required": true },
+    { "kind": "n8n", "name": "original - prompt-update", "artifactRef": "n8n/prompt-update.json", "required": true },
+    { "kind": "n8n", "name": "original - make-call-retel", "artifactRef": "n8n/make-call-retel.json", "required": true },
+    { "kind": "ghl", "name": "Inbound DMs", "artifactRef": "ghl/inbound-dms.json", "required": true },
+    { "kind": "ghl", "name": "Phone Calls", "artifactRef": "ghl/phone-calls.json", "required": true },
+    { "kind": "ghl", "name": "Engagement", "artifactRef": "ghl/engagement.json", "required": true },
+    { "kind": "ghl", "name": "Followups", "artifactRef": "ghl/followups.json", "required": true },
+    { "kind": "ghl", "name": "Database Reactivation", "artifactRef": "ghl/database-reactivation.json", "required": true },
+    { "kind": "prompt", "name": "retel-inbound-agent.md", "artifactRef": "prompts/retel-inbound-agent.md", "required": true },
+    { "kind": "prompt", "name": "retel-outbound-agent.md", "artifactRef": "prompts/retel-outbound-agent.md", "required": true }
+  ],
+  "wiring": {
+    "edges": [
+      { "from": { "artifact": "retell/inbound-agent", "output": "webhook" }, "to": { "artifact": "n8n/retell-inbound-webhook", "input": "path" } },
+      { "from": { "artifact": "ghl/inbound-dms", "output": "webhook" }, "to": { "artifact": "ingress/ghl", "input": "inbound_dms" } },
+      { "from": { "artifact": "ingress/ghl", "output": "inbound_dms" }, "to": { "artifact": "n8n/dm-webhook", "input": "path" } }
+    ]
+  }
+}
