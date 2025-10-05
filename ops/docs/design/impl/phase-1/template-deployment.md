@@ -27,6 +27,15 @@ Acceptance criteria
 - Deploy to all three providers; store external IDs and links; auditable
 - Callback URLs wired from our ingress and propagated to providers
 
+Developer checklist (MVP)
+- [ ] Define TemplateArtifact and ProviderLink models
+- [ ] Implement POST /templates/import (store content to DB or object storage)
+- [ ] Implement POST /templates/{id}/customize (apply variables, call ILlmPort if requested)
+- [ ] Implement POST /templates/{id}/plan (targets=retell|n8n|ghl, variables)
+- [ ] Implement POST /templates/{id}/deploy (call adapters; persist DeploymentRecord+ProviderLinks)
+- [ ] Populate Retell webhooks, n8n webhook node paths, and GHL webhook actions with our ingress URLs
+- [ ] Write contract tests for template/deployment schemas
+
 References
 - Knowledge base: ../../integrations/1prompt/README.md
 - LLM: ../../llm-and-automation.md

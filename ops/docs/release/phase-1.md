@@ -37,17 +37,18 @@ UI/UX Stack and Templates
 
 Milestones
 1) Monorepo + CI gates ready
-2) IAM MVP: Google SSO, RBAC, audit events (entities: tenant, client, group, role, permission, assignment)
-3) Prompt-svc MVP: import templates → client instance → publish (non-prod validation)
-4) Webhook-ingress MVP: Retell + Twilio; normalize + validate
-5) Declarative flow schema MVP + orchestrator (simple E2E)
-6) Billing-usage MVP: Retell collector daily rollups
-7) Payments MVP: Stripe adapter; base sub + one metered metric; sandbox invoice
-8) Portal MVP: Connect accounts + billing overview
-9) Portal UI: scaffold shell with the chosen stack and import dashboard template (Mosaic/Notus/Windmill), replace controls with shadcn/ui
-10) Templates & Deployment MVP: template registry, customization, deployment plan, provider links recorded
+2) Webhook-ingress MVP: Retell + Twilio; normalize + validate
+3) Declarative flow schema MVP + orchestrator (simple E2E)
+4) Templates & Deployment MVP: template registry, customization, deployment plan, provider links recorded
+5) IAM MVP: Google SSO, RBAC, audit events (entities: tenant, client, group, role, permission, assignment)
+6) Prompt-svc MVP: import templates → client instance → publish (non-prod validation)
+7) Billing-usage MVP: Retell collector daily rollups
+8) Payments MVP: Stripe adapter; base sub + one metered metric; sandbox invoice
+9) Portal MVP: Connect accounts + billing overview
+10) Portal UI: scaffold shell with the chosen stack and import dashboard template (Mosaic/Notus/Windmill), replace controls with shadcn/ui
 11) LLM abstraction: ILlmPort defined and a draft generation→review→promote workflow exercised in non-prod (no auto-activation)
 12) Feature flags: framework design finalized (implementation begins Phase 2)
+13) GHL limitations vs standalone feasibility assessment completed (decision recorded)
 
 Acceptance criteria
 - CI enforces lint errors as failures and ≥95% coverage
@@ -69,7 +70,7 @@ Risks and mitigations
 - Template drift → adopt shadcn/ui as a consistent component baseline and replace template components incrementally
 
 Incremental Delivery & Priorities
-- P0: Webhook Ingress (Retell, Twilio) + Declarative Orchestrator minimal path + Portal Connect Accounts
+- P0: Webhook Ingress (Retell, Twilio) + Declarative Orchestrator minimal path + Templates & Deployment MVP (import→customize→plan→deploy across Retell/n8n/GHL) + Portal Connect Accounts
 - P1: IAM (Google SSO, RBAC), Prompt-svc draft→publish, Retell usage collector
 - P1: Payments (Stripe MVP), Usage & Billing Overview page
 - P2: Integrations Catalog, Templates & Prompts UI
