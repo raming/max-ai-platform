@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://max-ai/contracts/subscription.schema.json",
+  "title": "Subscription",
+  "type": "object",
+  "required": ["id", "customerId", "status", "plan", "period"],
+  "properties": {
+    "id": {"type": "string"},
+    "customerId": {"type": "string"},
+    "status": {"enum": ["active", "trialing", "canceled", "past_due"]},
+    "plan": {"type": "string"},
+    "period": {"type": "string"},
+    "provider": {"enum": ["stripe", "paypal"]}
+  },
+  "additionalProperties": false
+}

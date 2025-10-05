@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://max-ai/contracts/invoice-line-item.schema.json",
+  "title": "InvoiceLineItem",
+  "type": "object",
+  "required": ["id", "metricKey", "quantity", "unitPrice", "amount", "type"],
+  "properties": {
+    "id": {"type": "string"},
+    "metricKey": {"type": "string"},
+    "quantity": {"type": "number", "minimum": 0},
+    "unitPrice": {"type": "number", "minimum": 0},
+    "amount": {"type": "number", "minimum": 0},
+    "type": {"enum": ["subscription", "included", "overage", "adjustment", "tax"]}
+  },
+  "additionalProperties": false
+}
