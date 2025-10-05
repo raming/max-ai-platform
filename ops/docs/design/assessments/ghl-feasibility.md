@@ -12,6 +12,11 @@ Inputs
 - ADR-0001 (GHL encapsulation): ../../adr/adr-0001-ghl-encapsulation.md
 
 Scope (areas to assess)
+0) Integration modes (how we integrate and what we expose)
+   - Server-side API using sub-account API tokens (preferred)
+   - Browser-based token/JWT (user-admin JWT) for calling GHL from client (generally avoid; evaluate risks)
+   - iFrame/whitelabel embedding to hide GHL domain (evaluate feasibility/support and security/CSP)
+   - Proxy patterns (api-gateway) to encapsulate all provider calls
 1) API coverage for onboarding flows
    - Workflows/automations: triggers/actions parity; programmatic create/update; exports
    - Webhooks: topics, payload flexibility, latency/ordering, idempotency
@@ -37,10 +42,12 @@ Methodology
 
 Deliverables
 - Gap analysis matrix (use/can use/missing/workaround) with references
+- Integration modes recommendation (server-side API vs browser JWT vs iFrame/whitelabel) with risks and mitigations
 - Decision note: continue encapsulation vs. partial rebuild (scope + cost + criteria)
 - Phase plan impact: any changes to Phase 1/2 milestones
 
 Checklist
+- [ ] Integration modes: confirm feasibility of server-side API (sub-account tokens), assess risks of browser JWT, and availability/safety of iFrame/whitelabel; document preferred approach
 - [ ] Confirm API topics used by our onboarding flows (contacts, workflows, webhooks)
 - [ ] Validate webhook topics and payload mapping to our GhlEvent schema
 - [ ] Document custom fields discovery and update constraints

@@ -4,11 +4,23 @@ Purpose
 Inventory our current GHL usage for onboarding and automation, map to GHL capabilities, and identify gaps/workarounds to inform the encapsulate vs rebuild decision.
 
 Legend
+- Integration modes tracked: API (server-side tokens), browser JWT (user-admin), iFrame/whitelabel (domain privacy)
 - ✅ = supported/usable
 - ⚠️ = limited/needs workaround
 - ❌ = unavailable (candidate for rebuild)
 
 Matrix
+
+0) Integration Modes
+- Server-side API (sub-account tokens via proxy)
+  - Status: ✅ (preferred)
+  - Notes: Implement token proxy; never expose tokens to browser
+- Browser JWT (user-admin) in client
+  - Status: ❌/⚠️ (avoid)
+  - Notes: Security risk and domain exposure; only consider for non-sensitive ops with strict scopes
+- iFrame/whitelabel embedding
+  - Status: ⚠️
+  - Notes: Investigate official support + CSP. Default to proxy encapsulation
 
 1) Triggers & Events
 - Contact created/updated → Webhook to ingress → n8n
