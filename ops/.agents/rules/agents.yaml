@@ -1,0 +1,38 @@
+# AI Agent Configuration for MaxAI Platform
+seats:
+  dev.default:
+    github: rayg  # Update with actual GitHub username
+    role: dev
+    description: Default development agent
+    
+  sre.default:
+    github: rayg  # Update with actual GitHub username
+    role: sre
+    description: Site Reliability Engineering agent
+    
+  release_manager.default:
+    github: rayg  # Update with actual GitHub username
+    role: release_manager
+    description: Release management agent
+
+roles:
+  dev:
+    description: Software development role
+    capabilities:
+      - code_development
+      - testing
+      - debugging
+      
+  sre:
+    description: Site reliability engineering role
+    capabilities:
+      - infrastructure
+      - monitoring
+      - deployment
+      
+  release_manager:
+    description: Release management role
+    capabilities:
+      - release_planning
+      - version_management
+      - deployment_coordination
