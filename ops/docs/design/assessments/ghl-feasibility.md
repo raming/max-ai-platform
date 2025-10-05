@@ -34,6 +34,25 @@ Scope (areas to assess)
 
 Methodology
 - Inventory current usage from KB: triggers, actions, webhooks, fields used
+
+Endpoint/topic mapping (draft)
+- Contacts & Custom Fields
+  - GET /locations/{locationId}/customFields — discover fields (used in onboarding field mapping)
+  - PATCH /contacts/{contactId} — update standard/custom fields (writes from n8n)
+  - GET /contacts?query=… — lookup by email/phone (used by n8n/agents)
+- Workflows/Automations
+  - READ: list workflows and folders (used by scripts; confirm official endpoint coverage)
+  - ACTION: send_webhook (external URL) — used to invoke our ingress or n8n webhooks
+  - ACTION: update_contact — writes custom fields
+  - ACTION: send_sms — optional (we may prefer IMessagePort)
+- Webhooks (outbound from GHL)
+  - Triggers: contact_created/updated, appointment_booked/updated, message events (DMs)
+  - Payload: validate against ops/docs/contracts/ghl-event.schema.json; include ids, timestamps, and minimal PII
+- Authentication
+  - Server-side sub-account API tokens stored via token proxy (preferred)
+  - Avoid browser-admin JWT for calling GHL from client; only consider with strict scopes and non-sensitive flows
+- Privacy/Domain
+  - Prefer proxy; iFrame/whitelabel feasibility TBD per reseller options and CSP
 - Map usage to GHL APIs and note gaps or pain points
 - Validate webhook topics and payloads vs. our normalized event schemas
 - Evaluate options for domain privacy (embed/whitelabel) and feasibility
