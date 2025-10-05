@@ -6,10 +6,11 @@ Provision a minimal GCP project for webhook validation (Cloud Run) and secrets (
 Prereqs
 - gcloud CLI authenticated: gcloud auth login
 - Set env vars (example):
-  - export PROJECT_ID=my-maxai-arch14
+  - export PROJECT_ID=max-ai-platform  # fixed project id per ops guidelines
   - export REGION=us-central1
   - export GCP_BILLING_ACCOUNT=XXXXXX-XXXXXX-XXXXXX (ask your GCP admin)
   - Optional (org): export ORG_ID=123456789012
+  - Optional: export SKIP_CREATE=true  # set to skip project creation if project already exists
 
 Steps
 1) Bootstrap project and APIs

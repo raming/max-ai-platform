@@ -8,10 +8,14 @@ set -euo pipefail
 NAME="${PROJECT_ID}"
 
 echo "Creating project $PROJECT_ID (if not exists)"
-if [[ -n "${ORG_ID:-}" ]]; then
-  gcloud projects create "$PROJECT_ID" --name="$NAME" --organization="$ORG_ID" || true
+if [[ "${SKIP_CREATE:-}" == "true" ]]; then
+  echo "SKIP_CREATE=true; skipping gcloud projects create"
 else
-  gcloud projects create "$PROJECT_ID" --name="$NAME" || true
+  if [[ -n "${ORG_ID:-}" ]]; then
+    gcloud projects create "$PROJECT_ID" --name="$NAME" --organization="$ORG_ID" || true
+  else
+    gcloud projects create "$PROJECT_ID" --name="$NAME" || true
+  fi
 fi
 
 echo "Linking billing account"
