@@ -21,3 +21,14 @@ Test plan
 
 Acceptance criteria
 - Wizard completes end-to-end with at least one Retell + n8n + GHL deploy
+
+Developer checklist
+- [ ] Step 1: Select SolutionPack (or Import from Providers / Derive from Client)
+- [ ] Step 2: Customize variables (pack-level + artifact-level) and optional LLM refine
+- [ ] Step 3: Create DeploymentPlan (targets + variables) and validate
+- [ ] Step 4: Resources step to create/explain ResourceInitializationPlan (Supabase prompts/documents)
+- [ ] Step 5: Deploy (upsert to providers) and record providerLinks
+- [ ] Step 6: Validate callbacks (trigger test flows)
+- [ ] Show provider links and audit activity in the UI
+- [ ] Use schemas: ops/docs/contracts/solution-pack.schema.json, resource-initialization-plan.schema.json
+- [ ] End-to-end tests across wizard steps (happy path and error paths)

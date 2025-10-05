@@ -61,4 +61,5 @@ References
 - Contracts: ../contracts/solution-pack.schema.json, ../contracts/resource-initialization-plan.schema.json, ../contracts/template-artifact.schema.json
 - Templates & Deployment: ./template-registry-and-deployment.md
 - Knowledge Base: ../integrations/1prompt/README.md
+- Examples: ../design/examples/solution-pack-1prompt-v1.8.json
 - DB Portability: ../design/db-portability.md
