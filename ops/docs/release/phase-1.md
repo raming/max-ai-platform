@@ -81,6 +81,11 @@ Timeline (indicative)
 - Week 3–4: P1 items
 - Week 5–6: P2 items; hardening, tests, a11y
 
+Tracker Milestones
+- M1 — Onboarding Foundations (P0): Ingress, minimal Orchestrator, Templates & Deployment MVP, Connect Accounts
+- M2 — Onboarding Extensions (P1): IAM, Prompt-svc, Retell Usage collector, Payments MVP, Usage & Billing Overview
+- M3 — Hardening & P2 (P2): Portal UI scaffolding, Integrations Catalog, additional flows, a11y/perf
+
 Detailed Specs
 - See detailed specs under ../design/impl/phase-1/README.md for each component
 

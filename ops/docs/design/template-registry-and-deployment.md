@@ -41,6 +41,7 @@ Callbacks and IDs
 - Record provider links: { provider: "retell|n8n|ghl", externalId, url }
 
 References
+- Solution Packs: ./solution-packs.md (umbrella bundling and wiring)
 - 1prompt imports: ../../docs/integrations/1prompt/README.md
 - ILlmPort: ../llm-and-automation.md
-- Contracts: ../../contracts/template-artifact.schema.json, ../../contracts/deployment-plan.schema.json, ../../contracts/deployment-record.schema.json, ../../contracts/provider-link.schema.json
+- Contracts: ../../contracts/solution-pack.schema.json, ../../contracts/template-artifact.schema.json, ../../contracts/deployment-plan.schema.json, ../../contracts/deployment-record.schema.json, ../../contracts/provider-link.schema.json
