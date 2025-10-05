@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://max-ai/contracts/resource-initialization-plan.schema.json",
+  "title": "ResourceInitializationPlan",
+  "type": "object",
+  "required": ["id", "clientId", "resources"],
+  "properties": {
+    "id": {"type": "string"},
+    "clientId": {"type": "string"},
+    "resources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["kind"],
+        "properties": {
+          "kind": {"enum": ["supabase", "storage", "other"]},
+          "supabase": {
+            "type": "object",
+            "properties": {
+              "projectUrl": {"type": "string"},
+              "anonKey": {"type": "string"},
+              "serviceRoleKey": {"type": "string"},
+              "init": {
+                "type": "object",
+                "properties": {
+                  "tables": {
+                    "type": "array",
+                    "items": {"enum": ["prompts", "documents"]}
+                  }
+                },
+                "additionalProperties": false
+              }
+            },
+            "additionalProperties": false
+          },
+          "options": {"type": "object"}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

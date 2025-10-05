@@ -40,15 +40,16 @@ Milestones
 2) Webhook-ingress MVP: Retell + Twilio; normalize + validate
 3) Declarative flow schema MVP + orchestrator (simple E2E)
 4) Templates & Deployment MVP: template registry, customization, deployment plan, provider links recorded
-5) IAM MVP: Google SSO, RBAC, audit events (entities: tenant, client, group, role, permission, assignment)
-6) Prompt-svc MVP: import templates → client instance → publish (non-prod validation)
-7) Billing-usage MVP: Retell collector daily rollups
-8) Payments MVP: Stripe adapter; base sub + one metered metric; sandbox invoice
-9) Portal MVP: Connect accounts + billing overview
-10) Portal UI: scaffold shell with the chosen stack and import dashboard template (Mosaic/Notus/Windmill), replace controls with shadcn/ui
-11) LLM abstraction: ILlmPort defined and a draft generation→review→promote workflow exercised in non-prod (no auto-activation)
-12) Feature flags: framework design finalized (implementation begins Phase 2)
-13) GHL limitations vs standalone feasibility assessment completed (decision recorded)
+5) Resources Initialization: Supabase prompts/documents tables per client (ResourceInitializationPlan)
+6) IAM MVP: Google SSO, RBAC, audit events (entities: tenant, client, group, role, permission, assignment)
+7) Prompt-svc MVP: import templates → client instance → publish (non-prod validation)
+8) Billing-usage MVP: Retell collector daily rollups
+9) Payments MVP: Stripe adapter; base sub + one metered metric; sandbox invoice
+10) Portal MVP: Connect accounts + billing overview
+11) Portal UI: scaffold shell with the chosen stack and import dashboard template (Mosaic/Notus/Windmill), replace controls with shadcn/ui
+12) LLM abstraction: ILlmPort defined and a draft generation→review→promote workflow exercised in non-prod (no auto-activation)
+13) Feature flags: framework design finalized (implementation begins Phase 2)
+14) GHL limitations vs standalone feasibility assessment completed (decision recorded)
 
 Acceptance criteria
 - CI enforces lint errors as failures and ≥95% coverage

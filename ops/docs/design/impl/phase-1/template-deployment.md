@@ -21,6 +21,7 @@ Contracts
 - See: ../../contracts/deployment-plan.schema.json
 - See: ../../contracts/deployment-record.schema.json
 - See: ../../contracts/provider-link.schema.json
+- See: ../../contracts/resource-initialization-plan.schema.json
 
 Acceptance criteria
 - Import retell/n8n/ghl base artifacts; customize with variables; validate with schemas
@@ -32,11 +33,13 @@ Developer checklist (MVP)
 - [ ] Implement POST /templates/import (store content to DB or object storage)
 - [ ] Implement POST /templates/{id}/customize (apply variables, call ILlmPort if requested)
 - [ ] Implement POST /templates/{id}/plan (targets=retell|n8n|ghl, variables)
-- [ ] Implement POST /templates/{id}/deploy (call adapters; persist DeploymentRecord+ProviderLinks)
+- [ ] Implement POST /templates/{id}/resources (produce ResourceInitializationPlan for Supabase prompts/documents; guided/manual or API)
+- [ ] Implement POST /templates/{id}/deploy (call adapters; persist DeploymentRecord+ProviderLinks; execute resources plan)
 - [ ] Populate Retell webhooks, n8n webhook node paths, and GHL webhook actions with our ingress URLs
-- [ ] Write contract tests for template/deployment schemas
+- [ ] Write contract tests for template/deployment schemas and resources plan
 
 References
 - Knowledge base: ../../integrations/1prompt/README.md
 - LLM: ../../llm-and-automation.md
 - Orchestrator/Ingress: ./orchestrator.md, ./webhook-ingress.md
+- Examples: ../../design/examples/resource-init-plan-acme.json

@@ -36,18 +36,29 @@ Wiring
 
 Lifecycle
 1) Import a SolutionPack (1Prompt v1.8) → registry stores references to artifacts
+   - Import modes:
+     - From Providers: scan a source environment (GHL/Retell/n8n) and pull artifacts into the registry as base templates
+     - From Client: derive a new pack from an existing client’s deployed set (e.g., a "Plumbers" pack)
 2) Customize for a client → apply pack variables (optionally use ILlmPort for prompt refinement)
 3) Validate → schemas + contract tests
-4) DeploymentPlan → includes target providers and per-artifact variables
-5) Deploy → upsert artifacts in providers; record providerLinks; wire callbacks
-6) Validate callbacks → trigger test events; confirm end-to-end behavior
-7) Maintain → update pack version; re-run customize→plan→deploy for clients if needed; audit trail
+4) Resource Initialization → provision per-client resources (e.g., Supabase project) and initialize required tables (prompts, documents)
+5) DeploymentPlan → includes target providers and per-artifact variables and resources
+6) Deploy → upsert artifacts in providers; record providerLinks; wire callbacks
+7) Validate callbacks → trigger test events; confirm end-to-end behavior
+8) Maintain → update pack version; re-run customize→plan→deploy for clients if needed; audit trail
+
+Resources
+- Some packs require platform resources initialized per client (e.g., Supabase):
+  - Project URL/keys stored via token proxy; created via guided/manual step or API (when enabled)
+  - Initialize DB schema for prompts and documents tables for client KB
+  - ResourceInitializationPlan captured and executed alongside deployment
 
 Extensibility per client
 - Add new workflows or prompts and append to the client’s deployed set without changing the base pack
 - Use the same Wiring model for new edges and endpoints
 
 References
-- Contracts: ../contracts/solution-pack.schema.json, ../contracts/template-artifact.schema.json
+- Contracts: ../contracts/solution-pack.schema.json, ../contracts/resource-initialization-plan.schema.json, ../contracts/template-artifact.schema.json
 - Templates & Deployment: ./template-registry-and-deployment.md
 - Knowledge Base: ../integrations/1prompt/README.md
+- DB Portability: ../design/db-portability.md
