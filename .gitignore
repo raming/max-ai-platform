@@ -1,0 +1,71 @@
+# Root ignore for MaxAI platform (monorepo style)
+
+# Node
+node_modules/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build output
+build/
+dist/
+.tmp/
+.tmp-*/
+.tmp*/
+.out/
+.esbuild/
+
+# Coverage / test artifacts
+coverage/
+.nyc_output/
+.jest-cache/
+.jest/*
+.jest/**
+.jest-local/**
+
+# TypeScript
+*.tsbuildinfo
+
+# Env and secrets
+.env
+.env.*
+!.env.example
+
+# OS/editor
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Lint/format/cache
+.eslintcache
+.prettier-cache/
+
+# Package managers
+.pnpm-store/
+.pnpm-debug.log*
+
+# Turbo / Nx / task runners (safe even if not used)
+.turbo/
+.nx/
+
+# Storybook
+.out-storybook/
+storybook-static/
+
+# Next.js / Vite / general web
+.next/
+.vercel/
+.svelte-kit/
+
+# Logs and traces
+*.trace
+*.pid
+*.seed
+
+# Misc tools
+.cache/
+.husky/_/
+.tmp-cache/
