@@ -1,0 +1,13 @@
+# General
+.DS_Store
+node_modules/
+.env.local
+.env*
+# Build artifacts
+/dist/
+/build/
+# Editor
+.vscode/
+.idea/
+# Agent worktrees (do not commit nested git dirs)
+.agents/worktrees/
