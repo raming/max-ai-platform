@@ -35,32 +35,56 @@ UI/UX Stack and Templates
 - Initial pages: Dashboard, Clients, Integrations, Flows, Usage & Billing, Templates & Prompts, Settings, Audit; include multi-step wizards for onboarding and connect flows
 - Testing: Playwright e2e, React Testing Library, Storybook; a11y via Radix primitives; ESLint warnings as errors
 
-Milestones
-1) Monorepo + CI gates ready
-2) Webhook-ingress MVP: Retell + Twilio; normalize + validate
-3) Declarative flow schema MVP + orchestrator (simple E2E)
-4) Templates & Deployment MVP: template registry, customization, deployment plan, provider links recorded
-5) Resources Initialization: Supabase prompts/documents tables per client (ResourceInitializationPlan)
-6) IAM MVP: Google SSO, RBAC, audit events (entities: tenant, client, group, role, permission, assignment)
-7) Prompt-svc MVP: import templates → client instance → publish (non-prod validation)
-8) Billing-usage MVP: Retell collector daily rollups
-9) Payments MVP: Stripe adapter; base sub + one metered metric; sandbox invoice
-10) Portal MVP: Connect accounts + billing overview
-11) Portal UI: scaffold shell with the chosen stack and import dashboard template (Mosaic/Notus/Windmill), replace controls with shadcn/ui
-12) LLM abstraction: ILlmPort defined and a draft generation→review→promote workflow exercised in non-prod (no auto-activation)
-13) Feature flags: framework design finalized (implementation begins Phase 2)
-14) GHL limitations vs standalone feasibility assessment completed (decision recorded)
+Milestones (UPDATED: Security-First Priority per QA-RES-01 Escalation)
 
-Acceptance criteria
-- CI enforces lint errors as failures and ≥95% coverage
+**SECURITY FOUNDATION (BLOCKING M1 - MUST COMPLETE FIRST)**:
+0) **Security Remediation**: Emergency credential removal and secrets manager integration
+1) **Token Proxy Implementation**: Secure provider access via api-gateway with audit logging
+2) **Security Validation**: Comprehensive security test suite execution and QA approval
+
+**CORE INFRASTRUCTURE (POST-SECURITY)**:
+3) Monorepo + CI gates ready (with security gates integrated)
+4) Webhook-ingress MVP: Retell + Twilio; normalize + validate
+5) Declarative flow schema MVP + orchestrator (simple E2E)
+6) Templates & Deployment MVP: template registry, customization, deployment plan, provider links recorded
+7) Resources Initialization: Supabase prompts/documents tables per client (ResourceInitializationPlan) **WITH SECURE TOKEN PROXY**
+
+**IDENTITY AND ACCESS**:
+8) IAM MVP: Google SSO, RBAC, audit events (entities: tenant, client, group, role, permission, assignment)
+9) Prompt-svc MVP: import templates → client instance → publish (non-prod validation)
+
+**BILLING AND PAYMENTS**:
+10) Billing-usage MVP: Retell collector daily rollups
+11) Payments MVP: Stripe adapter; base sub + one metered metric; sandbox invoice
+
+**PORTAL AND UI**:
+12) Portal MVP: Connect accounts + billing overview
+13) Portal UI: scaffold shell with the chosen stack and import dashboard template (Mosaic/Notus/Windmill), replace controls with shadcn/ui
+
+**ADVANCED FEATURES**:
+14) LLM abstraction: ILlmPort defined and a draft generation→review→promote workflow exercised in non-prod (no auto-activation)
+15) Feature flags: framework design finalized (implementation begins Phase 2)
+16) GHL limitations vs standalone feasibility assessment completed (decision recorded)
+
+Acceptance Criteria (UPDATED: Security-First per QA-RES-01 Escalation)
+
+**SECURITY FOUNDATION (P0 - BLOCKING M1 APPROVAL)**:
+- **Zero Secrets in Repository**: All credentials removed from .env files; secrets manager integration functional
+- **Token Proxy Operational**: All provider access (Supabase, GHL, Twilio, n8n) goes through api-gateway proxy
+- **Security Test Suite**: Automated tests pass for secrets exposure, cross-tenant isolation, audit logging
+- **QA Security Approval**: Comprehensive QA validation complete per QA-RES-01 requirements
+- **Audit Logging**: All resource operations logged with correlation IDs; no secrets in logs validated
+
+**CORE FUNCTIONALITY (POST-SECURITY)**:
+- CI enforces lint errors as failures and ≥95% coverage + security gates
 - Contracts committed for all adapters used in Phase 1; validated in CI and non-prod
-- One E2E flow demonstrably runs with correlation IDs and audits
+- One E2E flow demonstrably runs with correlation IDs and audits **THROUGH SECURE TOKEN PROXY**
 - Billing: Retell usage ingested and visible in admin; stripe sandbox invoice generated
 - Portal: Google connect completes; basic billing page shows subscription and usage-to-date
 - UI/UX: Portal shell, navigation, and at least two wizard flows implemented with RHF+Zod; dark mode and a11y checks in CI
 - LLM: ILlmPort contracts exist; at least one generated artifact passes non-prod validation and human review, then is promoted
 - Feature flags: ADR and design doc approved; per-tenant/user allowlist semantics documented
-- Security/Compliance: audit log fields present across services; logger redaction on; PCI SAQ A posture documented and followed
+- Security/Compliance: Enhanced - ADR-0008-update requirements implemented; comprehensive security controls validated
 - DB portability: repository pattern in code; migrations tested on at least one alternative Postgres target
 - Messaging: BullMQ/Redis queues with DLQ configured for orchestrator critical paths
 
@@ -70,8 +94,9 @@ Risks and mitigations
 - Billing accuracy → unit tests on valuation logic; idempotency + reconciliation
 - Template drift → adopt shadcn/ui as a consistent component baseline and replace template components incrementally
 
-Incremental Delivery & Priorities
-- P0: Webhook Ingress (Retell, Twilio) + Declarative Orchestrator minimal path + Templates & Deployment MVP (import→customize→plan→deploy across Retell/n8n/GHL) + Portal Connect Accounts
+Incremental Delivery & Priorities (UPDATED: Security-First per QA Escalation)
+- **P0 SECURITY (BLOCKING)**: Security remediation + Token proxy + Security validation + QA approval
+- **P0 CORE**: Webhook Ingress (Retell, Twilio) + Declarative Orchestrator minimal path + Templates & Deployment MVP (import→customize→plan→deploy across Retell/n8n/GHL) **WITH SECURE TOKEN PROXY** + Portal Connect Accounts
 - P1: IAM (Google SSO, RBAC), Prompt-svc draft→publish, Retell usage collector
 - P1: Payments (Stripe MVP), Usage & Billing Overview page
 - P2: Integrations Catalog, Templates & Prompts UI
@@ -82,8 +107,9 @@ Timeline (indicative)
 - Week 3–4: P1 items
 - Week 5–6: P2 items; hardening, tests, a11y
 
-Tracker Milestones
-- M1 — Onboarding Foundations (P0): Ingress, minimal Orchestrator, Templates & Deployment MVP, Connect Accounts
+Tracker Milestones (UPDATED: Security-First per QA Escalation)
+- **M0 — Security Foundation (P0 BLOCKING)**: Security remediation, Token proxy implementation, Security validation, QA approval
+- M1 — Onboarding Foundations (P0): Ingress, minimal Orchestrator, Templates & Deployment MVP **WITH SECURE PROXY**, Connect Accounts
 - M2 — Onboarding Extensions (P1): IAM, Prompt-svc, Retell Usage collector, Payments MVP, Usage & Billing Overview
 - M3 — Hardening & P2 (P2): Portal UI scaffolding, Integrations Catalog, additional flows, a11y/perf
 

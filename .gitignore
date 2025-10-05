@@ -1,0 +1,43 @@
+# OS
+.DS_Store
+
+# Environment files
+.env
+.env.*
+
+# Dependencies
+node_modules/
+
+# Build outputs
+build/
+dist/
+.out/
+.next/
+.next-cache/
+
+# Test coverage and reports
+coverage/
+.nyc_output/
+reports/
+junit.xml
+
+# Logs
+*.log
+logs/
+
+# Tooling caches
+.cache/
+.tmp/
+.temp/
+.turbo/
+
+# Framework outputs
+out/
+.cypress/
+cypress/screenshots/
+cypress/videos/
+
+# Misc
+*.tgz
+*.swp
+*.swo
