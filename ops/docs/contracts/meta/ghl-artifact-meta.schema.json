@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://max-ai/contracts/meta/ghl-artifact-meta.schema.json",
+  "title": "GhlArtifactMeta",
+  "type": "object",
+  "properties": {
+    "workflowId": {"type": "string"},
+    "name": {"type": "string"},
+    "category": {"type": "string"},
+    "triggers": {"type": "array", "items": {"type": "string"}},
+    "actions": {"type": "array", "items": {"type": "string"}},
+    "webhooks": {"type": "array", "items": {"type": "object"}},
+    "fields": {"type": "object"}
+  },
+  "additionalProperties": true
+}

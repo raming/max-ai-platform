@@ -44,4 +44,5 @@ References
 - Solution Packs: ./solution-packs.md (umbrella bundling and wiring)
 - 1prompt imports: ../../docs/integrations/1prompt/README.md
 - ILlmPort: ../llm-and-automation.md
-- Contracts: ../../contracts/solution-pack.schema.json, ../../contracts/template-artifact.schema.json, ../../contracts/deployment-plan.schema.json, ../../contracts/deployment-record.schema.json, ../../contracts/provider-link.schema.json
+- Provider import: ./provider-artifact-import.md
+- Contracts: ../../contracts/solution-pack.schema.json, ../../contracts/template-artifact.schema.json, ../../contracts/deployment-plan.schema.json, ../../contracts/deployment-record.schema.json, ../../contracts/provider-link.schema.json, ../../contracts/meta/retell-artifact-meta.schema.json, ../../contracts/meta/n8n-artifact-meta.schema.json, ../../contracts/meta/ghl-artifact-meta.schema.json
