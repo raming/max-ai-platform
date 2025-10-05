@@ -11,23 +11,28 @@ When a dev completes implementation:
    - Add one: action:qa-review or action:qa-test
    - Add status:needs-qa
    - Comment with a one-paragraph instruction for QA (scope, risks, what to verify)
-2. **AUTO-RUN quality gates**:
-   ```bash
-   npm run lint --fix
-   npm run build
-   npm run test
-   npm run test:coverage  # Must be ≥95%
-   ```
-2. **AUTO-COMMIT** if all gates pass:
-   ```bash
-   git add .
-   git commit -m "feat(area): HAKIM-N short description"
-   git push origin work/dev/HAKIM-N-slug
-   ```
-3. **AUTO-CREATE PR** linking to issue and spec
-4. **AUTO-TRANSITION** issue state to status:needs-qa with comment: "✅ Dev complete — ready for QA"
-5. **AUTO-REASSIGN** to QA seat and keep role:qa label for routing
-6. **IMMEDIATELY** query for next assigned issue
+2. Ensure IAM DoR gates are present on affected endpoints:
+   - OIDC token verification using Keycloak discovery/JWKS
+   - Casbin authorization checks for protected resources
+   - JSON Schema contracts referenced and tests added
+   - Structured logs + audit events for sensitive actions
+3. **AUTO-RUN quality gates**:
+```bash
+npm run lint --fix
+npm run build
+npm run test
+npm run test:coverage  # Must be ≥95%
+```
+4. **AUTO-COMMIT** if all gates pass:
+```bash
+git add .
+git commit -m "feat(area): HAKIM-N short description"
+git push origin work/dev/HAKIM-N-slug
+```
+5. **AUTO-CREATE PR** linking to issue and spec
+6. **AUTO-TRANSITION** issue state to status:needs-qa with comment: "Dev complete — ready for QA"
+7. **AUTO-REASSIGN** to QA seat and keep role:qa label for routing
+8. **IMMEDIATELY** query for next assigned issue
 
 ### Architect Task Completion  
 When architect completes spec/design:

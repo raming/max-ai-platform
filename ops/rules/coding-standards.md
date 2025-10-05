@@ -3,6 +3,13 @@
 Purpose
 Provide clear, enforceable guidance so coders (human and AI) produce small, testable, maintainable code that fits our architecture and CI gates.
 
+IAM foundation (Keycloak + Casbin) — Definition of Ready gates (MANDATORY)
+- AuthN: All protected endpoints must verify OIDC JWTs using OIDC discovery and JWKS from Keycloak. Validate iss/aud/exp/nbf and required claims (sub, tenant).
+- AuthZ: All protected endpoints must enforce authorization via Casbin (enforce(subject, resource, action, context)). Policies must live in-repo and be reviewed in PRs.
+- Contracts: JSON Schemas must exist and be referenced for token claims and authz request/response. Contract tests run in CI; runtime validation enabled in non-prod.
+- Observability: Structured logs with correlation IDs; emit audit event on allow/deny decisions for sensitive actions.
+- CI gates: eslint --max-warnings 0, tests + coverage ≥95% for changed code, contract tests green. PRs may not introduce new warnings.
+
 General principles
 - Single Responsibility: each module/function/class does one thing; prefer composition over large multi‑purpose units.
 - Small, testable units: design functions with explicit inputs/outputs; avoid hidden global state; maximize pure logic.
