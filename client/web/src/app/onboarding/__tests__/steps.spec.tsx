@@ -31,8 +31,10 @@ describe('onboarding steps', () => {
   });
 
   it('CustomizeStep marks customize complete', () => {
-    const { getByText } = render(<CustomizeStep />);
-    fireEvent.click(getByText('Mark Customized'));
+    const { getByLabelText, getByText } = render(<CustomizeStep />);
+    fireEvent.change(getByLabelText('business-name'), { target: { value: 'Acme' } });
+    fireEvent.change(getByLabelText('greeting'), { target: { value: 'Hello!' } });
+    fireEvent.click(getByText('Save and Continue'));
     expect(useOnboardingStore.getState().customizeComplete).toBe(true);
   });
 
