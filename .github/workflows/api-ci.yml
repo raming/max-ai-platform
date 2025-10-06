@@ -6,7 +6,6 @@ on:
     paths:
       - "client/api/**"
       - "client/token-proxy-core/**"
-      - ".github/workflows/api-ci.yml"
   workflow_dispatch:
 
 jobs:
