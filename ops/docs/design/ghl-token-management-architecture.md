@@ -39,6 +39,17 @@ location_id=3MF7Qje6BuQlkuO9gSs5,yrMl7UtmMqo31qLMP76W
 
 ## 🏗️ **Architecture Design**
 
+### Adapter/Abstraction Strategy (Ports & Adapters)
+
+To ensure we can switch from the current admin-user token seeding approach to an agency API key approach without impacting the broader application, we define a dedicated port and pluggable adapters:
+
+- Port: IGHLAuthPort (see ports-and-adapters.md)
+- Adapters:
+  - AdminUserSeedAuthAdapter — current strategy; seeds from admin user session and maintains tokens via refresh endpoint
+  - AgencyApiKeyAuthAdapter — future strategy; derives scoped access using agency API key when available/supported
+
+All consumers (API gateway, proxy services, webhooks) depend only on IGHLAuthPort. The concrete adapter is injected via configuration/DI per environment/tenant. Contract validation is enforced in CI and non-prod runtime.
+
 ### **Component 1: Initial Authentication Service**
 
 **Purpose**: Handle one-time human authentication to acquire initial tokens
