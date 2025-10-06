@@ -1,21 +1,35 @@
 # AI Agent Configuration for MaxAI Platform
 seats:
+  team_lead.casey-brooks:
+    github: raming
+    role: team_lead
+    description: Team lead agent for planning and coordination
+    
   dev.default:
-    github: rayg  # Update with actual GitHub username
+    github: raming
     role: dev
     description: Default development agent
     
   sre.default:
-    github: rayg  # Update with actual GitHub username
+    github: raming
     role: sre
     description: Site Reliability Engineering agent
     
   release_manager.default:
-    github: rayg  # Update with actual GitHub username
+    github: raming
     role: release_manager
     description: Release management agent
 
 roles:
+  team_lead:
+    description: Team leadership and planning role
+    capabilities:
+      - epic_planning
+      - story_creation
+      - acceptance_criteria
+      - coordination
+      - issue_management
+      
   dev:
     description: Software development role
     capabilities:
