@@ -55,6 +55,17 @@ Labels & triage
 - priority:{P0,P1,P2,P3}: P0 = urgent; P3 = lowest
 - sprint:{sprint-YYYY-WW} or sprint:{sprint-N}
 - Agents MUST apply priority and sprint labels to enable human triage.
+- Review routing (authoritative, on Issue and PR):
+  - action:qa-review or action:qa-test → seat:qa.<seat>, status:needs-qa
+  - action:code-review → seat:team_lead.<seat> (or peer dev), status:needs-review
+  - action:human-merge → status:awaiting-human + help:<human-label> (e.g., help:ray-gerami); agents do not proceed until cleared
+
+Handoff helper
+- Use pr-handoff.sh to update the Issue and PR after opening the PR:
+```
+REPO=<org>/<repo> ISSUE=<N> PR=<PR#> NEXT_SEAT=<seat:...> NEXT_STATUS=<status:...> ACTIONS="action:..." \
+$HOME/repos/ops-template/scripts/pr-handoff.sh
+```
 
 Queries (human triage examples)
 - High priority first:

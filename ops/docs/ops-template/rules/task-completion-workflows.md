@@ -3,6 +3,8 @@
 Purpose
 Define clear, automated workflows for when agents complete tasks to ensure smooth handoffs and continuous operation.
 
+Note: See also scope-control-and-triage.md for scope guardrails and end-of-task triage requirements.
+
 ## Completion States & Actions
 
 ### Developer Task Completion
@@ -88,6 +90,27 @@ Auto-escalate to humans only when:
 - External dependencies blocking progress
 - Security/compliance concerns identified
 
+## PR Handoff Automation (Issue + PR updates)
+On PR creation, the author agent MUST update the originating Issue and the PR so the next owner can pick it up without ambiguity:
+- Link the issue in PR description: Fixes #<N> or Refs #<N>
+- Issue updates:
+  - Comment: "PR opened: <url> — Requesting <actions>" (e.g., qa-review, qa-test, code-review, human-merge)
+  - Flip seat to the next owner (seat:<role.seat>)
+  - Set NEXT_STATUS to reflect the next action (status:needs-qa | status:needs-review | status:awaiting-human)
+  - Add ACTIONS labels (action:qa-review | action:qa-test | action:code-review | action:human-merge)
+  - Optional: add help:ray-gerami when human involvement is required
+- PR updates:
+  - Mirror the seat/status/action labels
+  - Request reviewers as appropriate
+
+Quick command (GitHub) using canonical script:
+```
+REPO=<org>/<repo> ISSUE=<N> PR=<PR#> \
+NEXT_SEAT="seat:qa.mina-li" NEXT_STATUS="status:needs-qa" ACTIONS="action:qa-review" \
+PREV_SEAT="seat:dev.avery-kim" REVIEWERS="mina-gh" \
+$HOME/repos/ops-template/scripts/pr-handoff.sh
+```
+
 ## Continuous Operation Rules
 - **NEVER WAIT** for human confirmation on routine operations
 - **ALWAYS QUERY** for next work immediately after completion
@@ -101,9 +124,9 @@ Auto-escalate to humans only when:
 4) Always leave a short progress comment on the issue before switching context.
 
 ### Quick commands
-- Show my issues (assigned to me):
-  PROJECT_OPS_DIR=<ops> SEAT=<role.name> $HOME/repos/ops-template/scripts/list-issues.sh
+- Show my issues (ready for my seat):
+  PROJECT_OPS_DIR=<ops> SEAT=<role.name> READINESS_LABEL="status:ready" $HOME/repos/ops-template/scripts/list-issues.sh
 - Auto next (continue if only one obvious option, else present choices):
-  PROJECT_OPS_DIR=<ops> SEAT=<role.name> $HOME/repos/ops-template/scripts/auto-next.sh
+  PROJECT_OPS_DIR=<ops> SEAT=<role.name> READINESS_LABEL="status:ready" $HOME/repos/ops-template/scripts/auto-next.sh
 - Reload seat prompt:
   PROJECT_OPS_DIR=<ops> SEAT=<role.name> $HOME/repos/ops-template/scripts/reload-seat.sh
