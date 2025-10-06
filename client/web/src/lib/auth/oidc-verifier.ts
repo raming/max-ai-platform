@@ -124,7 +124,7 @@ export class OIDCVerifier {
    * Build OIDC discovery URL
    */
   private buildDiscoveryUrl(): string {
-    const baseUrl = this.config.keycloakBaseUrl.replace(/\\/$/, '');
+    const baseUrl = this.config.keycloakBaseUrl.replace(/\/$/, '');
     
     if (this.config.realm) {
       return `${baseUrl}/realms/${this.config.realm}/.well-known/openid-configuration`;
@@ -241,7 +241,7 @@ export class OIDCVerifier {
   static extractBearerToken(authHeader?: string): string | null {
     if (!authHeader) return null;
     
-    const matches = authHeader.match(/^Bearer\\s+(.+)$/i);
+    const matches = authHeader.match(/^Bearer\s+(.+)$/i);
     return matches ? matches[1] : null;
   }
 
