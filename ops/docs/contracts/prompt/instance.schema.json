@@ -1,0 +1,114 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://maxai.platform/schemas/prompt/instance.schema.json",
+  "title": "Prompt Instance",
+  "description": "Client-specific instance of a prompt template with variable values",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Unique instance identifier"
+    },
+    "templateId": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Template this instance is based on"
+    },
+    "templateVersion": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$",
+      "description": "Version of the template used"
+    },
+    "clientId": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Client this instance belongs to"
+    },
+    "tenantId": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Tenant this instance belongs to"
+    },
+    "name": {
+      "type": "string",
+      "maxLength": 100,
+      "description": "Instance name (unique within client)"
+    },
+    "displayName": {
+      "type": "string",
+      "maxLength": 255,
+      "description": "Human-readable instance name"
+    },
+    "values": {
+      "type": "object",
+      "description": "Variable values for this instance",
+      "additionalProperties": true
+    },
+    "renderedContent": {
+      "type": "string",
+      "description": "Template content with variables rendered"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["draft", "active", "inactive", "archived"],
+      "description": "Instance status"
+    },
+    "deploymentStatus": {
+      "type": "string",
+      "enum": ["pending", "deployed", "failed", "rollback"],
+      "description": "Deployment status to provider"
+    },
+    "providerConfig": {
+      "type": "object",
+      "description": "Provider-specific configuration",
+      "additionalProperties": true
+    },
+    "providerInstanceId": {
+      "type": ["string", "null"],
+      "description": "Provider-specific instance identifier"
+    },
+    "lastDeployedAt": {
+      "type": ["string", "null"],
+      "format": "date-time",
+      "description": "Last deployment timestamp"
+    },
+    "createdBy": {
+      "type": "string",
+      "format": "uuid",
+      "description": "User who created this instance"
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Instance creation timestamp"
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Instance last update timestamp"
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Additional instance metadata",
+      "additionalProperties": true
+    }
+  },
+  "required": [
+    "id",
+    "templateId",
+    "templateVersion",
+    "clientId",
+    "tenantId",
+    "name",
+    "displayName",
+    "values",
+    "renderedContent",
+    "status",
+    "deploymentStatus",
+    "createdBy",
+    "createdAt",
+    "updatedAt"
+  ],
+  "additionalProperties": false
+}

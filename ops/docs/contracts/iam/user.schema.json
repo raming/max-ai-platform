@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://maxai.platform/schemas/iam/user.schema.json",
+  "title": "IAM User",
+  "description": "User entity in the IAM system with multi-tenant support",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Unique user identifier"
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "description": "User's email address (primary identifier)"
+    },
+    "displayName": {
+      "type": "string",
+      "maxLength": 255,
+      "description": "User's display name"
+    },
+    "tenantId": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Tenant this user belongs to"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["active", "suspended", "pending", "disabled"],
+      "description": "User account status"
+    },
+    "provider": {
+      "type": "string",
+      "enum": ["google", "internal"],
+      "description": "Authentication provider used"
+    },
+    "providerUserId": {
+      "type": "string",
+      "description": "User ID from the authentication provider"
+    },
+    "lastLoginAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp of last login"
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "User creation timestamp"
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "User last update timestamp"
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Additional user metadata",
+      "additionalProperties": true
+    }
+  },
+  "required": [
+    "id",
+    "email",
+    "displayName",
+    "tenantId",
+    "status",
+    "provider",
+    "createdAt",
+    "updatedAt"
+  ],
+  "additionalProperties": false
+}

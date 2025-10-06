@@ -1,0 +1,136 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://maxai.platform/schemas/prompt/template.schema.json",
+  "title": "Prompt Template",
+  "description": "Template definition for prompts with versioning and variable support",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Unique template identifier"
+    },
+    "name": {
+      "type": "string",
+      "maxLength": 100,
+      "pattern": "^[a-z][a-z0-9_-]*$",
+      "description": "Template name (kebab-case, unique within tenant)"
+    },
+    "displayName": {
+      "type": "string",
+      "maxLength": 255,
+      "description": "Human-readable template name"
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 1000,
+      "description": "Template description"
+    },
+    "tenantId": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Tenant this template belongs to"
+    },
+    "category": {
+      "type": "string",
+      "enum": ["agent", "system", "workflow", "notification"],
+      "description": "Template category"
+    },
+    "provider": {
+      "type": "string",
+      "enum": ["retell", "n8n", "internal"],
+      "description": "Target provider for this template"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$",
+      "description": "Semantic version (major.minor.patch)"
+    },
+    "content": {
+      "type": "string",
+      "description": "Template content with variable placeholders"
+    },
+    "variables": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "pattern": "^[a-zA-Z][a-zA-Z0-9_]*$",
+            "description": "Variable name"
+          },
+          "type": {
+            "type": "string",
+            "enum": ["string", "number", "boolean", "array", "object"],
+            "description": "Variable data type"
+          },
+          "required": {
+            "type": "boolean",
+            "description": "Whether this variable is required"
+          },
+          "defaultValue": {
+            "description": "Default value for the variable"
+          },
+          "description": {
+            "type": "string",
+            "description": "Variable description"
+          }
+        },
+        "required": ["name", "type", "required"]
+      },
+      "description": "Template variables"
+    },
+    "schema": {
+      "type": "object",
+      "description": "JSON schema for validation of template instances",
+      "additionalProperties": true
+    },
+    "status": {
+      "type": "string",
+      "enum": ["draft", "published", "deprecated", "archived"],
+      "description": "Template status"
+    },
+    "publishedAt": {
+      "type": ["string", "null"],
+      "format": "date-time",
+      "description": "Publication timestamp"
+    },
+    "createdBy": {
+      "type": "string",
+      "format": "uuid",
+      "description": "User who created this template"
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Template creation timestamp"
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Template last update timestamp"
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Additional template metadata",
+      "additionalProperties": true
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "displayName",
+    "tenantId",
+    "category",
+    "provider",
+    "version",
+    "content",
+    "variables",
+    "status",
+    "createdBy",
+    "createdAt",
+    "updatedAt"
+  ],
+  "additionalProperties": false
+}
