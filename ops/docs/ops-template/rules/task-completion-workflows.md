@@ -3,6 +3,8 @@
 Purpose
 Define clear, automated workflows for when agents complete tasks to ensure smooth handoffs and continuous operation.
 
+Note: See also scope-control-and-triage.md for scope guardrails and end-of-task triage requirements.
+
 ## Completion States & Actions
 
 ### Developer Task Completion

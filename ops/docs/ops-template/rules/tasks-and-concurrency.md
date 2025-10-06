@@ -1,5 +1,7 @@
 # Tasks and concurrency policy (canonical)
 
+Note: See also scope-control-and-triage.md for guardrails and required end-of-task triage.
+
 Primary tracker
 - Use the Git host issue tracker (e.g., GitHub Issues) for all tasks/bugs/epics by default.
 - Do NOT create local files for tasks or bugs in the repo; local folders may contain templates only.
