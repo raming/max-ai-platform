@@ -16,6 +16,9 @@ const config: Config = {
   testEnvironment: 'jsdom',
   collectCoverageFrom: [
     'src/app/onboarding/store.ts',
+    'src/lib/contracts/**/*.ts',
+    '!src/lib/contracts/**/*.spec.ts',
+    '!src/lib/contracts/**/*.test.ts',
   ],
   coverageThreshold: {
     global: {
@@ -25,6 +28,10 @@ const config: Config = {
       statements: 95,
     },
   },
+  testMatch: [
+    '<rootDir>/src/**/*.{spec,test}.{ts,tsx}',
+    '<rootDir>/../tests/**/*.{spec,test}.{ts,tsx}',
+  ],
   forceExit: true,
   clearMocks: true,
   restoreMocks: true,

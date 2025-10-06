@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://maxai.platform/schemas/iam/role-assignment.schema.json",
+  "title": "IAM Role Assignment",
+  "description": "Assignment of roles to users with optional client scoping",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Unique assignment identifier"
+    },
+    "userId": {
+      "type": "string",
+      "format": "uuid",
+      "description": "User being assigned the role"
+    },
+    "roleId": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Role being assigned"
+    },
+    "tenantId": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Tenant scope for this assignment"
+    },
+    "clientId": {
+      "type": ["string", "null"],
+      "format": "uuid",
+      "description": "Optional client scope for this assignment (null = tenant-wide)"
+    },
+    "scope": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["tenant", "client", "resource"],
+          "description": "Scope type for the role assignment"
+        },
+        "resourceType": {
+          "type": "string",
+          "description": "Resource type when scope is 'resource'"
+        },
+        "resourceId": {
+          "type": "string",
+          "description": "Resource ID when scope is 'resource'"
+        }
+      },
+      "required": ["type"],
+      "if": {
+        "properties": { "type": { "const": "resource" } }
+      },
+      "then": {
+        "required": ["resourceType", "resourceId"]
+      }
+    },
+    "assignedBy": {
+      "type": "string",
+      "format": "uuid",
+      "description": "User who made this assignment"
+    },
+    "assignedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Assignment timestamp"
+    },
+    "expiresAt": {
+      "type": ["string", "null"],
+      "format": "date-time",
+      "description": "Optional expiration timestamp"
+    },
+    "isActive": {
+      "type": "boolean",
+      "description": "Whether this assignment is currently active"
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Additional assignment metadata",
+      "additionalProperties": true
+    }
+  },
+  "required": [
+    "id",
+    "userId",
+    "roleId",
+    "tenantId",
+    "scope",
+    "assignedBy",
+    "assignedAt",
+    "isActive"
+  ],
+  "additionalProperties": false
+}

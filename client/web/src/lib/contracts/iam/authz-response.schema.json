@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://max-ai.platform/iam/authz-response.schema.json",
+  "title": "Authorization Response",
+  "type": "object",
+  "required": ["decision"],
+  "properties": {
+    "decision": {"type": "string", "enum": ["allow", "deny"]},
+    "reason": {"type": "string"},
+    "policyRef": {"type": "string"},
+    "obligations": {"type": "object", "additionalProperties": true}
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://maxai.platform/schemas/iam/role.schema.json",
+  "title": "IAM Role",
+  "description": "Role entity in the RBAC system with permissions",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Unique role identifier"
+    },
+    "name": {
+      "type": "string",
+      "maxLength": 100,
+      "pattern": "^[a-z][a-z0-9_-]*$",
+      "description": "Role name (kebab-case, unique within tenant)"
+    },
+    "displayName": {
+      "type": "string",
+      "maxLength": 255,
+      "description": "Human-readable role name"
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 1000,
+      "description": "Role description"
+    },
+    "tenantId": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Tenant this role belongs to"
+    },
+    "permissions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z]+:[a-z0-9_*/-]+$",
+        "description": "Permission in format 'action:resource'"
+      },
+      "description": "List of permissions granted by this role"
+    },
+    "isSystemRole": {
+      "type": "boolean",
+      "description": "Whether this is a system-defined role (cannot be modified)"
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Role creation timestamp"
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Role last update timestamp"
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Additional role metadata",
+      "additionalProperties": true
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "displayName",
+    "tenantId",
+    "permissions",
+    "isSystemRole",
+    "createdAt",
+    "updatedAt"
+  ],
+  "additionalProperties": false
+}
