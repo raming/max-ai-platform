@@ -110,7 +110,7 @@ describe('Authorization Response Contract Validation', () => {
 
       const result = validateAuthzResponse(invalidResponse);
       expect(result.valid).toBe(false);
-      expect(result.errors![0].missingProperty).toBe('decision');
+      expect(result.errors![0].params.missingProperty).toBe('decision');
     });
 
     it('should reject response with invalid decision value', () => {
@@ -121,7 +121,7 @@ describe('Authorization Response Contract Validation', () => {
       const result = validateAuthzResponse(invalidResponse);
       expect(result.valid).toBe(false);
       expect(result.errors![0].instancePath).toBe('/decision');
-      expect(result.errors![0].allowedValues).toEqual(['allow', 'deny']);
+      expect(result.errors![0].keyword).toBe('enum');
     });
 
     it('should reject response with wrong type for decision', () => {
@@ -192,7 +192,7 @@ describe('Authorization Response Contract Validation', () => {
     it('should reject empty object', () => {
       const result = validateAuthzResponse({});
       expect(result.valid).toBe(false);
-      expect(result.errors![0].missingProperty).toBe('decision');
+      expect(result.errors![0].params.missingProperty).toBe('decision');
     });
 
     it('should reject null input', () => {

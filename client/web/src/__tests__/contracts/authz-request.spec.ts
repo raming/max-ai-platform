@@ -122,7 +122,7 @@ describe('Authorization Request Contract Validation', () => {
 
       const result = validateAuthzRequest(invalidRequest);
       expect(result.valid).toBe(false);
-      expect(result.errors![0].missingProperty).toBe('subject');
+      expect(result.errors![0].params.missingProperty).toBe('subject');
     });
 
     it('should reject request missing required resource field', () => {
@@ -136,7 +136,7 @@ describe('Authorization Request Contract Validation', () => {
 
       const result = validateAuthzRequest(invalidRequest);
       expect(result.valid).toBe(false);
-      expect(result.errors![0].missingProperty).toBe('resource');
+      expect(result.errors![0].params.missingProperty).toBe('resource');
     });
 
     it('should reject request missing required action field', () => {
@@ -153,7 +153,7 @@ describe('Authorization Request Contract Validation', () => {
 
       const result = validateAuthzRequest(invalidRequest);
       expect(result.valid).toBe(false);
-      expect(result.errors![0].missingProperty).toBe('action');
+      expect(result.errors![0].params.missingProperty).toBe('action');
     });
 
     it('should reject request with subject missing required id', () => {
@@ -171,7 +171,7 @@ describe('Authorization Request Contract Validation', () => {
       const result = validateAuthzRequest(invalidRequest);
       expect(result.valid).toBe(false);
       expect(result.errors![0].instancePath).toBe('/subject');
-      expect(result.errors![0].missingProperty).toBe('id');
+      expect(result.errors![0].params.missingProperty).toBe('id');
     });
 
     it('should reject request with subject missing required tenant', () => {
@@ -189,7 +189,7 @@ describe('Authorization Request Contract Validation', () => {
       const result = validateAuthzRequest(invalidRequest);
       expect(result.valid).toBe(false);
       expect(result.errors![0].instancePath).toBe('/subject');
-      expect(result.errors![0].missingProperty).toBe('tenant');
+      expect(result.errors![0].params.missingProperty).toBe('tenant');
     });
 
     it('should reject request with resource missing required type', () => {
@@ -207,7 +207,7 @@ describe('Authorization Request Contract Validation', () => {
       const result = validateAuthzRequest(invalidRequest);
       expect(result.valid).toBe(false);
       expect(result.errors![0].instancePath).toBe('/resource');
-      expect(result.errors![0].missingProperty).toBe('type');
+      expect(result.errors![0].params.missingProperty).toBe('type');
     });
 
     it('should reject request with resource missing required id', () => {
@@ -225,7 +225,7 @@ describe('Authorization Request Contract Validation', () => {
       const result = validateAuthzRequest(invalidRequest);
       expect(result.valid).toBe(false);
       expect(result.errors![0].instancePath).toBe('/resource');
-      expect(result.errors![0].missingProperty).toBe('id');
+      expect(result.errors![0].params.missingProperty).toBe('id');
     });
 
     it('should reject request with wrong type for roles', () => {

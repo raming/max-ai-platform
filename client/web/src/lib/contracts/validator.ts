@@ -48,9 +48,7 @@ export interface AuthzResponse {
   obligations?: { [key: string]: any };
 }
 
-// Feature flag for runtime validation
-const ENABLE_RUNTIME_VALIDATION = process.env.NODE_ENV !== 'production' && 
-  process.env.ENABLE_CONTRACT_VALIDATION === 'true';
+// Feature flag for runtime validation - moved to runtime evaluation
 
 export class ContractValidator {
   private ajv: Ajv;
@@ -115,7 +113,11 @@ export class ContractValidator {
     validatorFn: (data: unknown) => { valid: boolean; errors?: any[] },
     context: string
   ): T {
-    if (!ENABLE_RUNTIME_VALIDATION) {
+    // Evaluate feature flag at runtime, not module load time
+    const isRuntimeValidationEnabled = process.env.NODE_ENV !== 'production' && 
+      process.env.ENABLE_CONTRACT_VALIDATION === 'true';
+    
+    if (!isRuntimeValidationEnabled) {
       return data as T;
     }
 
