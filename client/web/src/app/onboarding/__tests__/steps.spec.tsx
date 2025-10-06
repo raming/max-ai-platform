@@ -6,6 +6,8 @@ import CustomizeStep from '../customize/page';
 import PlanStep from '../plan/page';
 import { useOnboardingStore } from '../store';
 
+jest.mock('next/navigation', () => ({ useRouter: () => ({ push: jest.fn() }) }));
+
 describe('onboarding steps', () => {
   beforeEach(() => {
     useOnboardingStore.setState({
@@ -23,8 +25,8 @@ describe('onboarding steps', () => {
   });
 
   it('TemplatesStep marks template selected', () => {
-    const { getByText } = render(<TemplatesStep />);
-    fireEvent.click(getByText('Select Template'));
+    const { getByLabelText } = render(<TemplatesStep />);
+    fireEvent.click(getByLabelText('select-welcome-bot'));
     expect(useOnboardingStore.getState().templateSelected).toBe(true);
   });
 
