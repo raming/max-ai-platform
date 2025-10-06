@@ -1,47 +1,66 @@
-# IAM (MVP) — Detailed Spec
+# IAM (MVP) — Extreme Detail Spec
 
 Purpose
-Provide multi-tenant RBAC with Google SSO, service tokens, policy checks, and audit events.
+Provide multi-tenant identity, SSO, service tokens, RBAC policy checks, and audit with strict contracts and operational guardrails.
 
-APIs (REST, initial)
-- POST /iam/sessions/google/callback — exchange code for session (server-side OAuth)
-- GET  /iam/me — return user, roles, tenant assignments
-- POST /iam/tokens — mint service token (admin-only)
-- POST /iam/policies/check — evaluate {subject, action, resource}
+Ports (interfaces)
+- IIdentityProviderPort: exchangeAuthCode(provider, code) → UserProfile
+- ITokenService: mintServiceToken(actor, scopes) → {token, exp}; verify(token) → Claims
+- IPolicyEnginePort: check({subject, action, resource, attrs}) → {allow|deny, reason}
+- IAuditWriter: write(event) → void
 
-Data model (MVP)
-- users(id, email, name, provider)
-- tenants(id, name)
-- clients(id, tenant_id, name)
-- groups(id, tenant_id, client_id?, name)
-- roles(id, name) — owner, admin, operator, analyst, client_user
-- permissions(id, action, resource)
-- role_assignments(id, user_id, role_id, tenant_id, client_id?)
-- audit(id, at, actor_id, action, resource, metadata)
+APIs (REST)
+- POST /iam/sessions/google/callback — 302 to portal with session; 401 on failure
+- GET  /iam/me — 200 {user, roles, assignments}; requires session or service token
+- POST /iam/tokens — 201 {token, exp}; admin-only; scopes validated
+- POST /iam/policies/check — 200 {allow, reason}; request includes tenant_id/client_id
 
-Contracts (entities)
-- See: ../../contracts/tenant.schema.json
-- See: ../../contracts/client.schema.json
-- See: ../../contracts/group.schema.json
-- See: ../../contracts/role.schema.json
-- See: ../../contracts/permission.schema.json
-- See: ../../contracts/role-assignment.schema.json
+Data model
+- users(id PK, email UNIQUE, name, provider ENUM(google,local))
+- tenants(id PK, name UNIQUE)
+- clients(id PK, tenant_id FK, name)
+- groups(id PK, tenant_id FK, client_id?, name)
+- roles(id PK, name UNIQUE)
+- permissions(id PK, action, resource, UNIQUE(action, resource))
+- role_assignments(id PK, user_id FK, role_id FK, tenant_id FK, client_id?)
+- audit(id PK, at, actor_id, action, resource, metadata JSONB, correlation_id)
 
-Policies
-- Resource scopes: tenant, client, integration, agent, prompt
-- Checks are attribute-based + role-based; requests carry tenant_id/client_id
+Contracts (JSON Schemas)
+- ../../contracts/user.schema.json
+- ../../contracts/tenant.schema.json
+- ../../contracts/client.schema.json
+- ../../contracts/group.schema.json
+- ../../contracts/role.schema.json
+- ../../contracts/permission.schema.json
+- ../../contracts/role-assignment.schema.json
+- ../../contracts/iam-policy-check.schema.json
 
-SSO and token proxy
-- Portal SSO: Google (Phase 1), Microsoft (Phase 2); optional SAML/OIDC in later phases
-- Provider token proxy: store provider tokens server-side; api-gateway performs operations on behalf of users; never expose provider tokens to browser
-- Token rotation: secrets manager; audit token issuance and revocation
+Security & compliance
+- SSO: server-side OAuth flow; anti-CSRF state param; PKCE when applicable
+- Tokens: JWT HS/RS signed; short-lived; rotate keys; store only hashes where needed
+- RBAC: enforce at gateway and service layers; deny-by-default
+- Redaction: no PII in logs; audit sensitive actions (role assignment, token mint)
 
-Contracts
-- JSON Schemas: User, Role, Assignment, PolicyCheck, Token
-- See: ../../contracts/user.schema.json
-- See: ../../contracts/iam-policy-check.schema.json
+Observability
+- Logs: actor_id, tenant_id, client_id, action, resource, correlation_id
+- Metrics: policy_checks_total{decision}, token_mints_total, sso_logins_total{provider}
+- Traces: session creation and policy checks linked via correlation_id
+
+NFRs
+- Policy check latency P95 < 20ms; token mint P95 < 100ms
+- Availability ≥ 99.9%; audit write must be durable (retry on failure)
+
+Error taxonomy
+- 400.invalid_request | 401.unauthorized | 403.forbidden
+- 409.role_assignment_conflict | 422.validation_error
+- 500.identity_provider_error | 500.audit_write_failed
+
+Test strategy
+- Unit: policy evaluation matrix; token mint/verify; ≥95% coverage
+- Integration: SSO code exchange with mocked IdP; audit persistence; RBAC enforcement
+- Contract: JSON Schemas for IAM entities and policy check; negative cases
 
 Acceptance criteria
-- Google SSO login working; service tokens mintable; policy check endpoint functional
-- Audit events for assignments and token issuance
-- Tests: ≥95% coverage across policy evaluation and endpoints
+- Google SSO login working; service tokens mintable with scopes; gateway RBAC enforced
+- Policy check endpoint returns allow/deny with reason; audit present for all sensitive actions
+- CI shows ≥95% coverage for IAM services
