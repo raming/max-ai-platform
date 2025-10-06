@@ -1,10 +1,10 @@
-import { Injectable, Logger } from '@nestjs/common';
+import { Inject, Injectable, Logger } from '@nestjs/common';
 import { IResourceProvider, ProviderResult, ResourceInitializationPlan, FLAGS, isEnabled, redactSecret } from 'token-proxy-core';
 
 @Injectable()
 export class ResourceService {
   private readonly logger = new Logger(ResourceService.name);
-  constructor(private readonly provider: IResourceProvider) {}
+  constructor(@Inject('IResourceProvider') private readonly provider: IResourceProvider) {}
 
   async init(plan: ResourceInitializationPlan, opts: { correlationId: string }): Promise<ProviderResult> {
     if (!isEnabled(FLAGS.RESOURCE_INIT_TOKEN_PROXY)) {
