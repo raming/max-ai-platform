@@ -14,6 +14,8 @@ Ports (contracts)
   - createCustomer, attachPayment, subscribe, reportUsage/createInvoiceItem, generateInvoice, refund, verifyWebhook, getInvoice
 - ILlmPort
   - generateContent (prompt templates, flow specs), evaluate (lint/critique), embeddings (optional), model selection
+- IGHLAuthPort
+  - initiateOAuth, handleCallback, refreshToken, revokeConnection, getConnectionInfo
 
 Notes
 
@@ -52,6 +54,14 @@ export interface IPaymentProviderPort {
 export interface ILlmPort {
   generateContent(input: GenerateRequest, ctx: RequestCtx): Promise<GeneratedArtifact>;
   evaluate(input: EvaluateRequest, ctx: RequestCtx): Promise<EvaluationReport>;
+}
+
+export interface IGHLAuthPort {
+  initiateOAuth(input: { tenantId: string; scopes: string[] }, ctx: RequestCtx): Promise<{ authUrl: string; state: string }>;
+  handleCallback(input: { provider: 'ghl'; code: string; state: string }, ctx: RequestCtx): Promise<{ success: boolean; tenantId: string }>;
+  refreshToken(input: { tenantId: string }, ctx: RequestCtx): Promise<{ success: boolean; expiresAt: string }>;
+  revokeConnection(input: { tenantId: string }, ctx: RequestCtx): Promise<void>;
+  getConnectionInfo(input: { tenantId: string }, ctx: RequestCtx): Promise<{ connected: boolean; locationIds?: string[]; expiresAt?: string }>;
 }
 ```
 

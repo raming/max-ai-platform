@@ -1,0 +1,323 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://max-ai/contracts/appointment.schema.json",
+  "title": "Appointment",
+  "description": "Canonical appointment/calendar event data model abstracting provider-specific details",
+  "type": "object",
+  "required": [
+    "id",
+    "providerId",
+    "providerType",
+    "locationId", 
+    "title",
+    "startTime",
+    "endTime",
+    "status",
+    "contact"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique internal appointment identifier"
+    },
+    "providerId": {
+      "type": "string",
+      "description": "Provider-specific appointment ID (e.g., GHL appointment ID)"
+    },
+    "providerType": {
+      "type": "string", 
+      "enum": ["ghl", "google_calendar", "outlook", "calendly", "custom"],
+      "description": "Source calendar system"
+    },
+    "locationId": {
+      "type": "string",
+      "description": "Associated business location identifier"
+    },
+    "title": {
+      "type": "string",
+      "description": "Appointment title or subject"
+    },
+    "description": {
+      "type": ["string", "null"],
+      "description": "Detailed appointment description or notes"
+    },
+    "startTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Appointment start date and time (ISO 8601)"
+    },
+    "endTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Appointment end date and time (ISO 8601)"
+    },
+    "timezone": {
+      "type": "string",
+      "description": "IANA timezone identifier (e.g., 'America/New_York')",
+      "pattern": "^[A-Za-z_]+/[A-Za-z_]+$"
+    },
+    "allDay": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether this is an all-day event"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["scheduled", "confirmed", "cancelled", "no_show", "completed", "rescheduled"],
+      "description": "Current appointment status"
+    },
+    "appointmentType": {
+      "type": ["object", "null"],
+      "description": "Appointment type/service configuration",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Service or appointment type name"
+        },
+        "duration": {
+          "type": "integer", 
+          "minimum": 1,
+          "description": "Standard duration in minutes"
+        },
+        "category": {
+          "type": ["string", "null"],
+          "description": "Service category"
+        },
+        "price": {
+          "type": ["number", "null"],
+          "minimum": 0,
+          "description": "Service price if applicable"
+        },
+        "currency": {
+          "type": ["string", "null"],
+          "pattern": "^[A-Z]{3}$",
+          "description": "Currency code (ISO 4217)"
+        }
+      },
+      "required": ["name", "duration"],
+      "additionalProperties": false
+    },
+    "contact": {
+      "type": "object",
+      "description": "Client/customer contact information",
+      "required": ["name"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Contact's full name"
+        },
+        "firstName": {
+          "type": ["string", "null"],
+          "description": "Contact's first name"
+        },
+        "lastName": {
+          "type": ["string", "null"],
+          "description": "Contact's last name"
+        },
+        "email": {
+          "type": ["string", "null"],
+          "format": "email",
+          "description": "Contact's email address"
+        },
+        "phone": {
+          "type": ["string", "null"],
+          "description": "Contact's phone number"
+        },
+        "companyName": {
+          "type": ["string", "null"],
+          "description": "Contact's company or organization"
+        },
+        "contactId": {
+          "type": ["string", "null"],
+          "description": "Reference to internal contact record"
+        }
+      },
+      "additionalProperties": false
+    },
+    "assignedTo": {
+      "type": ["object", "null"],
+      "description": "Staff member or resource assigned to this appointment", 
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "Internal user ID"
+        },
+        "name": {
+          "type": "string", 
+          "description": "Staff member's name"
+        },
+        "email": {
+          "type": ["string", "null"],
+          "format": "email",
+          "description": "Staff member's email"
+        },
+        "role": {
+          "type": ["string", "null"],
+          "description": "Staff role or title"
+        }
+      },
+      "required": ["userId", "name"],
+      "additionalProperties": false
+    },
+    "location": {
+      "type": ["object", "null"],
+      "description": "Physical or virtual meeting location",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["physical", "phone", "video", "custom"],
+          "description": "Type of meeting location"
+        },
+        "address": {
+          "type": ["string", "null"],
+          "description": "Physical address for in-person meetings"
+        },
+        "phone": {
+          "type": ["string", "null"],
+          "description": "Phone number for phone meetings"
+        },
+        "videoUrl": {
+          "type": ["string", "null"],
+          "format": "uri",
+          "description": "Video conference link (Zoom, Meet, etc.)"
+        },
+        "instructions": {
+          "type": ["string", "null"],
+          "description": "Additional location instructions"
+        }
+      },
+      "required": ["type"],
+      "additionalProperties": false
+    },
+    "reminders": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["email", "sms", "push", "webhook"],
+            "description": "Reminder delivery method"
+          },
+          "minutesBefore": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "Minutes before appointment to send reminder"
+          },
+          "sent": {
+            "type": "boolean",
+            "default": false,
+            "description": "Whether this reminder has been sent"
+          },
+          "sentAt": {
+            "type": ["string", "null"],
+            "format": "date-time",
+            "description": "When the reminder was actually sent"
+          }
+        },
+        "required": ["type", "minutesBefore"],
+        "additionalProperties": false
+      },
+      "description": "Configured reminders for this appointment"
+    },
+    "customFields": {
+      "type": "object",
+      "description": "Additional fields collected during booking",
+      "additionalProperties": true
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string",
+            "description": "Note content"
+          },
+          "authorId": {
+            "type": ["string", "null"],
+            "description": "User ID of note author"
+          },
+          "authorName": {
+            "type": "string",
+            "description": "Name of note author"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "When the note was created"
+          },
+          "isPrivate": {
+            "type": "boolean",
+            "default": false,
+            "description": "Whether note is private to staff"
+          }
+        },
+        "required": ["content", "authorName", "createdAt"],
+        "additionalProperties": false
+      },
+      "description": "Notes and comments on the appointment"
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Provider-specific metadata and platform details",
+      "properties": {
+        "sourceUrl": {
+          "type": ["string", "null"],
+          "format": "uri",
+          "description": "Direct link to appointment on source platform"
+        },
+        "platformData": {
+          "type": ["object", "null"], 
+          "description": "Raw data from the originating platform (for debugging/auditing)"
+        },
+        "syncedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When this appointment was last synced from the provider"
+        },
+        "rescheduleCount": {
+          "type": "integer",
+          "minimum": 0,
+          "default": 0,
+          "description": "Number of times this appointment has been rescheduled"
+        },
+        "originalStartTime": {
+          "type": ["string", "null"],
+          "format": "date-time",
+          "description": "Original start time if rescheduled"
+        },
+        "cancelledAt": {
+          "type": ["string", "null"],
+          "format": "date-time", 
+          "description": "When appointment was cancelled"
+        },
+        "cancelledBy": {
+          "type": ["string", "null"],
+          "description": "Who cancelled the appointment"
+        },
+        "cancellationReason": {
+          "type": ["string", "null"],
+          "description": "Reason for cancellation"
+        }
+      },
+      "required": ["syncedAt"],
+      "additionalProperties": true
+    },
+    "tenantId": {
+      "type": "string",
+      "description": "Tenant that owns this appointment data"
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When this record was created in our system"
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When this record was last updated in our system"
+    }
+  },
+  "additionalProperties": false
+}

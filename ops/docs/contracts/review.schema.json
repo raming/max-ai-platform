@@ -1,0 +1,203 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://max-ai/contracts/review.schema.json",
+  "title": "Review",
+  "description": "Canonical review data model abstracting provider-specific details",
+  "type": "object",
+  "required": [
+    "id",
+    "providerId",
+    "providerType", 
+    "locationId",
+    "rating",
+    "title",
+    "content",
+    "author",
+    "publishedAt",
+    "status"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique internal review identifier"
+    },
+    "providerId": {
+      "type": "string", 
+      "description": "Provider-specific review ID (e.g., GHL review ID)"
+    },
+    "providerType": {
+      "type": "string",
+      "enum": ["ghl", "google", "yelp", "facebook", "custom"],
+      "description": "Source platform for the review"
+    },
+    "locationId": {
+      "type": "string",
+      "description": "Associated location/business identifier"
+    },
+    "rating": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 5,
+      "description": "Normalized 0-5 star rating"
+    },
+    "title": {
+      "type": "string",
+      "description": "Review title or subject line"
+    },
+    "content": {
+      "type": "string",
+      "description": "Full review text content"
+    },
+    "author": {
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Reviewer's display name"
+        },
+        "email": {
+          "type": ["string", "null"],
+          "format": "email",
+          "description": "Reviewer's email if available"
+        },
+        "phone": {
+          "type": ["string", "null"],
+          "description": "Reviewer's phone if available"
+        },
+        "avatar": {
+          "type": ["string", "null"],
+          "format": "uri",
+          "description": "URL to reviewer's profile image"
+        },
+        "profileUrl": {
+          "type": ["string", "null"],
+          "format": "uri", 
+          "description": "Link to reviewer's profile on the source platform"
+        }
+      },
+      "additionalProperties": false
+    },
+    "publishedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When the review was originally published"
+    },
+    "updatedAt": {
+      "type": ["string", "null"],
+      "format": "date-time",
+      "description": "When the review was last modified"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["published", "pending", "flagged", "removed", "archived"],
+      "description": "Current review status"
+    },
+    "response": {
+      "type": ["object", "null"],
+      "description": "Business response to the review",
+      "properties": {
+        "content": {
+          "type": "string",
+          "description": "Response text content"
+        },
+        "authorName": {
+          "type": "string",
+          "description": "Name of the business representative who responded"
+        },
+        "publishedAt": {
+          "type": "string", 
+          "format": "date-time",
+          "description": "When the response was published"
+        },
+        "updatedAt": {
+          "type": ["string", "null"],
+          "format": "date-time",
+          "description": "When the response was last updated"
+        }
+      },
+      "required": ["content", "authorName", "publishedAt"],
+      "additionalProperties": false
+    },
+    "categories": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Tagged categories or topics mentioned in the review"
+    },
+    "sentiment": {
+      "type": ["object", "null"],
+      "description": "AI-analyzed sentiment data",
+      "properties": {
+        "overall": {
+          "type": "string",
+          "enum": ["positive", "neutral", "negative"],
+          "description": "Overall sentiment classification"
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Confidence score for sentiment analysis"
+        },
+        "keywords": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "term": {"type": "string"},
+              "sentiment": {"type": "string", "enum": ["positive", "neutral", "negative"]},
+              "weight": {"type": "number", "minimum": 0, "maximum": 1}
+            },
+            "required": ["term", "sentiment", "weight"]
+          },
+          "description": "Key terms and their sentiment contribution"
+        }
+      },
+      "required": ["overall", "confidence"],
+      "additionalProperties": false
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Provider-specific metadata and platform details",
+      "properties": {
+        "sourceUrl": {
+          "type": ["string", "null"],
+          "format": "uri",
+          "description": "Direct link to review on source platform"
+        },
+        "platformData": {
+          "type": ["object", "null"],
+          "description": "Raw data from the originating platform (for debugging/auditing)"
+        },
+        "syncedAt": {
+          "type": "string",
+          "format": "date-time", 
+          "description": "When this review was last synced from the provider"
+        },
+        "customFields": {
+          "type": "object",
+          "description": "Additional fields specific to tenant configuration"
+        }
+      },
+      "required": ["syncedAt"],
+      "additionalProperties": true
+    },
+    "tenantId": {
+      "type": "string",
+      "description": "Tenant that owns this review data"
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When this record was created in our system"
+    },
+    "updatedAt": {
+      "type": "string", 
+      "format": "date-time",
+      "description": "When this record was last updated in our system"
+    }
+  },
+  "additionalProperties": false
+}
