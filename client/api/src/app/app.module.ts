@@ -4,12 +4,9 @@ import { AppService } from './app.service';
 import { ResourceController } from './resource.controller';
 import { ResourceService } from './resource.service';
 import { IResourceProvider, ITokenStore } from 'token-proxy-core';
+import { MemoryTokenStore } from '../adapters/token-store.memory';
+import { SupabaseProvider } from '../providers/supabase.provider';
 
-class NoopProvider implements IResourceProvider {
-  async init(): Promise<{ ok: boolean; status: number; error?: string; data?: unknown }> {
-    return { ok: true, status: 202 };
-  }
-}
 
 @Module({
   imports: [],
@@ -17,8 +14,8 @@ class NoopProvider implements IResourceProvider {
   providers: [
     AppService,
     ResourceService,
-    { provide: 'IResourceProvider', useClass: NoopProvider },
-    { provide: 'ITokenStore', useClass: (await import('../adapters/token-store.memory')).MemoryTokenStore as any },
+    { provide: 'IResourceProvider', useClass: SupabaseProvider },
+    { provide: 'ITokenStore', useClass: MemoryTokenStore },
   ],
 })
 export class AppModule {}
