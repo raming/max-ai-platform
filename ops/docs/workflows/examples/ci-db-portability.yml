@@ -1,0 +1,107 @@
+name: CI Portability (Docs-Only Example)
+
+on:
+  workflow_dispatch: {}
+  pull_request:
+    paths:
+      - 'client/**'
+      - 'ops/**'
+
+jobs:
+  db-portability:
+    name: DB Portability — ${{ matrix.provider }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        provider: [postgres, supabase]
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: app
+          POSTGRES_PASSWORD: app
+          POSTGRES_DB: app
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U app" --health-interval 10s --health-timeout 5s --health-retries 5
+      supabase:
+        image: supabase/postgres:15.1.0.45
+        # Supabase image includes pg + common extensions; we'll treat it as a proxied provider
+        # Only start for matrix.provider == supabase via if condition in steps
+        ports:
+          - 5433:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres -p 5432" --health-interval 10s --health-timeout 5s --health-retries 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Use provider connection
+        id: db
+        run: |
+          if [ "${{ matrix.provider }}" = "postgres" ]; then
+            echo "DB_URL=postgresql://app:app@localhost:5432/app?schema=public" >> $GITHUB_OUTPUT
+          else
+            echo "DB_URL=postgresql://postgres:postgres@localhost:5433/postgres?schema=public" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Install deps
+        run: |
+          npm ci --prefer-offline --no-audit --no-fund
+        working-directory: client
+
+      - name: Wait for DB (postgres)
+        if: matrix.provider == 'postgres'
+        run: |
+          for i in {1..30}; do
+            if PGPASSWORD=app psql -h localhost -p 5432 -U app -d app -c 'select 1' >/dev/null 2>&1; then
+              echo "Postgres is ready"; break; fi; sleep 2; done
+        shell: bash
+
+      - name: Wait for DB (supabase)
+        if: matrix.provider == 'supabase'
+        run: |
+          for i in {1..30}; do
+            if PGPASSWORD=postgres psql -h localhost -p 5433 -U postgres -d postgres -c 'select 1' >/dev/null 2>&1; then
+              echo "Supabase (local image) is ready"; break; fi; sleep 2; done
+        shell: bash
+
+      - name: Prisma migrate deploy
+        env:
+          DATABASE_URL: ${{ steps.db.outputs.DB_URL }}
+        run: |
+          npx prisma migrate deploy
+        working-directory: client
+
+      - name: Seed (idempotent)
+        env:
+          DATABASE_URL: ${{ steps.db.outputs.DB_URL }}
+        run: |
+          if [ -f scripts/seed.ts ] || [ -f scripts/seed.js ]; then
+            npx ts-node --transpile-only scripts/seed.ts || node scripts/seed.js || true
+          else
+            echo "No seed script present; skipping"
+          fi
+        working-directory: client
+
+      - name: Run smoke CRUD + contract tests
+        env:
+          DATABASE_URL: ${{ steps.db.outputs.DB_URL }}
+        run: |
+          npm run test:integration --if-present
+          npm run test:contract --if-present
+        working-directory: client
+
+      - name: Upload coverage
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-${{ matrix.provider }}
+          path: client/coverage
