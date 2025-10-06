@@ -1,0 +1,19 @@
+
+# Nx caches
+.nx/installation
+.nx/cache
+.nx/workspace-data
+
+# Node artifacts
+node_modules/
+
+# Build & coverage
+/dist/
+coverage/
+
+.cursor/rules/nx-rules.mdc
+.github/instructions/nx.instructions.md
+
+# Next.js
+.next
+out
