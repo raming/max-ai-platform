@@ -103,9 +103,9 @@ Auto-escalate to humans only when:
 4) Always leave a short progress comment on the issue before switching context.
 
 ### Quick commands
-- Show my issues (assigned to me):
-  PROJECT_OPS_DIR=<ops> SEAT=<role.name> $HOME/repos/ops-template/scripts/list-issues.sh
+- Show my issues (ready for my seat):
+  PROJECT_OPS_DIR=<ops> SEAT=<role.name> READINESS_LABEL="status:ready" $HOME/repos/ops-template/scripts/list-issues.sh
 - Auto next (continue if only one obvious option, else present choices):
-  PROJECT_OPS_DIR=<ops> SEAT=<role.name> $HOME/repos/ops-template/scripts/auto-next.sh
+  PROJECT_OPS_DIR=<ops> SEAT=<role.name> READINESS_LABEL="status:ready" $HOME/repos/ops-template/scripts/auto-next.sh
 - Reload seat prompt:
   PROJECT_OPS_DIR=<ops> SEAT=<role.name> $HOME/repos/ops-template/scripts/reload-seat.sh

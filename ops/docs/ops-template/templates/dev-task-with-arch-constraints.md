@@ -88,6 +88,12 @@
 - [ ] Implement contract tests per adapter specification
 - [ ] Run JSON Schema validation in CI pipeline
 
+## Seat routing (required)
+
+- Next seat: <role.seat>
+- Add labels in tracker: `seat:<role.seat>`, `status:ready`
+- When handing off from Team Lead to Dev, replace `seat:team_lead.<seat>` with `seat:dev.<seat>` and keep `status:ready` if appropriate
+
 ## 🧪 **Testing Strategy**
 
 ### Unit Tests (≥95% Coverage)
