@@ -1,6 +1,8 @@
-import { Body, Controller, Headers, HttpCode, HttpException, HttpStatus, Post } from '@nestjs/common';
+import { Body, Controller, Headers, HttpCode, HttpException, HttpStatus, Post, UsePipes } from '@nestjs/common';
 import { ResourceService } from './resource.service';
 import { ResourceInitializationPlan } from 'token-proxy-core';
+import { AjvValidationPipe } from '../validation/ajv.pipe';
+import schema from '../schemas/resource-initialization-plan.schema.json';
 
 @Controller('resource')
 export class ResourceController {
@@ -8,6 +10,7 @@ export class ResourceController {
 
   @Post('init')
   @HttpCode(202)
+  @UsePipes(new AjvValidationPipe(schema as any))
   async init(
     @Body() plan: ResourceInitializationPlan,
     @Headers('x-correlation-id') correlationId?: string
