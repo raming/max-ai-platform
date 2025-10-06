@@ -344,6 +344,58 @@ Provide systematic state preservation and recovery for agents to prevent lost wo
 
 ---
 
+## 🌿 Branch Tracking & Reuse (with Worktrees)
+
+### Naming & Mapping
+- Branch names: `work/{role}/{TASK-ID}-{slug}` (e.g., `work/dev/HAKIM-0020-feature-gate-sdk`)
+- State file source of truth: `.agents/workspaces/{seat}/current-state.json` stores:
+  - `branch_name`, `task_issue_number`, and progress context
+- Link PRs and issues via “Fixes #N” to enable automatic closure and traceability
+
+### Reuse Rules
+- Same task continuation: Reuse the same branch across sessions and review iterations
+- Scope pivots: If the scope materially changes beyond the original intent, fork a new branch `work/{role}/{TASK-IDb}-{slug2}` and reference the prior PR for continuity
+- Handoff: Keep the branch until merged; handoff through PR and issue comments with state notes
+
+### Worktrees per Seat (concurrency-safe)
+- Seats can keep concurrent branches via git worktrees for parallel tasks/testing
+- Recommended layout: keep per-seat worktrees under `.agents/worktrees/{seat}/`
+- Example commands (non-interactive):
+```bash
+# Ensure remote branch exists locally (idempotent)
+git fetch origin work/dev/HAKIM-0020-feature-gate-sdk:work/dev/HAKIM-0020-feature-gate-sdk || true
+
+# Create a worktree for the branch if not present
+git worktree add -B work/dev/HAKIM-0020-feature-gate-sdk .agents/worktrees/dev.avery-kim/work-dev-HAKIM-0020 work/dev/HAKIM-0020-feature-gate-sdk
+
+# Open the worktree path in the agent session
+# (Seat/path helper scripts may automate this step)
+```
+
+### Resume Logic
+- On startup or “resume from state”:
+  1) Read `.agents/workspaces/{seat}/current-state.json`
+  2) If `branch_name` exists locally, switch to it (or open its worktree)
+  3) If missing locally, `git fetch` the branch; recreate the worktree if needed
+  4) Confirm upstream tracking; pull/rebase to sync before continuing
+
+### Sync & Hygiene
+- Keep PR branch current with base:
+  - Prefer `git rebase origin/main` on clean histories; otherwise merge main with a labeled sync commit
+- After merge:
+  - Delete remote branch; optionally prune worktree and local branch
+  - Clear or archive the state file for the seat (`status: completed`) to prevent stale resumes
+- Abandoned branches:
+  - If PR is closed without merge, delete local/remote branches after 30 days unless explicitly preserved
+  - Create follow-up issue(s) if work should be salvaged
+
+### Safety & Coordination
+- Never rewrite shared history on a branch under active review without communication
+- For multi-seat collaboration, prefer a single PR branch and coordinate via issue comments and PR threads
+- Ensure CI is green after rebase/merge-from-main before requesting final review/merge
+
+---
+
 ## Summary
 
 This system ensures **no agent work is ever lost**, enables **seamless resumption** after interruptions, and provides **visible progress tracking** through GitHub issue comments combined with fast local workspace caching.
