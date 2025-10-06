@@ -69,3 +69,8 @@ storybook-static/
 .cache/
 .husky/_/
 .tmp-cache/
+
+# GHL Token Investigation Results
+ops/tools/ghl-token-investigation/investigation-results/
+ops/tools/ghl-token-investigation/captured-tokens.json
+ops/tools/ghl-token-investigation/package-lock.json
