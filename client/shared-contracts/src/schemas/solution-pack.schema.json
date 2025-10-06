@@ -1,0 +1,65 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://max-ai/contracts/solution-pack.schema.json",
+  "title": "SolutionPack",
+  "type": "object",
+  "required": ["id", "name", "version", "artifacts"],
+  "properties": {
+    "id": {"type": "string"},
+    "name": {"type": "string"},
+    "version": {"type": "integer", "minimum": 1},
+    "description": {"type": "string"},
+    "variables": {"type": "object"},
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["kind", "name"],
+        "properties": {
+          "artifactRef": {"type": "string"},
+          "kind": {"enum": ["retell", "n8n", "ghl", "prompt"]},
+          "name": {"type": "string"},
+          "required": {"type": "boolean"},
+          "defaultVariables": {"type": "object"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "wiring": {
+      "type": "object",
+      "properties": {
+        "edges": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["from", "to"],
+            "properties": {
+              "from": {
+                "type": "object",
+                "required": ["artifact", "output"],
+                "properties": {
+                  "artifact": {"type": "string"},
+                  "output": {"type": "string"}
+                },
+                "additionalProperties": false
+              },
+              "to": {
+                "type": "object",
+                "required": ["artifact", "input"],
+                "properties": {
+                  "artifact": {"type": "string"},
+                  "input": {"type": "string"}
+                },
+                "additionalProperties": false
+              },
+              "transform": {"type": "object"}
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

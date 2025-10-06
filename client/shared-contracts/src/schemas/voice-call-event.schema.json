@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://max-ai/contracts/voice-call-event.schema.json",
+  "title": "VoiceCallEvent",
+  "type": "object",
+  "required": ["eventId", "tenantId", "clientId", "agentId", "timestamp", "direction", "durationSec"],
+  "properties": {
+    "eventId": {"type": "string"},
+    "tenantId": {"type": "string"},
+    "clientId": {"type": "string"},
+    "agentId": {"type": "string"},
+    "timestamp": {"type": "string", "format": "date-time"},
+    "direction": {"enum": ["inbound", "outbound"]},
+    "durationSec": {"type": "number", "minimum": 0},
+    "analysis": {"type": "object"},
+    "raw": {"type": "object"}
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://max-ai/contracts/iam-policy-check.schema.json",
+  "title": "PolicyCheck",
+  "type": "object",
+  "required": ["subject", "action", "resource"],
+  "properties": {
+    "subject": {"type": "string"},
+    "action": {"type": "string"},
+    "resource": {"type": "string"},
+    "attributes": {"type": "object"}
+  },
+  "additionalProperties": false
+}

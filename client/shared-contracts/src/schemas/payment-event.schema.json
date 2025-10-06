@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://max-ai/contracts/payment-event.schema.json",
+  "title": "PaymentEvent",
+  "type": "object",
+  "required": ["eventId", "provider", "type", "timestamp", "data"],
+  "properties": {
+    "eventId": {"type": "string"},
+    "provider": {"enum": ["stripe", "paypal"]},
+    "type": {"type": "string"},
+    "timestamp": {"type": "string", "format": "date-time"},
+    "data": {"type": "object"}
+  },
+  "additionalProperties": false
+}

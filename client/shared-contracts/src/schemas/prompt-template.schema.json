@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://max-ai/contracts/prompt-template.schema.json",
+  "title": "PromptTemplate",
+  "type": "object",
+  "required": ["id", "name", "contentMd", "version"],
+  "properties": {
+    "id": {"type": "string"},
+    "name": {"type": "string"},
+    "contentMd": {"type": "string"},
+    "contentJson": {"type": "object"},
+    "version": {"type": "integer", "minimum": 1}
+  },
+  "additionalProperties": false
+}

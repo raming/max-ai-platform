@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://max-ai/contracts/role-assignment.schema.json",
+  "title": "RoleAssignment",
+  "type": "object",
+  "required": ["id", "userId", "roleId", "tenantId"],
+  "properties": {
+    "id": {"type": "string"},
+    "userId": {"type": "string"},
+    "roleId": {"type": "string"},
+    "tenantId": {"type": "string"},
+    "clientId": {"type": "string"}
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,62 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://max-ai/contracts/flow.schema.json",
+  "title": "Flow",
+  "type": "object",
+  "required": ["name", "version", "tenantId", "clientId", "bindings", "triggers", "steps"],
+  "properties": {
+    "name": {"type": "string"},
+    "version": {"type": "integer", "minimum": 1},
+    "tenantId": {"type": "string"},
+    "clientId": {"type": "string"},
+    "bindings": {
+      "type": "object",
+      "properties": {
+        "crm": {"type": "string"},
+        "calendar": {"type": "string"},
+        "payments": {"type": "string"},
+        "voice": {"type": "string"},
+        "message": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "triggers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["type"],
+        "properties": {
+          "type": {"enum": ["webhook", "schedule", "manual"]},
+          "event": {"type": "string"},
+          "cron": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "port", "action"],
+        "properties": {
+          "name": {"type": "string"},
+          "port": {"type": "string"},
+          "action": {"type": "string"},
+          "input": {"type": "object"},
+          "when": {"type": "string"},
+          "retry": {
+            "type": "object",
+            "properties": {
+              "maxAttempts": {"type": "integer", "minimum": 0},
+              "backoffMs": {"type": "integer", "minimum": 0}
+            },
+            "additionalProperties": false
+          },
+          "delegateToN8n": {"type": "boolean"}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

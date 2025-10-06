@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://max-ai/contracts/deployment-record.schema.json",
+  "title": "DeploymentRecord",
+  "type": "object",
+  "required": ["id", "planId", "status", "providerLinks"],
+  "properties": {
+    "id": {"type": "string"},
+    "planId": {"type": "string"},
+    "status": {"enum": ["pending", "success", "failed"]},
+    "logsRef": {"type": "string"},
+    "providerLinks": {
+      "type": "array",
+      "items": {"$ref": "provider-link.schema.json"}
+    }
+  },
+  "additionalProperties": false
+}
