@@ -1,4 +1,3 @@
-import styles from './page.module.css';
 import Link from 'next/link';
 
 export default function Index() {
@@ -8,7 +7,7 @@ export default function Index() {
    * Note: The corresponding styles are in the ./index.css file.
    */
   return (
-    <div className={styles.page}>
+    <main style={{ padding: 24 }}>
       <div className="wrapper">
         <div className="container">
           <div id="welcome">
@@ -16,10 +15,12 @@ export default function Index() {
               <span> Hello there, </span>
               Welcome web 👋
             </h1>
-          </div>
+      <h1>Welcome</h1>
+      <p>
+        Start the onboarding wizard: <Link href="/onboarding/client">Begin →</Link>
+      </p>
           <p>Start the onboarding wizard: <Link href="/onboarding/client">Begin →</Link></p>
 
-          <div id="hero"
             <div className="text-container">
               <h2>
                 <svg
@@ -464,7 +465,7 @@ export default function Index() {
               />
             </svg>
           </p>
-        </div>
+    </main>
       </div>
     </div>
   );

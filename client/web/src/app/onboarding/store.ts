@@ -58,7 +58,14 @@ export const useOnboardingStore = create<OnboardingState>()(
         set((prev) => ({ customizeComplete: complete, customizeData: data ?? prev.customizeData })),
       setPlanReady: (ready, data) =>
         set((prev) => ({ planReady: ready, planData: data ?? prev.planData })),
-      reset: () => set(() => ({ ...initialState })),
+      reset: () =>
+        set(() => ({
+          ...initialState,
+          clientData: undefined,
+          templateData: undefined,
+          customizeData: undefined,
+          planData: undefined,
+        })),
     }),
     {
       name: "onboarding-store",

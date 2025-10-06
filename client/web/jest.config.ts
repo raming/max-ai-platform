@@ -14,6 +14,20 @@ const config: Config = {
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   coverageDirectory: '../coverage/web',
   testEnvironment: 'jsdom',
+  collectCoverageFrom: [
+    'src/app/onboarding/store.ts',
+  ],
+  coverageThreshold: {
+    global: {
+      branches: 95,
+      functions: 95,
+      lines: 95,
+      statements: 95,
+    },
+  },
+  forceExit: true,
+  clearMocks: true,
+  restoreMocks: true,
 };
 
 export default createJestConfig(config);
