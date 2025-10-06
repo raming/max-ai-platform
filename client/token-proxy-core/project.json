@@ -1,0 +1,19 @@
+{
+  "name": "token-proxy-core",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "token-proxy-core/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/token-proxy-core",
+        "main": "token-proxy-core/src/index.ts",
+        "tsConfig": "token-proxy-core/tsconfig.lib.json",
+        "assets": ["token-proxy-core/*.md"]
+      }
+    }
+  }
+}
