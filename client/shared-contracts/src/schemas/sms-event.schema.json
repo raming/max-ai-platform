@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://max-ai/contracts/sms-event.schema.json",
+  "title": "SmsEvent",
+  "type": "object",
+  "required": ["eventId", "tenantId", "clientId", "from", "to", "timestamp", "direction", "text"],
+  "properties": {
+    "eventId": {"type": "string"},
+    "tenantId": {"type": "string"},
+    "clientId": {"type": "string"},
+    "from": {"type": "string"},
+    "to": {"type": "string"},
+    "timestamp": {"type": "string", "format": "date-time"},
+    "direction": {"enum": ["inbound", "outbound"]},
+    "text": {"type": "string"},
+    "raw": {"type": "object"}
+  },
+  "additionalProperties": false
+}

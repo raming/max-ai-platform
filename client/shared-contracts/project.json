@@ -1,0 +1,19 @@
+{
+  "name": "shared-contracts",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "shared-contracts/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/shared-contracts",
+        "main": "shared-contracts/src/index.ts",
+        "tsConfig": "shared-contracts/tsconfig.lib.json",
+        "assets": ["shared-contracts/*.md"]
+      }
+    }
+  }
+}

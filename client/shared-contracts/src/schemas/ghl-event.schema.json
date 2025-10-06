@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://max-ai/contracts/ghl-event.schema.json",
+  "title": "GhlEvent",
+  "type": "object",
+  "required": ["eventId", "locationId", "timestamp", "topic", "payload"],
+  "properties": {
+    "eventId": {"type": "string"},
+    "locationId": {"type": "string"},
+    "timestamp": {"type": "string", "format": "date-time"},
+    "topic": {"type": "string"},
+    "payload": {"type": "object"}
+  },
+  "additionalProperties": false
+}

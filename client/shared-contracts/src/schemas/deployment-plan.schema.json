@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://max-ai/contracts/deployment-plan.schema.json",
+  "title": "DeploymentPlan",
+  "type": "object",
+  "required": ["id", "templateId", "clientId", "targets"],
+  "properties": {
+    "id": {"type": "string"},
+    "templateId": {"type": "string"},
+    "clientId": {"type": "string"},
+    "targets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["provider"],
+        "properties": {
+          "provider": {"enum": ["retell", "n8n", "ghl"]},
+          "variables": {"type": "object"}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://max-ai/contracts/invoice.schema.json",
+  "title": "Invoice",
+  "type": "object",
+  "required": ["id", "customerId", "total", "currency", "status", "lines"],
+  "properties": {
+    "id": {"type": "string"},
+    "customerId": {"type": "string"},
+    "total": {"type": "number", "minimum": 0},
+    "currency": {"type": "string", "minLength": 3, "maxLength": 3},
+    "status": {"enum": ["draft", "open", "paid", "uncollectible", "void"]},
+    "provider": {"enum": ["stripe", "paypal"]},
+    "lines": {"type": "array", "items": {"$ref": "invoice-line-item.schema.json"}}
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://max-ai/contracts/permission.schema.json",
+  "title": "Permission",
+  "type": "object",
+  "required": ["id", "action", "resource"],
+  "properties": {
+    "id": {"type": "string"},
+    "action": {"type": "string"},
+    "resource": {"type": "string"},
+    "description": {"type": "string"}
+  },
+  "additionalProperties": false
+}

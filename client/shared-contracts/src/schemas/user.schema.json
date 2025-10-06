@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://max-ai/contracts/user.schema.json",
+  "title": "User",
+  "type": "object",
+  "required": ["id", "email", "name", "provider"],
+  "properties": {
+    "id": {"type": "string"},
+    "email": {"type": "string", "format": "email"},
+    "name": {"type": "string"},
+    "provider": {"type": "string"}
+  },
+  "additionalProperties": false
+}
