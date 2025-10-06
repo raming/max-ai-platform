@@ -1,0 +1,29 @@
+name: QA Suite
+
+on:
+  push:
+    branches:
+      - "work/qa/**"
+  workflow_dispatch:
+
+jobs:
+  qa-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+          cache-dependency-path: client/package-lock.json
+
+      - name: Install dependencies
+        working-directory: client
+        run: npm install
+
+      - name: Run QA test suite (all projects)
+        working-directory: client
+        run: ./nx run-many -t test --all --skip-nx-cache
