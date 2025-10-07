@@ -5,6 +5,11 @@ Owner: <agent-seat>
 State: todo | in-progress | needs-review | approved | done
 Related: <links to specs/ADRs/designs>
 
+Seat routing (required)
+- Next seat: <role.seat>
+- Labels to add in tracker: `seat:<role.seat>`, `status:ready` (when ready to pick)
+- Priority: `priority:P0|P1|P2`
+
 Summary
 <what the agent is doing and why>
 
