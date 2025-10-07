@@ -27,12 +27,12 @@ Examples:
 
 Hakim Platform ops:
 ```
-PROJECT_OPS_DIR=$HOME/repos/hakim/hakim-platform/ops SEAT=dev.avery-kim $HOME/repos/ops-template/scripts/list-issues.sh
+PROJECT_OPS_DIR=$HOME/repos/hakim/hakim-platform/ops SEAT=dev.avery-kim READINESS_LABEL="status:ready" $HOME/repos/ops-template/scripts/list-issues.sh
 ```
 
 MaxAI Platform ops:
 ```
-PROJECT_OPS_DIR=$HOME/repos/max-ai/platform/ops SEAT=dev.avery-kim $HOME/repos/ops-template/scripts/list-issues.sh
+PROJECT_OPS_DIR=$HOME/repos/max-ai/platform/ops SEAT=dev.avery-kim READINESS_LABEL="status:ready" $HOME/repos/ops-template/scripts/list-issues.sh
 ```
 
 Optional assignee routing (use when organization prefers assignee-based triage):
