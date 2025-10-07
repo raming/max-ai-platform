@@ -15,11 +15,11 @@ export default function Index() {
               <span> Hello there, </span>
               Welcome web 👋
             </h1>
-      <h1>Welcome</h1>
-      <p>
-        Start the onboarding wizard: <Link href="/onboarding/client">Begin →</Link>
-      </p>
-          <p>Start the onboarding wizard: <Link href="/onboarding/client">Begin →</Link></p>
+            <h1>Welcome</h1>
+            <p>
+              Start the onboarding wizard: <Link href="/onboarding/client">Begin →</Link>
+            </p>
+            <p>Start the onboarding wizard: <Link href="/onboarding/client">Begin →</Link></p>
 
             <div className="text-container">
               <h2>
@@ -465,8 +465,8 @@ export default function Index() {
               />
             </svg>
           </p>
+        </div>
       </div>
-    </div>
     </main>
   );
 }
