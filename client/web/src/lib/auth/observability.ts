@@ -177,7 +177,6 @@ export class AuthLogger {
     // Structured logging format
     const logEntry = {
       level: event.result === 'success' ? 'info' : 'warn',
-      timestamp: event.timestamp,
       component: 'auth-audit',
       event: event.type,
       correlationId: event.correlationId,
@@ -224,12 +223,38 @@ export class AuthLogger {
    * Create logger from request context
    */
   static fromRequest(req: any): AuthLogger {
-    // Try to extract correlation ID from headers
-    const correlationId = req.headers?.['x-correlation-id'] || 
-                         req.headers?.['x-request-id'] ||
-                         req.headers?.['x-trace-id'];
-    
+    // Try to extract correlation ID from headers in a runtime-agnostic way.
+    // Supports: NextRequest (Headers-like with .get()), Express/Node (object map), and plain objects.
+    const headers = req?.headers;
+
+    const getHeader = (name: string): string | undefined => {
+      if (!headers) return undefined;
+
+      // Headers-like (NextRequest / Fetch API)
+      if (typeof headers.get === 'function') {
+        return headers.get(name) || headers.get(name.toLowerCase()) || undefined;
+      }
+
+      // Node/Express style: header map (possibly lower-cased keys)
+      if (typeof headers === 'object') {
+        return (
+          headers[name] || headers[name.toLowerCase()] || headers[name.toUpperCase()]
+        );
+      }
+
+      return undefined;
+    };
+
+    const correlationId = getHeader('x-correlation-id') || getHeader('x-request-id') || getHeader('x-trace-id');
+
     return new AuthLogger(correlationId);
+  }
+
+  /**
+   * Expose correlation id for external use (read-only)
+   */
+  get correlationIdValue(): string | undefined {
+    return this.correlationId;
   }
 }
 

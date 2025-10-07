@@ -9,7 +9,7 @@ import {
   OIDCDiscovery,
   JWKS
 } from './types';
-import { validateTokenClaimsRuntime } from '../contracts/validator';
+import { validateTokenClaimsRuntime } from './contracts/validator';
 import { AuthLogger, AuthTimer } from './observability';
 
 /**
@@ -20,7 +20,6 @@ import { AuthLogger, AuthTimer } from './observability';
  */
 export class OIDCVerifier {
   private discoveryCache: Map<string, { discovery: OIDCDiscovery; expires: number }> = new Map();
-  private jwksCache: Map<string, { jwks: any; expires: number }> = new Map();
   private logger: AuthLogger;
 
   constructor(private config: AuthConfig, logger?: AuthLogger) {
@@ -37,11 +36,11 @@ export class OIDCVerifier {
       // Step 1: Get OIDC discovery document
       const discovery = await this.getDiscoveryDocument();
       
-      // Step 2: Get JWKS and create verification function
-      const JWKS = createRemoteJWKSet(new URL(discovery.jwks_uri));
+  // Step 2: Get JWKS and create verification function
+  const remoteJwks = createRemoteJWKSet(new URL(discovery.jwks_uri));
       
       // Step 3: Verify JWT signature and claims
-      const { payload } = await jwtVerify(token, JWKS, {
+      const { payload } = await jwtVerify(token, remoteJwks, {
         issuer: discovery.issuer,
         audience: Array.isArray(this.config.audience) ? this.config.audience : [this.config.audience],
         clockTolerance: this.config.clockTolerance
@@ -112,10 +111,11 @@ export class OIDCVerifier {
 
       return discovery;
     } catch (error) {
+      const e = error as any;
       throw this.createAuthError(
         AuthErrorCode.DISCOVERY_FAILED,
-        `Failed to fetch OIDC discovery document: ${error.message}`,
-        { discoveryUrl, originalError: error }
+        `Failed to fetch OIDC discovery document: ${e?.message ?? String(e)}`,
+        { discoveryUrl, originalError: e }
       );
     }
   }
@@ -142,10 +142,11 @@ export class OIDCVerifier {
     try {
       validateTokenClaimsRuntime(payload);
     } catch (error) {
+      const e = error as any;
       throw this.createAuthError(
         AuthErrorCode.INVALID_TOKEN_FORMAT,
-        `Token claims failed contract validation: ${error.message}`,
-        { payload, validationError: error }
+        `Token claims failed contract validation: ${e?.message ?? String(e)}`,
+        { payload, validationError: e }
       );
     }
 
@@ -198,19 +199,19 @@ export class OIDCVerifier {
    */
   private handleVerificationError(error: any): AuthError {
     // Handle jose library specific errors
-    if (error.code === 'ERR_JWT_EXPIRED') {
+    if (error?.code === 'ERR_JWT_EXPIRED' || error?.name === 'TokenExpiredError') {
       return this.createAuthError(AuthErrorCode.TOKEN_EXPIRED, 'Token has expired', error);
     }
     
-    if (error.code === 'ERR_JWT_INVALID') {
+    if (error?.code === 'ERR_JWT_INVALID' || error?.name === 'JWTInvalid' || error?.name === 'JsonWebTokenError') {
       return this.createAuthError(AuthErrorCode.INVALID_TOKEN_FORMAT, 'Token format is invalid', error);
     }
     
-    if (error.code === 'ERR_JWKS_NO_MATCHING_KEY') {
+    if (error?.code === 'ERR_JWKS_NO_MATCHING_KEY' || error?.name === 'JWKSMissingKeyError') {
       return this.createAuthError(AuthErrorCode.INVALID_SIGNATURE, 'No matching key found for token signature', error);
     }
     
-    if (error.code === 'ERR_JWT_CLAIM_VALIDATION_FAILED') {
+    if (error?.code === 'ERR_JWT_CLAIM_VALIDATION_FAILED' || error?.name === 'ClaimValidationFailed') {
       return this.createAuthError(AuthErrorCode.INVALID_AUDIENCE, 'Token audience validation failed', error);
     }
 
@@ -238,11 +239,11 @@ export class OIDCVerifier {
   /**
    * Extract token from Authorization header
    */
-  static extractBearerToken(authHeader?: string): string | null {
-    if (!authHeader) return null;
-    
+  static extractBearerToken(authHeader?: string | null): string | undefined {
+    if (!authHeader) return undefined;
+
     const matches = authHeader.match(/^Bearer\s+(.+)$/i);
-    return matches ? matches[1] : null;
+    return matches ? matches[1] : undefined;
   }
 
   /**

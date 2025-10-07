@@ -2,7 +2,8 @@ import type { Config } from 'jest';
 import nextJest from 'next/jest.js';
 
 const createJestConfig = nextJest({
-  dir: './',
+  // Next.js app lives under `src/app` in this project; point the helper at `src`
+  dir: './src',
 });
 
 const config: Config = {

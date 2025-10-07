@@ -18,8 +18,8 @@ export class AuthMiddleware {
    * Next.js middleware function for API routes
    */
   async nextMiddleware(request: NextRequest): Promise<NextResponse | void> {
-    const authHeader = request.headers.get('authorization');
-    const token = OIDCVerifier.extractBearerToken(authHeader);
+  const authHeader = request.headers.get('authorization');
+  const token = OIDCVerifier.extractBearerToken(authHeader);
 
     if (!token) {
       return this.createUnauthorizedResponse(AuthErrorCode.MISSING_TOKEN, 'Authorization header with Bearer token required');
@@ -36,10 +36,13 @@ export class AuthMiddleware {
     }
 
     // Add subject to headers for downstream processing
+    // Only expose minimal identifiers in headers to avoid leaking PII and header size issues.
     const response = NextResponse.next();
     response.headers.set('x-subject-id', result.subject!.id);
     response.headers.set('x-tenant-id', result.subject!.tenantId);
-    response.headers.set('x-subject-context', JSON.stringify(result.subject));
+    // Propagate correlation id if available via logger
+  const corr = this.logger?.correlationIdValue;
+  if (corr) response.headers.set('x-correlation-id', corr);
 
     return response;
   }
@@ -89,12 +92,13 @@ export class AuthMiddleware {
         
         next();
       } catch (error) {
+        const e = error as any;
         this.logger.logTokenVerificationFailed(
           AuthErrorCode.UNKNOWN_ERROR,
           'Authentication middleware failed',
           {
-            error: error.message,
-            stack: error.stack,
+            error: e?.message ?? String(e),
+            stack: e?.stack,
             url: req.url,
             method: req.method
           }
@@ -104,7 +108,7 @@ export class AuthMiddleware {
           res,
           AuthErrorCode.UNKNOWN_ERROR,
           'Authentication middleware failed',
-          error
+          e
         );
       }
     };
