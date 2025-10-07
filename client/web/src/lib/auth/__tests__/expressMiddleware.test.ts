@@ -1,5 +1,21 @@
+/// <reference types="jest" />
+
+// Mock next/server to avoid importing Next runtime
+jest.mock('next/server', () => ({ NextResponse: { next: jest.fn(() => ({ headers: { set: jest.fn() } })), json: jest.fn() } }));
+
+// Mock oidc-verifier to avoid importing ESM jose in tests
+jest.mock('../oidc-verifier', () => ({
+  OIDCVerifier: class {
+    static extractBearerToken(authHeader?: string | null) {
+      if (!authHeader) return undefined;
+      const m = (authHeader as string).match(/^Bearer\s+(.+)$/i);
+      return m ? m[1] : undefined;
+    }
+    verifyToken = jest.fn();
+  }
+}));
+
 import { AuthMiddleware } from '../middleware';
-import { OIDCVerifier } from '../oidc-verifier';
 
 // Minimal express mock helpers
 function mockReq(headers: Record<string, any> = {}) {
@@ -24,7 +40,7 @@ function mockRes() {
 }
 
 describe('expressMiddleware', () => {
-  beforeEach(() => jest.clearAllMocks());
+  beforeEach(() => { jest.clearAllMocks(); process.env.KEYCLOAK_BASE_URL = 'https://auth.example.com'; });
 
   it('returns 401 when missing token', async () => {
     const mockVerify = jest.fn();
