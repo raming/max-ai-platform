@@ -1,26 +1,47 @@
 # AI Agent Configuration for MaxAI Platform
 seats:
+  architect.morgan-lee:
+    github: raming
+    role: architect
+    description: Architect agent for design authority and governance
+    
   team_lead.casey-brooks:
     github: raming
     role: team_lead
     description: Team lead agent for planning and coordination
     
-  dev.default:
+  dev.avery-kim:
     github: raming
     role: dev
-    description: Default development agent
+    description: Developer agent for implementation and testing
     
-  sre.default:
+  qa.mina-li:
+    github: raming
+    role: qa
+    description: Quality assurance agent for testing and validation
+    
+  sre.devon-singh:
     github: raming
     role: sre
-    description: Site Reliability Engineering agent
+    description: Site Reliability Engineering agent for infrastructure and operations
     
-  release_manager.default:
+  release_manager.rohan-patel:
     github: raming
     role: release_manager
-    description: Release management agent
+    description: Release management agent for deployment coordination
 
 roles:
+  architect:
+    description: Architecture governance and design authority role
+    capabilities:
+      - requirements_analysis
+      - architecture_design
+      - adr_creation
+      - specification_writing
+      - design_review
+      - governance
+      - nfr_definition
+      
   team_lead:
     description: Team leadership and planning role
     capabilities:
@@ -36,6 +57,16 @@ roles:
       - code_development
       - testing
       - debugging
+      
+  qa:
+    description: Quality assurance and testing role
+    capabilities:
+      - end_to_end_testing
+      - contract_validation
+      - performance_testing
+      - security_testing
+      - test_automation
+      - defect_management
       
   sre:
     description: Site reliability engineering role
