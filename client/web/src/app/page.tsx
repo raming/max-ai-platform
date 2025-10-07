@@ -465,8 +465,8 @@ export default function Index() {
               />
             </svg>
           </p>
-    </main>
       </div>
     </div>
+    </main>
   );
 }

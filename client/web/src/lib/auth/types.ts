@@ -110,4 +110,4 @@ declare global {
 }
 
 // Re-export contract validation types for convenience
-export type { KeycloakTokenClaims } from '../contracts/validator';
+export type { KeycloakTokenClaims } from './contracts/validator';
