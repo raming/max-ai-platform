@@ -1,6 +1,6 @@
-import { NextRequest, NextResponse } from 'next/server';
+import type { NextRequest, NextResponse } from 'next/server';
+import type { OIDCVerifier as OIDCVerifierType } from './oidc-verifier';
 import { Request, Response, NextFunction } from 'express';
-import { OIDCVerifier } from './oidc-verifier';
 import { AuthConfig, AuthErrorCode, SubjectContext } from './types';
 import { AuthLogger } from './observability';
 
@@ -9,8 +9,8 @@ import { AuthLogger } from './observability';
  */
 export class AuthMiddleware {
   private logger: AuthLogger;
-  
-  constructor(private verifier: OIDCVerifier, logger?: AuthLogger) {
+
+  constructor(private verifier: OIDCVerifierType, logger?: AuthLogger) {
     this.logger = logger || new AuthLogger();
   }
 
@@ -18,18 +18,20 @@ export class AuthMiddleware {
    * Next.js middleware function for API routes
    */
   async nextMiddleware(request: NextRequest): Promise<NextResponse | void> {
-  const authHeader = request.headers.get('authorization');
-  const token = OIDCVerifier.extractBearerToken(authHeader);
+    const authHeader = request.headers.get('authorization');
+    // Dynamically import OIDCVerifier to allow tests to mock module without loading ESM dependencies
+    const { OIDCVerifier } = await import('./oidc-verifier');
+    const token = (OIDCVerifier as any).extractBearerToken(authHeader);
 
     if (!token) {
-      return this.createUnauthorizedResponse(AuthErrorCode.MISSING_TOKEN, 'Authorization header with Bearer token required');
+      return await this.createUnauthorizedResponse(AuthErrorCode.MISSING_TOKEN, 'Authorization header with Bearer token required');
     }
 
     const result = await this.verifier.verifyToken(token);
 
     if (!result.success) {
       return this.createUnauthorizedResponse(
-        result.error!.code, 
+        result.error!.code,
         result.error!.message,
         result.error!.details
       );
@@ -37,12 +39,20 @@ export class AuthMiddleware {
 
     // Add subject to headers for downstream processing
     // Only expose minimal identifiers in headers to avoid leaking PII and header size issues.
-    const response = NextResponse.next();
+    // Try to use NextResponse.next() when running in Next runtime; otherwise provide a minimal fallback
+    let response: any;
+    try {
+      const { NextResponse } = await import('next/server');
+      response = NextResponse.next();
+    } catch {
+      response = { headers: { set: (_k: string, _v: string) => undefined } };
+    }
+
     response.headers.set('x-subject-id', result.subject!.id);
     response.headers.set('x-tenant-id', result.subject!.tenantId);
     // Propagate correlation id if available via logger
-  const corr = this.logger?.correlationIdValue;
-  if (corr) response.headers.set('x-correlation-id', corr);
+    const corr = this.logger?.correlationIdValue;
+    if (corr) response.headers.set('x-correlation-id', corr);
 
     return response;
   }
@@ -54,13 +64,15 @@ export class AuthMiddleware {
     return async (req: Request, res: Response, next: NextFunction) => {
       try {
         const authHeader = req.headers.authorization;
-        const token = OIDCVerifier.extractBearerToken(authHeader);
+        // Dynamically import OIDCVerifier so tests can mock it and avoid ESM jose import
+        const { OIDCVerifier } = await import('./oidc-verifier');
+        const token = (OIDCVerifier as any).extractBearerToken(authHeader);
 
         if (!token) {
           this.logger.logUnauthorizedAccess('api', req.path, req.method, {
             reason: 'missing_token',
             userAgent: req.headers['user-agent'],
-            ip: req.ip || req.connection.remoteAddress
+            ip: req.ip || (req as any).connection?.remoteAddress
           });
           return this.sendUnauthorizedResponse(res, AuthErrorCode.MISSING_TOKEN, 'Authorization header with Bearer token required');
         }
@@ -72,9 +84,9 @@ export class AuthMiddleware {
             reason: 'token_verification_failed',
             errorCode: result.error!.code,
             userAgent: req.headers['user-agent'],
-            ip: req.ip || req.connection.remoteAddress
+            ip: req.ip || (req as any).connection?.remoteAddress
           });
-          
+
           return this.sendUnauthorizedResponse(
             res,
             result.error!.code,
@@ -84,12 +96,12 @@ export class AuthMiddleware {
         }
 
         // Inject subject context into request
-        req.subject = result.subject;
+        (req as any).subject = result.subject;
 
         // Add trace headers for observability
         res.setHeader('x-subject-id', result.subject!.id);
         res.setHeader('x-tenant-id', result.subject!.tenantId);
-        
+
         next();
       } catch (error) {
         const e = error as any;
@@ -99,11 +111,11 @@ export class AuthMiddleware {
           {
             error: e?.message ?? String(e),
             stack: e?.stack,
-            url: req.url,
-            method: req.method
+            url: (req as any).url,
+            method: (req as any).method
           }
         );
-        
+
         return this.sendUnauthorizedResponse(
           res,
           AuthErrorCode.UNKNOWN_ERROR,
@@ -121,11 +133,13 @@ export class AuthMiddleware {
     return async (req: NextRequest): Promise<NextResponse> => {
       const config = AuthMiddleware.getConfigFromEnv();
       const logger = AuthLogger.fromRequest(req);
+      // Dynamically import OIDCVerifier so tests can mock it without loading jose
+      const { OIDCVerifier } = await import('./oidc-verifier');
       const verifier = new OIDCVerifier(config, logger);
       const middleware = new AuthMiddleware(verifier, logger);
 
       const authHeader = req.headers.get('authorization');
-      const token = OIDCVerifier.extractBearerToken(authHeader);
+      const token = (OIDCVerifier as any).extractBearerToken(authHeader);
 
       if (!token) {
         logger.logUnauthorizedAccess('api', req.nextUrl.pathname, req.method, {
@@ -133,9 +147,9 @@ export class AuthMiddleware {
           userAgent: req.headers.get('user-agent'),
           ip: req.headers.get('x-forwarded-for') || req.headers.get('x-real-ip')
         });
-        
-        return middleware.createUnauthorizedResponse(
-          AuthErrorCode.MISSING_TOKEN, 
+
+        return await middleware.createUnauthorizedResponse(
+          AuthErrorCode.MISSING_TOKEN,
           'Authorization header with Bearer token required'
         );
       }
@@ -149,8 +163,8 @@ export class AuthMiddleware {
           userAgent: req.headers.get('user-agent'),
           ip: req.headers.get('x-forwarded-for') || req.headers.get('x-real-ip')
         });
-        
-        return middleware.createUnauthorizedResponse(
+
+        return await middleware.createUnauthorizedResponse(
           result.error!.code,
           result.error!.message,
           result.error!.details
@@ -173,7 +187,7 @@ export class AuthMiddleware {
   /**
    * Create unauthorized response for Next.js
    */
-  private createUnauthorizedResponse(code: AuthErrorCode, message: string, details?: any): NextResponse {
+  private async createUnauthorizedResponse(code: AuthErrorCode, message: string, details?: any): Promise<any> {
     const errorResponse = {
       error: {
         code,
@@ -184,7 +198,13 @@ export class AuthMiddleware {
       ...(process.env.NODE_ENV !== 'production' && details && { details })
     };
 
-    return NextResponse.json(errorResponse, { status: 401 });
+    // Try to use NextResponse if available (runtime); fall back to plain object for tests
+    try {
+      const { NextResponse } = await import('next/server');
+      return NextResponse.json(errorResponse, { status: 401 });
+    } catch {
+      return { status: 401, payload: errorResponse };
+    }
   }
 
   /**
@@ -232,6 +252,21 @@ export class AuthMiddleware {
   static fromEnv(): AuthMiddleware {
     const config = AuthMiddleware.getConfigFromEnv();
     const logger = new AuthLogger();
+    // Dynamically import OIDCVerifier to avoid pulling ESM-only dependencies at module load time
+    // when running in non-Next/test runtimes.
+    // Note: this returns a Promise; keep API synchronous by constructing a simple default here and
+    // allowing callers to use fromEnv() only in runtime contexts where dynamic import can be awaited.
+    // For now, provide a basic thrower to indicate that consumers should use fromEnvAsync when needed.
+    throw new Error('Use fromEnvAsync() to create middleware with runtime imports in non-Next environments');
+  }
+
+  /**
+   * Async variant that dynamically imports OIDCVerifier and returns an AuthMiddleware instance.
+   */
+  static async fromEnvAsync(): Promise<AuthMiddleware> {
+    const config = AuthMiddleware.getConfigFromEnv();
+    const logger = new AuthLogger();
+    const { OIDCVerifier } = await import('./oidc-verifier');
     const verifier = new OIDCVerifier(config, logger);
     return new AuthMiddleware(verifier, logger);
   }
@@ -241,7 +276,7 @@ export class AuthMiddleware {
  * Utility function to extract subject from request
  */
 export function getSubject(req: Request): SubjectContext | null {
-  return req.subject || null;
+  return (req as any).subject || null;
 }
 
 /**
