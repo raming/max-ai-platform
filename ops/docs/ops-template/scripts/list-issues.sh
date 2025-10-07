@@ -64,7 +64,7 @@ json=$(gh "${args[@]}")
 sorted=$(printf "%s" "$json" | jq -r '[.[]
   | select(("'"$INCLUDE_BLOCKED"'"=="true") or ((.labels|map(.name)|index("blocked"))|not))
   | select(("'"$ROLE"'" != "team_lead") or ("'"$INCLUDE_CODE"'" == "true") or ((.labels|map(.name)|index("type:code"))|not))
-  | .prio=((.labels|map(.name)|map(select(startswith("'"$PRIORITY_PREFIX"'")))|map(captures("P(?<p>[0-9]+)")|.captures[0].string|tonumber)|first) // 5)
+  | .prio=((.labels|map(.name)|map(select(startswith("'"$PRIORITY_PREFIX"'")))|map(capture("P(?<p>[0-9]+)")|.p|tonumber)|first) // 5)
 ] | sort_by(.prio, (.updatedAt|fromdateiso8601) * -1) | .[] | {number,title,labels:[.labels[].name],updatedAt,prio} | @json')
 
 # Pretty print succinct table
