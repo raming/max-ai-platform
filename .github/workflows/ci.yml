@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - pr-105
+      - main
+  pull_request:
+    branches:
+      - '**'
+
+jobs:
+  test:
+    name: Run tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run web tests
+        env:
+          CI: true
+        run: |
+          # Run the web project's Jest test suite
+          if [ -d client/web ]; then
+            cd client/web
+          elif [ -d web ]; then
+            cd web
+          fi
+          npx jest --runInBand
