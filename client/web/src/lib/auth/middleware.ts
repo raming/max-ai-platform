@@ -9,7 +9,7 @@ import { AuthLogger } from './observability';
  */
 export class AuthMiddleware {
   private logger: AuthLogger;
-  
+
   constructor(private verifier: OIDCVerifierType, logger?: AuthLogger) {
     this.logger = logger || new AuthLogger();
   }
@@ -18,20 +18,20 @@ export class AuthMiddleware {
    * Next.js middleware function for API routes
    */
   async nextMiddleware(request: NextRequest): Promise<NextResponse | void> {
-  const authHeader = request.headers.get('authorization');
-  // Use dynamic import for OIDCVerifier to allow tests to mock module without loading ESM dependencies
-  const { OIDCVerifier } = await import('./oidc-verifier');
-  const token = OIDCVerifier.extractBearerToken(authHeader);
+    const authHeader = request.headers.get('authorization');
+    // Dynamically import OIDCVerifier to allow tests to mock module without loading ESM dependencies
+    const { OIDCVerifier } = await import('./oidc-verifier');
+    const token = (OIDCVerifier as any).extractBearerToken(authHeader);
 
     if (!token) {
       return await this.createUnauthorizedResponse(AuthErrorCode.MISSING_TOKEN, 'Authorization header with Bearer token required');
     }
 
-  const result = await this.verifier.verifyToken(token);
+    const result = await this.verifier.verifyToken(token);
 
     if (!result.success) {
       return this.createUnauthorizedResponse(
-        result.error!.code, 
+        result.error!.code,
         result.error!.message,
         result.error!.details
       );
@@ -63,16 +63,16 @@ export class AuthMiddleware {
   expressMiddleware() {
     return async (req: Request, res: Response, next: NextFunction) => {
       try {
-  const authHeader = req.headers.authorization;
-  // Dynamically import OIDCVerifier so tests can mock it and avoid ESM jose import
-  const { OIDCVerifier } = await import('./oidc-verifier');
-  const token = (OIDCVerifier as any).extractBearerToken(authHeader);
+        const authHeader = req.headers.authorization;
+        // Dynamically import OIDCVerifier so tests can mock it and avoid ESM jose import
+        const { OIDCVerifier } = await import('./oidc-verifier');
+        const token = (OIDCVerifier as any).extractBearerToken(authHeader);
 
         if (!token) {
           this.logger.logUnauthorizedAccess('api', req.path, req.method, {
             reason: 'missing_token',
             userAgent: req.headers['user-agent'],
-            ip: req.ip || req.connection.remoteAddress
+            ip: req.ip || (req as any).connection?.remoteAddress
           });
           return this.sendUnauthorizedResponse(res, AuthErrorCode.MISSING_TOKEN, 'Authorization header with Bearer token required');
         }
@@ -84,9 +84,9 @@ export class AuthMiddleware {
             reason: 'token_verification_failed',
             errorCode: result.error!.code,
             userAgent: req.headers['user-agent'],
-            ip: req.ip || req.connection.remoteAddress
+            ip: req.ip || (req as any).connection?.remoteAddress
           });
-          
+
           return this.sendUnauthorizedResponse(
             res,
             result.error!.code,
@@ -96,12 +96,12 @@ export class AuthMiddleware {
         }
 
         // Inject subject context into request
-        req.subject = result.subject;
+        (req as any).subject = result.subject;
 
         // Add trace headers for observability
         res.setHeader('x-subject-id', result.subject!.id);
         res.setHeader('x-tenant-id', result.subject!.tenantId);
-        
+
         next();
       } catch (error) {
         const e = error as any;
@@ -111,11 +111,11 @@ export class AuthMiddleware {
           {
             error: e?.message ?? String(e),
             stack: e?.stack,
-            url: req.url,
-            method: req.method
+            url: (req as any).url,
+            method: (req as any).method
           }
         );
-        
+
         return this.sendUnauthorizedResponse(
           res,
           AuthErrorCode.UNKNOWN_ERROR,
@@ -147,9 +147,9 @@ export class AuthMiddleware {
           userAgent: req.headers.get('user-agent'),
           ip: req.headers.get('x-forwarded-for') || req.headers.get('x-real-ip')
         });
-        
+
         return await middleware.createUnauthorizedResponse(
-          AuthErrorCode.MISSING_TOKEN, 
+          AuthErrorCode.MISSING_TOKEN,
           'Authorization header with Bearer token required'
         );
       }
@@ -163,7 +163,7 @@ export class AuthMiddleware {
           userAgent: req.headers.get('user-agent'),
           ip: req.headers.get('x-forwarded-for') || req.headers.get('x-real-ip')
         });
-        
+
         return await middleware.createUnauthorizedResponse(
           result.error!.code,
           result.error!.message,
@@ -276,7 +276,7 @@ export class AuthMiddleware {
  * Utility function to extract subject from request
  */
 export function getSubject(req: Request): SubjectContext | null {
-  return req.subject || null;
+  return (req as any).subject || null;
 }
 
 /**
