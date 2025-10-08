@@ -1,0 +1,18 @@
+p, admin, flow, write
+p, admin, flow, read
+p, admin, iam_token, mint
+p, admin, payment, write
+p, admin, payment, read
+
+p, flow_manager, flow, write
+p, flow_manager, flow, read
+
+p, billing_admin, payment, write
+p, billing_admin, payment, read
+
+p, user, flow, read
+
+g, alice@example.com, admin
+g, bob@example.com, flow_manager
+g, charlie@example.com, billing_admin
+g, dave@example.com, user
