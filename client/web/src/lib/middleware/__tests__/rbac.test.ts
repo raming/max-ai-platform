@@ -21,16 +21,20 @@ jest.mock('../../auth/claims', () => ({
 
 // Mock RBACPolicyEngine to control policy decisions
 jest.mock('../../rbac/policy-engine', () => ({
-  RBACPolicyEngine: jest.fn().mockImplementation(() => ({
-    initialize: jest.fn().mockResolvedValue(undefined),
-    check: jest.fn()
-  }))
+  RBACPolicyEngine: jest.fn()
+}));
+
+// Mock the rbac module
+jest.mock('../rbac', () => ({
+  withRBAC: jest.requireActual('../rbac').withRBAC,
+  requireRole: jest.requireActual('../rbac').requireRole,
+  getPolicyEngine: jest.fn()
 }));
 
 const { NextResponse } = require('next/server');
 const { extractClaims } = require('../../auth/claims');
 const { RBACPolicyEngine } = require('../../rbac/policy-engine');
-const { withRBAC } = require('../rbac');
+const { withRBAC, getPolicyEngine } = require('../rbac');
 
 describe('RBAC Middleware', () => {
   let mockPolicyEngine: any;

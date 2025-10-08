@@ -6,6 +6,8 @@
  */
 
 import { SubjectContext, AuthErrorCode } from './types';
+import { AuditWriter } from '../audit/audit-writer';
+import type { NextRequest } from 'next/server';
 
 // Audit event types
 export enum AuditEventType {
@@ -59,10 +61,12 @@ let authMetrics: AuthMetrics = {
  * Logger for authentication events
  */
 export class AuthLogger {
-  private correlationId?: string;
+  private correlationId: string;
+  private auditWriter?: AuditWriter;
 
-  constructor(correlationId?: string) {
+  constructor(correlationId?: string, auditWriter?: AuditWriter) {
     this.correlationId = correlationId || this.generateCorrelationId();
+    this.auditWriter = auditWriter;
   }
 
   /**
@@ -103,11 +107,11 @@ export class AuthLogger {
       type: AuditEventType.TOKEN_VERIFICATION_FAILED,
       timestamp: new Date().toISOString(),
       result: 'failure',
+      correlationId: this.correlationId,
       error: {
         code: error,
         message
       },
-      correlationId: this.correlationId,
       metadata
     };
 
@@ -118,19 +122,14 @@ export class AuthLogger {
   /**
    * Log unauthorized access attempt
    */
-  logUnauthorizedAccess(
-    resourceType?: string,
-    resourceId?: string,
-    action?: string,
-    metadata?: Record<string, any>
-  ): void {
+  logUnauthorizedAccess(resource: string, path: string, method: string, metadata?: Record<string, any>): void {
     const auditEvent: AuditEvent = {
       id: this.generateEventId(),
       type: AuditEventType.UNAUTHORIZED_ACCESS_ATTEMPT,
       timestamp: new Date().toISOString(),
-      resourceType,
-      resourceId,
-      action,
+      resourceType: resource,
+      resourceId: path,
+      action: method,
       result: 'failure',
       correlationId: this.correlationId,
       metadata
@@ -140,24 +139,18 @@ export class AuthLogger {
   }
 
   /**
-   * Log successful access to protected resource
+   * Log protected resource access
    */
-  logProtectedResourceAccess(
-    subject: SubjectContext,
-    resourceType: string,
-    resourceId: string,
-    action: string,
-    metadata?: Record<string, any>
-  ): void {
+  logProtectedResourceAccess(subject: SubjectContext, resource: string, path: string, method: string, metadata?: Record<string, any>): void {
     const auditEvent: AuditEvent = {
       id: this.generateEventId(),
       type: AuditEventType.PROTECTED_RESOURCE_ACCESSED,
       timestamp: new Date().toISOString(),
       tenantId: subject.tenantId,
       userId: subject.id,
-      resourceType,
-      resourceId,
-      action,
+      resourceType: resource,
+      resourceId: path,
+      action: method,
       result: 'success',
       correlationId: this.correlationId,
       metadata: {
@@ -170,91 +163,36 @@ export class AuthLogger {
     this.emitAuditEvent(auditEvent);
   }
 
-  /**
-   * Emit structured log event
-   */
-  private emitAuditEvent(event: AuditEvent): void {
-    // Structured logging format
-    const logEntry = {
-      level: event.result === 'success' ? 'info' : 'warn',
-      component: 'auth-audit',
-      event: event.type,
-      correlationId: event.correlationId,
-      ...event
-    };
-
-    console.log('[AUDIT]', JSON.stringify(logEntry));
-
-    // In production, you might want to send this to:
-    // - Application Insights / CloudWatch Logs
-    // - Elasticsearch / Splunk
-    // - External audit system
-    // - SIEM solution
+  private emitAuditEvent(auditEvent: AuditEvent): void {
+    if (this.auditWriter) {
+      this.auditWriter.write(auditEvent);
+    }
   }
 
-  /**
-   * Update authentication metrics
-   */
-  private updateMetrics(result: 'success' | 'failure'): void {
+  private updateMetrics(outcome: 'success' | 'failure'): void {
     authMetrics.authenticationsTotal++;
-    
-    if (result === 'success') {
+    if (outcome === 'success') {
       authMetrics.authenticationsSuccess++;
     } else {
       authMetrics.authenticationsFailure++;
     }
   }
 
-  /**
-   * Generate unique event ID
-   */
-  private generateEventId(): string {
-    return `auth-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
-  }
-
-  /**
-   * Generate correlation ID for request tracing
-   */
   private generateCorrelationId(): string {
-    return `req-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+    return `corr-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
   }
 
-  /**
-   * Create logger from request context
-   */
-  static fromRequest(req: any): AuthLogger {
-    // Try to extract correlation ID from headers in a runtime-agnostic way.
-    // Supports: NextRequest (Headers-like with .get()), Express/Node (object map), and plain objects.
-    const headers = req?.headers;
-
-    const getHeader = (name: string): string | undefined => {
-      if (!headers) return undefined;
-
-      // Headers-like (NextRequest / Fetch API)
-      if (typeof headers.get === 'function') {
-        return headers.get(name) || headers.get(name.toLowerCase()) || undefined;
-      }
-
-      // Node/Express style: header map (possibly lower-cased keys)
-      if (typeof headers === 'object') {
-        return (
-          headers[name] || headers[name.toLowerCase()] || headers[name.toUpperCase()]
-        );
-      }
-
-      return undefined;
-    };
-
-    const correlationId = getHeader('x-correlation-id') || getHeader('x-request-id') || getHeader('x-trace-id');
-
-    return new AuthLogger(correlationId);
+  private generateEventId(): string {
+    return `audit-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
   }
 
-  /**
-   * Expose correlation id for external use (read-only)
-   */
-  get correlationIdValue(): string | undefined {
+  getCorrelationId(): string {
     return this.correlationId;
+  }
+
+  static fromRequest(req: NextRequest, auditWriter?: AuditWriter): AuthLogger {
+    const correlationId = req.headers.get('x-correlation-id') || req.headers.get('x-request-id') || undefined;
+    return new AuthLogger(correlationId, auditWriter);
   }
 }
 
