@@ -50,7 +50,7 @@ const rbacLogger = new RBACLogger();
 // Global policy engine instance
 let policyEngine: RBACPolicyEngine | null = null;
 
-async function getPolicyEngine(): Promise<RBACPolicyEngine> {
+export async function getPolicyEngine(): Promise<RBACPolicyEngine> {
   if (!policyEngine) {
     policyEngine = new RBACPolicyEngine();
     await policyEngine.initialize();

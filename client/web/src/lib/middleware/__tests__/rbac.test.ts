@@ -1,5 +1,7 @@
 /// <reference types="jest" />
 
+import { describe, it, expect, jest, beforeEach } from '@jest/globals';
+
 // Mock next/server to avoid importing Next.js runtime in tests
 jest.mock('next/server', () => {
   return {
@@ -19,17 +21,9 @@ jest.mock('../../auth/claims', () => ({
   extractClaims: jest.fn()
 }));
 
-// Mock RBACPolicyEngine to control policy decisions
-jest.mock('../../rbac/policy-engine', () => ({
-  RBACPolicyEngine: jest.fn()
-}));
-
-// Mock the rbac module
-jest.mock('../rbac', () => ({
-  withRBAC: jest.requireActual('../rbac').withRBAC,
-  requireRole: jest.requireActual('../rbac').requireRole,
-  getPolicyEngine: jest.fn()
-}));
+// Spy on getPolicyEngine
+const mockGetPolicyEngine = jest.fn();
+jest.spyOn(require('../rbac'), 'getPolicyEngine').mockImplementation(mockGetPolicyEngine);
 
 const { NextResponse } = require('next/server');
 const { extractClaims } = require('../../auth/claims');
@@ -44,11 +38,12 @@ describe('RBAC Middleware', () => {
     jest.clearAllMocks();
 
     mockPolicyEngine = {
-      initialize: jest.fn().mockResolvedValue(undefined),
+      initialize: jest.fn<any>().mockResolvedValue(undefined),
       check: jest.fn()
     };
 
     (RBACPolicyEngine as any).mockImplementation(() => mockPolicyEngine);
+    jest.spyOn(require('../rbac'), 'getPolicyEngine').mockResolvedValue(mockPolicyEngine);
     mockExtractClaims = extractClaims as jest.MockedFunction<typeof extractClaims>;
   });
 
@@ -135,7 +130,7 @@ describe('RBAC Middleware', () => {
 
       const middleware = withRBAC({ resource: 'test', action: 'read' });
       const mockResponse = { status: 200, data: 'success' };
-      const handler = jest.fn().mockResolvedValue(mockResponse);
+      const handler = jest.fn<any>().mockResolvedValue(mockResponse);
 
       const mockRequest = {
         headers: {
@@ -173,7 +168,7 @@ describe('RBAC Middleware', () => {
         action: 'read',
         extractResourceId
       });
-      const handler = jest.fn().mockResolvedValue({ status: 200 });
+      const handler = jest.fn<any>().mockResolvedValue({ status: 200 });
 
       const mockRequest = {
         headers: {

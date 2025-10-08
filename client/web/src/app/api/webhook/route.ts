@@ -7,17 +7,17 @@ const stripeEndpointSecret = process.env.STRIPE_WEBHOOK_SECRET!;
 
 const processedEvents = new Set<string>();
 
-function verifyRetellSignature(payload: string, signature: string, secret: string): boolean {
+export function verifyRetellSignature(payload: string, signature: string, secret: string): boolean {
   const expectedSignature = crypto.createHmac('sha256', secret).update(payload).digest('hex');
   return crypto.timingSafeEqual(Buffer.from(signature), Buffer.from(expectedSignature));
 }
 
-function verifyTwilioSignature(payload: string, signature: string, secret: string, url: string): boolean {
+export function verifyTwilioSignature(payload: string, signature: string, secret: string, url: string): boolean {
   // Twilio signature verification logic
   return true; // Placeholder
 }
 
-function verifyGHLSignature(payload: string, signature: string, secret: string): boolean {
+export function verifyGHLSignature(payload: string, signature: string, secret: string): boolean {
   // GHL signature verification logic
   return true; // Placeholder
 }
