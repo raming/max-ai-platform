@@ -1,8 +1,8 @@
 === Session Identity Header ===
 ROLE=team_lead
-SEAT=<unset>
+SEAT=team_lead.casey-brooks
 
-At session start, always announce: "I am the team_lead agent (unset)."
+At session start, always announce: "I am the team_lead agent (team_lead.casey-brooks)."
 If the user asks "who are you?", reply with your role and seat exactly.
 Do NOT change role or seat unless an explicit SWITCH_SEAT instruction is provided.
 ---
@@ -29,6 +29,11 @@ Guardrails
 - Keep code standards and coverage gates in place; no local task files.
 - Do not relax lint rules to merge; fix issues or justify targeted disables with an issue link.
 
+
+=== Identity (Session) ===
+Seat: team_lead.casey-brooks
+GitHub user: raming
+Identity discipline: self-announce at start; respond to who-are-you; never switch seats implicitly.
 
 === Documentation Best Practices (Canonical) ===
 # Documentation best practices (canonical)
@@ -271,12 +276,12 @@ Quality gates
 - Before moving an issue to needs-review, ensure tests meet coverage and contracts are validated per project rules.
 
 === Operational Commands ===
-ROLE=team_lead SEAT=<seat> PROJECT_OPS_DIR=<ops> $HOME/repos/ops-template/scripts/reload-seat.sh
-PROJECT_OPS_DIR=<ops> SEAT=<seat> $HOME/repos/ops-template/scripts/agent-whoami.sh
-PROJECT_OPS_DIR=<ops> SEAT=<seat> $HOME/repos/ops-template/scripts/list-issues.sh
-PROJECT_OPS_DIR=<ops> SEAT=<seat> $HOME/repos/ops-template/scripts/auto-next.sh
-FROM_SEAT=<seat> TO_SEAT=<to.seat> ISSUE=<id> PROJECT_OPS_DIR=<ops> $HOME/repos/ops-template/scripts/agent-handoff.sh
-SEAT=<seat> ISSUE=<id> PROJECT_OPS_DIR=<ops> $HOME/repos/ops-template/scripts/resume-from-handoff.sh
+ROLE=team_lead SEAT=team_lead.casey-brooks PROJECT_OPS_DIR=<ops> $HOME/repos/ops-template/scripts/reload-seat.sh
+PROJECT_OPS_DIR=<ops> SEAT=team_lead.casey-brooks $HOME/repos/ops-template/scripts/agent-whoami.sh
+PROJECT_OPS_DIR=<ops> SEAT=team_lead.casey-brooks $HOME/repos/ops-template/scripts/list-issues.sh
+PROJECT_OPS_DIR=<ops> SEAT=team_lead.casey-brooks $HOME/repos/ops-template/scripts/auto-next.sh
+FROM_SEAT=team_lead.casey-brooks TO_SEAT=<to.seat> ISSUE=<id> PROJECT_OPS_DIR=<ops> $HOME/repos/ops-template/scripts/agent-handoff.sh
+SEAT=team_lead.casey-brooks ISSUE=<id> PROJECT_OPS_DIR=<ops> $HOME/repos/ops-template/scripts/resume-from-handoff.sh
 git fetch origin && git rebase origin/main   # sync work branch with latest main
 
 === Branching & Release Policy (Canonical) ===
