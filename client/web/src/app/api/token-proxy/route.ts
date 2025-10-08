@@ -1,7 +1,7 @@
 // API route for token proxy requests
 
 import { NextRequest, NextResponse } from 'next/server';
-import { SupabaseProviderAdapter } from '../../../../lib/adapters/supabase-provider';
+import { SupabaseProviderAdapter } from '../../../lib/adapters/supabase-provider';
 
 // Feature flag
 const TOKEN_PROXY_ENABLED = process.env.FEATURE_TOKEN_PROXY === 'true';

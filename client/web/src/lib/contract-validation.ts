@@ -98,3 +98,22 @@ async function loadSchema(path: string): Promise<any> {
   // - For server-side: read from filesystem or cache
   throw new Error('Schema loading not implemented - schemas should be embedded or fetched');
 }
+
+/**
+ * Get the resource initialization plan schema
+ * Server-side function to load schema from filesystem
+ */
+export function getResourceInitSchema(): any {
+  // In Next.js API routes, we can read from the filesystem
+  // The schema is located at ops/docs/contracts/resource-initialization-plan.schema.json
+  const fs = require('fs');
+  const path = require('path');
+
+  try {
+    const schemaPath = path.join(process.cwd(), '../../../ops/docs/contracts/resource-initialization-plan.schema.json');
+    const schemaContent = fs.readFileSync(schemaPath, 'utf-8');
+    return JSON.parse(schemaContent);
+  } catch (error) {
+    throw new Error(`Failed to load resource initialization schema: ${error}`);
+  }
+}

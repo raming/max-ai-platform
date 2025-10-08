@@ -309,7 +309,7 @@ Stacked branch hygiene
 - Rebase the base (QA) branch onto origin/main daily, then rebase the stacked branch onto the updated base
 - In the stacked PR body, declare the dependency (e.g., "Depends on #<base-pr>") and add labels: stacked, seat:<seat>, priority:<Pn>
 - If the base PR becomes long-delayed or requires deep rework, pivot to main + cherry-pick or feature flags
-  - Examples: work/dev/HAKIM-0001-order-mvp, work/architect/HAKIM-0001-iam-matrix
+  - Examples: work/dev/PROJ-0001-order-mvp, work/architect/PROJ-0001-iam-matrix
 - Optional prefixes (when appropriate):
   - hotfix/{version-or-slug}
   - release/{version}
@@ -324,6 +324,22 @@ Protection and merge authority
 - Merge authority:
   - Code changes (client repo): Release Manager merges; Team Lead may merge low-risk docs/runtime configs with RM approval
   - Ops/specs/process (ops repo): Team Lead or Release Manager merges; Architect approval required for design/specs/ADR changes
+
+## PR Preparation Requirements
+
+**MANDATORY: Sync with main before creating PR**
+- Always fetch latest changes from origin/main
+- Rebase or merge your branch onto main and resolve conflicts locally
+- Never create PR with outdated branch that will conflict during merge
+- Commands:
+  ```bash
+  git fetch origin
+  git rebase origin/main  # preferred: linear history
+  # OR
+  git merge origin/main   # if rebase not suitable
+  # Resolve conflicts, test, then:
+  git push -f origin your-branch
+  ```
 
 Pull requests
 - One PR per focused change; small and linked to an issue
@@ -453,7 +469,7 @@ Define when agents should proceed autonomously vs. escalate to humans, ensuring 
 # ✅ AUTO-APPROVE - Development workflow
 npm run test
 git commit -m "feat: add user authentication"
-gh pr create --title "HAKIM-123 User Auth"
+gh pr create --title "PROJ-123 User Auth"
 
 # ✅ AUTO-APPROVE - Project operations  
 cd /Users/user/projects/client-repo
