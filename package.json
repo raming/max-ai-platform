@@ -1,0 +1,53 @@
+{
+  "name": "max-ai-platform",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "devDependencies": {
+    "@nestjs/schematics": "^11.0.0",
+    "@nx/devkit": "21.6.3",
+    "@nx/eslint": "^21.6.3",
+    "@nx/jest": "^21.6.3",
+    "@nx/js": "^21.6.3",
+    "@nx/nest": "^21.6.3",
+    "@nx/next": "^21.6.3",
+    "@nx/playwright": "21.6.3",
+    "@playwright/test": "^1.36.0",
+    "@swc-node/register": "~1.9.1",
+    "@swc/cli": "~0.6.0",
+    "@swc/core": "~1.5.7",
+    "@swc/helpers": "~0.5.11",
+    "@testing-library/dom": "10.4.0",
+    "@testing-library/react": "16.1.0",
+    "@types/jest": "^30.0.0",
+    "@types/node": "20.19.9",
+    "@types/react": "19.0.0",
+    "@types/react-dom": "19.0.0",
+    "babel-jest": "^30.0.2",
+    "eslint": "^9.37.0",
+    "jest": "^30.2.0",
+    "jest-environment-jsdom": "^30.0.2",
+    "jest-util": "^30.0.2",
+    "prettier": "^2.6.2",
+    "ts-jest": "^29.4.4",
+    "ts-node": "10.9.1",
+    "tslib": "^2.3.0",
+    "typescript": "^5.9.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ajv": "^8.17.1",
+    "next": "~15.2.4",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "zustand": "^5.0.8"
+  }
+}
