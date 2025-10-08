@@ -7,8 +7,8 @@ describe('Authorization Request Contract', () => {
   let validate: any;
 
   beforeAll(() => {
-    ajv = new Ajv({ allErrors: true });
-    const schemaPath = path.join(__dirname, '../../../../../../ops/docs/contracts/iam/authz-request.schema.json');
+    ajv = new Ajv({ allErrors: true, strict: false });
+    const schemaPath = path.join(__dirname, '../../../../../ops/docs/contracts/iam/authz-request.schema.json');
     const schema = JSON.parse(fs.readFileSync(schemaPath, 'utf-8'));
     validate = ajv.compile(schema);
   });

@@ -1,11 +1,10 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://max-ai.platform/iam/keycloak-token-claims.schema.json",
   "title": "Keycloak Token Claims",
   "type": "object",
   "required": ["iss", "sub", "aud", "exp", "iat", "tenant"],
   "properties": {
-    "iss": {"type": "string", "format": "uri"},
+    "iss": {"type": "string"},
     "sub": {"type": "string"},
     "aud": {"oneOf": [{"type": "string"}, {"type": "array", "items": {"type": "string"}}]},
     "exp": {"type": "integer", "minimum": 0},

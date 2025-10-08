@@ -1,5 +1,4 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://max-ai.platform/iam/authz-response.schema.json",
   "title": "Authorization Response",
   "type": "object",

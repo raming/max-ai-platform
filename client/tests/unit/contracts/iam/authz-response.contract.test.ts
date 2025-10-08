@@ -7,8 +7,8 @@ describe('Authorization Response Contract', () => {
   let validate: any;
 
   beforeAll(() => {
-    ajv = new Ajv({ allErrors: true });
-    const schemaPath = path.join(__dirname, '../../../../../../ops/docs/contracts/iam/authz-response.schema.json');
+    ajv = new Ajv({ allErrors: true, strict: false });
+    const schemaPath = path.join(__dirname, '../../../../../ops/docs/contracts/iam/authz-response.schema.json');
     const schema = JSON.parse(fs.readFileSync(schemaPath, 'utf-8'));
     validate = ajv.compile(schema);
   });

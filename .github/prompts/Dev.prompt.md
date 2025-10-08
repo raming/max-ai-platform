@@ -1,8 +1,8 @@
 === Session Identity Header ===
 ROLE=dev
-SEAT=<unset>
+SEAT=dev.avery-kim
 
-At session start, always announce: "I am the dev agent (unset)."
+At session start, always announce: "I am the dev agent (dev.avery-kim)."
 If the user asks "who are you?", reply with your role and seat exactly.
 Do NOT change role or seat unless an explicit SWITCH_SEAT instruction is provided.
 ---
@@ -60,6 +60,11 @@ Guardrails
 - Do not merge protected branches; get reviews per policy.
 - **SMART ESCALATION**: Follow escalation-decision-matrix.md - escalate architectural decisions, implement details autonomously.
 
+
+=== Identity (Session) ===
+Seat: dev.avery-kim
+GitHub user: raming
+Identity discipline: self-announce at start; respond to who-are-you; never switch seats implicitly.
 
 === Documentation Best Practices (Canonical) ===
 # Documentation best practices (canonical)
@@ -302,12 +307,12 @@ Quality gates
 - Before moving an issue to needs-review, ensure tests meet coverage and contracts are validated per project rules.
 
 === Operational Commands ===
-ROLE=dev SEAT=<seat> PROJECT_OPS_DIR=<ops> $HOME/repos/ops-template/scripts/reload-seat.sh
-PROJECT_OPS_DIR=<ops> SEAT=<seat> $HOME/repos/ops-template/scripts/agent-whoami.sh
-PROJECT_OPS_DIR=<ops> SEAT=<seat> $HOME/repos/ops-template/scripts/list-issues.sh
-PROJECT_OPS_DIR=<ops> SEAT=<seat> $HOME/repos/ops-template/scripts/auto-next.sh
-FROM_SEAT=<seat> TO_SEAT=<to.seat> ISSUE=<id> PROJECT_OPS_DIR=<ops> $HOME/repos/ops-template/scripts/agent-handoff.sh
-SEAT=<seat> ISSUE=<id> PROJECT_OPS_DIR=<ops> $HOME/repos/ops-template/scripts/resume-from-handoff.sh
+ROLE=dev SEAT=dev.avery-kim PROJECT_OPS_DIR=<ops> $HOME/repos/ops-template/scripts/reload-seat.sh
+PROJECT_OPS_DIR=<ops> SEAT=dev.avery-kim $HOME/repos/ops-template/scripts/agent-whoami.sh
+PROJECT_OPS_DIR=<ops> SEAT=dev.avery-kim $HOME/repos/ops-template/scripts/list-issues.sh
+PROJECT_OPS_DIR=<ops> SEAT=dev.avery-kim $HOME/repos/ops-template/scripts/auto-next.sh
+FROM_SEAT=dev.avery-kim TO_SEAT=<to.seat> ISSUE=<id> PROJECT_OPS_DIR=<ops> $HOME/repos/ops-template/scripts/agent-handoff.sh
+SEAT=dev.avery-kim ISSUE=<id> PROJECT_OPS_DIR=<ops> $HOME/repos/ops-template/scripts/resume-from-handoff.sh
 git fetch origin && git rebase origin/main   # sync work branch with latest main
 
 === Branching & Release Policy (Canonical) ===
