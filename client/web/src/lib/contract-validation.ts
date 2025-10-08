@@ -42,13 +42,9 @@ export async function initializeContractValidators(): Promise<void> {
 
   try {
     // Load schemas from ops/docs/contracts/iam/
-    // In a real implementation, these would be bundled or fetched
-    // For now, we'll assume schemas are available
-
-    // Note: In production, schemas should be embedded or cached
-    const keycloakSchema = await loadSchema('/ops/docs/contracts/iam/keycloak-token-claims.schema.json');
-    const authzRequestSchema = await loadSchema('/ops/docs/contracts/iam/authz-request.schema.json');
-    const authzResponseSchema = await loadSchema('/ops/docs/contracts/iam/authz-response.schema.json');
+    const keycloakSchema = loadSchemaFromFilesystem('/ops/docs/contracts/iam/keycloak-token-claims.schema.json');
+    const authzRequestSchema = loadSchemaFromFilesystem('/ops/docs/contracts/iam/authz-request.schema.json');
+    const authzResponseSchema = loadSchemaFromFilesystem('/ops/docs/contracts/iam/authz-response.schema.json');
 
     keycloakTokenClaimsValidator = ajv.compile(keycloakSchema);
     authzRequestValidator = ajv.compile(authzRequestSchema);
@@ -91,12 +87,19 @@ export function validateAuthzResponse(response: any): void {
   }
 }
 
-// Helper to load schema (placeholder - in real implementation, fetch or import)
-async function loadSchema(path: string): Promise<any> {
-  // This is a placeholder - in a real implementation:
-  // - For client-side: fetch from API or embed schemas
-  // - For server-side: read from filesystem or cache
-  throw new Error('Schema loading not implemented - schemas should be embedded or fetched');
+// Helper to load schema from filesystem (server-side)
+function loadSchemaFromFilesystem(relativePath: string): any {
+  const fs = require('fs');
+  const path = require('path');
+
+  try {
+    // Navigate from client/web/src/lib to the ops directory
+    const schemaPath = path.join(process.cwd(), '../../../ops', relativePath);
+    const schemaContent = fs.readFileSync(schemaPath, 'utf-8');
+    return JSON.parse(schemaContent);
+  } catch (error) {
+    throw new Error(`Failed to load schema ${relativePath}: ${error}`);
+  }
 }
 
 /**

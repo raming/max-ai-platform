@@ -7,7 +7,7 @@ on:
       - main
   pull_request:
     branches:
-      - '**'
+      - "**"
 
 jobs:
   test:
@@ -20,8 +20,8 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
-          cache: 'npm'
+          node-version: "18"
+          cache: "npm"
 
       - name: Install dependencies
         run: npm ci
@@ -30,10 +30,6 @@ jobs:
         env:
           CI: true
         run: |
-          # Run the web project's Jest test suite
-          if [ -d client/web ]; then
-            cd client/web
-          elif [ -d web ]; then
-            cd web
-          fi
-          npx jest --runInBand
+          # Run the client project's Jest test suite
+          cd client
+          npx jest --config jest.simple.config.js --runInBand

@@ -60,15 +60,23 @@ export class RBACPolicyEngine {
       }
 
       // Audit log
-      console.log('AUDIT: Policy check', {
+      const auditEntry = {
+        level: decision === 'allow' ? 'info' : 'warn',
+        component: 'rbac-policy',
+        event: decision === 'allow' ? 'rbac.policy_allow' : 'rbac.policy_deny',
         correlationId,
-        subject: subject.id,
-        tenant: subject.tenant,
+        tenantId: subject.tenant,
+        userId: subject.id,
         resource: resource.type,
+        resourceId: resource.id,
         action,
         decision,
-        outcome: decision === 'allow' ? 'success' : 'denied'
-      });
+        reason,
+        policyRef: `${resource.type}:${action}`,
+        timestamp: new Date().toISOString()
+      };
+
+      console.log('[RBAC-POLICY]', JSON.stringify(auditEntry));
 
       return {
         decision,

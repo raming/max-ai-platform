@@ -4,6 +4,49 @@ import { NextRequest, NextResponse } from 'next/server';
 import { extractClaims } from '../auth/claims';
 import { RBACPolicyEngine, PolicyCheckRequest } from '../rbac/policy-engine';
 
+// RBAC Audit Logger
+class RBACLogger {
+  logPolicyCheck(
+    correlationId: string,
+    subject: any,
+    resource: string,
+    action: string,
+    decision: 'allow' | 'deny',
+    reason?: string
+  ): void {
+    const logEntry = {
+      level: decision === 'allow' ? 'info' : 'warn',
+      component: 'rbac-audit',
+      event: decision === 'allow' ? 'rbac.access_granted' : 'rbac.access_denied',
+      correlationId,
+      tenantId: subject.tenant,
+      userId: subject.id,
+      resourceType: resource,
+      action,
+      result: decision,
+      reason,
+      timestamp: new Date().toISOString()
+    };
+
+    console.log('[RBAC-AUDIT]', JSON.stringify(logEntry));
+  }
+
+  logError(correlationId: string, error: any): void {
+    const logEntry = {
+      level: 'error',
+      component: 'rbac-middleware',
+      event: 'rbac.middleware_error',
+      correlationId,
+      error: error.message || 'Unknown error',
+      timestamp: new Date().toISOString()
+    };
+
+    console.error('[RBAC-ERROR]', JSON.stringify(logEntry));
+  }
+}
+
+const rbacLogger = new RBACLogger();
+
 // Global policy engine instance
 let policyEngine: RBACPolicyEngine | null = null;
 
@@ -36,10 +79,14 @@ export function withRBAC(options: RBACOptions) {
       // Extract token from Authorization header
       const authHeader = request.headers.get('authorization');
       if (!authHeader || !authHeader.startsWith('Bearer ')) {
-        console.log('AUDIT: Missing or invalid authorization header', {
+        rbacLogger.logPolicyCheck(
           correlationId,
-          outcome: 'unauthorized'
-        });
+          { id: 'anonymous', tenant: 'unknown' },
+          options.resource,
+          options.action,
+          'deny',
+          'Missing or invalid authorization header'
+        );
 
         return NextResponse.json(
           { error: 'Unauthorized', message: 'Missing or invalid authorization header' },
@@ -69,21 +116,29 @@ export function withRBAC(options: RBACOptions) {
       const policyResponse = await engine.check(policyRequest, correlationId);
 
       if (policyResponse.decision === 'deny') {
-        console.log('AUDIT: Access denied', {
+        rbacLogger.logPolicyCheck(
           correlationId,
-          subject: claims.subject.id,
-          tenant: claims.subject.tenant,
-          resource: options.resource,
-          action: options.action,
-          reason: policyResponse.reason,
-          outcome: 'forbidden'
-        });
+          claims.subject,
+          options.resource,
+          options.action,
+          'deny',
+          policyResponse.reason
+        );
 
         return NextResponse.json(
           { error: 'Forbidden', message: policyResponse.reason || 'Access denied' },
           { status: 403, headers: { 'x-correlation-id': correlationId } }
         );
       }
+
+      // Log successful access
+      rbacLogger.logPolicyCheck(
+        correlationId,
+        claims.subject,
+        options.resource,
+        options.action,
+        'allow'
+      );
 
       // Attach claims to request for handler use
       (request as any).claims = claims;
@@ -93,7 +148,7 @@ export function withRBAC(options: RBACOptions) {
       return await handler(request);
     } catch (error) {
       const errorMessage = error instanceof Error ? error.message : 'Unknown error';
-      console.error('RBAC middleware error', { error, correlationId });
+      rbacLogger.logError(correlationId, error);
 
       return NextResponse.json(
         { error: 'Internal Server Error', message: errorMessage },
