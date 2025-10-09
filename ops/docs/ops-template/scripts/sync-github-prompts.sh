@@ -63,27 +63,43 @@ ROLES=(architect team_lead dev qa release_manager sre)
 titlecase() {
   local s="$1"
   if [[ "$s" == "qa" || "$s" == "sre" ]]; then
-    # Uppercase acronyms in a portable way
-    echo "$(echo "$s" | tr '[:lower:]' '[:upper:]')"
+    echo "$s" | tr '[:lower:]' '[:upper:]'
     return
   fi
   IFS='_'
   read -ra parts <<< "$s"
-  out_parts=()
+  out=""
   for p in "${parts[@]}"; do
-    first="$(echo "${p:0:1}" | tr '[:lower:]' '[:upper:]')"
-    rest="$(echo "${p:1}" | tr '[:upper:]' '[:lower:]')"
-    out_parts+=("$first$rest")
+    out+="$(tr '[:lower:]' '[:upper:]' <<< "${p:0:1}")$(tr '[:upper:]' '[:lower:]' <<< "${p:1}")"
   done
-  # Re-join with underscore to preserve readability (Team_Lead, Release_Manager)
-  (IFS='_'; echo "${out_parts[*]}")
+  echo "$out"
 }
 
 for role in "${ROLES[@]}"; do
   cap=$(titlecase "$role")
   out="$DEST_DIR/${cap}.prompt.md"
-  echo "Generating merged prompt for role=$role -> $out"
-  ROLE="$role" SEAT="" PROJECT_OPS_DIR="$PROJECT_OPS_DIR" "$MERGER" > "$out"
+  
+  # Determine SEAT from project's agents.yaml if available, otherwise use template
+  SEAT=""
+  agents_yaml="$PROJECT_OPS_DIR/.agents/rules/agents.yaml"
+  template_agents_yaml="$ROOT_DIR/templates/agents.yaml"
+  
+  # Use project-specific agents.yaml if it exists, otherwise fall back to template
+  yaml_file="$agents_yaml"
+  if [[ ! -f "$agents_yaml" ]]; then
+    yaml_file="$template_agents_yaml"
+  fi
+  
+  if [[ -f "$yaml_file" ]] && command -v yq >/dev/null 2>&1; then
+    # Find seats that start with the role (e.g., "dev." for role "dev")
+    seat_candidates=$(yq -r ".seats | keys | .[]" "$yaml_file" | grep "^${role}\." | sort | head -1)
+    if [[ -n "$seat_candidates" ]]; then
+      SEAT="$seat_candidates"
+    fi
+  fi
+  
+  echo "Generating merged prompt for role=$role seat=${SEAT:-<none>} -> $out"
+  ROLE="$role" SEAT="$SEAT" PROJECT_OPS_DIR="$PROJECT_OPS_DIR" "$MERGER" > "$out"
 done
 
 echo "Synced GitHub prompts to $DEST_DIR"

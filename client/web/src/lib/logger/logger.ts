@@ -27,7 +27,7 @@ export function redactObject(obj: any): any {
   if (obj && typeof obj === 'object') {
     const redacted: any = {};
     for (const key in obj) {
-      if (obj.hasOwnProperty(key)) {
+      if (Object.hasOwn(obj, key)) {
         redacted[key] = redactObject(obj[key]);
       }
     }

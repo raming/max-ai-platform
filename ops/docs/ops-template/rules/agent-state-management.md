@@ -114,7 +114,7 @@ Provide systematic state preservation and recovery for agents to prevent lost wo
 {
   "agent_seat": "dev.avery-kim",
   "task_issue_number": 25,
-  "task_title": "HAKIM-0020 — Implement Feature Gate SDK",
+  "task_title": "PROJ-0020 — Implement Feature Gate SDK",
   "status": "in_progress", 
   "started_at": "2025-01-27T10:30:00Z",
   "last_updated": "2025-01-27T14:45:00Z",
@@ -135,7 +135,7 @@ Provide systematic state preservation and recovery for agents to prevent lost wo
   },
   
   "technical_context": {
-    "branch_name": "work/dev/HAKIM-0020-feature-gate-sdk",
+    "branch_name": "work/dev/PROJ-0020-feature-gate-sdk",
     "files_modified": [
       "src/ports/FeatureGate.ts",
       "src/adapters/FileFeatureConfigAdapter.ts"
@@ -266,7 +266,7 @@ Provide systematic state preservation and recovery for agents to prevent lost wo
 ```markdown
 🔄 **AGENT STATE CHECKPOINT** - dev.avery-kim - 2025-01-27T14:30:00Z
 
-**Task**: #25 - HAKIM-0020 Feature Gate SDK Implementation
+**Task**: #25 - PROJ-0020 Feature Gate SDK Implementation
 **Progress**: Day 2 of development, 60% complete
 **Current Focus**: Implementing ETag caching in FileFeatureConfigAdapter
 
@@ -290,7 +290,7 @@ Provide systematic state preservation and recovery for agents to prevent lost wo
 ### Context & Notes
 **Technical Context**: Using node-cache for L1, fs.stat() for ETag simulation
 **Files Modified**: src/adapters/FileFeatureConfigAdapter.ts (220 lines)
-**Branch**: work/dev/HAKIM-0020-feature-gate-sdk
+**Branch**: work/dev/PROJ-0020-feature-gate-sdk
 **Blockers**: None currently
 
 **Resume Command**: Continue implementing ETag validation in refreshConfig() method
@@ -347,7 +347,7 @@ Provide systematic state preservation and recovery for agents to prevent lost wo
 ## 🌿 Branch Tracking & Reuse (with Worktrees)
 
 ### Naming & Mapping
-- Branch names: `work/{role}/{TASK-ID}-{slug}` (e.g., `work/dev/HAKIM-0020-feature-gate-sdk`)
+- Branch names: `work/{role}/{TASK-ID}-{slug}` (e.g., `work/dev/PROJ-0020-feature-gate-sdk`)
 - State file source of truth: `.agents/workspaces/{seat}/current-state.json` stores:
   - `branch_name`, `task_issue_number`, and progress context
 - Link PRs and issues via “Fixes #N” to enable automatic closure and traceability
@@ -363,10 +363,10 @@ Provide systematic state preservation and recovery for agents to prevent lost wo
 - Example commands (non-interactive):
 ```bash
 # Ensure remote branch exists locally (idempotent)
-git fetch origin work/dev/HAKIM-0020-feature-gate-sdk:work/dev/HAKIM-0020-feature-gate-sdk || true
+git fetch origin work/dev/PROJ-0020-feature-gate-sdk:work/dev/PROJ-0020-feature-gate-sdk || true
 
 # Create a worktree for the branch if not present
-git worktree add -B work/dev/HAKIM-0020-feature-gate-sdk .agents/worktrees/dev.avery-kim/work-dev-HAKIM-0020 work/dev/HAKIM-0020-feature-gate-sdk
+git worktree add -B work/dev/PROJ-0020-feature-gate-sdk .agents/worktrees/dev.avery-kim/work-dev-PROJ-0020 work/dev/PROJ-0020-feature-gate-sdk
 
 # Open the worktree path in the agent session
 # (Seat/path helper scripts may automate this step)

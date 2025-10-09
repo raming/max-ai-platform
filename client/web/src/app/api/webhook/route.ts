@@ -1,25 +1,30 @@
 import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';
-import crypto from 'crypto';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
 const stripeEndpointSecret = process.env.STRIPE_WEBHOOK_SECRET!;
 
 const processedEvents = new Set<string>();
 
-export function verifyRetellSignature(payload: string, signature: string, secret: string): boolean {
-  const expectedSignature = crypto.createHmac('sha256', secret).update(payload).digest('hex');
-  return crypto.timingSafeEqual(Buffer.from(signature), Buffer.from(expectedSignature));
+export function verifyRetellSignature(_payload: string, _signature: string, _secret: string): boolean {
+  // TODO: Implement Retell webhook signature verification
+  // This is a security-critical function that must validate HMAC signatures
+  // Reference: https://docs.retell.ai/webhook/security
+  throw new Error('Retell webhook signature verification not yet implemented');
 }
 
-export function verifyTwilioSignature(payload: string, signature: string, secret: string, url: string): boolean {
-  // Twilio signature verification logic
-  return true; // Placeholder
+export function verifyTwilioSignature(_payload: string, _signature: string, _secret: string, _url: string): boolean {
+  // TODO: Implement Twilio webhook signature verification
+  // This is a security-critical function that must validate HMAC signatures
+  // Reference: https://www.twilio.com/docs/usage/webhooks/webhooks-security
+  throw new Error('Twilio webhook signature verification not yet implemented');
 }
 
-export function verifyGHLSignature(payload: string, signature: string, secret: string): boolean {
-  // GHL signature verification logic
-  return true; // Placeholder
+export function verifyGHLSignature(_payload: string, _signature: string, _secret: string): boolean {
+  // TODO: Implement GHL webhook signature verification
+  // This is a security-critical function that must validate HMAC signatures
+  // Reference: GHL webhook security documentation
+  throw new Error('GHL webhook signature verification not yet implemented');
 }
 
 export async function POST(req: NextRequest) {
@@ -55,7 +60,7 @@ export async function POST(req: NextRequest) {
     } else {
       throw new Error('Unknown provider');
     }
-  } catch (err: any) {
+  } catch {
     return NextResponse.json({ error: 'Invalid signature' }, { status: 400 });
   }
 

@@ -5,11 +5,12 @@ import { SupabaseProviderAdapter } from '../../../../lib/adapters/supabase-provi
 import { SecretsManagerAdapter } from '../../../../lib/adapters/secrets-manager';
 import { ResourceInitializationPlan } from '../../../../lib/ports/token-proxy';
 import { validateContract } from '../../../../lib/contract-validation';
+import { AuthMiddleware } from '../../../../lib/auth/middleware';
 
 // Feature flag
 const TOKEN_PROXY_ENABLED = process.env.FEATURE_TOKEN_PROXY === 'true';
 
-export async function POST(request: NextRequest) {
+export const POST = AuthMiddleware.withAuth(async (request: NextRequest, { subject }) => {
   if (!TOKEN_PROXY_ENABLED) {
     return NextResponse.json({ error: 'Token proxy not enabled' }, { status: 403 });
   }
@@ -31,7 +32,7 @@ export async function POST(request: NextRequest) {
     for (const resource of plan.resources) {
       if (resource.kind === 'supabase' && resource.supabase) {
         await secretsManager.storeToken(
-          'tenant1', // TODO: get from auth context
+          subject.tenantId, // Get tenant from auth context
           plan.clientId,
           'supabase',
           {
@@ -59,7 +60,7 @@ export async function POST(request: NextRequest) {
       { status: 500 }
     );
   }
-}
+});
 
 // Helper to get the schema (in production, load from file)
 function getResourceInitSchema() {

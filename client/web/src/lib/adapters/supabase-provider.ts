@@ -1,6 +1,6 @@
 // Supabase resource provider adapter
 
-import { IResourceProvider, ResourceInitializationPlan, InitializationResult, ProviderRequest, ProviderResponse, TokenData } from '../ports/token-proxy';
+import { IResourceProvider, ResourceInitializationPlan, InitializationResult, ProviderRequest, ProviderResponse } from '../ports/token-proxy';
 
 export class SupabaseProviderAdapter implements IResourceProvider {
   async initializeResources(

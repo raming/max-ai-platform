@@ -34,7 +34,11 @@ export default [
       },
     },
     rules: {
-      '@typescript-eslint/no-unused-vars': 'error',
+      '@typescript-eslint/no-unused-vars': ['error', {
+        'argsIgnorePattern': '^_',
+        'varsIgnorePattern': '^_',
+        'caughtErrorsIgnorePattern': '^_',
+      }],
       '@typescript-eslint/explicit-function-return-type': 'warn',
       '@typescript-eslint/no-explicit-any': 'warn',
       'no-console': 'warn',
@@ -75,5 +79,11 @@ export default [
         afterAll: 'readonly',
       },
     },
+  },
+  {
+    files: ['**/next.config.js', '*.config.js', '*.config.mjs', '*.preset.js', 'jest.config.ts'],
+    rules: {
+      '@typescript-eslint/no-require-imports': 'off'
+    }
   },
 ];

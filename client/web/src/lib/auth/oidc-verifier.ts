@@ -1,13 +1,12 @@
 import { jwtVerify, createRemoteJWKSet, JWTPayload } from 'jose';
 import { 
-  TokenClaims, 
-  SubjectContext, 
   AuthConfig, 
   AuthResult, 
   AuthError, 
   AuthErrorCode,
   OIDCDiscovery,
-  JWKS
+  TokenClaims,
+  SubjectContext
 } from './types';
 import { validateTokenClaimsRuntime } from './contracts/validator';
 import { AuthLogger, AuthTimer } from './observability';

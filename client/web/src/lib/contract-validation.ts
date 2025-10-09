@@ -41,14 +41,10 @@ export async function initializeContractValidators(): Promise<void> {
   }
 
   try {
-    // Load schemas from ops/docs/contracts/iam/
-    const keycloakSchema = loadSchemaFromFilesystem('/ops/docs/contracts/iam/keycloak-token-claims.schema.json');
-    const authzRequestSchema = loadSchemaFromFilesystem('/ops/docs/contracts/iam/authz-request.schema.json');
-    const authzResponseSchema = loadSchemaFromFilesystem('/ops/docs/contracts/iam/authz-response.schema.json');
-
-    keycloakTokenClaimsValidator = ajv.compile(keycloakSchema);
-    authzRequestValidator = ajv.compile(authzRequestSchema);
-    authzResponseValidator = ajv.compile(authzResponseSchema);
+    // Use embedded schemas
+    keycloakTokenClaimsValidator = ajv.compile(KEYCLOAK_TOKEN_CLAIMS_SCHEMA);
+    authzRequestValidator = ajv.compile(AUTHZ_REQUEST_SCHEMA);
+    authzResponseValidator = ajv.compile(AUTHZ_RESPONSE_SCHEMA);
   } catch (error) {
     console.warn('Failed to initialize contract validators:', error);
   }
@@ -87,36 +83,156 @@ export function validateAuthzResponse(response: any): void {
   }
 }
 
-// Helper to load schema from filesystem (server-side)
-function loadSchemaFromFilesystem(relativePath: string): any {
-  const fs = require('fs');
-  const path = require('path');
+/**
+ * Keycloak token claims JSON schema
+ */
+const KEYCLOAK_TOKEN_CLAIMS_SCHEMA = {
+  "$id": "https://max-ai.platform/iam/keycloak-token-claims.schema.json",
+  "title": "Keycloak Token Claims",
+  "type": "object",
+  "required": ["iss", "sub", "aud", "exp", "iat", "tenant"],
+  "properties": {
+    "iss": {"type": "string"},
+    "sub": {"type": "string"},
+    "aud": {"oneOf": [{"type": "string"}, {"type": "array", "items": {"type": "string"}}]},
+    "exp": {"type": "integer", "minimum": 0},
+    "nbf": {"type": "integer", "minimum": 0},
+    "iat": {"type": "integer", "minimum": 0},
+    "jti": {"type": "string"},
+    "tenant": {"type": "string", "description": "Tenant/realm or org identifier"},
+    "scope": {"type": "string"},
+    "roles": {"type": "array", "items": {"type": "string"}},
+    "groups": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": true
+};
 
-  try {
-    // Navigate from client/web/src/lib to the ops directory
-    const schemaPath = path.join(process.cwd(), '../../../ops', relativePath);
-    const schemaContent = fs.readFileSync(schemaPath, 'utf-8');
-    return JSON.parse(schemaContent);
-  } catch (error) {
-    throw new Error(`Failed to load schema ${relativePath}: ${error}`);
-  }
-}
+/**
+ * Authorization request JSON schema
+ */
+const AUTHZ_REQUEST_SCHEMA = {
+  "$id": "https://max-ai.platform/iam/authz-request.schema.json",
+  "title": "Authorization Request",
+  "type": "object",
+  "required": ["subject", "resource", "action"],
+  "properties": {
+    "subject": {
+      "type": "object",
+      "required": ["id", "tenant"],
+      "properties": {
+        "id": {"type": "string"},
+        "tenant": {"type": "string"},
+        "roles": {"type": "array", "items": {"type": "string"}},
+        "groups": {"type": "array", "items": {"type": "string"}},
+        "scopes": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": true
+    },
+    "resource": {
+      "type": "object",
+      "required": ["type", "id"],
+      "properties": {
+        "type": {"type": "string"},
+        "id": {"type": "string"},
+        "ownerTenant": {"type": "string"}
+      },
+      "additionalProperties": true
+    },
+    "action": {"type": "string"},
+    "context": {"type": "object", "additionalProperties": true}
+  },
+  "additionalProperties": false
+};
+
+/**
+ * Authorization response JSON schema
+ */
+const AUTHZ_RESPONSE_SCHEMA = {
+  "$id": "https://max-ai.platform/iam/authz-response.schema.json",
+  "title": "Authorization Response",
+  "type": "object",
+  "required": ["decision"],
+  "properties": {
+    "decision": {"type": "string", "enum": ["allow", "deny"]},
+    "reason": {"type": "string"},
+    "policyRef": {"type": "string"},
+    "obligations": {"type": "object", "additionalProperties": true}
+  },
+  "additionalProperties": false
+};
+
+/**
+ * Resource initialization plan JSON schema
+ */
+const RESOURCE_INIT_SCHEMA = {
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://max-ai/contracts/resource-initialization-plan.schema.json",
+  "title": "ResourceInitializationPlan",
+  "type": "object",
+  "required": ["id", "clientId", "resources"],
+  "properties": {
+    "id": {"type": "string"},
+    "clientId": {"type": "string"},
+    "resources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["kind"],
+        "properties": {
+          "kind": {"enum": ["supabase", "storage", "other"]},
+          "supabase": {
+            "type": "object",
+            "properties": {
+              "projectUrl": {"type": "string"},
+              "anonKey": {"type": "string"},
+              "serviceRoleKey": {"type": "string"},
+              "init": {
+                "type": "object",
+                "properties": {
+                  "tables": {
+                    "type": "array",
+                    "items": {"enum": ["prompts", "documents"]}
+                  }
+                },
+                "additionalProperties": false
+              }
+            },
+            "additionalProperties": false
+          },
+          "options": {"type": "object"}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+};
 
 /**
  * Get the resource initialization plan schema
- * Server-side function to load schema from filesystem
+ * Returns the embedded schema for validation
  */
 export function getResourceInitSchema(): any {
-  // In Next.js API routes, we can read from the filesystem
-  // The schema is located at ops/docs/contracts/resource-initialization-plan.schema.json
-  const fs = require('fs');
-  const path = require('path');
+  return RESOURCE_INIT_SCHEMA;
+}
 
-  try {
-    const schemaPath = path.join(process.cwd(), '../../../ops/docs/contracts/resource-initialization-plan.schema.json');
-    const schemaContent = fs.readFileSync(schemaPath, 'utf-8');
-    return JSON.parse(schemaContent);
-  } catch (error) {
-    throw new Error(`Failed to load resource initialization schema: ${error}`);
-  }
+/**
+ * Get the Keycloak token claims schema
+ */
+export function getKeycloakTokenClaimsSchema(): any {
+  return KEYCLOAK_TOKEN_CLAIMS_SCHEMA;
+}
+
+/**
+ * Get the authorization request schema
+ */
+export function getAuthzRequestSchema(): any {
+  return AUTHZ_REQUEST_SCHEMA;
+}
+
+/**
+ * Get the authorization response schema
+ */
+export function getAuthzResponseSchema(): any {
+  return AUTHZ_RESPONSE_SCHEMA;
 }

@@ -1,6 +1,5 @@
 import Ajv from 'ajv';
-import * as fs from 'fs';
-import * as path from 'path';
+import { getAuthzRequestSchema } from '../../../../src/lib/contract-validation';
 
 describe('Authorization Request Contract', () => {
   let ajv: Ajv;
@@ -8,8 +7,7 @@ describe('Authorization Request Contract', () => {
 
   beforeAll(() => {
     ajv = new Ajv({ allErrors: true, strict: false });
-    const schemaPath = path.join(__dirname, '../../../../../ops/docs/contracts/iam/authz-request.schema.json');
-    const schema = JSON.parse(fs.readFileSync(schemaPath, 'utf-8'));
+    const schema = getAuthzRequestSchema();
     validate = ajv.compile(schema);
   });
 

@@ -1,5 +1,13 @@
 # Scripts README
 
+detect-stubs.js
+- Purpose: Scan codebase for unimplemented prototype methods marked with standardized error messages.
+- Usage:
+  npm run detect-stubs                                    # Scan current directory
+  node scripts/detect-stubs.js /path/to/code              # Scan specific directory
+- CI Integration: Exits with code 1 if stub methods found, suitable for automated pipelines.
+- Documentation: See scripts/README-stub-detection.md for detailed usage and examples.
+
 merge-prompts.sh (legacy)
 - Purpose: merges canonical rules (and optionally project-specific rules) into a single text.
 - Usage:

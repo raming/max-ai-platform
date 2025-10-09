@@ -166,7 +166,7 @@ export function withRBAC(options: RBACOptions) {
 /**
  * Helper to check if a request has a specific role
  */
-export function requireRole(role: string) {
+export function requireRole(_role: string) {
   return withRBAC({
     resource: 'any',
     action: 'access',

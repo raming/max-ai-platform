@@ -80,7 +80,7 @@ export function extractTenantId(claims: ExtractedClaims): string {
 /**
  * Extract client ID from claims (if present in context)
  */
-export function extractClientId(claims: ExtractedClaims): string | null {
+export function extractClientId(_claims: ExtractedClaims): string | null {
   // In a real implementation, this might come from a specific claim
   // For now, return null as it's not in the standard claims
   return null;

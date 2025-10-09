@@ -48,13 +48,10 @@ export const POST = AuthMiddleware.withAuth(async (req: NextRequest, { subject }
     };
 
     return NextResponse.json(response, { status: 200 });
-  } catch (error) {
+  } catch {
     return NextResponse.json(
-      { 
-        error: 'Failed to process request',
-        timestamp: new Date().toISOString() 
-      },
-      { status: 400 }
+      { error: 'Authentication failed' },
+      { status: 401 }
     );
   }
 });
