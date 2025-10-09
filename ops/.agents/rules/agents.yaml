@@ -1,83 +1,21 @@
-# AI Agent Configuration for MaxAI Platform
+# agents.yaml — template
+
 seats:
   architect.morgan-lee:
-    github: raming
-    role: architect
-    description: Architect agent for design authority and governance
-    
+    name: Morgan Lee
+    github: morgan-gh
   team_lead.casey-brooks:
-    github: raming
-    role: team_lead
-    description: Team lead agent for planning and coordination
-    
+    name: Casey Brooks
+    github: casey-gh
   dev.avery-kim:
-    github: raming
-    role: dev
-    description: Developer agent for implementation and testing
-    
+    name: Avery Kim
+    github: avery-gh
   qa.mina-li:
-    github: raming
-    role: qa
-    description: Quality assurance agent for testing and validation
-    
-  sre.devon-singh:
-    github: raming
-    role: sre
-    description: Site Reliability Engineering agent for infrastructure and operations
-    
+    name: Mina Li
+    github: mina-gh
   release_manager.rohan-patel:
-    github: raming
-    role: release_manager
-    description: Release management agent for deployment coordination
-
-roles:
-  architect:
-    description: Architecture governance and design authority role
-    capabilities:
-      - requirements_analysis
-      - architecture_design
-      - adr_creation
-      - specification_writing
-      - design_review
-      - governance
-      - nfr_definition
-      
-  team_lead:
-    description: Team leadership and planning role
-    capabilities:
-      - epic_planning
-      - story_creation
-      - acceptance_criteria
-      - coordination
-      - issue_management
-      
-  dev:
-    description: Software development role
-    capabilities:
-      - code_development
-      - testing
-      - debugging
-      
-  qa:
-    description: Quality assurance and testing role
-    capabilities:
-      - end_to_end_testing
-      - contract_validation
-      - performance_testing
-      - security_testing
-      - test_automation
-      - defect_management
-      
-  sre:
-    description: Site reliability engineering role
-    capabilities:
-      - infrastructure
-      - monitoring
-      - deployment
-      
-  release_manager:
-    description: Release management role
-    capabilities:
-      - release_planning
-      - version_management
-      - deployment_coordination
+    name: Rohan Patel
+    github: rohan-gh
+  sre.devon-singh:
+    name: Devon Singh
+    github: devon-gh
