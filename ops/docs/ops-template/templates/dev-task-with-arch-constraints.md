@@ -1,7 +1,7 @@
 # Development Task Template (Architect-Governed)
 
-**Tracker ID**: HAKIM-XXXX  
-**Architecture Spec**: [Link to tracker/specs/HAKIM-XXXX.md]  
+**Tracker ID**: PROJ-XXXX  
+**Architecture Spec**: [Link to tracker/specs/PROJ-XXXX.md]  
 **ADRs Referenced**: [List relevant ADRs]  
 **Architect**: [architect.morgan-lee]  
 
@@ -12,7 +12,7 @@
 ## 🏗️ **ARCHITECTURAL CONSTRAINTS (MANDATORY)**
 
 ### Required Reading
-- [ ] **MUST READ**: [Architecture Specification](../tracker/specs/HAKIM-XXXX.md)
+- [ ] **MUST READ**: [Architecture Specification](../tracker/specs/PROJ-XXXX.md)
 - [ ] **MUST READ**: [Related ADRs] 
 - [ ] **MUST UNDERSTAND**: Ports/adapters pattern requirements
 - [ ] **MUST VALIDATE**: JSON Schema contracts

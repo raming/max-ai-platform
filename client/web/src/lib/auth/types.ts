@@ -101,11 +101,9 @@ export enum AuthErrorCode {
 }
 
 // Express request extension for subject context
-declare global {
-  namespace Express {
-    interface Request {
-      subject?: SubjectContext;
-    }
+declare module 'express' {
+  interface Request {
+    subject?: SubjectContext;
   }
 }
 

@@ -24,9 +24,9 @@ jest.mock('../../rbac/policy-engine', () => ({
   RBACPolicyEngine: jest.fn()
 }));
 
-import { withRBAC } from '../rbac';
-import { extractClaims } from '../../auth/claims';
-import { RBACPolicyEngine } from '../../rbac/policy-engine';
+const { withRBAC } = require('../rbac');
+const { extractClaims } = require('../../auth/claims');
+const { RBACPolicyEngine } = require('../../rbac/policy-engine');
 
 describe('RBAC Middleware', () => {
   let mockPolicyEngine;
@@ -40,6 +40,7 @@ describe('RBAC Middleware', () => {
     };
     RBACPolicyEngine.mockImplementation(() => mockPolicyEngine);
     const rbac = require('../rbac');
+    rbac.resetPolicyEngine();
     jest.spyOn(rbac, 'getPolicyEngine').mockResolvedValue(mockPolicyEngine);
     mockExtractClaims = extractClaims;
   });

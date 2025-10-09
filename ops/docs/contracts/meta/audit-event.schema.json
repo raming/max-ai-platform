@@ -1,0 +1,109 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "string"
+        },
+        "type": {
+            "type": "string",
+            "enum": [
+                "auth.token.verified",
+                "auth.token.verification_failed",
+                "auth.unauthorized_access_attempt",
+                "auth.protected_resource_accessed"
+            ]
+        },
+        "timestamp": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "tenantId": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "clientId": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "userId": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "resourceType": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "resourceId": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "action": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "result": {
+            "type": "string",
+            "enum": [
+                "success",
+                "failure"
+            ]
+        },
+        "error": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "code": {
+                    "type": "string"
+                },
+                "message": {
+                    "type": "string"
+                }
+            }
+        },
+        "metadata": {
+            "type": [
+                "object",
+                "null"
+            ]
+        },
+        "correlationId": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "ipAddress": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "userAgent": {
+            "type": [
+                "string",
+                "null"
+            ]
+        }
+    },
+    "required": [
+        "id",
+        "type",
+        "timestamp",
+        "result"
+    ]
+}

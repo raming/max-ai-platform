@@ -22,7 +22,7 @@ Stacked branch hygiene
 - Rebase the base (QA) branch onto origin/main daily, then rebase the stacked branch onto the updated base
 - In the stacked PR body, declare the dependency (e.g., "Depends on #<base-pr>") and add labels: stacked, seat:<seat>, priority:<Pn>
 - If the base PR becomes long-delayed or requires deep rework, pivot to main + cherry-pick or feature flags
-  - Examples: work/dev/HAKIM-0001-order-mvp, work/architect/HAKIM-0001-iam-matrix
+  - Examples: work/dev/PROJ-0001-order-mvp, work/architect/PROJ-0001-iam-matrix
 - Optional prefixes (when appropriate):
   - hotfix/{version-or-slug}
   - release/{version}

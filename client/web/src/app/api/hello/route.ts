@@ -2,8 +2,12 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 import { withRBAC } from '../../../lib/middleware/rbac';
+import { Logger } from '../../../lib/logger/logger';
 
 async function handler(request: NextRequest) {
+  const logger = Logger.fromRequest(request);
+  logger.info('Handling hello request');
+
   // Access claims from request (attached by middleware)
   const claims = (request as any).claims;
   const correlationId = (request as any).correlationId;

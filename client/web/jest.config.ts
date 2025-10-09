@@ -1,41 +1,38 @@
 import type { Config } from 'jest';
-import nextJest from 'next/jest.js';
-
-const createJestConfig = nextJest({
-  // Next.js app lives under `src/app` in this project; point the helper at `src`
-  dir: './src',
-});
 
 const config: Config = {
   displayName: 'web',
-  preset: '../jest.preset.js',
   transform: {
+    '^.+\\.(ts|tsx)$': ['ts-jest', { tsconfig: 'tsconfig.spec.json' }],
     '^(?!.*\\.(js|jsx|ts|tsx|css|json)$)': '@nx/react/plugins/jest',
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   coverageDirectory: '../coverage/web',
   testEnvironment: 'jsdom',
   testMatch: [
-    '<rootDir>/**/../tests/unit/**/*.test.ts',
-    '<rootDir>/**/../tests/integration/**/*.test.ts',
+    '<rootDir>/tests/unit/**/*.test.ts',
+    '<rootDir>/tests/integration/**/*.test.ts',
     '<rootDir>/src/**/*.test.ts',
-    '<rootDir>/src/**/*.spec.ts'
+    '<rootDir>/src/**/*.spec.ts',
+    '<rootDir>/src/**/*.test.js',
+    '<rootDir>/src/**/*.spec.js'
   ],
   collectCoverageFrom: [
     'src/lib/**/*.ts',
-    '../tests/unit/**/*.ts'
+    'src/app/**/*.ts',
+    'tests/unit/**/*.ts'
   ],
   coverageThreshold: {
     global: {
-      branches: 30,
-      functions: 30,
-      lines: 30,
-      statements: 30,
+      branches: 40,
+      functions: 45,
+      lines: 45,
+      statements: 45,
     },
   },
   forceExit: true,
   clearMocks: true,
-  restoreMocks: true,
+  restoreMocks: true
 };
 
-export default createJestConfig(config);
+export default config;

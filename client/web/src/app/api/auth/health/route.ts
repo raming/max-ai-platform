@@ -6,6 +6,7 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 import { getAuthHealthCheck, getAuthMetricsSummary } from '../../../../lib/auth/observability';
+import { Logger } from '../../../../lib/logger/logger';
 
 /**
  * GET /api/auth/health
@@ -13,6 +14,8 @@ import { getAuthHealthCheck, getAuthMetricsSummary } from '../../../../lib/auth/
  * Returns authentication system health status and metrics
  */
 export async function GET(request: NextRequest) {
+  const logger = Logger.fromRequest(request);
+  logger.info('Auth health check requested');
   try {
     const health = getAuthHealthCheck();
     const metrics = getAuthMetricsSummary();

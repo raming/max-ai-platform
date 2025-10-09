@@ -25,8 +25,8 @@ npm run test:coverage     # Must be ≥95%
 2. **AUTO-COMMIT** if all gates pass:
 ```bash
 git add .
-git commit -m "feat(area): HAKIM-N short description"
-git push origin work/dev/HAKIM-N-slug
+git commit -m "feat(area): PROJ-N short description"
+git push origin work/dev/PROJ-N-slug
 ```
 3. **AUTO-CREATE PR** linking to issue and spec
 4. **AUTO-TRANSITION** issue state to status:needs-qa with comment: "✅ Dev complete — ready for QA"

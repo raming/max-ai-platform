@@ -250,8 +250,8 @@ export class AuthMiddleware {
    * Create middleware instance from environment configuration
    */
   static fromEnv(): AuthMiddleware {
-    const config = AuthMiddleware.getConfigFromEnv();
-    const logger = new AuthLogger();
+    const _config = AuthMiddleware.getConfigFromEnv();
+    const _logger = new AuthLogger();
     // Dynamically import OIDCVerifier to avoid pulling ESM-only dependencies at module load time
     // when running in non-Next/test runtimes.
     // Note: this returns a Promise; keep API synchronous by constructing a simple default here and

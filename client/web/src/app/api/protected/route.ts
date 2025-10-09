@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { AuthMiddleware } from '../../../lib/auth/middleware';
+import { Logger } from '../../../lib/logger/logger';
 
 /**
  * Sample protected API route demonstrating OIDC authentication
@@ -9,6 +10,9 @@ import { AuthMiddleware } from '../../../lib/auth/middleware';
  */
 
 export const GET = AuthMiddleware.withAuth(async (req: NextRequest, { subject }) => {
+  const logger = Logger.fromRequest(req);
+  logger.info('Protected resource accessed', { userId: subject.id });
+
   // The subject context is automatically injected by the middleware
   const response = {
     message: 'Hello from protected endpoint!',
@@ -44,13 +48,10 @@ export const POST = AuthMiddleware.withAuth(async (req: NextRequest, { subject }
     };
 
     return NextResponse.json(response, { status: 200 });
-  } catch (error) {
+  } catch {
     return NextResponse.json(
-      { 
-        error: 'Failed to process request',
-        timestamp: new Date().toISOString() 
-      },
-      { status: 400 }
+      { error: 'Authentication failed' },
+      { status: 401 }
     );
   }
 });

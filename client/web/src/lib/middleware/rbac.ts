@@ -50,12 +50,17 @@ const rbacLogger = new RBACLogger();
 // Global policy engine instance
 let policyEngine: RBACPolicyEngine | null = null;
 
-async function getPolicyEngine(): Promise<RBACPolicyEngine> {
+export async function getPolicyEngine(): Promise<RBACPolicyEngine> {
   if (!policyEngine) {
     policyEngine = new RBACPolicyEngine();
     await policyEngine.initialize();
   }
   return policyEngine;
+}
+
+// For testing
+export function resetPolicyEngine(): void {
+  policyEngine = null;
 }
 
 export interface RBACOptions {
@@ -97,7 +102,7 @@ export function withRBAC(options: RBACOptions) {
       const token = authHeader.substring(7);
 
       // Extract claims from token
-      const claims = extractClaims(token);
+      const claims = await extractClaims(token);
 
       // Build policy check request
       const resourceId = options.extractResourceId ? options.extractResourceId(request) : 'default';
@@ -161,7 +166,7 @@ export function withRBAC(options: RBACOptions) {
 /**
  * Helper to check if a request has a specific role
  */
-export function requireRole(role: string) {
+export function requireRole(_role: string) {
   return withRBAC({
     resource: 'any',
     action: 'access',

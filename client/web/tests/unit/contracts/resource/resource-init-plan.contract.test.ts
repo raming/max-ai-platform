@@ -1,6 +1,5 @@
 import Ajv from 'ajv';
-import * as fs from 'fs';
-import * as path from 'path';
+import { getResourceInitSchema } from '../../../../src/lib/contract-validation';
 
 describe('Resource Initialization Plan Contract', () => {
   let ajv: Ajv;
@@ -8,8 +7,7 @@ describe('Resource Initialization Plan Contract', () => {
 
   beforeAll(() => {
     ajv = new Ajv({ allErrors: true });
-    const schemaPath = path.join(__dirname, '../../../../../../ops/docs/contracts/resource-initialization-plan.schema.json');
-    const schema = JSON.parse(fs.readFileSync(schemaPath, 'utf-8'));
+    const schema = getResourceInitSchema();
     validate = ajv.compile(schema);
   });
 

@@ -1,6 +1,5 @@
 import Ajv from 'ajv';
-import * as fs from 'fs';
-import * as path from 'path';
+import { getKeycloakTokenClaimsSchema } from '../../../../src/lib/contract-validation';
 
 describe('Keycloak Token Claims Contract', () => {
   let ajv: Ajv;
@@ -8,8 +7,7 @@ describe('Keycloak Token Claims Contract', () => {
 
   beforeAll(() => {
     ajv = new Ajv({ allErrors: true, strict: false });
-    const schemaPath = path.join(__dirname, '../../../../../ops/docs/contracts/iam/keycloak-token-claims.schema.json');
-    const schema = JSON.parse(fs.readFileSync(schemaPath, 'utf-8'));
+    const schema = getKeycloakTokenClaimsSchema();
     validate = ajv.compile(schema);
   });
 
