@@ -1,15 +1,9 @@
 import type { Config } from 'jest';
-import nextJest from 'next/jest.js';
-
-const createJestConfig = nextJest({
-  // Next.js app lives under `src/app` in this project; point the helper at `src`
-  dir: './src',
-});
 
 const config: Config = {
   displayName: 'web',
-  preset: '../jest.preset.js',
   transform: {
+    '^.+\\.(ts|tsx)$': ['ts-jest', { tsconfig: 'tsconfig.spec.json' }],
     '^(?!.*\\.(js|jsx|ts|tsx|css|json)$)': '@nx/react/plugins/jest',
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
@@ -19,10 +13,13 @@ const config: Config = {
     '<rootDir>/**/../tests/unit/**/*.test.ts',
     '<rootDir>/**/../tests/integration/**/*.test.ts',
     '<rootDir>/src/**/*.test.ts',
-    '<rootDir>/src/**/*.spec.ts'
+    '<rootDir>/src/**/*.spec.ts',
+    '<rootDir>/src/**/*.test.js',
+    '<rootDir>/src/**/*.spec.js'
   ],
   collectCoverageFrom: [
     'src/lib/**/*.ts',
+    'src/app/**/*.ts',
     '../tests/unit/**/*.ts'
   ],
   coverageThreshold: {
@@ -36,6 +33,11 @@ const config: Config = {
   forceExit: true,
   clearMocks: true,
   restoreMocks: true,
+  globals: {
+    'ts-jest': {
+      tsconfig: 'tsconfig.spec.json'
+    }
+  }
 };
 
-export default createJestConfig(config);
+export default config;

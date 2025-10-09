@@ -1,49 +1,27 @@
 import { describe, it, expect, jest, beforeEach } from '@jest/globals';
 
-// Mock the route module
-jest.mock('../route', () => ({
-  verifyRetellSignature: (payload: string, signature: string, secret: string) => {
-    const expectedSignature = require('crypto').createHmac('sha256', secret).update(payload).digest('hex');
-    return require('crypto').timingSafeEqual(Buffer.from(signature), Buffer.from(expectedSignature));
-  },
-  verifyTwilioSignature: (payload: string, signature: string, secret: string, url: string) => {
-    require('crypto').createHmac('sha256', secret);
-    return true;
-  },
-  verifyGHLSignature: (payload: string, signature: string, secret: string) => {
-    require('crypto').createHmac('sha256', secret);
-    return true;
-  }
-}));
-
-const { verifyRetellSignature, verifyTwilioSignature, verifyGHLSignature } = require('../route');
-
-// Mock next/server
-jest.mock('next/server', () => ({
-  NextResponse: {
-    json: jest.fn((data, opts) => ({
-      status: opts?.status || 200,
-      json: () => Promise.resolve(data)
-    }))
-  }
+// Mock crypto
+jest.mock('crypto', () => ({
+  createHmac: jest.fn(() => ({
+    update: jest.fn().mockReturnThis(),
+    digest: jest.fn().mockReturnValue('mocked-signature')
+  })),
+  timingSafeEqual: jest.fn().mockReturnValue(true)
 }));
 
 // Mock Stripe
+const mockConstructEvent = jest.fn();
+const mockStripeInstance = { webhooks: { constructEvent: mockConstructEvent } };
 jest.mock('stripe', () => ({
-  default: jest.fn().mockImplementation(() => ({
-    webhooks: {
-      constructEvent: jest.fn()
-    }
-  }))
+  __esModule: true,
+  default: jest.fn(() => mockStripeInstance)
 }));
 
-// Mock crypto
-jest.mock('crypto', () => ({
-  createHmac: jest.fn().mockReturnValue({
-    update: jest.fn().mockReturnThis(),
-    digest: jest.fn().mockReturnValue('mocked-signature')
-  }),
-  timingSafeEqual: jest.fn().mockReturnValue(true)
+// Mock NextResponse
+jest.mock('next/server', () => ({
+  NextResponse: {
+    json: jest.fn((payload: any, opts?: any) => ({ status: opts?.status ?? 200, payload }))
+  }
 }));
 
 describe('Webhook Signature Verification', () => {
@@ -51,7 +29,8 @@ describe('Webhook Signature Verification', () => {
     jest.clearAllMocks();
   });
 
-  it('verifies Retell signature correctly', () => {
+  it('verifies Retell signature correctly', async () => {
+    const { verifyRetellSignature } = await import('../route');
     const payload = 'test-payload';
     const signature = 'mocked-signature';
     const secret = 'test-secret';
@@ -62,26 +41,55 @@ describe('Webhook Signature Verification', () => {
     expect(require('crypto').createHmac).toHaveBeenCalledWith('sha256', secret);
   });
 
-  it('verifies Twilio signature correctly', () => {
-    const payload = 'test-payload';
-    const signature = 'mocked-signature';
-    const secret = 'test-secret';
-    const url = 'https://example.com/webhook';
+  it('accepts valid Stripe webhook', async () => {
+    const { POST } = await import('../route');
+    mockConstructEvent.mockReturnValue({ id: 'evt_123', type: 'payment_intent.succeeded' });
 
-    const result = verifyTwilioSignature(payload, signature, secret, url);
+    const mockRequest = {
+      headers: {
+        get: jest.fn().mockReturnValue('t=123,v1=signature')
+      },
+      text: jest.fn<any>().mockResolvedValue('{"id": "evt_123"}')
+    } as any;
 
-    expect(result).toBe(true);
-    expect(require('crypto').createHmac).toHaveBeenCalledWith('sha256', secret);
+    const result = await POST(mockRequest);
+    expect(result.status).toBe(200);
+    expect(require('next/server').NextResponse.json).toHaveBeenCalledWith({ received: true });
   });
 
-  it('verifies GHL signature correctly', () => {
-    const payload = 'test-payload';
-    const signature = 'mocked-signature';
-    const secret = 'test-secret';
+  it('rejects invalid signature', async () => {
+    const { POST } = await import('../route');
+    mockConstructEvent.mockImplementation(() => {
+      throw new Error('Invalid signature');
+    });
 
-    const result = verifyGHLSignature(payload, signature, secret);
+    const mockRequest = {
+      headers: {
+        get: jest.fn().mockReturnValue('invalid')
+      },
+      text: jest.fn<any>().mockResolvedValue('{}')
+    } as any;
 
-    expect(result).toBe(true);
-    expect(require('crypto').createHmac).toHaveBeenCalledWith('sha256', secret);
+    const result = await POST(mockRequest);
+    expect(result.status).toBe(400);
+  });
+
+  it('handles idempotency', async () => {
+    const { POST } = await import('../route');
+    mockConstructEvent.mockReturnValue({ id: 'evt_123', type: 'payment_intent.succeeded' });
+
+    const mockRequest = {
+      headers: {
+        get: jest.fn().mockReturnValue('t=123,v1=signature')
+      },
+      text: jest.fn<any>().mockResolvedValue('{"id": "evt_123"}')
+    } as any;
+
+    // First request
+    await POST(mockRequest);
+    // Second request with same ID
+    const result = await POST(mockRequest);
+    expect(result.status).toBe(200);
+    expect(require('next/server').NextResponse.json).toHaveBeenCalledWith({ received: true });
   });
 });

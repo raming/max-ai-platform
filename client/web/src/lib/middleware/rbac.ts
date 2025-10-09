@@ -58,6 +58,11 @@ export async function getPolicyEngine(): Promise<RBACPolicyEngine> {
   return policyEngine;
 }
 
+// For testing
+export function resetPolicyEngine(): void {
+  policyEngine = null;
+}
+
 export interface RBACOptions {
   resource: string;
   action: string;
@@ -97,7 +102,7 @@ export function withRBAC(options: RBACOptions) {
       const token = authHeader.substring(7);
 
       // Extract claims from token
-      const claims = extractClaims(token);
+      const claims = await extractClaims(token);
 
       // Build policy check request
       const resourceId = options.extractResourceId ? options.extractResourceId(request) : 'default';

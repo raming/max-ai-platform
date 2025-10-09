@@ -24,9 +24,9 @@ jest.mock('../../rbac/policy-engine', () => ({
   RBACPolicyEngine: jest.fn()
 }));
 
-import { withRBAC } from '../rbac';
-import { extractClaims } from '../../auth/claims';
-import { RBACPolicyEngine } from '../../rbac/policy-engine';
+const { withRBAC } = require('../rbac');
+const { extractClaims } = require('../../auth/claims');
+const { RBACPolicyEngine } = require('../../rbac/policy-engine');
 
 describe('RBAC Middleware', () => {
   let mockPolicyEngine;
@@ -35,9 +35,13 @@ describe('RBAC Middleware', () => {
   beforeEach(() => {
     jest.clearAllMocks();
     mockPolicyEngine = {
+      initialize: jest.fn().mockResolvedValue(undefined),
       check: jest.fn()
     };
     RBACPolicyEngine.mockImplementation(() => mockPolicyEngine);
+    const rbac = require('../rbac');
+    rbac.resetPolicyEngine();
+    jest.spyOn(rbac, 'getPolicyEngine').mockResolvedValue(mockPolicyEngine);
     mockExtractClaims = extractClaims;
   });
 
@@ -71,7 +75,7 @@ describe('RBAC Middleware', () => {
     it('returns 403 when policy check denies access', async () => {
       const middleware = withRBAC({ resource: 'test', action: 'read' });
       mockExtractClaims.mockResolvedValue({ subject: { id: 'user1', tenant: 'tenant1', roles: ['user'] } });
-      mockPolicyEngine.check.mockResolvedValue({ decision: 'deny', reason: 'Policy denied' });
+      mockPolicyEngine.check.mockReturnValue(Promise.resolve({ decision: 'deny', reason: 'Policy denied' }));
 
       const mockRequest = {
         headers: {
@@ -88,7 +92,7 @@ describe('RBAC Middleware', () => {
       const handler = jest.fn().mockResolvedValue({ status: 200, payload: undefined, headers: {} });
       const middleware = withRBAC({ resource: 'test', action: 'read' });
       mockExtractClaims.mockResolvedValue({ subject: { id: 'alice@example.com', tenant: 'tenant1', roles: ['admin'] } });
-      mockPolicyEngine.check.mockResolvedValue({ decision: 'allow' });
+      mockPolicyEngine.check.mockReturnValue(Promise.resolve({ decision: 'allow' }));
 
       const mockRequest = {
         headers: {
@@ -108,7 +112,7 @@ describe('RBAC Middleware', () => {
       const extractResourceId = jest.fn().mockReturnValue('custom-id');
       const middleware = withRBAC({ resource: 'test', action: 'read', extractResourceId });
       mockExtractClaims.mockResolvedValue({ subject: { id: 'alice@example.com', tenant: 'tenant1', roles: ['admin'] } });
-      mockPolicyEngine.check.mockResolvedValue({ decision: 'allow' });
+      mockPolicyEngine.check.mockReturnValue(Promise.resolve({ decision: 'allow' }));
 
       const mockRequest = {
         headers: {
