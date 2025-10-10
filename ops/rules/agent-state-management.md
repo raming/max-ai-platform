@@ -114,7 +114,7 @@ Provide systematic state preservation and recovery for agents to prevent lost wo
 {
   "agent_seat": "dev.avery-kim",
   "task_issue_number": 25,
-  "task_title": "HAKIM-0020 — Implement Feature Gate SDK",
+  "task_title": "PROJ-0020 — Implement Feature Gate SDK",
   "status": "in_progress", 
   "started_at": "2025-01-27T10:30:00Z",
   "last_updated": "2025-01-27T14:45:00Z",
@@ -135,7 +135,7 @@ Provide systematic state preservation and recovery for agents to prevent lost wo
   },
   
   "technical_context": {
-    "branch_name": "work/dev/HAKIM-0020-feature-gate-sdk",
+    "branch_name": "work/dev/PROJ-0020-feature-gate-sdk",
     "files_modified": [
       "src/ports/FeatureGate.ts",
       "src/adapters/FileFeatureConfigAdapter.ts"
@@ -266,7 +266,7 @@ Provide systematic state preservation and recovery for agents to prevent lost wo
 ```markdown
 🔄 **AGENT STATE CHECKPOINT** - dev.avery-kim - 2025-01-27T14:30:00Z
 
-**Task**: #25 - HAKIM-0020 Feature Gate SDK Implementation
+**Task**: #25 - PROJ-0020 Feature Gate SDK Implementation
 **Progress**: Day 2 of development, 60% complete
 **Current Focus**: Implementing ETag caching in FileFeatureConfigAdapter
 
@@ -290,7 +290,7 @@ Provide systematic state preservation and recovery for agents to prevent lost wo
 ### Context & Notes
 **Technical Context**: Using node-cache for L1, fs.stat() for ETag simulation
 **Files Modified**: src/adapters/FileFeatureConfigAdapter.ts (220 lines)
-**Branch**: work/dev/HAKIM-0020-feature-gate-sdk
+**Branch**: work/dev/PROJ-0020-feature-gate-sdk
 **Blockers**: None currently
 
 **Resume Command**: Continue implementing ETag validation in refreshConfig() method
@@ -341,6 +341,58 @@ Provide systematic state preservation and recovery for agents to prevent lost wo
 - [ ] Set up automatic cleanup scripts
 - [ ] Configure agent startup to check for unfinished work
 - [ ] Document state comment format for the team
+
+---
+
+## 🌿 Branch Tracking & Reuse (with Worktrees)
+
+### Naming & Mapping
+- Branch names: `work/{role}/{TASK-ID}-{slug}` (e.g., `work/dev/PROJ-0020-feature-gate-sdk`)
+- State file source of truth: `.agents/workspaces/{seat}/current-state.json` stores:
+  - `branch_name`, `task_issue_number`, and progress context
+- Link PRs and issues via “Fixes #N” to enable automatic closure and traceability
+
+### Reuse Rules
+- Same task continuation: Reuse the same branch across sessions and review iterations
+- Scope pivots: If the scope materially changes beyond the original intent, fork a new branch `work/{role}/{TASK-IDb}-{slug2}` and reference the prior PR for continuity
+- Handoff: Keep the branch until merged; handoff through PR and issue comments with state notes
+
+### Worktrees per Seat (concurrency-safe)
+- Seats can keep concurrent branches via git worktrees for parallel tasks/testing
+- Recommended layout: keep per-seat worktrees under `.agents/worktrees/{seat}/`
+- Example commands (non-interactive):
+```bash
+# Ensure remote branch exists locally (idempotent)
+git fetch origin work/dev/PROJ-0020-feature-gate-sdk:work/dev/PROJ-0020-feature-gate-sdk || true
+
+# Create a worktree for the branch if not present
+git worktree add -B work/dev/PROJ-0020-feature-gate-sdk .agents/worktrees/dev.avery-kim/work-dev-PROJ-0020 work/dev/PROJ-0020-feature-gate-sdk
+
+# Open the worktree path in the agent session
+# (Seat/path helper scripts may automate this step)
+```
+
+### Resume Logic
+- On startup or “resume from state”:
+  1) Read `.agents/workspaces/{seat}/current-state.json`
+  2) If `branch_name` exists locally, switch to it (or open its worktree)
+  3) If missing locally, `git fetch` the branch; recreate the worktree if needed
+  4) Confirm upstream tracking; pull/rebase to sync before continuing
+
+### Sync & Hygiene
+- Keep PR branch current with base:
+  - Prefer `git rebase origin/main` on clean histories; otherwise merge main with a labeled sync commit
+- After merge:
+  - Delete remote branch; optionally prune worktree and local branch
+  - Clear or archive the state file for the seat (`status: completed`) to prevent stale resumes
+- Abandoned branches:
+  - If PR is closed without merge, delete local/remote branches after 30 days unless explicitly preserved
+  - Create follow-up issue(s) if work should be salvaged
+
+### Safety & Coordination
+- Never rewrite shared history on a branch under active review without communication
+- For multi-seat collaboration, prefer a single PR branch and coordinate via issue comments and PR threads
+- Ensure CI is green after rebase/merge-from-main before requesting final review/merge
 
 ---
 

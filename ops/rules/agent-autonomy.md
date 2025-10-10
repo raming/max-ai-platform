@@ -82,7 +82,7 @@ Define when agents should proceed autonomously vs. escalate to humans, ensuring 
 # ✅ AUTO-APPROVE - Development workflow
 npm run test
 git commit -m "feat: add user authentication"
-gh pr create --title "HAKIM-123 User Auth"
+gh pr create --title "PROJ-123 User Auth"
 
 # ✅ AUTO-APPROVE - Project operations  
 cd /Users/user/projects/client-repo

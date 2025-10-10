@@ -31,6 +31,15 @@ if [[ -z "$GH_USER" && -n "$PROJECT_OPS_DIR" && -n "$SEAT" && -f "$PROJECT_OPS_D
   fi
 fi
 
+# Session identity header (appears first to anchor identity and behavior)
+printf '=== Session Identity Header ===\n'
+echo "ROLE=$ROLE"
+echo "SEAT=${SEAT:-<unset>}"
+printf '\nAt session start, always announce: "I am the %s agent (%s)."\n' "$ROLE" "${SEAT:-unset}"
+printf 'If the user asks "who are you?", reply with your role and seat exactly.\n'
+printf 'Do NOT change role or seat unless an explicit SWITCH_SEAT instruction is provided.\n'
+printf '%s\n' "---"
+
 # Canonical role header
 cat "$role_path"
 echo
@@ -40,6 +49,29 @@ if [[ -n "$SEAT" || -n "$GH_USER" ]]; then
   printf '\n=== Identity (Session) ===\n'
   echo "Seat: ${SEAT:-<unset>}"
   echo "GitHub user: ${GH_USER:-<unset>}"
+  echo "Identity discipline: self-announce at start; respond to who-are-you; never switch seats implicitly."
+fi
+
+# Team coordination information
+if [[ -n "$PROJECT_OPS_DIR" && -f "$PROJECT_OPS_DIR/.agents/rules/agents.yaml" ]]; then
+  printf '\n=== Team Coordination ===\n'
+  echo "Available team members for task assignment and coordination:"
+  if command -v yq >/dev/null 2>&1; then
+    # List all seats except current one
+    yq -r '.seats | keys[]' "$PROJECT_OPS_DIR/.agents/rules/agents.yaml" 2>/dev/null | grep -v "${SEAT:-}" | while read -r seat; do
+      name=$(yq -r ".seats[\"$seat\"].name" "$PROJECT_OPS_DIR/.agents/rules/agents.yaml" 2>/dev/null)
+      github=$(yq -r ".seats[\"$seat\"].github" "$PROJECT_OPS_DIR/.agents/rules/agents.yaml" 2>/dev/null)
+      role=$(echo "$seat" | cut -d. -f1)
+      echo "- $seat: $name (@$github) - Role: $role"
+    done
+  else
+    echo "  (Install yq to see team member details)"
+  fi
+  echo ""
+  echo "Use these seat names when:"
+  echo "- Assigning issues: @seat.name"
+  echo "- Creating handoffs: TO_SEAT=seat.name"
+  echo "- Mentioning in PRs/issues: @github-username"
 fi
 
 # Canonical common rules
@@ -57,6 +89,21 @@ cat "$ROOT_DIR/rules/tasks-and-concurrency.md"
 
 printf '\n=== Agent Startup (Canonical) ===\n'
 cat "$ROOT_DIR/rules/agent-startup.md"
+
+printf '\n=== Operational Commands ===\n'
+printf 'ROLE=%s SEAT=%s PROJECT_OPS_DIR=%s $HOME/repos/ops-template/scripts/reload-seat.sh\n' "$ROLE" "${SEAT:-<seat>}" "$PROJECT_OPS_DIR"
+printf 'PROJECT_OPS_DIR=%s SEAT=%s $HOME/repos/ops-template/scripts/agent-whoami.sh\n' "$PROJECT_OPS_DIR" "${SEAT:-<seat>}"
+printf 'PROJECT_OPS_DIR=%s SEAT=%s $HOME/repos/ops-template/scripts/list-issues.sh\n' "$PROJECT_OPS_DIR" "${SEAT:-<seat>}"
+printf 'PROJECT_OPS_DIR=%s SEAT=%s $HOME/repos/ops-template/scripts/auto-next.sh\n' "$PROJECT_OPS_DIR" "${SEAT:-<seat>}"
+printf 'FROM_SEAT=%s TO_SEAT=<to.seat> ISSUE=<id> PROJECT_OPS_DIR=%s $HOME/repos/ops-template/scripts/agent-handoff.sh\n' "${SEAT:-<seat>}" "$PROJECT_OPS_DIR"
+printf 'SEAT=%s ISSUE=<id> PROJECT_OPS_DIR=%s $HOME/repos/ops-template/scripts/resume-from-handoff.sh\n' "${SEAT:-<seat>}" "$PROJECT_OPS_DIR"
+printf 'git fetch origin && git rebase origin/main   # sync work branch with latest main\n'
+
+printf '\n=== Branching & Release Policy (Canonical) ===\n'
+cat "$ROOT_DIR/rules/branching-release.md"
+
+printf '\n=== Agent Autonomy (Canonical) ===\n'
+cat "$ROOT_DIR/rules/agent-autonomy.md"
 
 printf '\n=== Multi-Agent Code Review (Canonical) ===\n'
 cat "$ROOT_DIR/rules/agent-code-review.md"

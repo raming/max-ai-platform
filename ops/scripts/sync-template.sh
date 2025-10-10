@@ -38,6 +38,7 @@ for ((i=0; i<count; i++)); do
 
   INCLUDE_LIST=($(yq -r ".projects[$i].sync.include[]" "$REGISTRY"))
   EXCLUDE_LIST=($(yq -r ".projects[$i].sync.exclude[]" "$REGISTRY"))
+  IS_OPS_MAIN=$(yq -r ".projects[$i].is_ops_main // false" "$REGISTRY")
 
   RSYNC_ARGS=("-a" "--delete")
   if $QUIET; then RSYNC_ARGS+=("--quiet"); fi
@@ -45,11 +46,52 @@ for ((i=0; i<count; i++)); do
 
   for inc in "${INCLUDE_LIST[@]}"; do
     SRC_PATH="$ROOT_DIR/$inc"
-    DEST_PATH="$DEST_EXPANDED/docs/ops-template/${inc%/**}"
-    mkdir -p "$DEST_PATH"
+    
+    # Determine destination path based on ops location
+    if [[ -d "$DEST_EXPANDED/.agents" ]]; then
+      # Ops is in project root
+      DEST_PATH="$DEST_EXPANDED/${inc%/**}"
+    else
+      # Ops is in subfolder
+      DEST_PATH="$DEST_EXPANDED/docs/ops-template/${inc%/**}"
+    fi
+    
+    # Only create directory if inc is a directory (ends with /)
+    if [[ "$inc" == */ ]]; then
+      mkdir -p "$DEST_PATH"
+    else
+      # For files, ensure destination is not a directory
+      if [[ -d "$DEST_PATH" ]]; then
+        rm -rf "$DEST_PATH"
+      fi
+    fi
+    
+    # Special handling for .github/prompts based on project type
+    if [[ "$inc" == ".github/prompts/" ]]; then
+      if [[ "$IS_OPS_MAIN" == "true" ]]; then
+        # Main ops repo gets all prompts
+        if ! $QUIET; then echo "   Sync: $inc -> $DEST_PATH (all prompts - main ops repo)"; fi
+      else
+        # Other repos get only TeamLead and ReleaseManager prompts
+        if ! $QUIET; then echo "   Sync: $inc -> $DEST_PATH (selective prompts - project repo)"; fi
+        if $WRITE; then
+          # Create the destination and sync only specific prompts
+          mkdir -p "$DEST_PATH"
+          rsync "${RSYNC_ARGS[@]}" --include="TeamLead.prompt.md" --include="ReleaseManager.prompt.md" --exclude="*" "$SRC_PATH" "$DEST_PATH/"
+        fi
+        continue
+      fi
+    fi
+    
     if ! $QUIET; then echo "   Sync: $inc -> $DEST_PATH"; fi
     if $WRITE; then
-      rsync "${RSYNC_ARGS[@]}" "$SRC_PATH" "$DEST_PATH/"
+      if [[ "$inc" == */ ]]; then
+        # Directory sync
+        rsync "${RSYNC_ARGS[@]}" "$SRC_PATH" "$DEST_PATH/"
+      else
+        # File sync
+        rsync "${RSYNC_ARGS[@]}" "$SRC_PATH" "$DEST_PATH"
+      fi
     fi
   done
   if ! $WRITE && ! $QUIET; then

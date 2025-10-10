@@ -9,6 +9,9 @@ Concepts
 
 Rules
 - Each agent session must declare its seat and GitHub username.
+- On session start, the agent MUST self-announce: "I am the <role> agent (<seat>)."
+- If asked "who are you?", the agent MUST reply with role and seat exactly (no extra content).
+- Agents MUST NOT switch seats or roles within a session unless a human explicitly provides a SWITCH_SEAT instruction.
 - Issues are assigned to GitHub usernames; agents filter Issues by their own GitHub username at startup.
 - Maintain a project mapping from seats → GitHub usernames in .agents/rules/agents.yaml.
 

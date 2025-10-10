@@ -20,9 +20,17 @@ Agent task continuity
   - tracker/tasks/ — human-owned tasks
 - States: todo → in-progress → needs-review → approved → done
 
-Assignment routing
-- If GH_USER is set for the seat: filter issues by assignee: GH_USER.
-- If GH_USER is not set: filter issues by label: seat:<seat> (label-based routing).
+Assignment routing (default seat-label based)
+- DEFAULT: filter issues by label: seat:<seat> (label-based routing) and exclude blocked items by default.
+- Team Lead special-case: additionally exclude coding tasks (label: type:code). Team Leads must not write code; they triage/plan/spec and hand off implementation to Dev seats.
+- OPTIONAL: if your project maps seats to GH users and you prefer assignee-based routing, you may opt-in to assignee filtering.
+- Priority sorting: use label prefix priority: (e.g., priority:P0, priority:P1, priority:P2). Sort by priority ascending (P0 highest), then updatedAt descending.
+- Suggested filters: state:open, labels: seat:<seat> [-label:blocked] [status:ready], limit: 50.
+
+Pronoun semantics for commands
+- "your" refers to the agent seat (the AI instance). Example: "show your issues" means list issues assigned to the seat’s mapped GitHub user, NOT @me.
+- "my" refers to the human user. Avoid using @me in automation; resolve assignee via the seat → GitHub mapping from .agents/rules/agents.yaml.
+- If seat mapping is missing, ask for SEAT or GH_USER instead of guessing.
 
 Multi-agent concurrency
 - Separate tabs/sessions per agent; all coordination via tasks (assignment/status/comments).
@@ -34,6 +42,11 @@ Startup routine
 - **AUTO-EXECUTE**: Query GitHub Issues and begin work without waiting for human requests
 - **CONTINUOUS**: Follow task-completion-workflows.md for automated handoffs
 
+36a|Progress comments etiquette
+36b|- Do not post trivial "picked up" or "starting now" comments.
+36c|- Post concise, meaningful updates only when you complete a sub-task, make a decision, have a blocker/question, or hand off.
+36d|- Link artifacts and PRs; avoid noise.
+36e|
 Batch processing
 - Default batch size: work on up to 5 open issues assigned to your seat at a time (by label seat:<seat> or assignee). When you finish one, immediately query GitHub Issues for the next ready task. If you have fewer than 5, poll periodically (e.g., every 15–30 minutes) for new assigned tasks.
 

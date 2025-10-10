@@ -22,23 +22,18 @@ if [[ -f "$AGENTS_FILE" ]]; then
   exit 0
 fi
 
-# Write template with default one-per-role seats (GH usernames as placeholders)
-cat > "$AGENTS_FILE" <<'YAML'
-# agents.yaml — per-project agent identity mapping (seats -> GitHub users)
-# Fill in real GitHub usernames for each seat. You can add more seats later with add-seat.sh.
-seats:
-  architect.default:
-    github: architect-gh
-  team_lead.default:
-    github: teamlead-gh
-  dev.default:
-    github: dev-gh
-  qa.default:
-    github: qa-gh
-  release_manager.default:
-    github: release-gh
-  sre.default:
-    github: sre-gh
-YAML
+# Seed from canonical template with example named seats; maintainers should customize immediately.
+ROOT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
+TEMPLATE_FILE="$ROOT_DIR/templates/agents.yaml"
+if [[ ! -f "$TEMPLATE_FILE" ]]; then
+  echo "Missing template: $TEMPLATE_FILE" >&2
+  exit 1
+fi
 
-echo "Initialized $AGENTS_FILE"
+{
+  echo "# agents.yaml — per-project agent identity mapping (seats -> GitHub users)"
+  echo "# Customize seat slugs and GitHub usernames. Add more seats with add-seat.sh or edit directly."
+  cat "$TEMPLATE_FILE"
+} > "$AGENTS_FILE"
+
+echo "Initialized $AGENTS_FILE from templates/agents.yaml"

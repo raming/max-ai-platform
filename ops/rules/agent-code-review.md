@@ -55,6 +55,17 @@ Labels & triage
 - priority:{P0,P1,P2,P3}: P0 = urgent; P3 = lowest
 - sprint:{sprint-YYYY-WW} or sprint:{sprint-N}
 - Agents MUST apply priority and sprint labels to enable human triage.
+- Review routing (authoritative, on Issue and PR):
+  - action:qa-review or action:qa-test → seat:qa.<seat>, status:needs-qa
+  - action:code-review → seat:team_lead.<seat> (or peer dev), status:needs-review
+  - action:human-merge → status:awaiting-human + help:<human-label> (e.g., help:ray-gerami); agents do not proceed until cleared
+
+Handoff helper
+- Use pr-handoff.sh to update the Issue and PR after opening the PR:
+```
+REPO=<org>/<repo> ISSUE=<N> PR=<PR#> NEXT_SEAT=<seat:...> NEXT_STATUS=<status:...> ACTIONS="action:..." \
+$HOME/repos/ops-template/scripts/pr-handoff.sh
+```
 
 Queries (human triage examples)
 - High priority first:
@@ -66,3 +77,43 @@ Constraints
 - No self-approval: author seat cannot act as reviewer.
 - Escalate to human when Coder and Reviewer disagree after 2 iterations.
 - All discussion and decisions must be recorded on the PR.
+
+## PR Readiness & Merge Etiquette
+
+### PR Readiness Checklist (author)
+- CI: All required checks are green (lint, type, unit/integration, contracts, basic SAST)
+- Tests: Added/updated; coverage not reduced (≥95% for code PRs unless explicitly waived)
+- **Architecture**: Implementation follows layer separation (UI/presentation, business logic, data access); no mixing of concerns
+- Scope: Single-purpose PR, small diff size, no unrelated changes or noisy formatting
+- Security: Address high/critical SAST or dependency alerts or document deferrals
+- Docs: README/configs/spec/ADR updated; migration notes included if needed
+- Labels: priority:{P0–P3}, sprint:{…}, area:{…}; action:qa-review or action:qa-test set for handoff
+- Links: Issue reference (Fixes #N) and spec/ADR links
+- Title: Clear, action-oriented; use Conventional Commit style when appropriate (e.g., feat:, fix:, chore:)
+
+### Review Hygiene (reviewer and author)
+- Keep feedback actionable and scoped to the PR intent
+- Resolve discussions explicitly; re-request review after updates
+- Avoid force-push that invalidates review context; if needed, summarize changes
+- Escalate after 2 back-and-forth iterations if fundamental disagreement persists
+
+### Merge Strategy
+- Default: Squash merge with a clean summary and co-authors when applicable
+- History sensitivity:
+  - Use squash for most feature/fix PRs
+  - Consider merge-commit for large/stacked changes where commit history adds value
+- Preconditions:
+  - Green CI, required approvals from a different seat (no self-approval)
+  - Branch in sync with base (rebase or merge base if behind/conflicts)
+- Rebase policy: Prefer rebase onto main for linear history; if risky, merge base into PR with a clear “sync with main” commit
+- Self-merge: Disallowed for authors; must be completed by a different seat or designated Release Manager
+
+### Post-Merge Actions
+- Auto-close issues with “Fixes #N”; verify linked issues closed
+- Delete the remote branch after merge (local optional)
+- Update CHANGELOG/release notes if the repo requires them; tag if part of a release cut
+- Backports: Apply backport labels or create follow-up issues as needed
+
+### PR Size Guidance
+- Target < ~400 LoC changed (excluding vendored/generated); split large PRs when feasible
+- For stacked changes, clearly link parent/child PRs and note dependencies in the description
