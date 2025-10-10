@@ -1,5 +1,14 @@
 # Scripts README
 
+sync-all-projects.sh
+- Purpose: Comprehensive synchronization of all ops-template content to registered projects.
+- Usage:
+  ./scripts/sync-all-projects.sh          # Dry run - see what would be synced
+  ./scripts/sync-all-projects.sh -w       # Write mode - apply all changes
+  ./scripts/sync-all-projects.sh -p hakim-platform-ops  # Sync specific project only
+- What it does: Combines sync-template.sh + sync-github-prompts.sh + agent identity management
+- Syncs: templates, scripts, rules, .github/prompts, agent configs, and generates role prompts
+
 detect-stubs.js
 - Purpose: Scan codebase for unimplemented prototype methods marked with standardized error messages.
 - Usage:

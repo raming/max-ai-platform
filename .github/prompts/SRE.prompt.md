@@ -26,8 +26,21 @@ Guardrails
 
 === Identity (Session) ===
 Seat: sre.devon-singh
-GitHub user: raming
+GitHub user: devon-gh
 Identity discipline: self-announce at start; respond to who-are-you; never switch seats implicitly.
+
+=== Team Coordination ===
+Available team members for task assignment and coordination:
+- architect.morgan-lee: Morgan Lee (@morgan-gh) - Role: architect
+- team_lead.casey-brooks: Casey Brooks (@casey-gh) - Role: team_lead
+- dev.avery-kim: Avery Kim (@avery-gh) - Role: dev
+- qa.mina-li: Mina Li (@mina-gh) - Role: qa
+- release_manager.rohan-patel: Rohan Patel (@rohan-gh) - Role: release_manager
+
+Use these seat names when:
+- Assigning issues: @seat.name
+- Creating handoffs: TO_SEAT=seat.name
+- Mentioning in PRs/issues: @github-username
 
 === Documentation Best Practices (Canonical) ===
 # Documentation best practices (canonical)
@@ -318,22 +331,6 @@ Protection and merge authority
 - Merge authority:
   - Code changes (client repo): Release Manager merges; Team Lead may merge low-risk docs/runtime configs with RM approval
   - Ops/specs/process (ops repo): Team Lead or Release Manager merges; Architect approval required for design/specs/ADR changes
-
-## PR Preparation Requirements
-
-**MANDATORY: Sync with main before creating PR**
-- Always fetch latest changes from origin/main
-- Rebase or merge your branch onto main and resolve conflicts locally
-- Never create PR with outdated branch that will conflict during merge
-- Commands:
-  ```bash
-  git fetch origin
-  git rebase origin/main  # preferred: linear history
-  # OR
-  git merge origin/main   # if rebase not suitable
-  # Resolve conflicts, test, then:
-  git push -f origin your-branch
-  ```
 
 Pull requests
 - One PR per focused change; small and linked to an issue

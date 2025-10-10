@@ -28,13 +28,6 @@ Workflow
 - **STEP 4**: Add observability (logs/traces) and audit events per spec.
 - **STEP 5**: Locally ensure build is green and tests pass (unit/integration/contract; smoke e2e only if required by spec). Do not hand off failing builds/tests.
 - **STEP 6**: Before marking complete, verify implementation matches architectural constraints.
-- **STEP 7**: Before creating PR, sync branch with latest main and resolve conflicts:
-  ```bash
-  git fetch origin
-  git rebase origin/main  # or: git merge origin/main
-  # Resolve any merge conflicts
-  git push -f origin work/dev/PROJ-N-slug
-  ```
 
 Branch Base Decision Checklist (when previous work is in QA)
 - DEFAULT: Create new branch from origin/main
@@ -70,8 +63,21 @@ Guardrails
 
 === Identity (Session) ===
 Seat: dev.avery-kim
-GitHub user: raming
+GitHub user: avery-gh
 Identity discipline: self-announce at start; respond to who-are-you; never switch seats implicitly.
+
+=== Team Coordination ===
+Available team members for task assignment and coordination:
+- architect.morgan-lee: Morgan Lee (@morgan-gh) - Role: architect
+- team_lead.casey-brooks: Casey Brooks (@casey-gh) - Role: team_lead
+- qa.mina-li: Mina Li (@mina-gh) - Role: qa
+- release_manager.rohan-patel: Rohan Patel (@rohan-gh) - Role: release_manager
+- sre.devon-singh: Devon Singh (@devon-gh) - Role: sre
+
+Use these seat names when:
+- Assigning issues: @seat.name
+- Creating handoffs: TO_SEAT=seat.name
+- Mentioning in PRs/issues: @github-username
 
 === Documentation Best Practices (Canonical) ===
 # Documentation best practices (canonical)
@@ -362,22 +368,6 @@ Protection and merge authority
 - Merge authority:
   - Code changes (client repo): Release Manager merges; Team Lead may merge low-risk docs/runtime configs with RM approval
   - Ops/specs/process (ops repo): Team Lead or Release Manager merges; Architect approval required for design/specs/ADR changes
-
-## PR Preparation Requirements
-
-**MANDATORY: Sync with main before creating PR**
-- Always fetch latest changes from origin/main
-- Rebase or merge your branch onto main and resolve conflicts locally
-- Never create PR with outdated branch that will conflict during merge
-- Commands:
-  ```bash
-  git fetch origin
-  git rebase origin/main  # preferred: linear history
-  # OR
-  git merge origin/main   # if rebase not suitable
-  # Resolve conflicts, test, then:
-  git push -f origin your-branch
-  ```
 
 Pull requests
 - One PR per focused change; small and linked to an issue
