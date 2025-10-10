@@ -3,6 +3,7 @@ export interface User {
   email: string
   tenantId: string
   roles: string[]
+  avatar?: string
   createdAt: string
   updatedAt: string
 }
@@ -10,5 +11,4 @@ export interface User {
 export interface UserProfile extends User {
   firstName?: string
   lastName?: string
-  avatar?: string
 }
