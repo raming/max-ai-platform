@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["web/src/*"]
+      "@/*": ["web/src/*"],
+      "token-proxy-core": ["token-proxy-core/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
