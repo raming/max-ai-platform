@@ -1,49 +1,53 @@
 {
-  "name": "web-demo",
-  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "web/my-app/apps/web",
-  "projectType": "application",
-  "tags": ["demo"],
-  "targets": {
-    "dev": {
-      "executor": "@nx/next:server",
-      "defaultConfiguration": "development",
-      "options": {
-        "buildTarget": "web-demo:build",
-        "dev": true
-      },
-      "configurations": {
-        "development": {
-          "buildTarget": "web-demo:build:development",
-          "hmr": true
-        },
-        "production": {
-          "buildTarget": "web-demo:build:production",
-          "dev": false
-        }
-      }
-    },
-    "build": {
-      "executor": "@nx/next:build",
-      "outputs": ["{projectRoot}/.next"],
-      "defaultConfiguration": "production",
-      "options": {
-        "outputPath": "{projectRoot}/.next"
-      },
-      "configurations": {
-        "development": {
-          "outputPath": "web/my-app/apps/web"
-        },
-        "production": {
-          "outputPath": "web/my-app/apps/web/.next",
-          "fileReplacements": [
-            {
-              "replace": "web/my-app/apps/web/environments/environment.ts",
-              "with": "web/my-app/apps/web/environments/environment.prod.ts"
+    "name": "web-demo",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "web/my-app/apps/web",
+    "projectType": "application",
+    "tags": [
+        "demo"
+    ],
+    "targets": {
+        "dev": {
+            "executor": "@nx/next:server",
+            "defaultConfiguration": "development",
+            "options": {
+                "buildTarget": "web-demo:build",
+                "dev": true
+            },
+            "configurations": {
+                "development": {
+                    "buildTarget": "web-demo:build:development",
+                    "hmr": true
+                },
+                "production": {
+                    "buildTarget": "web-demo:build:production",
+                    "dev": false
+                }
             }
-          ]
+        },
+        "build": {
+            "executor": "@nx/next:build",
+            "outputs": [
+                "{projectRoot}/.next"
+            ],
+            "defaultConfiguration": "production",
+            "options": {
+                "outputPath": "{projectRoot}/.next"
+            },
+            "configurations": {
+                "development": {
+                    "outputPath": "web/my-app/apps/web"
+                },
+                "production": {
+                    "outputPath": "web/my-app/apps/web/.next",
+                    "fileReplacements": [
+                        {
+                            "replace": "web/my-app/apps/web/environments/environment.ts",
+                            "with": "web/my-app/apps/web/environments/environment.prod.ts"
+                        }
+                    ]
+                }
+            }
         }
-      }
     }
-  }
 }
