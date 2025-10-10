@@ -90,6 +90,8 @@
     "@tailwindcss/typography": "^0.5.19",
     "@tanstack/react-query": "^5.90.2",
     "@tanstack/react-query-devtools": "^5.90.2",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/user-event": "^14.6.1",
     "ajv": "^8.17.1",
     "autoprefixer": "^10.4.21",
     "axios": "^1.6.0",
