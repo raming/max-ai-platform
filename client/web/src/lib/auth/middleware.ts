@@ -51,7 +51,7 @@ export class AuthMiddleware {
     response.headers.set('x-subject-id', result.subject!.id);
     response.headers.set('x-tenant-id', result.subject!.tenantId);
     // Propagate correlation id if available via logger
-    const corr = this.logger?.correlationIdValue;
+    const corr = this.logger?.getCorrelationId();
     if (corr) response.headers.set('x-correlation-id', corr);
 
     return response;

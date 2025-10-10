@@ -52,6 +52,28 @@ if [[ -n "$SEAT" || -n "$GH_USER" ]]; then
   echo "Identity discipline: self-announce at start; respond to who-are-you; never switch seats implicitly."
 fi
 
+# Team coordination information
+if [[ -n "$PROJECT_OPS_DIR" && -f "$PROJECT_OPS_DIR/.agents/rules/agents.yaml" ]]; then
+  printf '\n=== Team Coordination ===\n'
+  echo "Available team members for task assignment and coordination:"
+  if command -v yq >/dev/null 2>&1; then
+    # List all seats except current one
+    yq -r '.seats | keys[]' "$PROJECT_OPS_DIR/.agents/rules/agents.yaml" 2>/dev/null | grep -v "${SEAT:-}" | while read -r seat; do
+      name=$(yq -r ".seats[\"$seat\"].name" "$PROJECT_OPS_DIR/.agents/rules/agents.yaml" 2>/dev/null)
+      github=$(yq -r ".seats[\"$seat\"].github" "$PROJECT_OPS_DIR/.agents/rules/agents.yaml" 2>/dev/null)
+      role=$(echo "$seat" | cut -d. -f1)
+      echo "- $seat: $name (@$github) - Role: $role"
+    done
+  else
+    echo "  (Install yq to see team member details)"
+  fi
+  echo ""
+  echo "Use these seat names when:"
+  echo "- Assigning issues: @seat.name"
+  echo "- Creating handoffs: TO_SEAT=seat.name"
+  echo "- Mentioning in PRs/issues: @github-username"
+fi
+
 # Canonical common rules
 printf '\n=== Documentation Best Practices (Canonical) ===\n'
 cat "$ROOT_DIR/rules/documentation.md"

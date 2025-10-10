@@ -1,24 +1,21 @@
 # agents.yaml — template
 
 seats:
-  team_lead.casey-brooks:
-    name: Casey Brooks
-    github: casey-gh
   architect.morgan-lee:
     name: Morgan Lee
     github: morgan-gh
-  dev.alex-chen:
-    name: Alex Chen
-    github: alex-gh
-  dev.samir-khan:
-    name: Samir Khan
-    github: samir-gh
+  team_lead.casey-brooks:
+    name: Casey Brooks
+    github: casey-gh
+  dev.avery-kim:
+    name: Avery Kim
+    github: avery-gh
   qa.mina-li:
     name: Mina Li
     github: mina-gh
   release_manager.rohan-patel:
     name: Rohan Patel
-    github: release-gh
+    github: rohan-gh
   sre.devon-singh:
     name: Devon Singh
-    github: sre-gh
+    github: devon-gh

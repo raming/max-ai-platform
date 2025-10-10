@@ -1,14 +1,11 @@
+'use client';
+
 import { Inter } from 'next/font/google';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import './global.css';
 
 const inter = Inter({ subsets: ['latin'] });
-
-export const metadata = {
-  title: 'MaxAI Platform',
-  description: 'AI-Employee services platform',
-};
 
 export default function RootLayout({
   children,
