@@ -1,14 +1,38 @@
 # UI Framework Implementation Specification
 
 ## Overview
-This specification details the implementation of the UI framework stack for the MaxAI Platform portal (apps/portal-web). The stack must support multi-tenant, RBAC-enforced client experiences with high performance, accessibility, and security compliance.
+This specification details the implementation of a **Hybrid UI Framework** for the MaxAI Platform portal, combining shadcn/ui accessibility and maintainability with Metronic-inspired enterprise dashboard patterns. The implementation follows a **Placeholder-First Development Strategy** to provide early structural visibility while maintaining clean separation of UI from data/backend concerns.
+
+The framework supports multi-tenant, RBAC-enforced client experiences with high performance, accessibility, and security compliance. Components remain backend-agnostic through props-based data flow, enabling seamless integration with ports/adapters architecture.
 
 ## Technology Stack
-- **Next.js 14** (App Router)
-- **React 18** (Server Components)
-- **shadcn/ui** + **Tailwind CSS**
-- **Zustand** (client state)
-- **TanStack Query** (server state)
+- **Framework**: Next.js 14 with App Router
+- **React Version**: React 18 with Server Components
+- **UI Components**: shadcn/ui + Tailwind CSS (Hybrid with Metronic Inspiration)
+- **Client State**: Zustand
+- **Server State**: TanStack Query
+- **Rich Text Editor**: Quill.js (NX Library: libs/ui/editor)
+
+## Hybrid Approach Principles
+
+### shadcn/ui Foundation
+- Accessibility-first components (WCAG 2.1 AA compliant)
+- Consistent design system with easy theming
+- Utility-first CSS for maintainability
+- TypeScript-first development
+
+### Metronic-Inspired Patterns
+- Enterprise dashboard layouts with multi-level navigation
+- Professional stats cards and data visualization
+- Comprehensive form patterns for business workflows
+- Responsive grid systems for complex dashboards
+- Breadcrumb navigation and contextual actions
+
+### Placeholder-First Strategy
+- **Mock Data**: Clearly marked placeholder content for early UX validation
+- **Skeleton Components**: Loading states and empty states for all major sections
+- **Type Contracts**: TypeScript interfaces defining expected data structures
+- **Progressive Enhancement**: Placeholders easily replaceable with real functionality
 
 ## Installation and Setup
 
@@ -147,6 +171,93 @@ client/web/
 ├── postcss.config.js
 └── components.json          # shadcn/ui config
 ```
+
+## Application Skeleton & Placeholders
+
+### Core Layout Architecture
+The application implements a **Metronic-inspired enterprise dashboard layout** with the following structure:
+
+```
+┌─────────────────────────────────────────────────┐
+│ TopBar: Breadcrumbs | User Menu | Notifications │
+├─────────────────┬─────────────────────────────────┤
+│ Sidebar         │ Main Content Area              │
+│ • Dashboard     │ ┌─────────────────────────────┐ │
+│ • Users         │ │ Page Header: Title + Actions │ │
+│ • Billing       │ ├─────────────────────────────┤ │
+│ • Settings      │ │ Content Grid/Table          │ │
+│ • Profile       │ │ • Stats Cards               │ │
+│                 │ │ • Data Tables               │ │
+│                 │ │ • Forms                     │ │
+│                 │ └─────────────────────────────┘ │
+└─────────────────┴─────────────────────────────────┘
+```
+
+### Placeholder Pages & Components
+
+#### Authentication Pages
+- **Sign In Page**: Email/password form with validation, "Remember me", "Forgot password" links
+- **Sign Up Page**: Registration form with company details, plan selection
+- **Password Reset**: Email verification and new password setup
+
+#### Dashboard Pages
+- **Main Dashboard**: Stats overview, recent activity, quick actions
+- **Analytics Dashboard**: Charts and metrics with date range filters
+- **User Dashboard**: Personalized view with relevant metrics
+
+#### User Management
+- **User List**: Data table with search, filters, bulk actions
+- **User Profile**: Account details, roles, permissions, activity history
+- **User Settings**: Preferences, notifications, security settings
+
+#### Billing & Subscriptions
+- **Plans Overview**: Available plans with feature comparisons
+- **Current Subscription**: Usage metrics, billing history, payment methods
+- **Invoices**: Invoice list with download, payment status
+- **Payment Methods**: Credit cards, billing address management
+
+#### Settings & Configuration
+- **Application Settings**: Global preferences and configurations
+- **Team Settings**: Member management and permissions
+- **Integration Settings**: API keys, webhook configurations
+
+### Mock Data Strategy
+
+All placeholder implementations use clearly marked mock data:
+
+```typescript
+// Example mock data structure
+export const mockUsers = [
+  {
+    id: '1',
+    name: 'John Doe',
+    email: 'john@example.com',
+    role: 'Admin',
+    status: 'Active',
+    lastLogin: '2025-10-10T10:00:00Z',
+    // MOCK: This data is for UI development only
+    _isMock: true
+  }
+]
+```
+
+### Component Implementation Patterns
+
+#### Layout Components
+- **Sidebar**: Collapsible navigation with active state indicators
+- **TopBar**: Breadcrumb navigation, user menu, global search
+- **PageHeader**: Title, description, primary/secondary actions
+- **ContentGrid**: Responsive grid for stats cards and widgets
+
+#### Data Display Components
+- **StatsCard**: Metric display with trend indicators and icons
+- **DataTable**: Sortable, filterable tables with pagination
+- **Chart**: Various chart types for analytics and metrics
+
+#### Form Components
+- **FormField**: Consistent form field styling with validation
+- **FormSection**: Grouped form fields with section headers
+- **ActionButtons**: Primary/secondary button patterns
 
 ### Key Files
 
@@ -480,3 +591,118 @@ export function Header() {
 - [ ] Performance benchmarks met (<3s initial load)
 - [ ] ESLint clean with 0 warnings
 - [ ] Unit test coverage >80% for UI components
+
+## Quill.js Rich Text Editor Integration
+
+### NX Library Structure
+Create dedicated NX library for rich text editing capabilities:
+
+```
+libs/ui/editor/
+├── src/
+│   ├── lib/
+│   │   ├── quill-editor.tsx       # Main editor component
+│   │   ├── quill-toolbar.tsx      # Toolbar configuration
+│   │   ├── quill-theme.ts         # Tailwind theme integration
+│   │   ├── types.ts               # TypeScript interfaces
+│   │   └── utils.ts               # Editor utilities
+│   ├── index.ts                   # Public API exports
+│   └── test-setup.ts              # Test configuration
+├── project.json                   # NX project configuration
+├── tsconfig.json                  # TypeScript configuration
+└── jest.config.ts                 # Test configuration
+```
+
+### Component API
+```typescript
+interface QuillEditorProps {
+  value: string
+  onChange: (value: string) => void
+  placeholder?: string
+  readOnly?: boolean
+  theme?: 'snow' | 'bubble'
+  formats?: string[]
+  modules?: Record<string, any>
+  className?: string
+}
+
+export function QuillEditor(props: QuillEditorProps) {
+  // Implementation with shadcn/ui styling
+}
+```
+
+### Features
+- **TypeScript First**: Full type safety for content and configuration
+- **Theme Integration**: Seamless integration with Tailwind/shadcn design system
+- **Content Validation**: XSS protection and content sanitization
+- **Export Capabilities**: HTML, Markdown, JSON, and plain text export
+- **Accessibility**: WCAG 2.1 AA compliant with keyboard navigation
+- **Performance**: Lazy loading and optimized bundle size
+
+### Usage Examples
+```typescript
+// Basic usage
+<QuillEditor
+  value={content}
+  onChange={setContent}
+  placeholder="Enter your content here..."
+/>
+
+// Advanced configuration
+<QuillEditor
+  value={content}
+  onChange={setContent}
+  modules={{
+    toolbar: [
+      ['bold', 'italic', 'underline'],
+      ['link', 'image'],
+      [{ list: 'ordered'}, { list: 'bullet' }]
+    ]
+  }}
+  formats={['bold', 'italic', 'underline', 'link', 'image', 'list']}
+/>
+```
+
+### Security Considerations
+- Content sanitization using DOMPurify
+- XSS protection for dynamic content
+- Input validation and size limits
+- Audit logging for content changes
+
+### Testing Strategy
+- Unit tests for component logic and utilities
+- Integration tests for editor functionality
+- E2E tests for content editing workflows
+- Accessibility tests for screen reader support
+
+## NX Library Architecture
+
+### Library Organization
+```
+libs/
+├── ui/
+│   ├── components/     # Core UI components (buttons, forms, etc.)
+│   ├── editor/         # Quill.js rich text editor
+│   ├── layouts/        # Dashboard and page layouts
+│   └── icons/          # Icon components and utilities
+├── shared/
+│   ├── types/          # Common TypeScript interfaces
+│   ├── utils/          # Shared utility functions
+│   └── constants/      # Application constants
+└── feature/
+    ├── auth/           # Authentication-specific components
+    ├── billing/        # Billing and subscription components
+    └── dashboard/      # Dashboard-specific components
+```
+
+### Cross-Project Sharing
+- **NPM Publishing**: Libraries published to private NPM registry
+- **TypeScript Declarations**: Complete type definitions for all exports
+- **Documentation**: Storybook integration for component documentation
+- **Versioning**: Semantic versioning with breaking change detection
+
+### Build Configuration
+- **ESBuild**: Fast compilation for development
+- **TypeScript**: Strict type checking and declaration generation
+- **CSS**: Tailwind CSS integration with design token support
+- **Testing**: Jest with RTL and coverage reporting

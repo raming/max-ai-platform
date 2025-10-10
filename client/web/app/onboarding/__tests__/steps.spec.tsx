@@ -1,0 +1,46 @@
+import React from 'react';
+import { fireEvent, render } from '@testing-library/react';
+import ClientStep from '../client/page';
+import TemplatesStep from '../templates/page';
+import CustomizeStep from '../customize/page';
+import PlanStep from '../plan/page';
+import { useOnboardingStore } from '../store';
+
+jest.mock('next/navigation', () => ({ useRouter: () => ({ push: jest.fn() }) }));
+
+describe('onboarding steps', () => {
+  beforeEach(() => {
+    useOnboardingStore.setState({
+      clientComplete: false,
+      templateSelected: false,
+      customizeComplete: false,
+      planReady: false,
+    });
+  });
+
+  it('ClientStep marks client complete', () => {
+    const { getByText } = render(<ClientStep />);
+    fireEvent.click(getByText('Mark Complete'));
+    expect(useOnboardingStore.getState().clientComplete).toBe(true);
+  });
+
+  it('TemplatesStep marks template selected', () => {
+    const { getByLabelText } = render(<TemplatesStep />);
+    fireEvent.click(getByLabelText('select-welcome-bot'));
+    expect(useOnboardingStore.getState().templateSelected).toBe(true);
+  });
+
+  it('CustomizeStep marks customize complete', () => {
+    const { getByLabelText, getByText } = render(<CustomizeStep />);
+    fireEvent.change(getByLabelText('business-name'), { target: { value: 'Acme' } });
+    fireEvent.change(getByLabelText('greeting'), { target: { value: 'Hello!' } });
+    fireEvent.click(getByText('Save and Continue'));
+    expect(useOnboardingStore.getState().customizeComplete).toBe(true);
+  });
+
+  it('PlanStep marks plan ready', () => {
+    const { getByText } = render(<PlanStep />);
+    fireEvent.click(getByText('Mark Plan Ready'));
+    expect(useOnboardingStore.getState().planReady).toBe(true);
+  });
+});
