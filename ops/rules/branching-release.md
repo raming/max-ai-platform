@@ -6,7 +6,23 @@ Define a simple, predictable git process that works well with agents and humans,
 Branches
 - Default base: main (protected)
 - Working branches: work/{role}/{task-id}-{slug}
-  - Examples: work/dev/HAKIM-0001-order-mvp, work/architect/HAKIM-0001-iam-matrix
+- Branch sync discipline:
+  - At session start and before creating a PR, fetch latest and rebase (preferred) or fast-forward merge your work branch onto origin/main.
+  - Commands: git fetch origin && git rebase origin/main  # or: git merge --ff-only origin/main
+
+Branch base decision checklist (Dev)
+- DEFAULT: Branch from origin/main
+- Stack on previous QA-pending branch ONLY if ALL are true:
+  - The new task strictly depends on unmerged code from the previous branch (shared contracts, data shape, boundaries) that cannot be feasibly isolated or guarded behind flags
+  - Cherry-picking or re-implementing would be riskier than stacking
+  - The prior PR is not severely blocked and is expected to merge in normal order
+- Otherwise: branch from origin/main and either cherry-pick the minimal needed commits or use feature flags for isolation
+
+Stacked branch hygiene
+- Rebase the base (QA) branch onto origin/main daily, then rebase the stacked branch onto the updated base
+- In the stacked PR body, declare the dependency (e.g., "Depends on #<base-pr>") and add labels: stacked, seat:<seat>, priority:<Pn>
+- If the base PR becomes long-delayed or requires deep rework, pivot to main + cherry-pick or feature flags
+  - Examples: work/dev/PROJ-0001-order-mvp, work/architect/PROJ-0001-iam-matrix
 - Optional prefixes (when appropriate):
   - hotfix/{version-or-slug}
   - release/{version}

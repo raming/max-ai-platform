@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import { useRouter } from "next/navigation";
 import { useOnboardingStore } from "../store";
 import { TEMPLATES, TemplateInfo } from "./templates.data";

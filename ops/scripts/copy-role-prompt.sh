@@ -10,8 +10,7 @@ set -euo pipefail
 ROLE=${ROLE:-}
 PROJECT_OPS_DIR=${PROJECT_OPS_DIR:-}
 SEAT=${SEAT:-}
-SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-MERGER="$SCRIPT_DIR/merge-role-prompt.sh"
+MERGER="$HOME/repos/ops-template/scripts/merge-role-prompt.sh"
 
 if [[ -z "$ROLE" || -z "$PROJECT_OPS_DIR" || -z "$SEAT" ]]; then
   echo "Set ROLE, PROJECT_OPS_DIR, and SEAT" >&2

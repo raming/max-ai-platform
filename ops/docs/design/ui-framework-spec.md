@@ -480,3 +480,305 @@ export function Header() {
 - [ ] Performance benchmarks met (<3s initial load)
 - [ ] ESLint clean with 0 warnings
 - [ ] Unit test coverage >80% for UI components
+
+## Layer Separation and Architecture Patterns
+
+### Strict Layer Separation (MANDATORY)
+Following our canonical coding standards (ops/rules/coding-standards.md), the UI framework enforces strict separation between:
+
+#### 1. **Presentation Layer (UI Components)**
+- **Location**: `src/components/` (pure presentation components)
+- **Responsibilities**: 
+  - Rendering data passed as props
+  - User interaction handling (clicks, forms)
+  - Visual feedback and accessibility
+  - **NO business logic, validation, or API calls**
+- **Pattern**: Components receive `onAction` callbacks as props
+- **Example**:
+```tsx
+// ✅ GOOD: Pure presentation component
+interface UserCardProps {
+  user: User;
+  onEdit: (userId: string) => void;
+  onDelete: (userId: string) => void;
+}
+
+export function UserCard({ user, onEdit, onDelete }: UserCardProps) {
+  return (
+    <Card>
+      <CardHeader>
+        <CardTitle>{user.name}</CardTitle>
+        <CardDescription>{user.email}</CardDescription>
+      </CardHeader>
+      <CardContent>
+        <Button onClick={() => onEdit(user.id)}>Edit</Button>
+        <Button onClick={() => onDelete(user.id)} variant="destructive">Delete</Button>
+      </CardContent>
+    </Card>
+  );
+}
+```
+
+#### 2. **Business Logic Layer (Custom Hooks & Services)**
+- **Location**: `src/lib/hooks/` (custom hooks), `src/lib/services/` (business services)
+- **Responsibilities**:
+  - Business rules and validation
+  - Data transformation and orchestration
+  - Error handling and user feedback
+  - **NO direct UI manipulation or rendering**
+- **Pattern**: Dependency injection via React context or hook parameters
+- **Example**:
+```tsx
+// ✅ GOOD: Business logic in custom hook
+export function useUserManagement() {
+  const queryClient = useQueryClient();
+  const { mutate: updateUser, isLoading } = useMutation({
+    mutationFn: async (data: UpdateUserData) => {
+      // Business validation
+      if (!data.email?.includes('@')) {
+        throw new ValidationError('Invalid email format');
+      }
+      
+      // Call data layer
+      return await userApi.update(data);
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['users'] });
+      toast.success('User updated successfully');
+    },
+    onError: (error) => {
+      toast.error(error.message);
+    }
+  });
+
+  return { updateUser, isLoading };
+}
+```
+
+#### 3. **Data Access Layer (API & Queries)**
+- **Location**: `src/lib/queries/` (TanStack Query hooks), `src/lib/api/` (API clients)
+- **Responsibilities**:
+  - HTTP requests and response handling
+  - Caching and synchronization
+  - Authentication headers and correlation IDs
+  - **NO business logic or UI concerns**
+- **Pattern**: Repository pattern with clear interfaces
+- **Example**:
+```tsx
+// ✅ GOOD: Data access layer
+export const userApi = {
+  async getById(id: string): Promise<User> {
+    const response = await fetch(`/api/users/${id}`, {
+      headers: {
+        'x-correlation-id': generateCorrelationId(),
+        'Authorization': `Bearer ${getAuthToken()}`,
+      },
+    });
+    
+    if (!response.ok) {
+      throw new ApiError(response.status, await response.text());
+    }
+    
+    return response.json();
+  },
+
+  async update(id: string, data: Partial<User>): Promise<User> {
+    const response = await fetch(`/api/users/${id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-correlation-id': generateCorrelationId(),
+        'Authorization': `Bearer ${getAuthToken()}`,
+      },
+      body: JSON.stringify(data),
+    });
+    
+    if (!response.ok) {
+      throw new ApiError(response.status, await response.text());
+    }
+    
+    return response.json();
+  },
+};
+
+// ✅ GOOD: Query hook wrapping API
+export function useUsers() {
+  return useQuery({
+    queryKey: ['users'],
+    queryFn: async () => {
+      const users = await userApi.getAll();
+      return users; // Pure data access, no transformation
+    },
+    staleTime: 5 * 60 * 1000, // 5 minutes
+  });
+}
+```
+
+### Anti-Patterns (STRICTLY FORBIDDEN)
+
+#### ❌ BAD: Business Logic in UI Components
+```tsx
+// ❌ VIOLATION: Business logic mixed with UI
+export function UserForm() {
+  const [formData, setFormData] = useState({ name: '', email: '' });
+  
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    
+    // ❌ Business validation in UI component
+    if (!formData.email.includes('@')) {
+      alert('Invalid email'); // ❌ UI concern (alert) in business logic
+      return;
+    }
+    
+    try {
+      // ❌ Direct API call from UI component
+      const response = await fetch('/api/users', {
+        method: 'POST',
+        body: JSON.stringify(formData),
+      });
+      
+      if (response.ok) {
+        alert('User created!'); // ❌ UI feedback mixed with business logic
+      }
+    } catch (error) {
+      alert('Error creating user'); // ❌ Error handling in UI
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      {/* Form fields */}
+    </form>
+  );
+}
+```
+
+#### ❌ BAD: Data Access in Business Logic
+```tsx
+// ❌ VIOLATION: Data access mixed with business logic
+export function useUserManagement() {
+  const createUser = async (data: CreateUserData) => {
+    // ❌ Business validation mixed with data access
+    if (!data.email?.includes('@')) {
+      throw new Error('Invalid email');
+    }
+    
+    // ❌ Direct HTTP call in business logic
+    const response = await fetch('/api/users', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    });
+    
+    if (!response.ok) {
+      throw new Error('Failed to create user');
+    }
+    
+    return response.json();
+  };
+
+  return { createUser };
+}
+```
+
+### Component Composition Pattern
+
+#### Page Components (Container Pattern)
+```tsx
+// ✅ GOOD: Page component orchestrates layers
+export default function UsersPage() {
+  const { users, isLoading, error } = useUsers(); // Data layer
+  const { createUser, updateUser, deleteUser } = useUserManagement(); // Business layer
+  
+  if (isLoading) return <LoadingSpinner />;
+  if (error) return <ErrorMessage error={error} />;
+  
+  return (
+    <div>
+      <UserList 
+        users={users} 
+        onEdit={updateUser}
+        onDelete={deleteUser}
+      />
+      <CreateUserForm onSubmit={createUser} />
+    </div>
+  );
+}
+```
+
+#### UI Components (Presentation Pattern)
+```tsx
+// ✅ GOOD: Pure presentation components
+export function UserList({ users, onEdit, onDelete }: UserListProps) {
+  return (
+    <div className="space-y-4">
+      {users.map(user => (
+        <UserCard 
+          key={user.id}
+          user={user}
+          onEdit={() => onEdit(user.id)}
+          onDelete={() => onDelete(user.id)}
+        />
+      ))}
+    </div>
+  );
+}
+```
+
+### Dependency Injection Pattern
+
+#### Context-Based Services
+```tsx
+// ✅ GOOD: Dependency injection via React Context
+const UserServiceContext = createContext<UserService | null>(null);
+
+export function UserServiceProvider({ children }: { children: ReactNode }) {
+  const service = useMemo(() => new UserService(userApi), []);
+  
+  return (
+    <UserServiceContext.Provider value={service}>
+      {children}
+    </UserServiceContext.Provider>
+  );
+}
+
+export function useUserService() {
+  const service = useContext(UserServiceContext);
+  if (!service) throw new Error('UserServiceProvider not found');
+  return service;
+}
+```
+
+### Testing Layer Separation
+
+#### Unit Tests
+- **UI Components**: Test rendering and user interactions (no business logic)
+- **Business Logic**: Test rules and transformations (mock data layer)
+- **Data Access**: Test API calls and error handling (mock HTTP)
+
+#### Integration Tests
+- Test complete flows: UI → Business Logic → Data Access
+- Verify layer boundaries are respected
+- Test error propagation across layers
+
+### Enforcement in CI/CD
+
+#### ESLint Rules (Custom)
+```js
+// .eslintrc.js
+module.exports = {
+  rules: {
+    'no-direct-api-calls': 'error', // Forbid fetch/axios in components
+    'no-business-logic-in-ui': 'error', // Detect business patterns in UI files
+    'require-layer-separation': 'error', // Enforce import boundaries
+  },
+};
+```
+
+#### Architecture Tests
+- Import boundary checks (UI can't import business logic directly)
+- Dependency injection verification
+- Layer isolation tests
+
+This architecture ensures maintainable, testable code where each layer has clear responsibilities and can evolve independently while maintaining our security and performance standards.
