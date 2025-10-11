@@ -1,12 +1,12 @@
-import Ajv from 'ajv';
-import { getKeycloakTokenClaimsSchema } from '../../../../src/lib/contract-validation';
+import Ajv, { type ValidateFunction } from 'ajv';
+import { getKeycloakTokenClaimsSchema } from '../../../../lib/contract-validation';
 
 describe('Keycloak Token Claims Contract', () => {
   let ajv: Ajv;
-  let validate: any;
+  let validate: ValidateFunction;
 
   beforeAll(() => {
-    ajv = new Ajv({ allErrors: true, strict: false });
+    ajv = new Ajv({ allErrors: true });
     const schema = getKeycloakTokenClaimsSchema();
     validate = ajv.compile(schema);
   });
@@ -61,7 +61,7 @@ describe('Keycloak Token Claims Contract', () => {
       const valid = validate(claims);
       expect(valid).toBe(false);
       expect(validate.errors).toContainEqual(
-        expect.objectContaining({ instancePath: '', keyword: 'required', params: { missingProperty: 'iss' } })
+        expect.objectContaining({ dataPath: '', keyword: 'required', params: { missingProperty: 'iss' } })
       );
     });
 
@@ -78,7 +78,7 @@ describe('Keycloak Token Claims Contract', () => {
       const valid = validate(claims);
       expect(valid).toBe(false);
       expect(validate.errors).toContainEqual(
-        expect.objectContaining({ instancePath: '/exp', keyword: 'minimum' })
+        expect.objectContaining({ dataPath: '.exp', keyword: 'minimum' })
       );
     });
 
@@ -95,7 +95,7 @@ describe('Keycloak Token Claims Contract', () => {
       const valid = validate(claims);
       expect(valid).toBe(false);
       expect(validate.errors).toContainEqual(
-        expect.objectContaining({ instancePath: '/tenant', keyword: 'type' })
+        expect.objectContaining({ dataPath: '.tenant', keyword: 'type' })
       );
     });
   });

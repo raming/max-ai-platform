@@ -1,12 +1,12 @@
-import Ajv from 'ajv';
-import { getAuthzResponseSchema } from '../../../../src/lib/contract-validation';
+import Ajv, { type ValidateFunction } from 'ajv';
+import { getAuthzResponseSchema } from '../../../../lib/contract-validation';
 
 describe('Authorization Response Contract', () => {
   let ajv: Ajv;
-  let validate: any;
+  let validate: ValidateFunction;
 
   beforeAll(() => {
-    ajv = new Ajv({ allErrors: true, strict: false });
+    ajv = new Ajv({ allErrors: true });
     const schema = getAuthzResponseSchema();
     validate = ajv.compile(schema);
   });
@@ -58,7 +58,7 @@ describe('Authorization Response Contract', () => {
       const valid = validate(response);
       expect(valid).toBe(false);
       expect(validate.errors).toContainEqual(
-        expect.objectContaining({ instancePath: '', keyword: 'required', params: { missingProperty: 'decision' } })
+        expect.objectContaining({ dataPath: '', keyword: 'required', params: { missingProperty: 'decision' } })
       );
     });
 
@@ -70,7 +70,7 @@ describe('Authorization Response Contract', () => {
       const valid = validate(response);
       expect(valid).toBe(false);
       expect(validate.errors).toContainEqual(
-        expect.objectContaining({ instancePath: '/decision', keyword: 'enum' })
+        expect.objectContaining({ dataPath: '.decision', keyword: 'enum' })
       );
     });
 
@@ -83,7 +83,7 @@ describe('Authorization Response Contract', () => {
       const valid = validate(response);
       expect(valid).toBe(false);
       expect(validate.errors).toContainEqual(
-        expect.objectContaining({ instancePath: '/reason', keyword: 'type' })
+        expect.objectContaining({ dataPath: '.reason', keyword: 'type' })
       );
     });
   });

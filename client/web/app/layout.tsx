@@ -3,14 +3,15 @@
 import { Inter } from 'next/font/google';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
-import './global.css';
+import "./globals.css";
+
 const inter = Inter({ subsets: ['latin'] });
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   const queryClient = new QueryClient({
     defaultOptions: {
       queries: {

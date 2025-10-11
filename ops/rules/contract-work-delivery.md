@@ -1,19 +1,66 @@
 # Contract work delivery workflow (canonical)
 
 Purpose
-Define a structured process for contract/consulting engagements where work is delivered to client repositories in batched, reviewable increments while maintaining isolation and quality control.
+Define a structured process for contract/consulting engagements using private mirror repositories to keep internal AI agent tooling completely separate from client repositories, especially when clients use different git platforms (GitBucket, etc.).
 
-## Contract Branch Setup
+## Repository Architecture
 
-### Initial Setup (per client repository)
+### Private Mirror Repository
+- **Location**: Your private org (GitHub)
+- **Content**: Complete mirror of client repo + full ops integration
+- **Purpose**: Internal development workspace with AI agents, custom labels, seat references
+- **Structure**: Same as client repo but with ops/ content in root
+
+### Client Repository  
+- **Location**: Client's git platform (GitBucket, etc.)
+- **Content**: Clean client code only (no ops tooling)
+- **Purpose**: Official delivery point for client review
+- **Access**: You have push access for deliveries
+
+### Example Structure
+```
+your-org/ (GitHub - private)
+├── airmeez-mirror/        # ← Private mirror repo
+│   ├── main               # Mirrors client main/master
+│   ├── work/dev/AIRMEEZ-123-feature-a  # Internal AI agent branches
+│   ├── ops/               # Full ops content (private)
+│   ├── client/            # Frontend code
+│   ├── backend/           # Backend code
+│   ├── .agents/           # Agent configs (private)
+│   └── .github/           # Internal GitHub Actions
+
+client-org/ (GitBucket - client)
+├── airmeez/              # ← Client repo
+│   ├── master            # Client's main branch
+│   ├── feature/AIRMEEZ-123-user-auth  # Clean delivery branches
+│   ├── client/           # Frontend code only
+│   └── backend/          # Backend code only
+```
+
+## Branch Mapping Strategy
+
+### Branch Synchronization
+- **Private Repo**: `work/{role}/{task-id}-{slug}` (internal AI agent branches)
+- **Client Repo**: `feature/{task-id}-{slug}` (clean delivery branches)
+- **Sync Direction**: Private → Client (one-way code sync, exclude ops content)
+
+### Regular Maintenance
+Both repositories should regularly sync with their respective upstream branches:
+
+**Private Mirror Repo** (your-org/airmeez-mirror):
 ```bash
-# For each client repo (frontend, backend, etc.)
-git checkout -b contract/metazone-airmeez
-git push -u origin contract/metazone-airmeez
+# Sync internal main with client master
+git checkout main
+git remote add client-mirror <client-repo-url>
+git fetch client-mirror
+git merge client-mirror/master --no-ff -m "sync: merge client updates"
+```
 
-# Set up upstream tracking for client main
-git remote add upstream <client-repo-url>
-git fetch upstream
+**Client Repo** (client-org/airmeez):
+```bash
+# Sync feature branches with master
+git checkout feature/AIRMEEZ-123-user-auth
+git merge master
 ```
 
 ### Branch Hierarchy
@@ -28,49 +75,57 @@ client-repo/
 
 ## Daily Workflow
 
-### Agent Development Process
-1. **Branch Creation**: Create feature branches from contract branch
+### Agent Development Process (Private Mirror Repo)
+1. **Branch Creation**: Create feature branches from main in private mirror
    ```bash
-   git checkout contract/metazone-airmeez
-   git pull origin contract/metazone-airmeez
+   cd /path/to/your/airmeez-mirror
+   git checkout main
+   git pull origin main
    git checkout -b work/dev/AIRMEEZ-123-user-auth
    ```
 
 2. **Development**: Follow standard ops workflow on feature branches
-   - Implement changes with proper testing
-   - Create PRs to merge feature branches → contract branch
+   - Implement changes with full ops tooling (.agents/, ops/, internal labels)
+   - Create PRs to merge feature branches → main in private repo
    - Internal team reviews and merges
 
-3. **Contract Branch Updates**: All approved work accumulates on contract branch
+3. **Main Branch Updates**: All approved work accumulates on private main
 
 ### Client Sync Process (daily/weekly)
 ```bash
-# Keep contract branch updated with client changes
-git checkout contract/metazone-airmeez
-git fetch upstream  # client's main
-git merge upstream/main --no-ff -m "sync: merge client updates $(date)"
+# Keep private mirror updated with client changes
+cd /path/to/your/airmeez-mirror
+git checkout main
+git fetch client-mirror  # remote pointing to client repo
+git merge client-mirror/master --no-ff -m "sync: merge client updates $(date)"
 
 # Resolve conflicts if any, prioritizing client changes
-# Push updated contract branch
-git push origin contract/metazone-airmeez
+# Push updated main branch
+git push origin main
 ```
 
 ## Delivery Process
 
 ### Pre-Delivery Checklist
-- [ ] All planned features implemented and tested on contract branch
-- [ ] Cross-repository dependencies resolved (ops + frontend + backend)
-- [ ] Integration testing completed across all repos
+- [ ] All planned features implemented and tested in private mirror
+- [ ] Cross-repository dependencies resolved (frontend + backend)
+- [ ] Integration testing completed
 - [ ] Documentation updated
 - [ ] Client notified of upcoming delivery
 
 ### Delivery Execution
-1. **Final Sync**: Ensure contract branch has latest client changes
+1. **Run Sync Script**: Sync completed work to client repo
    ```bash
-   git checkout contract/metazone-airmeez
-   git fetch upstream
-   git rebase upstream/main  # or merge if conflicts expected
+   ./scripts/sync-to-client-repo.sh \
+     --private-repo "/path/to/your/airmeez-mirror" \
+     --client-repo "/path/to/client/airmeez" \
+     --task-id "AIRMEEZ-123" \
+     --feature-name "user-auth"
    ```
+
+2. **Create Client PR**: From feature branch → master in client GitBucket
+3. **Client Review**: Airmeez manager reviews clean PR (no internal tooling)
+4. **Merge**: Client merges when approved
 
 2. **Create Delivery PR**: From contract branch → client main
    ```bash

@@ -1,12 +1,12 @@
-import Ajv from 'ajv';
-import { getAuthzRequestSchema } from '../../../../src/lib/contract-validation';
+import Ajv, { type ValidateFunction } from 'ajv';
+import { getAuthzRequestSchema } from '../../../../lib/contract-validation';
 
 describe('Authorization Request Contract', () => {
   let ajv: Ajv;
-  let validate: any;
+  let validate: ValidateFunction;
 
   beforeAll(() => {
-    ajv = new Ajv({ allErrors: true, strict: false });
+    ajv = new Ajv({ allErrors: true });
     const schema = getAuthzRequestSchema();
     validate = ajv.compile(schema);
   });
@@ -70,7 +70,7 @@ describe('Authorization Request Contract', () => {
       const valid = validate(request);
       expect(valid).toBe(false);
       expect(validate.errors).toContainEqual(
-        expect.objectContaining({ instancePath: '', keyword: 'required', params: { missingProperty: 'subject' } })
+        expect.objectContaining({ dataPath: '', keyword: 'required', params: { missingProperty: 'subject' } })
       );
     });
 
@@ -89,7 +89,7 @@ describe('Authorization Request Contract', () => {
       const valid = validate(request);
       expect(valid).toBe(false);
       expect(validate.errors).toContainEqual(
-        expect.objectContaining({ instancePath: '/subject', keyword: 'required', params: { missingProperty: 'id' } })
+        expect.objectContaining({ dataPath: '.subject', keyword: 'required', params: { missingProperty: 'id' } })
       );
     });
 
@@ -108,7 +108,7 @@ describe('Authorization Request Contract', () => {
       const valid = validate(request);
       expect(valid).toBe(false);
       expect(validate.errors).toContainEqual(
-        expect.objectContaining({ instancePath: '/resource', keyword: 'required', params: { missingProperty: 'type' } })
+        expect.objectContaining({ dataPath: '.resource', keyword: 'required', params: { missingProperty: 'type' } })
       );
     });
 
@@ -127,7 +127,7 @@ describe('Authorization Request Contract', () => {
       const valid = validate(request);
       expect(valid).toBe(false);
       expect(validate.errors).toContainEqual(
-        expect.objectContaining({ instancePath: '', keyword: 'required', params: { missingProperty: 'action' } })
+        expect.objectContaining({ dataPath: '', keyword: 'required', params: { missingProperty: 'action' } })
       );
     });
   });

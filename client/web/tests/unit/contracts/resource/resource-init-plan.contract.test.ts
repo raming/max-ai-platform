@@ -1,9 +1,9 @@
-import Ajv from 'ajv';
-import { getResourceInitSchema } from '../../../../src/lib/contract-validation';
+import Ajv, { type ValidateFunction } from 'ajv';
+import { getResourceInitSchema } from '../../../../lib/contract-validation';
 
 describe('Resource Initialization Plan Contract', () => {
   let ajv: Ajv;
-  let validate: any;
+  let validate: ValidateFunction;
 
   beforeAll(() => {
     ajv = new Ajv({ allErrors: true });
@@ -66,7 +66,7 @@ describe('Resource Initialization Plan Contract', () => {
       const valid = validate(plan);
       expect(valid).toBe(false);
       expect(validate.errors).toContainEqual(
-        expect.objectContaining({ instancePath: '', keyword: 'required', params: { missingProperty: 'id' } })
+        expect.objectContaining({ dataPath: '', keyword: 'required', params: { missingProperty: 'id' } })
       );
     });
 
@@ -79,7 +79,7 @@ describe('Resource Initialization Plan Contract', () => {
       const valid = validate(plan);
       expect(valid).toBe(false);
       expect(validate.errors).toContainEqual(
-        expect.objectContaining({ instancePath: '', keyword: 'required', params: { missingProperty: 'clientId' } })
+        expect.objectContaining({ dataPath: '', keyword: 'required', params: { missingProperty: 'clientId' } })
       );
     });
 
@@ -92,7 +92,7 @@ describe('Resource Initialization Plan Contract', () => {
       const valid = validate(plan);
       expect(valid).toBe(false);
       expect(validate.errors).toContainEqual(
-        expect.objectContaining({ instancePath: '', keyword: 'required', params: { missingProperty: 'resources' } })
+        expect.objectContaining({ dataPath: '', keyword: 'required', params: { missingProperty: 'resources' } })
       );
     });
 
@@ -106,7 +106,7 @@ describe('Resource Initialization Plan Contract', () => {
       const valid = validate(plan);
       expect(valid).toBe(false);
       expect(validate.errors).toContainEqual(
-        expect.objectContaining({ instancePath: '/resources/0', keyword: 'required', params: { missingProperty: 'kind' } })
+        expect.objectContaining({ dataPath: '.resources[0]', keyword: 'required', params: { missingProperty: 'kind' } })
       );
     });
 
@@ -120,7 +120,7 @@ describe('Resource Initialization Plan Contract', () => {
       const valid = validate(plan);
       expect(valid).toBe(false);
       expect(validate.errors).toContainEqual(
-        expect.objectContaining({ instancePath: '/resources/0/kind', keyword: 'enum' })
+        expect.objectContaining({ dataPath: '.resources[0].kind', keyword: 'enum' })
       );
     });
 
@@ -142,7 +142,7 @@ describe('Resource Initialization Plan Contract', () => {
       const valid = validate(plan);
       expect(valid).toBe(false);
       expect(validate.errors).toContainEqual(
-        expect.objectContaining({ instancePath: '/resources/0/supabase', keyword: 'additionalProperties' })
+        expect.objectContaining({ dataPath: '.resources[0].supabase', keyword: 'additionalProperties' })
       );
     });
   });

@@ -322,18 +322,24 @@ Define a simple,- **Merge authority**:
   - Code changes (client repo): Release Manager merges; Team Lead may merge low-risk docs/runtime configs with RM approval
   - Ops/specs/process (ops repo): Team Lead or Release Manager merges; Architect approval required for design/specs/ADR changes
 
-**MULTI-REPOSITORY CONTRACT WORKFLOW:**
-For projects with separate ops, frontend, and backend repositories:
+**MULTI-REPOSITORY CONTRACT WORKFLOW (private mirror approach):**
+For projects with separate client repositories using different git platforms:
 
-- **Ops Repository**: Central coordination and specifications
-  - Use standard ops branching: work branches from main
-  - Track cross-repo dependencies in tracker/specs/
-  - Coordinate releases across all repositories
+- **Private Mirror Repositories**: Your GitHub repos mirroring client structure + ops
+  - Each client repo has a private mirror with full ops integration
+  - AI agents work here with complete internal tooling
+  - Branches follow standard ops workflow
 
-- **Client Repositories** (frontend/backend):
-  - Each has its own `contract/{your-org}-{project}` branch
-  - Agents work on feature branches within each repo's contract branch
-  - Use ops repo to track which changes are ready for delivery
+- **Client Repositories**: Clean repos on client's platform (GitBucket, etc.)
+  - No ops content, only client code
+  - Feature branches created via sync script
+  - Manual PR creation for client review
+
+- **Sync Workflow**:
+  - Develop in private mirrors with full ops tooling
+  - Use `sync-to-client-repo.sh` to transfer completed features
+  - Create clean PRs in client repos for review
+  - Client merges approved changes
 
 - **Cross-Repository Coordination**:
   - Frontend/backend changes should reference ops specs
@@ -375,14 +381,23 @@ Stacked branch hygiene
   - docs/{slug}, ops/{slug} (use sparingly; prefer work/{role}/...)
   - **contract/{client-slug}** (for contract work branches in client repositories)
 
-**CONTRACT WORK BRANCHING STRATEGY (for client repositories):**
-For contract/consulting engagements where you maintain private branches in client repos:
+**CONTRACT WORK BRANCHING STRATEGY (private mirror approach):**
+For contract/consulting engagements using private mirror repositories:
 
-- **Private Contract Branch**: `contract/{your-org}-{project}` (e.g., `contract/metazone-airmeez`)
-  - Base: Initially branched from client's main
-  - Purpose: Isolated workspace for all contract work; agents create feature branches from this
-  - Protection: Push directly to this branch (no PRs within contract branch)
-  - Sync: Regularly merge client's main → contract branch to stay updated
+- **Private Mirror Repo**: Your GitHub repo with full ops integration
+  - Branches: `work/{role}/{task-id}-{slug}` (AI agent development branches)
+  - Base: `main` (mirrors client master)
+  - Internal: Full ops tooling, custom labels, seat references
+
+- **Client Repo**: Clean delivery repo (GitBucket, etc.)
+  - Branches: `feature/{task-id}-{slug}` (clean delivery branches)
+  - Base: `master` (client's main branch)
+  - Clean: No internal tooling or references
+
+- **Sync Process**: Use `sync-to-client-repo.sh` to transfer completed work
+  - Direction: Private work branches → Client feature branches
+  - Content: Code changes only (excludes ops/, .agents/, .github/)
+  - History: Clean commit messages, no internal references
 
 - **Client Delivery PRs**: From `contract/{your-org}-{project}` → client's `main`
   - Frequency: Weekly/bi-weekly or milestone-based lump-sum deliveries
