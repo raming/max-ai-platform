@@ -3,20 +3,82 @@
 Purpose
 Provide clear, enforceable guidance so coders (human and AI) produce small, testable, maintainable code that fits our architecture and CI gates.
 
-IAM foundation (Keycloak + Casbin) — Definition of Ready gates (MANDATORY)
-- AuthN: All protected endpoints must verify OIDC JWTs using OIDC discovery and JWKS from Keycloak. Validate iss/aud/exp/nbf and required claims (sub, tenant).
-- AuthZ: All protected endpoints must enforce authorization via Casbin (enforce(subject, resource, action, context)). Policies must live in-repo and be reviewed in PRs.
-- Contracts: JSON Schemas must exist and be referenced for token claims and authz request/response. Contract tests run in CI; runtime validation enabled in non-prod.
-- Observability: Structured logs with correlation IDs; emit audit event on allow/deny decisions for sensitive actions.
-- CI gates: eslint --max-warnings 0, tests + coverage ≥95% for changed code, contract tests green. PRs may not introduce new warnings.
-
 General principles
 - Single Responsibility: each module/function/class does one thing; prefer composition over large multi‑purpose units.
+- **Separation of Concerns**: strictly separate UI/presentation, business logic, and data access layers. UI handles rendering and user interaction; business logic contains domain rules and workflows; data access manages persistence and external APIs.
 - Small, testable units: design functions with explicit inputs/outputs; avoid hidden global state; maximize pure logic.
 - Refactor continuously: if a function exceeds thresholds (below), split it and add unit tests for the extracted logic.
 - Defensive boundaries: validate inputs at API/adapter edges; keep domain logic free of IO concerns.
 - Ports & adapters: domain depends on ports; all external IO (DB, HTTP, queues) behind adapters; no inline SQL in services/controllers.
 - Immutability by default: avoid in‑place mutation; return new values; reduce side effects.
+
+**ARCHITECTURAL LAYER SEPARATION (MANDATORY):**
+Maintain strict separation between UI, business logic, and data layers:
+
+- **UI/Presentation Layer**: Handles rendering, user interaction, and view logic only. No business rules or data access.
+  - Components render data passed as props
+  - Event handlers dispatch actions or call business services
+  - No direct API calls or database queries
+  - No business validation logic
+
+- **Business Logic Layer**: Contains domain rules, workflows, and application logic. Pure functions where possible.
+  - Validates business rules and constraints
+  - Orchestrates complex operations across multiple data sources
+  - Transforms data between external and internal formats
+  - No direct UI manipulation or rendering
+  - No direct database queries or external API calls
+
+- **Data Access Layer**: Manages persistence, external APIs, and data retrieval.
+  - Repository/adapter patterns for data operations
+  - Connection pooling, caching, and optimization
+  - Data validation and sanitization
+  - No business logic or UI concerns
+
+**Layer Violation Examples:**
+```typescript
+// ❌ BAD: UI component with business logic
+function UserProfile({ userId }) {
+  const [user, setUser] = useState(null);
+  
+  useEffect(() => {
+    // Business logic in UI: validation, transformation
+    if (userId && userId.length > 5) {
+      fetch(`/api/users/${userId}`)
+        .then(data => {
+          // Data transformation in UI
+          const transformed = { ...data, fullName: `${data.firstName} ${data.lastName}` };
+          setUser(transformed);
+        });
+    }
+  }, [userId]);
+  
+  return <div>{user?.fullName}</div>;
+}
+
+// ✅ GOOD: Clean separation
+function UserProfile({ user }) {
+  return <div>{user.fullName}</div>; // Pure presentation
+}
+
+// Business logic in service
+class UserService {
+  async getUser(userId: string): Promise<User> {
+    if (!userId || userId.length <= 5) throw new ValidationError('Invalid user ID');
+    const data = await this.userRepository.getById(userId);
+    return {
+      ...data,
+      fullName: `${data.firstName} ${data.lastName}` // Business transformation
+    };
+  }
+}
+
+// Data access in repository
+class UserRepository {
+  async getById(id: string): Promise<UserData> {
+    return await this.db.query('SELECT * FROM users WHERE id = ?', [id]);
+  }
+}
+```
 
 Size and complexity thresholds
 - Function length: target ≤ 30 LOC; hard cap ≤ 60 LOC (mandatory refactor if exceeded).
@@ -38,6 +100,7 @@ Before marking any development task complete, agents MUST automatically execute:
 ```bash
 npm run lint --fix          # Auto-fix formatting issues
 npm run build              # Verify compilation succeeds  
+npm run detect-stubs       # Identify unimplemented methods
 npm run test               # Run full test suite
 npm run test:coverage      # Validate ≥95% coverage
 ```
@@ -55,6 +118,70 @@ Coding practices
 - Dependency injection: inject collaborators; avoid new inside domain logic; enable mocking in tests.
 - Side effects: isolate IO and time; pass time/clock sources for determinism in tests.
 - Concurrency: prefer safe abstractions (queues/promises/workers); protect shared state with atomic ops; avoid ad‑hoc locks.
+
+**STUB METHOD TRACKING (MANDATORY FOR AI AGENTS):**
+AI agents MUST mark all unimplemented prototype methods with standardized annotations. This ensures scaffolding code is tracked and revisited when features are implemented.
+
+**Marking Unimplemented Methods:**
+```typescript
+// For TypeScript/JavaScript
+function processUserData(userId: string): UserData {
+  throw new NotImplementedError('processUserData: User data processing logic not yet implemented');
+}
+
+// For Python
+def process_user_data(user_id: str) -> UserData:
+    raise NotImplementedError("process_user_data: User data processing logic not yet implemented")
+
+// For Go
+func ProcessUserData(userId string) (*UserData, error) {
+    return nil, fmt.Errorf("ProcessUserData: user data processing logic not yet implemented")
+}
+```
+
+**Standardized Error Messages:**
+- Format: `{MethodName}: {Brief description} not yet implemented`
+- Include method name for easy identification
+- Provide context about what the method should do
+
+**Detection and Testing:**
+- CI will automatically detect stub methods using `npm run detect-stubs`
+- Tests MUST cover all non-stub methods (stubs are excluded from coverage requirements)
+- Stub methods are logged during test runs for visibility
+
+**Practical Examples:**
+
+```typescript
+// ✅ GOOD: Properly marked stub method
+export async function processPayment(orderId: string, amount: number): Promise<PaymentResult> {
+  throw new NotImplementedError('processPayment: Payment processing integration not yet implemented - requires Stripe/PayPal setup');
+}
+
+// ❌ BAD: Unmarked stub (will be missed)
+export async function processPayment(orderId: string, amount: number): Promise<PaymentResult> {
+  return { success: false, error: 'Not implemented' }; // Silent failure
+}
+
+// ✅ GOOD: Python stub
+def validate_user_permissions(user_id: str, resource: str) -> bool:
+    raise NotImplementedError("validate_user_permissions: Permission validation logic not yet implemented - requires role-based access control")
+
+// ✅ GOOD: Go stub
+func (s *UserService) UpdateProfile(ctx context.Context, userID string, updates UserUpdates) error {
+    return fmt.Errorf("UpdateProfile: user profile update logic not yet implemented - requires database schema changes")
+}
+```
+
+**When to Use Stub Methods:**
+- During initial scaffolding/architecture setup
+- When implementing features incrementally
+- When external dependencies (APIs, databases) are not yet available
+- For placeholder methods in interfaces/abstract classes
+
+**When NOT to Use Stub Methods:**
+- For methods that should be fully implemented in the current task
+- For critical path functionality required for the feature to work
+- When the implementation is straightforward and doesn't require external dependencies
 - PR hygiene: small, single‑purpose PRs; reference issues; include tests and docs; pass CI gates.
 
 Performance & memory

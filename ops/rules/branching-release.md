@@ -1,16 +1,93 @@
 # Branching and release policy (canonical)
 
 Purpose
-Define a simple, predictable git process that works well with agents and humans, enforces quality, and keeps main stable.
+Define a simple,- **Merge authority**:
+  - Code changes (client repo): Release Manager merges; Team Lead may merge low-risk docs/runtime configs with RM approval
+  - Ops/specs/process (ops repo): Team Lead or Release Manager merges; Architect approval required for design/specs/ADR changes
+
+**MULTI-REPOSITORY CONTRACT WORKFLOW:**
+For projects with separate ops, frontend, and backend repositories:
+
+- **Ops Repository**: Central coordination and specifications
+  - Use standard ops branching: work branches from main
+  - Track cross-repo dependencies in tracker/specs/
+  - Coordinate releases across all repositories
+
+- **Client Repositories** (frontend/backend):
+  - Each has its own `contract/{your-org}-{project}` branch
+  - Agents work on feature branches within each repo's contract branch
+  - Use ops repo to track which changes are ready for delivery
+
+- **Cross-Repository Coordination**:
+  - Frontend/backend changes should reference ops specs
+  - Use ops repo issues to track multi-repo features
+  - Coordinate releases: ops changes first, then frontend/backend
+  - Tag releases across repos for consistency
+
+- **Delivery Process**:
+  1. Complete work on contract branches across all repos
+  2. Test integration between frontend/backend changes
+  3. Create coordinated PRs from all contract branches to respective mains
+  4. Client reviews and merges all related PRs together
+
+Pull requestsictable git process that works well with agents and humans, enforces quality, and keeps main stable.
 
 Branches
 - Default base: main (protected)
 - Working branches: work/{role}/{task-id}-{slug}
-  - Examples: work/dev/HAKIM-0001-order-mvp, work/architect/HAKIM-0001-iam-matrix
+- Branch sync discipline:
+  - At session start and before creating a PR, fetch latest and rebase (preferred) or fast-forward merge your work branch onto origin/main.
+  - Commands: git fetch origin && git rebase origin/main  # or: git merge --ff-only origin/main
+
+Branch base decision checklist (Dev)
+- DEFAULT: Branch from origin/main
+- Stack on previous QA-pending branch ONLY if ALL are true:
+  - The new task strictly depends on unmerged code from the previous branch (shared contracts, data shape, boundaries) that cannot be feasibly isolated or guarded behind flags
+  - Cherry-picking or re-implementing would be riskier than stacking
+  - The prior PR is not severely blocked and is expected to merge in normal order
+- Otherwise: branch from origin/main and either cherry-pick the minimal needed commits or use feature flags for isolation
+
+Stacked branch hygiene
+- Rebase the base (QA) branch onto origin/main daily, then rebase the stacked branch onto the updated base
+- In the stacked PR body, declare the dependency (e.g., "Depends on #<base-pr>") and add labels: stacked, seat:<seat>, priority:<Pn>
+- If the base PR becomes long-delayed or requires deep rework, pivot to main + cherry-pick or feature flags
+  - Examples: work/dev/PROJ-0001-order-mvp, work/architect/PROJ-0001-iam-matrix
 - Optional prefixes (when appropriate):
   - hotfix/{version-or-slug}
   - release/{version}
   - docs/{slug}, ops/{slug} (use sparingly; prefer work/{role}/...)
+  - **contract/{client-slug}** (for contract work branches in client repositories)
+
+**CONTRACT WORK BRANCHING STRATEGY (for client repositories):**
+For contract/consulting engagements where you maintain private branches in client repos:
+
+- **Private Contract Branch**: `contract/{your-org}-{project}` (e.g., `contract/metazone-airmeez`)
+  - Base: Initially branched from client's main
+  - Purpose: Isolated workspace for all contract work; agents create feature branches from this
+  - Protection: Push directly to this branch (no PRs within contract branch)
+  - Sync: Regularly merge client's main → contract branch to stay updated
+
+- **Client Delivery PRs**: From `contract/{your-org}-{project}` → client's `main`
+  - Frequency: Weekly/bi-weekly or milestone-based lump-sum deliveries
+  - Content: Batch all approved contract work for client review
+  - Review: Client team reviews the comprehensive changes
+  - Merge: Client merges when satisfied
+
+- **Agent Feature Branches**: `work/{role}/{task-id}-{slug}` branched from contract branch
+  - Same workflow as ops repo, but based on contract branch instead of main
+  - PRs: Merge feature branches back to contract branch (internal contract team review)
+  - No direct client repo PRs until delivery time
+
+- **Sync Discipline**:
+  ```bash
+  # Regular sync: merge client updates into contract branch
+  git checkout contract/metazone-airmeez
+  git fetch upstream  # client's main
+  git merge upstream/main --no-ff -m "sync: merge client updates"
+  
+  # Before delivery: ensure contract branch is up-to-date
+  git rebase upstream/main  # or merge if conflicts
+  ```
 
 Protection and merge authority
 - main is protected:

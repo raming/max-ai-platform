@@ -1,0 +1,161 @@
+{
+  "title": "",
+  "cssResources": [
+    {
+      "href": "http://localhost:3004/_next/static/css/app/layout.css?v=1760186152413",
+      "loaded": true
+    }
+  ],
+  "svgStyles": [
+    {
+      "index": 0,
+      "width": "503.656px",
+      "height": "503.656px",
+      "classes": "w-8 h-8 text-green-600"
+    },
+    {
+      "index": 1,
+      "width": "720px",
+      "height": "720px",
+      "classes": "w-16 h-16 text-gray-600"
+    },
+    {
+      "index": 2,
+      "width": "24px",
+      "height": "24px",
+      "classes": {}
+    },
+    {
+      "index": 3,
+      "width": "16px",
+      "height": "16px",
+      "classes": {}
+    },
+    {
+      "index": 4,
+      "width": "24px",
+      "height": "24px",
+      "classes": {}
+    },
+    {
+      "index": 5,
+      "width": "16px",
+      "height": "16px",
+      "classes": {}
+    },
+    {
+      "index": 6,
+      "width": "24px",
+      "height": "24px",
+      "classes": {}
+    },
+    {
+      "index": 7,
+      "width": "16px",
+      "height": "16px",
+      "classes": {}
+    },
+    {
+      "index": 8,
+      "width": "24px",
+      "height": "24px",
+      "classes": {}
+    },
+    {
+      "index": 9,
+      "width": "16px",
+      "height": "16px",
+      "classes": {}
+    },
+    {
+      "index": 10,
+      "width": "24px",
+      "height": "24px",
+      "classes": {}
+    },
+    {
+      "index": 11,
+      "width": "16px",
+      "height": "16px",
+      "classes": {}
+    },
+    {
+      "index": 12,
+      "width": "48px",
+      "height": "48px",
+      "classes": {}
+    },
+    {
+      "index": 13,
+      "width": "48px",
+      "height": "48px",
+      "classes": {}
+    },
+    {
+      "index": 14,
+      "width": "48px",
+      "height": "48px",
+      "classes": {}
+    },
+    {
+      "index": 15,
+      "width": "48px",
+      "height": "48px",
+      "classes": {}
+    },
+    {
+      "index": 16,
+      "width": "24px",
+      "height": "24px",
+      "classes": {}
+    },
+    {
+      "index": 17,
+      "width": "24px",
+      "height": "24px",
+      "classes": {}
+    },
+    {
+      "index": 18,
+      "width": "24px",
+      "height": "24px",
+      "classes": {}
+    },
+    {
+      "index": 19,
+      "width": "24px",
+      "height": "24px",
+      "classes": {}
+    },
+    {
+      "index": 20,
+      "width": "20px",
+      "height": "20px",
+      "classes": {}
+    },
+    {
+      "index": 21,
+      "width": "64px",
+      "height": "64px",
+      "classes": {}
+    },
+    {
+      "index": 22,
+      "width": "40px",
+      "height": "40px",
+      "classes": {}
+    }
+  ],
+  "hasTailwindClasses": {
+    "w-8": true,
+    "h-8": true,
+    "text-green-600": true,
+    "p-6": false,
+    "max-w-4xl": false
+  },
+  "cssContent": {
+    "styleSheets": 3,
+    "totalRules": 286
+  },
+  "tailwindRules": {}
+}
