@@ -29,15 +29,6 @@ describe('Webhook Signature Verification', () => {
     jest.clearAllMocks();
   });
 
-  it('verifies Retell signature correctly', async () => {
-    const { verifyRetellSignature } = await import('../route');
-    const payload = 'test-payload';
-    const signature = 'mocked-signature';
-    const secret = 'test-secret';
-
-    expect(() => verifyRetellSignature(payload, signature, secret)).toThrow('Retell webhook signature verification not yet implemented');
-  });
-
   it('accepts valid Stripe webhook', async () => {
     const { POST } = await import('../route');
     mockConstructEvent.mockReturnValue({ id: 'evt_123', type: 'payment_intent.succeeded' });

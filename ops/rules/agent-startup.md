@@ -34,8 +34,7 @@ Startup checklist (every session) — EXECUTE IMMEDIATELY
    - Create a triage comment on the planning issue noting you're idle and propose next actions.
 6) Before making changes, ensure you are on a work branch for the current task:
 - Branch naming: work/{role}/{task-id}-{slug}
-- **CONTRACT WORK**: If in client repository, ensure base branch is contract/{org}-{project}, not main
-- If not on such a branch, create it from up-to-date base: git fetch origin && git checkout -B work/{role}/{task-id}-{slug} origin/{base-branch}
+- If not on such a branch, create it from up-to-date main: git fetch origin && git checkout -B work/{role}/{task-id}-{slug} origin/main
 - Push the branch to origin to enable PRs: git push -u origin work/{role}/{task-id}-{slug}
 6a) At session start (and before opening a PR), always sync your work branch with latest main:
 - git fetch origin

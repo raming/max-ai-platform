@@ -276,8 +276,7 @@ Startup checklist (every session) — EXECUTE IMMEDIATELY
    - Create a triage comment on the planning issue noting you're idle and propose next actions.
 6) Before making changes, ensure you are on a work branch for the current task:
 - Branch naming: work/{role}/{task-id}-{slug}
-- **CONTRACT WORK**: If in client repository, ensure base branch is contract/{org}-{project}, not main
-- If not on such a branch, create it from up-to-date base: git fetch origin && git checkout -B work/{role}/{task-id}-{slug} origin/{base-branch}
+- If not on such a branch, create it from up-to-date main: git fetch origin && git checkout -B work/{role}/{task-id}-{slug} origin/main
 - Push the branch to origin to enable PRs: git push -u origin work/{role}/{task-id}-{slug}
 6a) At session start (and before opening a PR), always sync your work branch with latest main:
 - git fetch origin
@@ -311,42 +310,7 @@ git fetch origin && git rebase origin/main   # sync work branch with latest main
 # Branching and release policy (canonical)
 
 Purpose
-Define a simple,- **Merge authority**:
-  - Code changes (client repo): Release Manager merges; Team Lead may merge low-risk docs/runtime configs with RM approval
-  - Ops/specs/process (ops repo): Team Lead or Release Manager merges; Architect approval required for design/specs/ADR changes
-
-**MULTI-REPOSITORY CONTRACT WORKFLOW (private mirror approach):**
-For projects with separate client repositories using different git platforms:
-
-- **Private Mirror Repositories**: Your GitHub repos mirroring client structure + ops
-  - Each client repo has a private mirror with full ops integration
-  - AI agents work here with complete internal tooling
-  - Branches follow standard ops workflow
-
-- **Client Repositories**: Clean repos on client's platform (GitBucket, etc.)
-  - No ops content, only client code
-  - Feature branches created via sync script
-  - Manual PR creation for client review
-
-- **Sync Workflow**:
-  - Develop in private mirrors with full ops tooling
-  - Use `sync-to-client-repo.sh` to transfer completed features
-  - Create clean PRs in client repos for review
-  - Client merges approved changes
-
-- **Cross-Repository Coordination**:
-  - Frontend/backend changes should reference ops specs
-  - Use ops repo issues to track multi-repo features
-  - Coordinate releases: ops changes first, then frontend/backend
-  - Tag releases across repos for consistency
-
-- **Delivery Process**:
-  1. Complete work on contract branches across all repos
-  2. Test integration between frontend/backend changes
-  3. Create coordinated PRs from all contract branches to respective mains
-  4. Client reviews and merges all related PRs together
-
-Pull requestsictable git process that works well with agents and humans, enforces quality, and keeps main stable.
+Define a simple, predictable git process that works well with agents and humans, enforces quality, and keeps main stable.
 
 Branches
 - Default base: main (protected)
@@ -372,47 +336,6 @@ Stacked branch hygiene
   - hotfix/{version-or-slug}
   - release/{version}
   - docs/{slug}, ops/{slug} (use sparingly; prefer work/{role}/...)
-  - **contract/{client-slug}** (for contract work branches in client repositories)
-
-**CONTRACT WORK BRANCHING STRATEGY (private mirror approach):**
-For contract/consulting engagements using private mirror repositories:
-
-- **Private Mirror Repo**: Your GitHub repo with full ops integration
-  - Branches: `work/{role}/{task-id}-{slug}` (AI agent development branches)
-  - Base: `main` (mirrors client master)
-  - Internal: Full ops tooling, custom labels, seat references
-
-- **Client Repo**: Clean delivery repo (GitBucket, etc.)
-  - Branches: `feature/{task-id}-{slug}` (clean delivery branches)
-  - Base: `master` (client's main branch)
-  - Clean: No internal tooling or references
-
-- **Sync Process**: Use `sync-to-client-repo.sh` to transfer completed work
-  - Direction: Private work branches → Client feature branches
-  - Content: Code changes only (excludes ops/, .agents/, .github/)
-  - History: Clean commit messages, no internal references
-
-- **Client Delivery PRs**: From `contract/{your-org}-{project}` → client's `main`
-  - Frequency: Weekly/bi-weekly or milestone-based lump-sum deliveries
-  - Content: Batch all approved contract work for client review
-  - Review: Client team reviews the comprehensive changes
-  - Merge: Client merges when satisfied
-
-- **Agent Feature Branches**: `work/{role}/{task-id}-{slug}` branched from contract branch
-  - Same workflow as ops repo, but based on contract branch instead of main
-  - PRs: Merge feature branches back to contract branch (internal contract team review)
-  - No direct client repo PRs until delivery time
-
-- **Sync Discipline**:
-  ```bash
-  # Regular sync: merge client updates into contract branch
-  git checkout contract/metazone-airmeez
-  git fetch upstream  # client's main
-  git merge upstream/main --no-ff -m "sync: merge client updates"
-  
-  # Before delivery: ensure contract branch is up-to-date
-  git rebase upstream/main  # or merge if conflicts
-  ```
 
 Protection and merge authority
 - main is protected:
