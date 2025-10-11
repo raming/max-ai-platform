@@ -27,7 +27,7 @@ let validator: ValidateFunction | null = null;
 
 function getValidator(): ValidateFunction {
   if (!validator) {
-    const ajv = new Ajv({ strict: false });
+    const ajv = new Ajv({ allErrors: true });
     // Load the canonical schema from the ops/docs folder at runtime. Using
     // a filesystem read avoids TypeScript/tsconfig resolution issues for
     // package-local JSON imports across workspace boundaries.
@@ -57,7 +57,7 @@ export function validateTokenClaimsRuntime(payload: unknown): asserts payload is
   const validate = getValidator();
   const ok = validate(payload);
   if (!ok) {
-    const msg = validate.errors?.map(e => `${e.instancePath || '/'} ${e.message}`).join('; ') || 'validation failed';
+    const msg = validate.errors?.map(e => `${e.dataPath || '/'} ${e.message}`).join('; ') || 'validation failed';
     throw new Error(`Token claims validation failed: ${msg}`);
   }
 }

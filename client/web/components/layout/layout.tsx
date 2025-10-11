@@ -31,7 +31,6 @@ export function Layout({ children }: LayoutProps) {
             {/* Main content */}
             <div className="flex-1 flex flex-col overflow-hidden">
                 <Header
-                    sidebarCollapsed={sidebarCollapsed}
                     onSidebarToggle={toggleSidebar}
                 />
 
