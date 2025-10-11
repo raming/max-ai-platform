@@ -7,13 +7,21 @@ const config: Config = {
     '^(?!.*\\.(js|jsx|ts|tsx|css|json)$)': '@nx/react/plugins/jest',
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
+  moduleNameMapper: {
+    '^@/(.*)$': '<rootDir>/$1',
+  },
   coverageDirectory: '../coverage/web',
   testEnvironment: 'jsdom',
+  setupFilesAfterEnv: ['<rootDir>/tests/setup.ts'],
   testMatch: [
     '<rootDir>/tests/unit/**/*.test.ts',
+    '<rootDir>/tests/unit/**/*.test.tsx',
     '<rootDir>/tests/integration/**/*.test.ts',
+    '<rootDir>/tests/integration/**/*.test.tsx',
     '<rootDir>/src/**/*.test.ts',
     '<rootDir>/src/**/*.spec.ts',
+    '<rootDir>/src/**/*.test.tsx',
+    '<rootDir>/src/**/*.spec.tsx',
     '<rootDir>/src/**/*.test.js',
     '<rootDir>/src/**/*.spec.js'
   ],
