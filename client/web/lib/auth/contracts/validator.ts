@@ -57,7 +57,7 @@ export function validateTokenClaimsRuntime(payload: unknown): asserts payload is
   const validate = getValidator();
   const ok = validate(payload);
   if (!ok) {
-    const msg = validate.errors?.map(e => `${e.dataPath || '/'} ${e.message}`).join('; ') || 'validation failed';
+    const msg = validate.errors?.map((e: any) => `${e.dataPath || '/'} ${e.message}`).join('; ') || 'validation failed';
     throw new Error(`Token claims validation failed: ${msg}`);
   }
 }

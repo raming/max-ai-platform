@@ -21,7 +21,7 @@ export function validateContract(data: any, schema: any, schemaId: string): void
   const valid = validate(data);
 
   if (!valid) {
-    const errors = validate.errors?.map(err => `${err.dataPath}: ${err.message}`).join(', ') || 'unknown error';
+    const errors = validate.errors?.map((err: any) => `${err.dataPath}: ${err.message}`).join(', ') || 'unknown error';
     throw new Error(`Contract validation failed for ${schemaId}: ${errors}`);
   }
 }
