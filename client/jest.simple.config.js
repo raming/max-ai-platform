@@ -2,14 +2,13 @@ module.exports = {
   testEnvironment: 'node',
   testMatch: ['**/tests/unit/**/*.test.ts'],
   moduleFileExtensions: ['ts', 'js'],
-  transform: {
-    '^.+\\.ts$': 'ts-jest'
+  moduleNameMapper: {
+    '^@/(.*)$': '<rootDir>/web/$1',
   },
-  extensionsToTreatAsEsm: ['.ts'],
-  globals: {
-    'ts-jest': {
-      tsconfig: 'tsconfig.test.json',
+  transform: {
+    '^.+\\.ts$': ['ts-jest', {
+      tsconfig: 'web/tsconfig.spec.json',
       useESM: true
-    }
+    }]
   }
 };

@@ -1,15 +1,27 @@
-import Ajv from 'ajv';
-import { getAuthzRequestSchema } from '../../../../src/lib/contract-validation';
+import Ajv, { type ValidateFunction } from 'ajv';
+import { getAuthzRequestSchema } from '../../../../lib/contract-validation';
 
 describe('Authorization Request Contract', () => {
   let ajv: Ajv;
-  let validate: any;
+  let validate: ValidateFunction;
 
   beforeAll(() => {
-    ajv = new Ajv({ allErrors: true, strict: false });
+    ajv = new Ajv({ allErrors: true });
     const schema = getAuthzRequestSchema();
     validate = ajv.compile(schema);
   });
+
+  // Helper to check for path property (dataPath in older AJV, instancePath in newer)
+  const expectErrorWithPath = (path: string, keyword: string, params?: any) => {
+    // Handle both old (.resources[0]) and new (/resources/0) path formats
+    const altPath = path.replace(/\//g, '.').replace(/\.(\d+)/g, '[$1]');
+    const error = validate.errors?.find((err: any) =>
+      (err.dataPath === path || err.dataPath === altPath || err.instancePath === path) &&
+      err.keyword === keyword &&
+      (!params || Object.keys(params).every(key => err.params[key] === params[key]))
+    );
+    expect(error).toBeDefined();
+  };
 
   describe('valid requests', () => {
     it('should validate minimal required request', () => {
@@ -69,9 +81,7 @@ describe('Authorization Request Contract', () => {
 
       const valid = validate(request);
       expect(valid).toBe(false);
-      expect(validate.errors).toContainEqual(
-        expect.objectContaining({ instancePath: '', keyword: 'required', params: { missingProperty: 'subject' } })
-      );
+      expectErrorWithPath('', 'required', { missingProperty: 'subject' });
     });
 
     it('should reject subject missing id', () => {
@@ -88,9 +98,7 @@ describe('Authorization Request Contract', () => {
 
       const valid = validate(request);
       expect(valid).toBe(false);
-      expect(validate.errors).toContainEqual(
-        expect.objectContaining({ instancePath: '/subject', keyword: 'required', params: { missingProperty: 'id' } })
-      );
+      expectErrorWithPath('/subject', 'required', { missingProperty: 'id' });
     });
 
     it('should reject resource missing type', () => {
@@ -107,9 +115,7 @@ describe('Authorization Request Contract', () => {
 
       const valid = validate(request);
       expect(valid).toBe(false);
-      expect(validate.errors).toContainEqual(
-        expect.objectContaining({ instancePath: '/resource', keyword: 'required', params: { missingProperty: 'type' } })
-      );
+      expectErrorWithPath('/resource', 'required', { missingProperty: 'type' });
     });
 
     it('should reject missing action', () => {
@@ -126,9 +132,7 @@ describe('Authorization Request Contract', () => {
 
       const valid = validate(request);
       expect(valid).toBe(false);
-      expect(validate.errors).toContainEqual(
-        expect.objectContaining({ instancePath: '', keyword: 'required', params: { missingProperty: 'action' } })
-      );
+      expectErrorWithPath('', 'required', { missingProperty: 'action' });
     });
   });
 });

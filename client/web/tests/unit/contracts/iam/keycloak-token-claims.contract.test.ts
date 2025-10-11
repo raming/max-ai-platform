@@ -1,15 +1,27 @@
-import Ajv from 'ajv';
-import { getKeycloakTokenClaimsSchema } from '../../../../src/lib/contract-validation';
+import Ajv, { type ValidateFunction } from 'ajv';
+import { getKeycloakTokenClaimsSchema } from '../../../../lib/contract-validation';
 
 describe('Keycloak Token Claims Contract', () => {
   let ajv: Ajv;
-  let validate: any;
+  let validate: ValidateFunction;
 
   beforeAll(() => {
-    ajv = new Ajv({ allErrors: true, strict: false });
+    ajv = new Ajv({ allErrors: true });
     const schema = getKeycloakTokenClaimsSchema();
     validate = ajv.compile(schema);
   });
+
+  // Helper to check for path property (dataPath in older AJV, instancePath in newer)
+  const expectErrorWithPath = (path: string, keyword: string, params?: any) => {
+    // Handle both old (.resources[0]) and new (/resources/0) path formats
+    const altPath = path.replace(/\//g, '.').replace(/\.(\d+)/g, '[$1]');
+    const error = validate.errors?.find((err: any) =>
+      (err.dataPath === path || err.dataPath === altPath || err.instancePath === path) &&
+      err.keyword === keyword &&
+      (!params || Object.keys(params).every(key => err.params[key] === params[key]))
+    );
+    expect(error).toBeDefined();
+  };
 
   describe('valid claims', () => {
     it('should validate minimal required claims', () => {
@@ -60,9 +72,7 @@ describe('Keycloak Token Claims Contract', () => {
 
       const valid = validate(claims);
       expect(valid).toBe(false);
-      expect(validate.errors).toContainEqual(
-        expect.objectContaining({ instancePath: '', keyword: 'required', params: { missingProperty: 'iss' } })
-      );
+      expectErrorWithPath('', 'required', { missingProperty: 'iss' });
     });
 
     it('should reject negative exp', () => {
@@ -77,9 +87,7 @@ describe('Keycloak Token Claims Contract', () => {
 
       const valid = validate(claims);
       expect(valid).toBe(false);
-      expect(validate.errors).toContainEqual(
-        expect.objectContaining({ instancePath: '/exp', keyword: 'minimum' })
-      );
+      expectErrorWithPath('/exp', 'minimum');
     });
 
     it('should reject non-string tenant', () => {
@@ -94,9 +102,7 @@ describe('Keycloak Token Claims Contract', () => {
 
       const valid = validate(claims);
       expect(valid).toBe(false);
-      expect(validate.errors).toContainEqual(
-        expect.objectContaining({ instancePath: '/tenant', keyword: 'type' })
-      );
+      expectErrorWithPath('/tenant', 'type');
     });
   });
 });
