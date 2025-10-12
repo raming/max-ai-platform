@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.1.14",
+    "recharts": "^3.2.1"
+  }
+}
