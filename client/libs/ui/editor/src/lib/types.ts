@@ -1,5 +1,3 @@
-import { Quill } from 'react-quill';
-
 export type QuillTheme = 'snow' | 'bubble';
 
 export type QuillFormat =
@@ -24,7 +22,8 @@ export type QuillFormat =
   | 'code-block';
 
 export interface QuillToolbarItem {
-  [key: string]: any;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  [key: string]: any; // Quill.js toolbar configuration allows flexible object structures
 }
 
 export type QuillToolbarConfig = boolean | string[] | QuillToolbarItem[];
@@ -97,8 +96,10 @@ export interface QuillToolbarProps {
 export interface QuillEditorRef {
   focus: () => void;
   blur: () => void;
-  getEditor: () => typeof Quill;
+  getEditor: () => unknown;
   getLength: () => number;
   getText: () => string;
-  getContents: () => any;
+  getContents: () => unknown;
+  setContents: (delta: unknown) => void;
+  setText: (text: string) => void;
 }

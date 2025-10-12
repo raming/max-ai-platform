@@ -1,5 +1,5 @@
 import DOMPurify from 'dompurify';
-import { ExportFormat, ExportOptions, QuillDelta } from './types';
+import { ExportOptions, QuillDelta } from './types';
 
 /**
  * Sanitizes HTML content using DOMPurify
@@ -99,18 +99,22 @@ export function exportContent(
       return typeof processedContent === 'string' ? processedContent : deltaToHtml(processedContent);
 
     case 'markdown':
-      const html = typeof processedContent === 'string' ? processedContent : deltaToHtml(processedContent);
-      return htmlToMarkdown(html);
+      {
+        const html = typeof processedContent === 'string' ? processedContent : deltaToHtml(processedContent);
+        return htmlToMarkdown(html);
+      }
 
     case 'json':
       return JSON.stringify(content, null, 2);
 
     case 'text':
-      if (typeof processedContent === 'string') {
-        // Strip HTML tags for plain text
-        return processedContent.replace(/<[^>]*>/g, '');
+      {
+        if (typeof processedContent === 'string') {
+          // Strip HTML tags for plain text
+          return processedContent.replace(/<[^>]*>/g, '');
+        }
+        return deltaToHtml(processedContent).replace(/<[^>]*>/g, '');
       }
-      return deltaToHtml(processedContent).replace(/<[^>]*>/g, '');
 
     default:
       throw new Error(`Unsupported export format: ${format}`);
@@ -122,7 +126,7 @@ export function exportContent(
  */
 export function validateContentSize(
   content: string,
-  maxSizeKB: number = 1024
+  maxSizeKB = 1024
 ): { valid: boolean; size: number; message?: string } {
   const size = new Blob([content]).size;
   const sizeKB = size / 1024;
@@ -146,7 +150,8 @@ export function validateContentSize(
  */
 export function getWordCount(content: string): number {
   // Strip HTML tags and count words
-  const text = content.replace(/<[^>]*>/g, '').trim();
+  // Replace closing tags with spaces to separate words properly
+  const text = content.replace(/<\/[^>]+>/g, ' ').replace(/<[^>]*>/g, '').trim();
   return text ? text.split(/\s+/).length : 0;
 }
 

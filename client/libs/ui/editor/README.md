@@ -184,6 +184,28 @@ import type {
 />
 ```
 
+## Known Limitations
+
+### Browser Compatibility
+- Requires modern browsers with ES6+ support
+- Internet Explorer 11 and below are not supported
+- Mobile browsers may have limited toolbar functionality
+
+### Performance Considerations
+- Large documents (>100KB) may experience performance degradation
+- Real-time collaborative editing is not supported out-of-the-box
+- Image uploads require custom implementation
+
+### Security Notes
+- Client-side sanitization is not a substitute for server-side validation
+- Always validate and sanitize content on the server before storage
+- File uploads should be handled securely on the backend
+
+### Quill.js Specific Limitations
+- Some advanced Quill features may require additional configuration
+- Custom formats need to be registered with Quill before use
+- Theme customization is limited to Quill's built-in themes
+
 ## Running Tests
 
 ```bash
