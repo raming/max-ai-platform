@@ -11,6 +11,7 @@ import {
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Bell, Menu, Search, Settings, User, LogOut } from "lucide-react";
 import { Sidebar } from "./sidebar";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 
 interface HeaderProps {
     onSidebarToggle?: () => void;
@@ -56,8 +57,11 @@ export function Header({ onSidebarToggle }: HeaderProps) {
                 </div>
             </div>
 
-            {/* Right side - Notifications and user menu */}
+            {/* Right side - Theme toggle, notifications and user menu */}
             <div className="flex items-center space-x-4">
+                {/* Theme toggle */}
+                <ThemeToggle />
+
                 {/* Notifications */}
                 <Button variant="ghost" size="sm" className="relative">
                     <Bell className="h-5 w-5" />
