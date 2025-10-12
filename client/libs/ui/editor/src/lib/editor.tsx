@@ -1,8 +1,8 @@
-import React, { useMemo, useRef, useEffect } from 'react';
-import ReactQuill, { Quill } from 'react-quill';
+import React, { useMemo, useRef, useImperativeHandle } from 'react';
+import ReactQuill from 'react-quill';
 import DOMPurify from 'dompurify';
 import 'react-quill/dist/quill.snow.css';
-import { QuillModules, QuillDelta, QuillRange, QuillEditorProps, QuillToolbarProps, QuillEditorRef } from './types';
+import { QuillEditorProps, QuillToolbarProps, QuillEditorRef } from './types';
 
 const defaultToolbar = [
   [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
@@ -65,7 +65,7 @@ export const QuillEditor = React.forwardRef<QuillEditorRef, QuillEditorProps>(({
   const quillRef = useRef<ReactQuill>(null);
 
   // Sanitize content on change
-  const handleChange = (content: string, delta: any, source: string, editor: any) => {
+  const handleChange = (content: string, delta: unknown, source: string, editor: unknown): void => {
     // Sanitize HTML content
     const sanitizedContent = DOMPurify.sanitize(content, {
       ALLOWED_TAGS: [
@@ -87,7 +87,7 @@ export const QuillEditor = React.forwardRef<QuillEditorRef, QuillEditorProps>(({
     }
   };
 
-  const modules = useMemo(() => ({
+  const modules = useMemo((): Record<string, unknown> => ({
     toolbar: toolbar,
     clipboard: {
       matchVisual: false,
@@ -101,7 +101,7 @@ export const QuillEditor = React.forwardRef<QuillEditorRef, QuillEditorProps>(({
       bindings: {
         tab: {
           key: 9,
-          handler: function(range: any, context: any) {
+          handler: function(range: any, context: any): boolean {
             return true; // Allow default tab behavior
           }
         }
@@ -110,29 +110,29 @@ export const QuillEditor = React.forwardRef<QuillEditorRef, QuillEditorProps>(({
   }), [toolbar]);
 
   // Expose methods via ref
-  React.useImperativeHandle(ref, () => ({
-    focus: () => {
+  useImperativeHandle(ref, (): QuillEditorRef => ({
+    focus: (): void => {
       quillRef.current?.focus();
     },
-    blur: () => {
+    blur: (): void => {
       quillRef.current?.blur();
     },
-    getEditor: () => {
-      return quillRef.current?.getEditor() as any;
+    getEditor: (): unknown => {
+      return quillRef.current?.getEditor();
     },
-    getLength: () => {
+    getLength: (): number => {
       return quillRef.current?.getEditor()?.getLength() || 0;
     },
-    getText: () => {
+    getText: (): string => {
       return quillRef.current?.getEditor()?.getText() || '';
     },
-    getContents: () => {
+    getContents: (): unknown => {
       return quillRef.current?.getEditor()?.getContents();
     },
-    setContents: (delta: any) => {
-      quillRef.current?.getEditor()?.setContents(delta);
+    setContents: (delta: unknown): void => {
+      quillRef.current?.getEditor()?.setContents(delta as any);
     },
-    setText: (text: string) => {
+    setText: (text: string): void => {
       quillRef.current?.getEditor()?.setText(text);
     }
   }));
