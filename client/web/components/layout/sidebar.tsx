@@ -75,15 +75,15 @@ interface SidebarProps {
 
 export function Sidebar({ className, collapsed = false, onToggle }: SidebarProps) {
     return (
-        <div className={cn("flex h-full flex-col bg-white border-r border-gray-200", className)}>
+        <div className={cn("flex h-full flex-col bg-background border-r border-border", className)}>
             {/* Header */}
-            <div className="flex h-16 items-center justify-between px-4 border-b border-gray-200">
+            <div className="flex h-16 items-center justify-between px-4 border-b border-border">
                 {!collapsed && (
                     <div className="flex items-center space-x-2">
-                        <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-                            <span className="text-white font-bold text-sm">MA</span>
+                        <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+                            <span className="text-primary-foreground font-bold text-sm">MA</span>
                         </div>
-                        <span className="font-semibold text-gray-900">MaxAI Platform</span>
+                        <span className="font-semibold text-foreground">MaxAI Platform</span>
                     </div>
                 )}
                 <Button
@@ -112,8 +112,8 @@ export function Sidebar({ className, collapsed = false, onToggle }: SidebarProps
                                 className={cn(
                                     "flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors",
                                     item.current
-                                        ? "bg-blue-50 text-blue-700 border-r-2 border-blue-700"
-                                        : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
+                                        ? "bg-accent text-accent-foreground border-r-2 border-primary"
+                                        : "text-muted-foreground hover:bg-accent hover:text-accent-foreground"
                                 )}
                             >
                                 <Icon className={cn("flex-shrink-0 h-5 w-5", collapsed ? "mr-0" : "mr-3")} />
@@ -125,11 +125,11 @@ export function Sidebar({ className, collapsed = false, onToggle }: SidebarProps
             </ScrollArea>
 
             {/* Footer */}
-            <div className="border-t border-gray-200 p-4">
+            <div className="border-t border-border p-4">
                 <Link
                     href="/help"
                     className={cn(
-                        "flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:bg-gray-50 hover:text-gray-900 transition-colors",
+                        "flex items-center px-3 py-2 text-sm font-medium text-muted-foreground rounded-md hover:bg-accent hover:text-accent-foreground transition-colors",
                         collapsed && "justify-center"
                     )}
                 >
