@@ -6,7 +6,7 @@ Validate that the balanced escalation rules allow appropriate autonomy while pro
 ## ✅ **Good Autonomous Decisions** (Should NOT escalate)
 
 ### Scenario 1: Developer implementing FeatureGate caching
-**Context**: Implementing the caching layer specified in HAKIM-0020
+**Context**: Implementing the caching layer specified in PROJ-0020
 **Decision**: Choose between Map vs LRU Cache vs Redis adapter
 **Expected**: Proceed autonomously - this is implementation detail within constraints
 ```typescript

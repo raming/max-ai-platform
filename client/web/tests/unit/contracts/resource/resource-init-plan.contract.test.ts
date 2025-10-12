@@ -1,15 +1,27 @@
-import Ajv from 'ajv';
-import { getResourceInitSchema } from '../../../../src/lib/contract-validation';
+import Ajv, { type ValidateFunction } from 'ajv';
+import { getResourceInitSchema } from '../../../../lib/contract-validation';
 
 describe('Resource Initialization Plan Contract', () => {
   let ajv: Ajv;
-  let validate: any;
+  let validate: ValidateFunction;
 
   beforeAll(() => {
     ajv = new Ajv({ allErrors: true });
     const schema = getResourceInitSchema();
     validate = ajv.compile(schema);
   });
+
+  // Helper to check for path property (dataPath in older AJV, instancePath in newer)
+  const expectErrorWithPath = (path: string, keyword: string, params?: any) => {
+    // Handle both old (.resources[0]) and new (/resources/0) path formats
+    const altPath = path.replace(/\//g, '.').replace(/\.(\d+)/g, '[$1]');
+    const error = validate.errors?.find((err: any) =>
+      (err.dataPath === path || err.dataPath === altPath || err.instancePath === path) &&
+      err.keyword === keyword &&
+      (!params || Object.keys(params).every(key => err.params[key] === params[key]))
+    );
+    expect(error).toBeDefined();
+  };
 
   describe('valid plans', () => {
     it('should validate minimal required plan', () => {
@@ -65,9 +77,7 @@ describe('Resource Initialization Plan Contract', () => {
 
       const valid = validate(plan);
       expect(valid).toBe(false);
-      expect(validate.errors).toContainEqual(
-        expect.objectContaining({ instancePath: '', keyword: 'required', params: { missingProperty: 'id' } })
-      );
+      expectErrorWithPath('', 'required', { missingProperty: 'id' });
     });
 
     it('should reject missing clientId', () => {
@@ -78,9 +88,7 @@ describe('Resource Initialization Plan Contract', () => {
 
       const valid = validate(plan);
       expect(valid).toBe(false);
-      expect(validate.errors).toContainEqual(
-        expect.objectContaining({ instancePath: '', keyword: 'required', params: { missingProperty: 'clientId' } })
-      );
+      expectErrorWithPath('', 'required', { missingProperty: 'clientId' });
     });
 
     it('should reject missing resources', () => {
@@ -91,9 +99,7 @@ describe('Resource Initialization Plan Contract', () => {
 
       const valid = validate(plan);
       expect(valid).toBe(false);
-      expect(validate.errors).toContainEqual(
-        expect.objectContaining({ instancePath: '', keyword: 'required', params: { missingProperty: 'resources' } })
-      );
+      expectErrorWithPath('', 'required', { missingProperty: 'resources' });
     });
 
     it('should reject resource without kind', () => {
@@ -105,9 +111,7 @@ describe('Resource Initialization Plan Contract', () => {
 
       const valid = validate(plan);
       expect(valid).toBe(false);
-      expect(validate.errors).toContainEqual(
-        expect.objectContaining({ instancePath: '/resources/0', keyword: 'required', params: { missingProperty: 'kind' } })
-      );
+      expectErrorWithPath('/resources/0', 'required', { missingProperty: 'kind' });
     });
 
     it('should reject invalid resource kind', () => {
@@ -119,9 +123,7 @@ describe('Resource Initialization Plan Contract', () => {
 
       const valid = validate(plan);
       expect(valid).toBe(false);
-      expect(validate.errors).toContainEqual(
-        expect.objectContaining({ instancePath: '/resources/0/kind', keyword: 'enum' })
-      );
+      expectErrorWithPath('/resources/0/kind', 'enum');
     });
 
     it('should reject supabase config with extra properties', () => {
@@ -141,9 +143,7 @@ describe('Resource Initialization Plan Contract', () => {
 
       const valid = validate(plan);
       expect(valid).toBe(false);
-      expect(validate.errors).toContainEqual(
-        expect.objectContaining({ instancePath: '/resources/0/supabase', keyword: 'additionalProperties' })
-      );
+      expectErrorWithPath('/resources/0/supabase', 'additionalProperties');
     });
   });
 });

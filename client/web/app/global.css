@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Test basic CSS */
+body {
+  font-family: Arial, sans-serif;
+}
+
+.test-css {
+  color: red;
+  font-size: 24px;
+}

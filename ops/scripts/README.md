@@ -1,5 +1,22 @@
 # Scripts README
 
+sync-all-projects.sh
+- Purpose: Comprehensive synchronization of all ops-template content to registered projects.
+- Usage:
+  ./scripts/sync-all-projects.sh          # Dry run - see what would be synced
+  ./scripts/sync-all-projects.sh -w       # Write mode - apply all changes
+  ./scripts/sync-all-projects.sh -p hakim-platform-ops  # Sync specific project only
+- What it does: Combines sync-template.sh + sync-github-prompts.sh + agent identity management
+- Syncs: templates, scripts, rules, .github/prompts, agent configs, and generates role prompts
+
+detect-stubs.js
+- Purpose: Scan codebase for unimplemented prototype methods marked with standardized error messages.
+- Usage:
+  npm run detect-stubs                                    # Scan current directory
+  node scripts/detect-stubs.js /path/to/code              # Scan specific directory
+- CI Integration: Exits with code 1 if stub methods found, suitable for automated pipelines.
+- Documentation: See scripts/README-stub-detection.md for detailed usage and examples.
+
 merge-prompts.sh (legacy)
 - Purpose: merges canonical rules (and optionally project-specific rules) into a single text.
 - Usage:

@@ -276,6 +276,113 @@ When human provides input during agent work:
 
 ---
 
+## 🎨 **UX/UI Involvement Requirements (MANDATORY)**
+
+### Core Principle
+**AI agents MUST involve users for UX/UI feedback** when implementing user-facing interfaces, ensuring designs meet actual user needs and expectations.
+
+### When UX/UI Involvement is Required
+
+**MANDATORY USER INVOLVEMENT** for any work involving:
+- User interface design or changes
+- User experience workflows
+- Visual design elements (colors, typography, layout)
+- Interaction patterns (buttons, forms, navigation)
+- Information architecture
+- Accessibility features
+- Mobile/responsive design
+- Error states and messaging
+- Onboarding flows
+
+### UX/UI Involvement Workflow
+
+#### Phase 1: Preparation (Before Implementation)
+```
+🎨 **UX/UI INVOLVEMENT REQUIRED**
+
+**Feature**: [Brief description of UX/UI work]
+**Scope**: [What UI elements will be affected]
+**Current Status**: Preparing environment for user review
+
+**Preparation Checklist**:
+- [ ] Create working prototype/demo environment
+- [ ] Prepare 2-3 design alternatives if applicable
+- [ ] Document current user pain points (if improving existing UI)
+- [ ] Set up accessible demo environment (staging URL, screenshots, etc.)
+- [ ] Prepare specific questions for user feedback
+
+**Next Step**: Will notify user when ready for review
+```
+
+#### Phase 2: User Notification & Review Setup
+```
+👥 **USER REVIEW READY**
+
+**What to Review**: [Specific UI elements/features ready for feedback]
+**Demo Environment**: [Staging URL, screenshots, or access instructions]
+**Review Focus**: [Specific aspects to evaluate - usability, aesthetics, functionality]
+
+**Questions for User**:
+- [ ] Does this meet your workflow needs?
+- [ ] Is the interface intuitive and easy to use?
+- [ ] Are there any accessibility concerns?
+- [ ] Does this align with your mental model of the feature?
+- [ ] Any suggestions for improvement?
+
+**Timeline**: Please review within [timeframe, e.g., 24-48 hours]
+```
+
+#### Phase 3: Feedback Processing
+After receiving user feedback:
+```
+📝 **USER FEEDBACK RECEIVED**
+
+**Feedback Summary**: [Key points from user review]
+**Positive Aspects**: [What user liked]
+**Areas for Improvement**: [What needs changes]
+**Action Items**: [Specific changes to implement]
+
+**Implementation Plan**:
+- [ ] Address critical issues immediately
+- [ ] Schedule follow-up review for major changes
+- [ ] Document UX decisions for future reference
+- [ ] Update design system if new patterns established
+```
+
+### Escalation Requirements
+
+**MANDATORY ESCALATION** if user feedback indicates:
+- Major usability issues that block core functionality
+- Significant deviation from established design system
+- Accessibility violations
+- Performance issues affecting user experience
+- Conflicts with business requirements
+
+**Escalation Process**:
+1. Document user feedback with screenshots/quotes
+2. Tag relevant stakeholders (@architect, @product, @design-lead)
+3. Pause implementation until issues resolved
+4. Create formal UX requirement document if needed
+
+### Environment Setup Requirements
+
+**MANDATORY for UX/UI Reviews**:
+- Functional prototype (not just wireframes)
+- Accessible staging/demo environment
+- Realistic test data
+- Cross-browser/device testing capability
+- Clear instructions for accessing the review environment
+
+### Documentation Requirements
+
+**After UX/UI Implementation**:
+- Document UX decisions and rationale
+- Update design system documentation
+- Include accessibility compliance notes
+- Add user testing results to knowledge base
+
+---
+
 ## Summary
 This system ensures **no human input is lost**, maintains **agent task continuity**, and provides **proper escalation** of significant requirements while enabling **quick handling** of simple requests.
 
