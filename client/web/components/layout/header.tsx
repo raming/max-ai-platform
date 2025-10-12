@@ -11,6 +11,7 @@ import {
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Bell, Menu, Search, Settings, User, LogOut } from "lucide-react";
 import { Sidebar } from "./sidebar";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 
 interface HeaderProps {
     onSidebarToggle?: () => void;
@@ -18,7 +19,7 @@ interface HeaderProps {
 
 export function Header({ onSidebarToggle }: HeaderProps) {
     return (
-        <header className="h-16 bg-white border-b border-gray-200 flex items-center justify-between px-4 lg:px-6">
+        <header className="h-16 bg-background border-b border-border flex items-center justify-between px-4 lg:px-6">
             {/* Left side - Mobile menu and search */}
             <div className="flex items-center space-x-4">
                 {/* Mobile sidebar trigger */}
@@ -46,22 +47,25 @@ export function Header({ onSidebarToggle }: HeaderProps) {
                 {/* Search */}
                 <div className="hidden md:flex items-center space-x-2">
                     <div className="relative">
-                        <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+                        <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                         <input
                             type="text"
                             placeholder="Search..."
-                            className="pl-10 pr-4 py-2 w-64 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            className="pl-10 pr-4 py-2 w-64 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent bg-background"
                         />
                     </div>
                 </div>
             </div>
 
-            {/* Right side - Notifications and user menu */}
+            {/* Right side - Theme toggle, notifications and user menu */}
             <div className="flex items-center space-x-4">
+                {/* Theme toggle */}
+                <ThemeToggle />
+
                 {/* Notifications */}
                 <Button variant="ghost" size="sm" className="relative">
                     <Bell className="h-5 w-5" />
-                    <span className="absolute -top-1 -right-1 h-4 w-4 bg-red-500 text-white text-xs rounded-full flex items-center justify-center">
+                    <span className="absolute -top-1 -right-1 h-4 w-4 bg-destructive text-destructive-foreground text-xs rounded-full flex items-center justify-center">
                         3
                     </span>
                 </Button>
@@ -71,7 +75,6 @@ export function Header({ onSidebarToggle }: HeaderProps) {
                     <DropdownMenuTrigger asChild>
                         <Button variant="ghost" className="relative h-8 w-8 rounded-full">
                             <Avatar className="h-8 w-8">
-                                <AvatarImage src="/avatars/user.jpg" alt="User" />
                                 <AvatarFallback>JD</AvatarFallback>
                             </Avatar>
                         </Button>

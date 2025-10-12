@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["web/src/*"],
+      "@max-ai/ui-editor": ["libs/ui/editor/src/index.ts"],
       "token-proxy-core": ["token-proxy-core/src/index.ts"]
     }
   },

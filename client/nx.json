@@ -66,6 +66,11 @@
         "style": "css",
         "linter": "none"
       }
+    },
+    "@nx/react": {
+      "library": {
+        "unitTestRunner": "jest"
+      }
     }
   },
   "targetDefaults": {

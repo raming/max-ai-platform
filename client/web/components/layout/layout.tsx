@@ -16,7 +16,7 @@ export function Layout({ children }: LayoutProps) {
     };
 
     return (
-        <div className="h-screen flex bg-gray-50">
+        <div className="h-screen flex bg-background">
             {/* Sidebar */}
             <div
                 className={`hidden lg:flex transition-all duration-300 ease-in-out ${sidebarCollapsed ? "w-16" : "w-64"
