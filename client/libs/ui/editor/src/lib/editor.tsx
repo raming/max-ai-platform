@@ -10,9 +10,9 @@ const defaultToolbar = [
   [{ 'size': ['small', false, 'large', 'huge'] }],
   ['bold', 'italic', 'underline', 'strike'],
   [{ 'color': [] }, { 'background': [] }],
-  [{ 'script': 'sub'}, { 'script': 'super' }],
-  [{ 'list': 'ordered'}, { 'list': 'bullet' }],
-  [{ 'indent': '-1'}, { 'indent': '+1' }],
+  [{ 'script': 'sub' }, { 'script': 'super' }],
+  [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+  [{ 'indent': '-1' }, { 'indent': '+1' }],
   [{ 'align': [] }],
   ['blockquote', 'code-block'],
   ['link', 'image', 'video'],
@@ -101,7 +101,7 @@ export const QuillEditor: React.FC<QuillEditorProps> = ({
       bindings: {
         tab: {
           key: 9,
-          handler: function(range: any, context: any): boolean {
+          handler: function (range: any, context: any): boolean {
             return true; // Allow default tab behavior
           }
         }

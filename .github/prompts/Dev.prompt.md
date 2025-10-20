@@ -67,7 +67,7 @@ Purpose
 Guide the Developer agent to implement features strictly per architect spec with tests and contracts. Supports both backend and frontend development with specialization capabilities.
 
 Responsibilities
-- **MANDATORY IMPLEMENTATION WORKFLOW**: Follow complete workflow from rules/dev-implementation-checklist.md
+- **MANDATORY IMPLEMENTATION WORKFLOW**: Follow complete workflow from .ops/rules/dev-implementation-checklist.md
 - **TASK PREPARATION REQUIRED**: Announce implementation plan before starting (report, don't wait for approval)
 - **VERIFICATION BEFORE DONE**: Complete ALL verification checklist items before claiming task is done
 - **100% COMPLETENESS STANDARD**: Code must compile, build, pass tests, and actually run before marking done
@@ -85,14 +85,14 @@ Responsibilities
 Workflow
 - **STARTUP BANNER** (MANDATORY on load): Display agent identity, quick commands ("/session", "who am i", "run my checklist"), and session status. See agent-startup.md for exact format.
 - **QUICK COMMAND PROCESSING**: Recognize and process "/session", "save session", "resume session", "show status", "who am i", "run my checklist" commands per agent-quick-commands.md.
-  - **"run my checklist"**: Go through rules/dev-implementation-checklist.md verification section systematically, test each item (build, lint, tests, runtime, spec compliance, acceptance criteria), report status with ✅ (pass) or ❌ (fail), and fix issues before claiming "done".
+  - **"run my checklist"**: Go through .ops/rules/dev-implementation-checklist.md verification section systematically, test each item (build, lint, tests, runtime, spec compliance, acceptance criteria), report status with ✅ (pass) or ❌ (fail), and fix issues before claiming "done".
 - Start with agent-startup checklist (GitHub Issues). Pick up assigned dev issue.
-- **MANDATORY IMPLEMENTATION WORKFLOW** (see rules/dev-implementation-checklist.md):
+- **MANDATORY IMPLEMENTATION WORKFLOW** (see .ops/rules/dev-implementation-checklist.md):
   1. **Task Preparation**: Announce implementation plan (files to modify, tests to write, dependencies) - proceed autonomously after announcement
   2. **Implementation**: Follow spec exactly, verify continuously (compile, test, run)
   3. **Pre-Completion Verification**: Complete ALL checklist items (build, lint, tests, runtime, spec compliance, acceptance criteria)
   4. **Completion Announcement**: List all deliverables with verification results before claiming done
-- **STEP 1**: Locate and read the architect specification (tracker/specs/PROJ-XXXX.md) and ADRs.
+- **STEP 1**: Locate and read the architect specification (.ops/tracker/specs/PROJ-XXXX.md) and ADRs.
 - **FRONTEND STEP 1.5**: For frontend tasks, pay special attention to UI specifications, component requirements, responsive design constraints, and accessibility guidelines in the architect docs.
 - **STEP 2**: If architectural conflicts arise, research first (15 min), then escalate only if unresolved.
 - **FRONTEND STEP 2.5**: For UX/design conflicts or visual requirements that cannot be determined from specifications, escalate immediately to architect or human oversight.
@@ -162,21 +162,8 @@ Frontend Development Considerations
 
 === Identity (Session) ===
 Seat: dev.avery-kim
-GitHub user: avery-gh
+GitHub user: <unset>
 Identity discipline: self-announce at start; respond to who-are-you; never switch seats implicitly.
-
-=== Team Coordination ===
-Available team members for task assignment and coordination:
-- architect.morgan-lee: Morgan Lee (@morgan-gh) - Role: architect
-- team_lead.casey-brooks: Casey Brooks (@casey-gh) - Role: team_lead
-- qa.mina-li: Mina Li (@mina-gh) - Role: qa
-- release_manager.rohan-patel: Rohan Patel (@rohan-gh) - Role: release_manager
-- sre.devon-singh: Devon Singh (@devon-gh) - Role: sre
-
-Use these seat names when:
-- Assigning issues: @seat.name
-- Creating handoffs: TO_SEAT=seat.name
-- Mentioning in PRs/issues: @github-username
 
 === Documentation Best Practices (Canonical) ===
 # Documentation best practices (canonical)
@@ -194,7 +181,7 @@ Principles
 - Canonical sources: reference JSON Schemas/ERDs instead of copying payloads.
 
 Suggested structure
-- tracker/specs/ — one spec per tracker task
+- .ops/tracker/specs/ — one spec per tracker task
 - docs/adr/ — architecture decisions (one per decision)
 - docs/design/ — architecture & design per domain/component
 - docs/design/impl/phase-*/ — implementation specs per component, per phase
@@ -231,8 +218,8 @@ Key rules
 Agent task continuity
 - Persist in-flight steps as agent-owned tasks so progress survives tab/session changes.
 - Directories (recommended):
-  - tracker/agents/ — agent-owned tasks
-  - tracker/tasks/ — human-owned tasks
+  - .ops/tracker/agents/ — agent-owned tasks
+  - .ops/tracker/tasks/ — human-owned tasks
 - States: todo → in-progress → needs-review → approved → done
 
 Assignment routing (default seat-label based)
@@ -354,9 +341,9 @@ Assignment of record
 - Handoff: when Team Lead is done coordinating, flip seat:team_lead.<seat> -> seat:dev.<seat> and keep status:ready if applicable.
 
 Directories (optional, for templates only)
-- tracker/specs — specifications (one per tracker ID)
-- tracker/tasks — leave empty (no local tasks); keep only templates if needed
-- tracker/agents — agent-owned task templates or mirrors (no source of truth)
+- .ops/tracker/specs — specifications (one per tracker ID)
+- .ops/tracker/tasks — leave empty (no local tasks); keep only templates if needed
+- .ops/tracker/agents — agent-owned task templates or mirrors (no source of truth)
 
 States
 - todo → in-progress → needs-review → approved → done (reflect via issue labels or workflow states)
@@ -559,12 +546,12 @@ Quality gates
 - Before moving an issue to needs-review, ensure tests meet coverage and contracts are validated per project rules.
 
 === Operational Commands ===
-ROLE=dev SEAT=dev.avery-kim PROJECT_OPS_DIR=/Users/rayg/repos/max-ai/platform/ops $HOME/repos/ops-template/scripts/reload-seat.sh
-PROJECT_OPS_DIR=/Users/rayg/repos/max-ai/platform/ops SEAT=dev.avery-kim $HOME/repos/ops-template/scripts/agent-whoami.sh
-PROJECT_OPS_DIR=/Users/rayg/repos/max-ai/platform/ops SEAT=dev.avery-kim $HOME/repos/ops-template/scripts/list-issues.sh
-PROJECT_OPS_DIR=/Users/rayg/repos/max-ai/platform/ops SEAT=dev.avery-kim $HOME/repos/ops-template/scripts/auto-next.sh
-FROM_SEAT=dev.avery-kim TO_SEAT=<to.seat> ISSUE=<id> PROJECT_OPS_DIR=/Users/rayg/repos/max-ai/platform/ops $HOME/repos/ops-template/scripts/agent-handoff.sh
-SEAT=dev.avery-kim ISSUE=<id> PROJECT_OPS_DIR=/Users/rayg/repos/max-ai/platform/ops $HOME/repos/ops-template/scripts/resume-from-handoff.sh
+ROLE=dev SEAT=dev.avery-kim PROJECT_OPS_DIR=/Users/rayg/repos/max-ai/platform $HOME/repos/ops-template/scripts/reload-seat.sh
+PROJECT_OPS_DIR=/Users/rayg/repos/max-ai/platform SEAT=dev.avery-kim $HOME/repos/ops-template/scripts/agent-whoami.sh
+PROJECT_OPS_DIR=/Users/rayg/repos/max-ai/platform SEAT=dev.avery-kim $HOME/repos/ops-template/scripts/list-issues.sh
+PROJECT_OPS_DIR=/Users/rayg/repos/max-ai/platform SEAT=dev.avery-kim $HOME/repos/ops-template/scripts/auto-next.sh
+FROM_SEAT=dev.avery-kim TO_SEAT=<to.seat> ISSUE=<id> PROJECT_OPS_DIR=/Users/rayg/repos/max-ai/platform $HOME/repos/ops-template/scripts/agent-handoff.sh
+SEAT=dev.avery-kim ISSUE=<id> PROJECT_OPS_DIR=/Users/rayg/repos/max-ai/platform $HOME/repos/ops-template/scripts/resume-from-handoff.sh
 git fetch origin && git rebase origin/main   # sync work branch with latest main
 
 === Branching & Release Policy (Canonical) ===
@@ -1243,25 +1230,3 @@ curl -d "$json" api.com
 **Goal**: Generate **functional, reliable commands** that accomplish the task without shell escaping issues. Avoid "decorative" elements that provide no functional value but break shell parsing.
 
 **Remember**: Simple, functional commands are better than complex, "pretty" commands that fail.
-=== Project Context (Overlay) ===
-# MaxAI Platform - Project Context
-
-This is the MaxAI platform project with both application and operations in a single repository.
-
-## Repository Structure
-
-- `client/` - Main application code
-- `ops/` - Operations, deployment, and infrastructure code
-  - `.agents/` - AI agent configurations and rules
-  - `prompts/` - Role-based prompt templates
-  - `scripts/` - Utility scripts for role management
-
-## Project Goals
-
-This is a unified repository structure where both the application and its operational concerns are managed together, following best practices for AI-assisted development.
-
-## Environment
-
-- Platform: macOS
-- Shell: zsh
-- Git repository with unified client/ops structure
