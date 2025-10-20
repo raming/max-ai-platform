@@ -22,3 +22,9 @@ Suggested structure
 Anti-patterns
 - Mega-docs combining requirements, design, impl, and tests
 - Unbounded lists of tasks in a single file (use tracker entries)
+
+Enforcement
+- **QA Validation**: QA agents must validate documentation compliance before Dev implementation begins
+- **Escalation Path**: Non-compliant docs flagged to architect → Team Lead → human oversight
+- **Quality Gates**: Documentation compliance required for issue progression to implementation
+- **Multi-repo Sync**: QA oversees documentation synchronization to client repositories

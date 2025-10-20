@@ -1,0 +1,9 @@
+# Copilot conversation tracking (local only - prevents context loss)
+.copilot/sessions/
+.copilot/user-inputs/
+.copilot/decisions/
+
+# Keep structure and templates
+!.copilot/README.md
+!.copilot/templates/
+!.copilot/.gitkeep

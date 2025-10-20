@@ -1,9 +1,9 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
+import dynamic from 'next/dynamic';
 import { useParams } from 'next/navigation';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import { QuillEditor, QuillEditorRef } from '@max-ai/ui-editor';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -18,8 +18,6 @@ import {
   Edit,
   Eye,
   User,
-  MapPin,
-  Globe,
   Twitter,
   Linkedin,
   Github,
@@ -37,11 +35,16 @@ import {
   type UserProfile
 } from '@/lib/services/mock-content';
 
+// Dynamically import QuillEditor to avoid SSR issues
+const QuillEditor = dynamic(() => import('@max-ai/ui-editor').then(mod => ({ default: mod.QuillEditor })), {
+  ssr: false,
+  loading: () => <div className="h-32 bg-gray-100 rounded animate-pulse" />
+});
+
 export default function UserProfilePage() {
   const params = useParams();
   const userId = params.id as string;
   const queryClient = useQueryClient();
-  const editorRef = useRef<QuillEditorRef>(null);
 
   const [isEditing, setIsEditing] = useState(false);
   const [hasUnsavedChanges, setHasUnsavedChanges] = useState(false);
@@ -145,17 +148,13 @@ export default function UserProfilePage() {
   };
 
   const handleUndo = () => {
-    if (editorRef.current) {
-      // This would need to be implemented in the QuillEditor component
-      console.log('Undo functionality would be implemented here');
-    }
+    // This would need to be implemented in the QuillEditor component
+    console.log('Undo functionality would be implemented here');
   };
 
   const handleRedo = () => {
-    if (editorRef.current) {
-      // This would need to be implemented in the QuillEditor component
-      console.log('Redo functionality would be implemented here');
-    }
+    // This would need to be implemented in the QuillEditor component
+    console.log('Redo functionality would be implemented here');
   };
 
   const toggleEditMode = () => {
@@ -397,7 +396,6 @@ export default function UserProfilePage() {
                   </div>
 
                   <QuillEditor
-                    ref={editorRef}
                     value={profileData.content || ''}
                     onChange={handleContentChange}
                     placeholder="Tell your story... Share your experience, skills, and what makes you unique."

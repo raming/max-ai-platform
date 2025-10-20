@@ -9,6 +9,8 @@ Key rules
 - Coverage: enforce ≥95% line/branch coverage.
 - Linting: produce lint-clean code; ESLint warnings are treated as errors in CI (--max-warnings 0). Use targeted rule disables only with justification and an issue link.
 - Ports/adapters only: domain/services depend on ports; DB access limited to repository adapters; no inline SQL.
+- **Debug Logging**: MANDATORY debug logging in all functions for development troubleshooting (see logging-observability.md).
+- **Logging Middleware**: Ensure request logging interceptors and error boundaries are implemented (see logging-observability.md).
 - Observability/audit: structured logs/metrics/traces with correlation IDs; audit sensitive actions.
 - Security/compliance: RBAC guards; no PHI/secrets in logs; consent/PCI constraints respected.
 - DB portability: follow project portability policy; ANSI-first queries; document vendor fallbacks.
@@ -73,6 +75,7 @@ References (canonical rules)
 - rules/agent-autonomy.md (command approval policies)
 - rules/task-completion-workflows.md (automated handoffs)
 - rules/coding-standards.md (build/test automation)
+- rules/qa-documentation-validation.md (QA documentation responsibilities)
 - rules/escalation-decision-matrix.md (smart escalation guidelines)
 - rules/human-input-management.md (systematic input capture and triage)
 - rules/agent-state-management.md (work persistence and recovery across interruptions)

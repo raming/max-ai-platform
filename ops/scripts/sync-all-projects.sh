@@ -37,6 +37,7 @@ fi
 SYNC_TEMPLATE="$ROOT_DIR/scripts/sync-template.sh"
 SYNC_GITHUB_PROMPTS="$ROOT_DIR/scripts/sync-github-prompts.sh"
 INIT_IDENTITIES="$ROOT_DIR/scripts/init-project-identities.sh"
+GENERATE_KILOCODEMODES="$ROOT_DIR/scripts/generate-kilocodemodes.sh"
 
 # Get list of projects to sync
 if [[ -n "$SPECIFIC_PROJECT" ]]; then
@@ -106,6 +107,16 @@ for project_name in "${PROJECTS[@]}"; do
     if ! $QUIET; then echo "  ⏭️  Step 3: Skipping role prompts (use_github_prompts=false)"; fi
   fi
 
+  # Step 4: Regenerate .kilocodemodes if this is the ops-template repository
+  if [[ "$PROJECT_PATH" == "$ROOT_DIR" ]]; then
+    if ! $QUIET; then echo "  🎯 Step 4: Regenerating .kilocodemodes for ops-template..."; fi
+    if $WRITE; then
+      "$GENERATE_KILOCODEMODES" >/dev/null 2>&1
+    fi
+  else
+    if ! $QUIET; then echo "  ⏭️  Step 4: Skipping .kilocodemodes (not ops-template)"; fi
+  fi
+
   if ! $QUIET; then echo "  ✅ $project_name sync complete"; fi
   if ! $QUIET; then echo ""; fi
 done
@@ -118,6 +129,7 @@ if $WRITE; then
   echo "  • GitHub-integrated agent prompts (.github/prompts/)"
   echo "  • Agent identity configurations (.agents/rules/agents.yaml)"
   echo "  • Generated role prompts for projects with use_github_prompts=true"
+  echo "  • Regenerated .kilocodemodes for ops-template (if applicable)"
 else
   echo "🔍 Dry run complete. Use -w flag to apply changes."
 fi

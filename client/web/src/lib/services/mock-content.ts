@@ -170,8 +170,8 @@ function saveToStorage<T>(key: string, data: T[]): void {
 }
 
 // Initialize data from localStorage or use mock data
-let profiles = loadFromStorage(STORAGE_KEYS.profiles, mockProfiles);
-let settings = loadFromStorage(STORAGE_KEYS.settings, mockSettings);
+const profiles = loadFromStorage(STORAGE_KEYS.profiles, mockProfiles);
+const settings = loadFromStorage(STORAGE_KEYS.settings, mockSettings);
 
 // Profile operations
 export const profileService = {

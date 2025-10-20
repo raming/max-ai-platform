@@ -12,6 +12,7 @@ ROOT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 REGISTRY="$ROOT_DIR/registry/projects.yaml"
 
 PROJECT_NAME=${PROJECT_NAME:-}
+echo "DEBUG: PROJECT_NAME='$PROJECT_NAME'"
 PROJECT_OPS_DIR=${PROJECT_OPS_DIR:-}
 FORCE=${FORCE:-false}
 
@@ -27,8 +28,12 @@ if [[ -z "$PROJECT_OPS_DIR" && -n "$PROJECT_NAME" ]]; then
     name=$(yq -r ".projects[$i].name" "$REGISTRY")
     if [[ "$name" == "$PROJECT_NAME" ]]; then
       PROJECT_OPS_DIR=$(yq -r ".projects[$i].path" "$REGISTRY")
-      PROJECT_OPS_DIR=$(eval echo "$PROJECT_OPS_DIR")
-      use_github_prompts=$(yq -r ".projects[$i].use_github_prompts // "false"" "$REGISTRY")
+      PROJECT_OPS_DIR=$(eval "echo $PROJECT_OPS_DIR")
+      use_github_prompts=$(yq -r ".projects[$i].use_github_prompts // \"false\"" "$REGISTRY")
+      PROJECT_ROOT_OVERRIDE=$(yq -r ".projects[$i].project_root // \"\"" "$REGISTRY")
+      if [[ -n "$PROJECT_ROOT_OVERRIDE" ]]; then
+        PROJECT_ROOT_OVERRIDE=$(eval echo "$PROJECT_ROOT_OVERRIDE")
+      fi
       found=true
       break
     fi
@@ -48,12 +53,15 @@ if [[ -z "$PROJECT_OPS_DIR" ]]; then
   exit 1
 fi
 
-# Determine if ops is in project root or subfolder
-if [[ -d "$PROJECT_OPS_DIR/.agents" ]]; then
+# Determine project root for GitHub prompts
+if [[ -n "$PROJECT_ROOT_OVERRIDE" ]]; then
+  # Use explicit project_root from registry (for repos where ops is in subdirectory)
+  PROJECT_ROOT="$PROJECT_ROOT_OVERRIDE"
+elif [[ -d "$PROJECT_OPS_DIR/.agents" ]]; then
   # Ops is in project root
   PROJECT_ROOT="$PROJECT_OPS_DIR"
 else
-  # Ops is in subfolder
+  # Ops is in subfolder, go up one level
   PROJECT_ROOT="$(cd "$PROJECT_OPS_DIR/.." && pwd)"
 fi
 DEST_DIR="$PROJECT_ROOT/.github/prompts"

@@ -1,0 +1,15 @@
+{
+  "name": "Enhanced Architect",
+  "slug": "architect_enhanced",
+  "description": "System design with ops-template integration",
+  "trigger": "/architect",
+  "base_mode": "architect",
+  "prompt_file": "kilo/prompts/merged/Architect.kilo.md",
+  "ops_integration": true,
+  "capabilities": [
+    "system_design",
+    "architecture_governance",
+    "specification_writing",
+    "project_management"
+  ]
+}

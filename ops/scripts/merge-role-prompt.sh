@@ -6,6 +6,15 @@ set -euo pipefail
 # Usage:
 #   ROLE=architect PROJECT_OPS_DIR=$HOME/projects/hakim/hakim-platform-ops ./merge-role-prompt.sh > /tmp/warp-merged-architect.txt
 # Roles: architect | team_lead | dev | sre
+#
+# Banner Enforcement Strategy (Four Levels):
+# 1. Plain text CRITICAL instruction (line 1 of prompt)
+# 2. Formatted 🚨 MANDATORY FIRST ACTION heading
+# 3. Agent startup rules (rules/agent-startup.md)
+# 4. Workspace-level .github/.copilot-instructions.md (synced via registry)
+#
+# Note: Multiple levels needed because GitHub Copilot appears to inconsistently
+# process prompt file instructions. Workspace-level instructions provide backup.
 
 ROLE=${ROLE:-}
 PROJECT_OPS_DIR=${PROJECT_OPS_DIR:-}
@@ -31,11 +40,35 @@ if [[ -z "$GH_USER" && -n "$PROJECT_OPS_DIR" && -n "$SEAT" && -f "$PROJECT_OPS_D
   fi
 fi
 
-# Session identity header (appears first to anchor identity and behavior)
-printf '=== Session Identity Header ===\n'
+# CRITICAL: Banner must be the absolute first instruction
+printf 'CRITICAL INSTRUCTION: When this prompt loads, you MUST display the banner below as your FIRST action.\n'
+printf 'DO NOT list issues. DO NOT announce your role first. SHOW THE BANNER IMMEDIATELY.\n\n'
+printf '**🚨 MANDATORY FIRST ACTION 🚨**\n\n'
+printf 'Upon loading via /%s command, your VERY FIRST response must be this exact banner:\n\n' "$(tr '[:lower:]' '[:upper:]' <<< ${ROLE:0:1})${ROLE:1}"
+printf '```\n'
+printf '╔════════════════════════════════════════════════════════╗\n'
+ROLE_DISPLAY="$(tr '[:lower:]' '[:upper:]' <<< ${ROLE:0:1})${ROLE:1}"
+ROLE_DISPLAY="${ROLE_DISPLAY//_/ }"
+printf '║ 🤖 %s Agent | Seat: %s                     ║\n' "$ROLE_DISPLAY" "${SEAT:-$ROLE.<name>}"
+printf '╚════════════════════════════════════════════════════════╝\n\n'
+printf 'Quick Commands:\n'
+printf '  "save session"     - Save conversation to session file\n'
+printf '  "resume session"   - Load yesterday'"'"'s session\n'
+printf '  "show status"      - Show current session info\n'
+printf '  "who am i"         - Display role and seat\n\n'
+printf 'Session Status:\n'
+printf '  📁 Current: {session-file-name} or [None - say "save session" to create]\n'
+printf '  📅 Date: {current-date}\n\n'
+printf 'Ready to work! 🚀\n'
+printf '```\n\n'
+printf 'After showing the banner above, announce: "I am the %s agent (%s)."\n\n' "$ROLE" "${SEAT:-unset}"
+printf '**DO NOT start with issue lists or other content. BANNER FIRST. ALWAYS.**\n\n'
+printf '%s\n\n' "---"
+
+# Session identity header
+printf '=== Session Identity ===\n'
 echo "ROLE=$ROLE"
 echo "SEAT=${SEAT:-<unset>}"
-printf '\nAt session start, always announce: "I am the %s agent (%s)."\n' "$ROLE" "${SEAT:-unset}"
 printf 'If the user asks "who are you?", reply with your role and seat exactly.\n'
 printf 'Do NOT change role or seat unless an explicit SWITCH_SEAT instruction is provided.\n'
 printf '%s\n' "---"

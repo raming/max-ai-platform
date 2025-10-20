@@ -60,3 +60,19 @@ Agent identity
   ROLE=dev SEAT=dev.alex-chen GH_USER=alex-gh $HOME/repos/ops-template/scripts/merge-role-prompt.sh > /tmp/warp-merged-dev.txt
 - Option 2: Provide a mapping at $PROJECT_OPS_DIR/.agents/rules/agents.yaml and set SEAT only (requires yq):
   ROLE=dev SEAT=dev.alex-chen PROJECT_OPS_DIR=$HOME/repos/hakim/hakim-platform/ops $HOME/repos/ops-template/scripts/merge-role-prompt.sh > /tmp/warp-merged-dev.txt
+
+## Client Repository Synchronization
+
+sync-client-to-mirror.sh
+- Purpose: Sync latest changes from client repositories (frontend/backend) to mirror repository
+- Usage:
+  ./scripts/sync-client-to-mirror.sh --mirror-repo /path/to/mirror/repo [--dry-run] [--verbose]
+- What it does: Pulls latest changes from client repos and copies them to mirror's client/ and backend/ directories
+- Default paths: Frontend=$HOME/projects/Airmeez/airmeez_ui, Backend=$HOME/projects/Airmeez/api/airmeez_platform_backend
+
+sync-client-updates.sh (wrapper)
+- Purpose: Convenience script to sync client updates from within the mirror repository
+- Usage: (from mirror repo root)
+  ./sync-client-updates.sh [--dry-run] [--verbose]
+- What it does: Calls sync-client-to-mirror.sh with current directory as mirror repo
+- Dependencies: Requires ops-template scripts directory to be accessible (../ops-template/scripts or ../../ops-template/scripts)

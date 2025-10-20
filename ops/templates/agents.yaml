@@ -10,9 +10,19 @@ seats:
   dev.avery-kim:
     name: Avery Kim
     github: avery-gh
+    specializations:
+      - Backend development (Node.js, Python, Go)
+      - Frontend development (React, Vue, Angular)
+      - Full-stack integration
+      - Testing and quality assurance
   qa.mina-li:
     name: Mina Li
     github: mina-gh
+    responsibilities:
+      - Quality assurance and testing
+      - Documentation validation and compliance
+      - Implementation-documentation synchronization
+      - Multi-repo documentation oversight
   release_manager.rohan-patel:
     name: Rohan Patel
     github: rohan-gh

@@ -1,8 +1,8 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
+import dynamic from 'next/dynamic';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import { QuillEditor, QuillEditorRef } from '@max-ai/ui-editor';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -33,9 +33,14 @@ import {
   type UserSettings
 } from '@/lib/services/mock-content';
 
+// Dynamically import QuillEditor to avoid SSR issues
+const QuillEditor = dynamic(() => import('@max-ai/ui-editor').then(mod => ({ default: mod.QuillEditor })), {
+  ssr: false,
+  loading: () => <div className="h-32 bg-gray-100 rounded animate-pulse" />
+});
+
 export default function SettingsPage() {
   const queryClient = useQueryClient();
-  const editorRef = useRef<QuillEditorRef>(null);
 
   const [isEditing, setIsEditing] = useState(false);
   const [hasUnsavedChanges, setHasUnsavedChanges] = useState(false);
@@ -99,8 +104,8 @@ export default function SettingsPage() {
       });
 
       // Check for saved drafts
-      const aboutDraft = autoSaveService.getDraft('current-user', 'about');
-      const termsDraft = autoSaveService.getDraft('current-user', 'terms');
+      const aboutDraft = autoSaveService.getDraft('current-user', 'settings');
+      const termsDraft = autoSaveService.getDraft('current-user', 'settings');
 
       if (aboutDraft) {
         setSettingsData((prev: Partial<UserSettings>) => ({ ...prev, aboutContent: aboutDraft }));
@@ -119,10 +124,10 @@ export default function SettingsPage() {
     if (settingsData.contentPreferences?.autoSave && hasUnsavedChanges) {
       const timeoutId = setTimeout(() => {
         if (settingsData.aboutContent) {
-          autoSaveService.saveDraft('current-user', 'about', settingsData.aboutContent);
+          autoSaveService.saveDraft('current-user', 'settings', settingsData.aboutContent);
         }
         if (settingsData.termsContent) {
-          autoSaveService.saveDraft('current-user', 'terms', settingsData.termsContent);
+          autoSaveService.saveDraft('current-user', 'settings', settingsData.termsContent);
         }
       }, 30000); // Auto-save every 30 seconds
 
@@ -153,22 +158,18 @@ export default function SettingsPage() {
     }
 
     updateSettingsMutation.mutate(settingsData);
-    autoSaveService.clearDraft('current-user', 'about');
-    autoSaveService.clearDraft('current-user', 'terms');
+    autoSaveService.clearDraft('current-user', 'settings');
+    autoSaveService.clearDraft('current-user', 'settings');
   };
 
   const handleUndo = () => {
-    if (editorRef.current) {
-      // This would need to be implemented in the QuillEditor component
-      console.log('Undo functionality would be implemented here');
-    }
+    // This would need to be implemented in the QuillEditor component
+    console.log('Undo functionality would be implemented here');
   };
 
   const handleRedo = () => {
-    if (editorRef.current) {
-      // This would need to be implemented in the QuillEditor component
-      console.log('Redo functionality would be implemented here');
-    }
+    // This would need to be implemented in the QuillEditor component
+    console.log('Redo functionality would be implemented here');
   };
 
   const toggleEditMode = () => {
@@ -548,7 +549,6 @@ export default function SettingsPage() {
                   </div>
 
                   <QuillEditor
-                    ref={editorRef}
                     value={settingsData.aboutContent || ''}
                     onChange={(content: string) => handleContentChange('aboutContent', content)}
                     placeholder="Write about yourself, your mission, or your organization..."
@@ -589,7 +589,6 @@ export default function SettingsPage() {
                   </div>
 
                   <QuillEditor
-                    ref={editorRef}
                     value={settingsData.termsContent || ''}
                     onChange={(content: string) => handleContentChange('termsContent', content)}
                     placeholder="Define your terms and conditions..."
