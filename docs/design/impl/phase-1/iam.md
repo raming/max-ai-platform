@@ -1,4 +1,6 @@
-# IAM (MVP) — Extreme Detail Spec
+# IAM (MVP) — Implementation Spec
+
+> **📖 Detailed Documentation**: See [IAM Component Architecture](../../../iam/) for comprehensive specifications including diagrams, data model, API contracts, and security controls.
 
 Purpose
 Provide multi-tenant identity, SSO, service tokens, RBAC policy checks, and audit with strict contracts and operational guardrails.

@@ -1,5 +1,7 @@
 # Prompt Service (MVP) — Extreme Detail Spec
 
+> **📖 Detailed Architecture Documentation**: See [Prompt Service Component Architecture](../../../prompt-service/) for comprehensive specifications including data model, API contracts, versioning strategy, publishing adapters, and validation rules.
+
 Purpose
 Manage base templates and per-client prompt instances with versioning, diffs, rollout, and delivery to adapters with validation, audit, and observability.
 

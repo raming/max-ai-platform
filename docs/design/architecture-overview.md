@@ -1,9 +1,20 @@
-# Architecture Overview (MaxAI Platform)
+# Architecture Overview - Index
 
-Purpose
-Define the target multi-tenant architecture for AI-Employee services with platform-agnostic integrations, declarative orchestration, and payment gateway–agnostic billing.
+**Last Updated**: 2025-10-20
 
-Services (high-level)
+## Purpose
+
+Master index for MaxAI Platform architecture documentation.
+
+## System Architecture
+
+- **[System Overview](../../ops/docs/design/system-overview.md)** - System context, principles, technology stack
+- **[Container Architecture](../../ops/docs/design/container-architecture.md)** - All services, communication patterns
+- **[Deployment Architecture](../../ops/docs/design/deployment-architecture.md)** - Infrastructure, environments, scaling
+
+## Component Specifications
+
+### Core Services
 - apps/portal-web (Next.js)
   - Client portal for onboarding, connections (reviews/calendar), usage, and billing
   - RBAC via IAM; no direct GHL exposure (server-side proxies)

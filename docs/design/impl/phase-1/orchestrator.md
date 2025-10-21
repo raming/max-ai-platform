@@ -1,5 +1,7 @@
 # Declarative Orchestrator & Flow Schema (MVP) — Extreme Detail Spec
 
+> **📖 Detailed Architecture Documentation**: See [Orchestrator Component Architecture](../../../orchestrator/)
+
 Purpose
 Execute validated flow specs (triggers, steps, retries, conditionals) and delegate complex branches to n8n via adapter, with strict contracts, idempotency, and observability.
 
