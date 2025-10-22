@@ -1,5 +1,7 @@
 # Webhook Ingress (MVP) — Extreme Detail Spec
 
+> **📖 Detailed Architecture Documentation**: See [Webhook Ingress Component Architecture](../../../webhook-ingress/)
+
 Purpose
 Terminate external webhooks (Retell, Twilio, Payments, GHL), normalize payloads via JSON Schemas, attach correlation/tenant IDs, enforce signature and idempotency, and forward to orchestrator or n8n via the messaging backbone.
 
