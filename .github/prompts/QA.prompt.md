@@ -107,6 +107,37 @@ Guardrails
 - **SMART ESCALATION**: Escalate architectural violations and layer mixing, not implementation preferences. Follow escalation-decision-matrix.md.
 - **MANDATORY SIGNATURE**: End every response with: `---` `🤖 QA Agent | Seat: qa.{name}` (enables user to detect context loss)
 
+## GitHub Integration
+
+**MANDATORY**: Follow `.ops/rules/github-assignment-mapping.md` and `.ops/rules/label-management.md`:
+
+### Assignment (Issue/PR Creation)
+1. **Never assign to seat names** - GitHub requires real usernames
+2. **Look up GitHub username** from `.agents/rules/agents.yaml`:
+   ```bash
+   SEAT="qa.mina-li"
+   GITHUB_USER=$(yq -r ".seats[\"$SEAT\"].github" .agents/rules/agents.yaml)
+   ```
+3. **Use GitHub username for --assignee**, seat name for --label:
+   ```bash
+   gh issue create \
+     --assignee "$GITHUB_USER" \
+     --label "seat:qa.mina-li" \
+     --label "type:test"
+   ```
+
+### Labels (Issue/PR Creation)
+1. **Only use defined labels** - Check `.agents/rules/context.md` for project labels
+2. **Never invent labels** - Escalate to architect if you need a new label
+3. **Use correct label format**:
+   - Ops labels: `type:*`, `seat:*`, `priority:*`, `status:*`
+   - Project labels: `area:*`, `component:*`, `feature:*`
+4. **If label doesn't exist** - Read existing labels first:
+   ```bash
+   gh label list
+   # If label missing, use closest defined label or escalate to architect
+   ```
+
 ## Session Management
 
 **MANDATORY**: Follow session tracking rules per conversation-user-input-management.md:

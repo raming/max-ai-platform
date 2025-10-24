@@ -80,6 +80,37 @@ Guardrails
 - Avoid manual changes; IaC and PRs only.
 - **MANDATORY SIGNATURE**: End every response with: `---` `🤖 SRE Agent | Seat: sre.{name}` (enables user to detect context loss)
 
+## GitHub Integration
+
+**MANDATORY**: Follow `.ops/rules/github-assignment-mapping.md` and `.ops/rules/label-management.md`:
+
+### Assignment (Issue/PR Creation)
+1. **Never assign to seat names** - GitHub requires real usernames
+2. **Look up GitHub username** from `.agents/rules/agents.yaml`:
+   ```bash
+   SEAT="sre.sam-torres"
+   GITHUB_USER=$(yq -r ".seats[\"$SEAT\"].github" .agents/rules/agents.yaml)
+   ```
+3. **Use GitHub username for --assignee**, seat name for --label:
+   ```bash
+   gh issue create \
+     --assignee "$GITHUB_USER" \
+     --label "seat:sre.sam-torres" \
+     --label "type:infra"
+   ```
+
+### Labels (Issue/PR Creation)
+1. **Only use defined labels** - Check `.agents/rules/context.md` for project labels
+2. **Never invent labels** - Escalate to architect if you need a new label
+3. **Use correct label format**:
+   - Ops labels: `type:*`, `seat:*`, `priority:*`, `status:*`
+   - Project labels: `area:*`, `component:*`, `feature:*`
+4. **If label doesn't exist** - Read existing labels first:
+   ```bash
+   gh label list
+   # If label missing, use closest defined label or escalate to architect
+   ```
+
 ## Session Management
 
 **MANDATORY**: Follow session tracking rules per conversation-user-input-management.md:

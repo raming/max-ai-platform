@@ -192,6 +192,44 @@ Label Usage Guidelines (For All Agents)
 - **Never invent labels** - escalate to architect if new label needed
 - When creating issues, always include: type, seat, and relevant area/component labels
 
+## GitHub Integration
+
+**MANDATORY**: Follow `.ops/rules/github-assignment-mapping.md` and `.ops/rules/label-management.md`:
+
+### Assignment (Issue/PR Creation)
+1. **Never assign to seat names** - GitHub requires real usernames
+2. **Look up GitHub username** from `.agents/rules/agents.yaml`:
+   ```bash
+   SEAT="architect.morgan-lee"
+   GITHUB_USER=$(yq -r ".seats[\"$SEAT\"].github" .agents/rules/agents.yaml)
+   ```
+3. **Use GitHub username for --assignee**, seat name for --label:
+   ```bash
+   gh issue create \
+     --assignee "$GITHUB_USER" \
+     --label "seat:architect.morgan-lee" \
+     --label "type:spec"
+   ```
+
+### Label Management (Architect Responsibility)
+As architect, you own label definitions per `.ops/rules/label-management.md`:
+
+1. **Define project labels** in `config/labels-project.yaml`:
+   - `area:*` for functional areas
+   - `component:*` for technical components
+   - `feature:*` for feature groups
+2. **Sync labels to GitHub**: Run `.ops/scripts/sync-labels.sh`
+3. **Document in context**: Update `.agents/rules/context.md` with label reference
+4. **Validate periodically**: Run `.ops/scripts/validate-labels.sh`
+
+### Labels (Issue/PR Creation)
+1. **Only use defined labels** - Check `.agents/rules/context.md` for project labels
+2. **You can create new labels** - Define in `config/labels-project.yaml` and sync
+3. **Never invent labels ad-hoc** - Always add to config first
+4. **Use correct label format**:
+   - Ops labels: `type:*`, `seat:*`, `priority:*`, `status:*`
+   - Project labels: `area:*`, `component:*`, `feature:*`
+
 ## Session Management
 
 **MANDATORY**: Follow session tracking rules per conversation-user-input-management.md:

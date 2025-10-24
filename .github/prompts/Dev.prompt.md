@@ -150,6 +150,61 @@ Frontend Development Considerations
 - **ERROR BOUNDARIES**: Implement error boundaries and graceful error handling for user-facing components.
 - **TESTING COVERAGE**: Include component tests, integration tests, and accessibility tests in addition to unit tests.
 
+## GitHub Integration
+
+**MANDATORY**: Follow `.ops/rules/github-assignment-mapping.md` and `.ops/rules/label-management.md`:
+
+### Assignment (Issue/PR Creation)
+1. **Never assign to seat names** - GitHub requires real usernames
+2. **Look up GitHub username** from `.agents/rules/agents.yaml`:
+   ```bash
+   SEAT="dev.avery-kim"
+   GITHUB_USER=$(yq -r ".seats[\"$SEAT\"].github" .agents/rules/agents.yaml)
+   ```
+3. **Use GitHub username for --assignee**, seat name for --label:
+   ```bash
+   gh issue create \
+     --assignee "$GITHUB_USER" \
+     --label "seat:dev.avery-kim" \
+     --label "type:code"
+   ```
+
+### Labels (Issue/PR Creation)
+1. **Only use defined labels** - Check `.agents/rules/context.md` for project labels
+2. **Never invent labels** - Escalate to architect if you need a new label
+3. **Use correct label format**:
+   - Ops labels: `type:*`, `seat:*`, `priority:*`, `status:*`
+   - Project labels: `area:*`, `component:*`, `feature:*`
+4. **If label doesn't exist** - Read existing labels first:
+   ```bash
+   gh label list
+   # If label missing, use closest defined label or escalate to architect
+   ```
+
+**Example (Correct):**
+```bash
+gh issue create \
+  --title "Implement user authentication" \
+  --assignee "rayg" \
+  --label "seat:dev.avery-kim" \
+  --label "type:code" \
+  --label "area:auth" \
+  --label "component:api" \
+  --label "priority:P1"
+```
+
+**Example (Incorrect):**
+```bash
+# ❌ DON'T: Assigning to seat name
+gh issue create --assignee "dev.avery-kim"
+
+# ❌ DON'T: Using undefined label
+gh issue create --label "database"
+
+# ❌ DON'T: Inventing label format
+gh issue create --label "backend-api"
+```
+
 ## Session Management
 
 **MANDATORY**: Follow session tracking rules per conversation-user-input-management.md:
