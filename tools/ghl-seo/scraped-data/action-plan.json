@@ -1,0 +1,46 @@
+{
+  "title": "SEO Improvement Action Plan",
+  "generated": "2025-10-21T19:05:52.416Z",
+  "website": "https://maxaiassistant.com/",
+  "phases": [
+    {
+      "phase": "Immediate Actions (Week 1)",
+      "tasks": [
+        "Fix all critical SEO issues",
+        "Update meta titles and descriptions",
+        "Add missing H1 tags where needed",
+        "Implement basic Schema.org markup"
+      ]
+    },
+    {
+      "phase": "Short-term Improvements (Weeks 2-4)",
+      "tasks": [
+        "Optimize content for target keywords",
+        "Improve internal linking structure",
+        "Add alt text to images",
+        "Enhance page load speed"
+      ]
+    },
+    {
+      "phase": "Long-term Strategy (Months 2-3)",
+      "tasks": [
+        "Create comprehensive content marketing plan",
+        "Build high-quality backlinks",
+        "Expand social media presence",
+        "Monitor and track SEO performance"
+      ]
+    }
+  ],
+  "timeline": {
+    "week1": "Critical fixes and basic optimizations",
+    "week2": "Content and technical improvements",
+    "week3": "Advanced SEO implementation",
+    "week4": "Monitoring and refinement"
+  },
+  "success_metrics": [
+    "Improve overall SEO score by 20+ points",
+    "Fix all critical issues",
+    "Increase organic search visibility",
+    "Improve user engagement metrics"
+  ]
+}

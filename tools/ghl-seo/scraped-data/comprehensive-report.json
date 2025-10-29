@@ -1,0 +1,755 @@
+{
+  "title": "GoHighLevel Website SEO Analysis Report",
+  "generated": "2025-10-21T19:05:52.415Z",
+  "executive_summary": {
+    "overall_score": 32,
+    "grade": "F",
+    "pages_analyzed": 11,
+    "total_issues": 124,
+    "key_findings": [
+      "Website scored 32/100 (F grade)",
+      "124 SEO issues identified across 11 pages",
+      "62 critical issues require immediate attention",
+      "12 actionable recommendations provided"
+    ],
+    "strengths": [
+      "Analysis completed successfully"
+    ],
+    "priorities": [
+      "Fix 62 critical issues immediately",
+      "Address 51 warnings",
+      "Implement top recommendations for quick wins",
+      "Monitor progress with regular audits"
+    ]
+  },
+  "technical_details": {
+    "scraping": {
+      "totalPages": 11,
+      "pages": [
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Homepage",
+          "wordCount": 3403,
+          "h1Count": 0,
+          "images": 39
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "/homepage",
+          "wordCount": 3403,
+          "h1Count": 0,
+          "images": 39
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Truck Services",
+          "wordCount": 1977,
+          "h1Count": 13,
+          "images": 23
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto RepairPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6",
+          "wordCount": 2495,
+          "h1Count": 6,
+          "images": 7
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto CollisionPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6",
+          "wordCount": 2501,
+          "h1Count": 5,
+          "images": 7
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto Part StoresPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6",
+          "wordCount": 2493,
+          "h1Count": 5,
+          "images": 7
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto Part StoresPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6",
+          "wordCount": 2495,
+          "h1Count": 5,
+          "images": 7
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Tire DealersPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6",
+          "wordCount": 2483,
+          "h1Count": 5,
+          "images": 7
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Motorcycke shopsPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6",
+          "wordCount": 2486,
+          "h1Count": 5,
+          "images": 7
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Appliance RepairPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6",
+          "wordCount": 2489,
+          "h1Count": 5,
+          "images": 7
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Carpet CleaningPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6",
+          "wordCount": 2487,
+          "h1Count": 5,
+          "images": 7
+        }
+      ]
+    },
+    "audit": {
+      "overallScore": 32,
+      "grade": "F",
+      "totalIssues": 124,
+      "issueBreakdown": {
+        "critical": 62,
+        "warnings": 51,
+        "opportunities": 11
+      },
+      "recommendations": 12
+    }
+  },
+  "recommendations": [
+    {
+      "priority": "high",
+      "issue": "Missing title tag",
+      "affectedPages": 2,
+      "pages": [
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Homepage"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "/homepage"
+        }
+      ],
+      "solution": "Add a descriptive title tag (50-60 characters)",
+      "impact": "high"
+    },
+    {
+      "priority": "high",
+      "issue": "Missing meta description",
+      "affectedPages": 11,
+      "pages": [
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Homepage"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "/homepage"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Truck Services"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto RepairPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto CollisionPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto Part StoresPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto Part StoresPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Tire DealersPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Motorcycke shopsPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Appliance RepairPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Carpet CleaningPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        }
+      ],
+      "solution": "Add compelling meta description (150-160 characters)",
+      "impact": "high"
+    },
+    {
+      "priority": "high",
+      "issue": "Missing H1 tag",
+      "affectedPages": 2,
+      "pages": [
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Homepage"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "/homepage"
+        }
+      ],
+      "solution": "Add exactly one H1 tag with primary keyword",
+      "impact": "high"
+    },
+    {
+      "priority": "high",
+      "issue": "Target keyword \"ai assistant\" not found in content",
+      "affectedPages": 38,
+      "pages": [
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Homepage"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Homepage"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Homepage"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Homepage"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "/homepage"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "/homepage"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "/homepage"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "/homepage"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Truck Services"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Truck Services"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Truck Services"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Truck Services"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto RepairPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto RepairPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto RepairPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto CollisionPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto CollisionPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto CollisionPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto CollisionPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto Part StoresPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto Part StoresPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto Part StoresPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto Part StoresPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto Part StoresPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto Part StoresPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto Part StoresPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Tire DealersPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Tire DealersPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Tire DealersPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Motorcycke shopsPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Motorcycke shopsPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Motorcycke shopsPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Appliance RepairPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Appliance RepairPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Appliance RepairPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Carpet CleaningPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Carpet CleaningPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Carpet CleaningPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        }
+      ],
+      "solution": "Include \"ai assistant\" naturally in content (aim for 0.5-1% density)",
+      "impact": "high"
+    },
+    {
+      "priority": "high",
+      "issue": "Title does not include target keywords",
+      "affectedPages": 9,
+      "pages": [
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Truck Services"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto RepairPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto CollisionPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto Part StoresPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto Part StoresPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Tire DealersPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Motorcycke shopsPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Appliance RepairPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Carpet CleaningPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        }
+      ],
+      "solution": "Include primary keywords: ai assistant, local seo",
+      "impact": "high"
+    },
+    {
+      "priority": "medium",
+      "issue": "39 images missing alt text",
+      "affectedPages": 11,
+      "pages": [
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Homepage"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "/homepage"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Truck Services"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto RepairPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto CollisionPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto Part StoresPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto Part StoresPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Tire DealersPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Motorcycke shopsPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Appliance RepairPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Carpet CleaningPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        }
+      ],
+      "solution": "Add descriptive alt text to all images",
+      "impact": "medium"
+    },
+    {
+      "priority": "medium",
+      "issue": "Missing canonical URL",
+      "affectedPages": 11,
+      "pages": [
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Homepage"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "/homepage"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Truck Services"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto RepairPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto CollisionPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto Part StoresPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto Part StoresPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Tire DealersPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Motorcycke shopsPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Appliance RepairPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Carpet CleaningPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        }
+      ],
+      "solution": "Add canonical URL to prevent duplicate content issues",
+      "impact": "medium"
+    },
+    {
+      "priority": "medium",
+      "issue": "No structured data found",
+      "affectedPages": 11,
+      "pages": [
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Homepage"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "/homepage"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Truck Services"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto RepairPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto CollisionPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto Part StoresPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto Part StoresPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Tire DealersPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Motorcycke shopsPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Appliance RepairPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Carpet CleaningPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        }
+      ],
+      "solution": "Add Schema.org markup for rich snippets",
+      "impact": "medium"
+    },
+    {
+      "priority": "medium",
+      "issue": "Title too short (14 chars)",
+      "affectedPages": 1,
+      "pages": [
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Truck Services"
+        }
+      ],
+      "solution": "Expand title to 50-60 characters",
+      "impact": "medium"
+    },
+    {
+      "priority": "medium",
+      "issue": "Multiple H1 tags found (13)",
+      "affectedPages": 9,
+      "pages": [
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Truck Services"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto RepairPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto CollisionPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto Part StoresPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto Part StoresPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Tire DealersPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Motorcycke shopsPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Appliance RepairPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Carpet CleaningPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        }
+      ],
+      "solution": "Use only one H1 tag per page",
+      "impact": "medium"
+    },
+    {
+      "priority": "medium",
+      "issue": "Title too long (71 chars)",
+      "affectedPages": 8,
+      "pages": [
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto RepairPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto CollisionPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto Part StoresPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto Part StoresPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Tire DealersPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Motorcycke shopsPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Appliance RepairPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Carpet CleaningPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        }
+      ],
+      "solution": "Shorten title to under 60 characters",
+      "impact": "medium"
+    },
+    {
+      "priority": "low",
+      "issue": "Missing Open Graph tags",
+      "affectedPages": 11,
+      "pages": [
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Homepage"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "/homepage"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Truck Services"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto RepairPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto CollisionPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto Part StoresPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto Part StoresPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Tire DealersPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Motorcycke shopsPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Appliance RepairPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Carpet CleaningPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        }
+      ],
+      "solution": "Add og:title, og:description, and og:image for better social sharing",
+      "impact": "low"
+    }
+  ],
+  "next_steps": [
+    {
+      "phase": "Immediate Actions (Week 1)",
+      "tasks": [
+        "Fix all critical SEO issues",
+        "Update meta titles and descriptions",
+        "Add missing H1 tags where needed",
+        "Implement basic Schema.org markup"
+      ]
+    },
+    {
+      "phase": "Short-term Improvements (Weeks 2-4)",
+      "tasks": [
+        "Optimize content for target keywords",
+        "Improve internal linking structure",
+        "Add alt text to images",
+        "Enhance page load speed"
+      ]
+    },
+    {
+      "phase": "Long-term Strategy (Months 2-3)",
+      "tasks": [
+        "Create comprehensive content marketing plan",
+        "Build high-quality backlinks",
+        "Expand social media presence",
+        "Monitor and track SEO performance"
+      ]
+    }
+  ]
+}

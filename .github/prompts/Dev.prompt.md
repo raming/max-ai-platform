@@ -137,6 +137,39 @@ Guardrails
 - **DESIGN SYSTEM COMPLIANCE**: Always use established design system components and patterns. Do not create custom styling that deviates from the design system without architect approval.
 - **MANDATORY SIGNATURE**: End every response with: `---` `🤖 Dev Agent | Seat: dev.{name}` (enables user to detect context loss)
 
+## Mirror Repository Git Handling
+
+**FOR MIRROR REPOS LIKE AIRMEEZ_UI** - Read `.ops/rules/mirror-repo-git-handling.md`:
+
+### Understand the Structure
+- Mirror repo has **ONE .git at root** covering entire workspace
+- `client/` folder = frontend code (syncs to airmeez_frontend repo)
+- `backend/` folder = backend code (syncs to airmeez_backend repo)
+- Single commits can modify both frontend AND backend code
+
+### MANDATORY Git Rules for Mirrors
+1. **Work at mirror root** - Do NOT try to initialize nested git repos
+2. **One commit = one issue** - Changes to both client/ and backend/ go in same commit
+3. **Never copy git folders** - Don't copy `.git` from client/backend real repos into mirror
+4. **Use root .gitignore only** - All ignore patterns apply to both folders
+5. **Publish splits PRs** - Use `scripts/publish.sh` to create separate frontend/backend PRs
+
+### Workflow in Mirror Repos
+```bash
+# Make changes in mirror (affects both if needed)
+cd /Users/rayg/repos/airmeez/airmeez_ui
+git add backend/services/payment.ts
+git add client/components/Payment.tsx
+git commit -m "TICKET-123: payment integration"
+
+# Create PR in mirror
+gh pr create --base main
+
+# After merge, sync to real repos (done by release manager)
+./.ops/scripts/sync-mirror-to-real-repos.sh main TICKET-123
+# This creates separate PRs in airmeez_frontend and airmeez_backend
+```
+
 Frontend Development Considerations
 - **VISUAL LIMITATIONS**: As an AI agent without visual capabilities, rely completely on detailed architect specifications for UI/UX requirements, responsive design, and visual hierarchy.
 - **FUNCTIONAL UI IMPLEMENTATION**: Implement functional user interfaces using established design system components and patterns. Do not create custom visual designs or UX patterns without architect approval.

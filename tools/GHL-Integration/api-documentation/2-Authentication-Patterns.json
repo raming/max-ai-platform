@@ -1,0 +1,35 @@
+{
+  "generatedAt": "2025-10-21T23:31:47.585Z",
+  "summary": {
+    "primaryMethod": "token-id header",
+    "fallbackMethod": "Authorization Bearer header",
+    "tokenFormat": "JWT (JSON Web Token)",
+    "tokenAlgorithms": [
+      "HS256",
+      "RS256"
+    ]
+  },
+  "patterns": {
+    "token-id": {
+      "header": "token-id",
+      "format": "JWT Token",
+      "algorithm": "HS256 or RS256",
+      "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+      "usage": "Primary authentication method for most endpoints"
+    },
+    "bearer": {
+      "header": "Authorization",
+      "format": "Bearer {token}",
+      "algorithm": "HS256 or RS256",
+      "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+      "usage": "Fallback/alternative authentication method"
+    }
+  },
+  "implementationSteps": [
+    "1. Authenticate to get token-id",
+    "2. Include token-id header in all requests",
+    "3. Include version header (usually \"1.0\")",
+    "4. If 401 response, token may be expired - refresh",
+    "5. Some endpoints may accept Bearer token as alternative"
+  ]
+}

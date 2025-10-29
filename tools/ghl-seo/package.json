@@ -1,0 +1,39 @@
+{
+  "name": "ghl-seo-analyzer",
+  "version": "1.0.0",
+  "description": "GoHighLevel website SEO analysis and optimization tool",
+  "main": "index.js",
+  "scripts": {
+    "analyze": "node analyze-site.js",
+    "scrape": "node simple-scraper.js",
+    "seo-audit": "node seo-audit.js",
+    "update": "node update-pages-correct.js",
+    "fetch-pages": "node fetch-pages-correct.js",
+    "list-pages": "node fetch-pages-correct.js --list",
+    "test-api": "node ghl-api-client.js",
+    "test-apis": "node test-apis.js",
+    "manage-apis": "node manage-apis.js",
+    "quick-test": "node quick-test.js",
+    "discover": "node discover-apis.js",
+    "explore-admin": "node explore-admin.js",
+    "extract-tokens": "node extract-tokens.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.6.1"
+  },
+  "devDependencies": {
+    "chalk": "^4.1.2",
+    "cheerio": "^1.0.0-rc.12",
+    "lighthouse": "^11.3.0",
+    "ora": "^5.4.1",
+    "puppeteer": "^24.26.0"
+  },
+  "keywords": [
+    "seo",
+    "gohighlevel",
+    "puppeteer",
+    "website-analysis"
+  ],
+  "author": "Max AI Team",
+  "license": "MIT"
+}

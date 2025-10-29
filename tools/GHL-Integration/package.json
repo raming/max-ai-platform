@@ -1,0 +1,25 @@
+{
+  "name": "ghl-api-integration-monitor",
+  "version": "1.0.0",
+  "description": "Comprehensive GHL API authentication and header monitoring system",
+  "main": "monitor-ghl-api.js",
+  "scripts": {
+    "monitor": "node monitor-ghl-api.js",
+    "analyze": "node analyze-results.js",
+    "start": "npm run monitor"
+  },
+  "dependencies": {
+    "puppeteer": "^21.5.0",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "ghl",
+    "api",
+    "authentication",
+    "headers",
+    "monitoring"
+  ],
+  "author": "",
+  "license": "MIT"
+}

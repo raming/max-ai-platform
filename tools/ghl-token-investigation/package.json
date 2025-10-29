@@ -6,7 +6,9 @@
   "scripts": {
     "investigate": "node investigate-tokens.js",
     "analyze": "node analyze-tokens.js",
-    "auth-ghl": "node authenticate-ghl.js"
+    "auth-ghl": "node authenticate-ghl.js",
+    "inspect-apis": "node inspect-browser-apis.js",
+    "inspect-apis:headless": "HEADLESS=true DEVTOOLS=false node inspect-browser-apis.js"
   },
   "dependencies": {
     "puppeteer": "^22.15.0",

@@ -1,0 +1,47 @@
+[
+  {
+    "method": "POST",
+    "url": "https://identitytoolkit.googleapis.com/v1/accounts:signInWithCustomToken",
+    "hasData": true
+  },
+  {
+    "method": "POST",
+    "url": "https://identitytoolkit.googleapis.com/v1/accounts:lookup",
+    "hasData": true
+  },
+  {
+    "method": "POST",
+    "url": "https://backend.leadconnectorhq.com/appengine/api/token/update",
+    "hasData": false
+  },
+  {
+    "method": "GET",
+    "url": "https://rest.gohighlevel.com/v1/websites",
+    "hasData": false
+  },
+  {
+    "method": "GET",
+    "url": "https://rest.gohighlevel.com/v1/websites/{website_id}/pages",
+    "hasData": false
+  },
+  {
+    "method": "PUT",
+    "url": "https://rest.gohighlevel.com/v1/websites/pages/{page_id}",
+    "hasData": true
+  },
+  {
+    "method": "GET",
+    "url": "https://rest.gohighlevel.com/v1/websites/pages/{page_id}",
+    "hasData": false
+  },
+  {
+    "method": "POST",
+    "url": "https://data.pathfinder.gohighlevel.com/data/rec/",
+    "hasData": true
+  },
+  {
+    "method": "GET",
+    "url": "https://data.pathfinder.gohighlevel.com/data/guide.js",
+    "hasData": false
+  }
+]

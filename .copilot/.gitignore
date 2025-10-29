@@ -1,9 +1,20 @@
 # Copilot conversation tracking (local only - prevents context loss)
-.copilot/sessions/
-.copilot/user-inputs/
-.copilot/decisions/
+sessions/
+user-inputs/
+decisions/
+
+# Agent work output (should be in .ops/tracker/agents/ or GitHub issues instead)
+qa-review/
+architect-review/
+architect-findings/
+github-issue-updates/
+reports/
+architect-guidance/
+dev-review/
+team-lead-guidance/
 
 # Keep structure and templates
-!.copilot/README.md
-!.copilot/templates/
-!.copilot/.gitkeep
+!README.md
+!templates/
+!context/
+!.gitkeep

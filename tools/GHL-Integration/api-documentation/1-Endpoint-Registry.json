@@ -1,0 +1,392 @@
+{
+  "generatedAt": "2025-10-21T23:31:47.583Z",
+  "baseUrls": {
+    "backend": "https://backend.leadconnectorhq.com",
+    "locationapi": "https://locationapi.leadconnectorhq.com",
+    "pagebuilder": "https://page-builder.leadconnectorhq.com",
+    "apisystem": "https://apisystem.tech"
+  },
+  "totalEndpoints": 25,
+  "endpoints": [
+    {
+      "method": "GET",
+      "endpoint": "/users/me",
+      "name": "Get Current User",
+      "auth": "token-id",
+      "description": "Fetch current authenticated user information",
+      "fullUrl": "https://backend.leadconnectorhq.com/users/me",
+      "requiredHeaders": [
+        "token-id",
+        "version",
+        "content-type"
+      ],
+      "example": "### Get Current User\n\n```bash\ncurl -X GET \\\n  \"$BASE_URL/users/me\" \\\n  -H \"token-id: $TOKEN_ID\" \\\n  -H \"version: $VERSION\" \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Accept: application/json\"\n```\n\n",
+      "javascriptExample": "\nconst client = new GHLAPIClient(tokenId);\nconst result = await client.get current user;\n"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/users/{userId}",
+      "name": "Get User by ID",
+      "auth": "token-id",
+      "description": "Fetch specific user by ID",
+      "fullUrl": "https://backend.leadconnectorhq.com/users/{userId}",
+      "requiredHeaders": [
+        "token-id",
+        "version",
+        "content-type"
+      ],
+      "example": "### Get User by ID\n\n```bash\ncurl -X GET \\\n  \"$BASE_URL/users/{userId}\" \\\n  -H \"token-id: $TOKEN_ID\" \\\n  -H \"version: $VERSION\" \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Accept: application/json\"\n```\n\n",
+      "javascriptExample": "\nconst client = new GHLAPIClient(tokenId);\nconst result = await client.get user by id;\n"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/location",
+      "name": "Get Default Location",
+      "auth": "token-id",
+      "description": "Fetch default/primary location",
+      "fullUrl": "https://backend.leadconnectorhq.com/location",
+      "requiredHeaders": [
+        "token-id",
+        "version",
+        "content-type"
+      ],
+      "example": "### Get Default Location\n\n```bash\ncurl -X GET \\\n  \"$BASE_URL/location\" \\\n  -H \"token-id: $TOKEN_ID\" \\\n  -H \"version: $VERSION\" \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Accept: application/json\"\n```\n\n",
+      "javascriptExample": "\nconst client = new GHLAPIClient(tokenId);\nconst result = await client.get default location;\n"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/location/{id}",
+      "name": "Get Location",
+      "auth": "token-id",
+      "description": "Fetch location by ID",
+      "fullUrl": "https://backend.leadconnectorhq.com/location/{id}",
+      "requiredHeaders": [
+        "token-id",
+        "version",
+        "content-type"
+      ],
+      "example": "### Get Location\n\n```bash\ncurl -X GET \\\n  \"$BASE_URL/location/{id}\" \\\n  -H \"token-id: $TOKEN_ID\" \\\n  -H \"version: $VERSION\" \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Accept: application/json\"\n```\n\n",
+      "javascriptExample": "\nconst client = new GHLAPIClient(tokenId);\nconst result = await client.get location;\n"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/locations",
+      "name": "List Locations",
+      "auth": "token-id",
+      "description": "List all locations for user",
+      "fullUrl": "https://backend.leadconnectorhq.com/locations",
+      "requiredHeaders": [
+        "token-id",
+        "version",
+        "content-type"
+      ],
+      "example": "### List Locations\n\n```bash\ncurl -X GET \\\n  \"$BASE_URL/locations\" \\\n  -H \"token-id: $TOKEN_ID\" \\\n  -H \"version: $VERSION\" \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Accept: application/json\"\n```\n\n",
+      "javascriptExample": "\nconst client = new GHLAPIClient(tokenId);\nconst result = await client.list locations;\n"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/contact",
+      "name": "List Contacts",
+      "auth": "token-id",
+      "description": "List all contacts",
+      "fullUrl": "https://backend.leadconnectorhq.com/contact",
+      "requiredHeaders": [
+        "token-id",
+        "version",
+        "content-type"
+      ],
+      "example": "### List Contacts\n\n```bash\ncurl -X GET \\\n  \"$BASE_URL/contact\" \\\n  -H \"token-id: $TOKEN_ID\" \\\n  -H \"version: $VERSION\" \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Accept: application/json\"\n```\n\n",
+      "javascriptExample": "\nconst client = new GHLAPIClient(tokenId);\nconst result = await client.list contacts;\n"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/contact/{id}",
+      "name": "Get Contact",
+      "auth": "token-id",
+      "description": "Get contact by ID",
+      "fullUrl": "https://backend.leadconnectorhq.com/contact/{id}",
+      "requiredHeaders": [
+        "token-id",
+        "version",
+        "content-type"
+      ],
+      "example": "### Get Contact\n\n```bash\ncurl -X GET \\\n  \"$BASE_URL/contact/{id}\" \\\n  -H \"token-id: $TOKEN_ID\" \\\n  -H \"version: $VERSION\" \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Accept: application/json\"\n```\n\n",
+      "javascriptExample": "\nconst client = new GHLAPIClient(tokenId);\nconst result = await client.get contact;\n"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/contact",
+      "name": "Create Contact",
+      "auth": "token-id",
+      "description": "Create new contact",
+      "body": {
+        "firstName": "string",
+        "lastName": "string",
+        "email": "string"
+      },
+      "fullUrl": "https://backend.leadconnectorhq.com/contact",
+      "requiredHeaders": [
+        "token-id",
+        "version",
+        "content-type"
+      ],
+      "example": "### Create Contact\n\n```bash\ncurl -X POST \\\n  \"$BASE_URL/contact\" \\\n  -H \"token-id: $TOKEN_ID\" \\\n  -H \"version: $VERSION\" \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Accept: application/json\"\n```\n\n",
+      "javascriptExample": "\nconst client = new GHLAPIClient(tokenId);\nconst result = await client.create contact;\n"
+    },
+    {
+      "method": "PUT",
+      "endpoint": "/contact/{id}",
+      "name": "Update Contact",
+      "auth": "token-id",
+      "description": "Update existing contact",
+      "fullUrl": "https://backend.leadconnectorhq.com/contact/{id}",
+      "requiredHeaders": [
+        "token-id",
+        "version",
+        "content-type"
+      ],
+      "example": "### Update Contact\n\n```bash\ncurl -X PUT \\\n  \"$BASE_URL/contact/{id}\" \\\n  -H \"token-id: $TOKEN_ID\" \\\n  -H \"version: $VERSION\" \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Accept: application/json\"\n```\n\n",
+      "javascriptExample": "\nconst client = new GHLAPIClient(tokenId);\nconst result = await client.update contact;\n"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/opportunity",
+      "name": "List Opportunities",
+      "auth": "token-id",
+      "description": "List all opportunities/deals",
+      "fullUrl": "https://backend.leadconnectorhq.com/opportunity",
+      "requiredHeaders": [
+        "token-id",
+        "version",
+        "content-type"
+      ],
+      "example": "### List Opportunities\n\n```bash\ncurl -X GET \\\n  \"$BASE_URL/opportunity\" \\\n  -H \"token-id: $TOKEN_ID\" \\\n  -H \"version: $VERSION\" \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Accept: application/json\"\n```\n\n",
+      "javascriptExample": "\nconst client = new GHLAPIClient(tokenId);\nconst result = await client.list opportunities;\n"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/opportunity/{id}",
+      "name": "Get Opportunity",
+      "auth": "token-id",
+      "description": "Get opportunity by ID",
+      "fullUrl": "https://backend.leadconnectorhq.com/opportunity/{id}",
+      "requiredHeaders": [
+        "token-id",
+        "version",
+        "content-type"
+      ],
+      "example": "### Get Opportunity\n\n```bash\ncurl -X GET \\\n  \"$BASE_URL/opportunity/{id}\" \\\n  -H \"token-id: $TOKEN_ID\" \\\n  -H \"version: $VERSION\" \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Accept: application/json\"\n```\n\n",
+      "javascriptExample": "\nconst client = new GHLAPIClient(tokenId);\nconst result = await client.get opportunity;\n"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/opportunity",
+      "name": "Create Opportunity",
+      "auth": "token-id",
+      "description": "Create new opportunity",
+      "fullUrl": "https://backend.leadconnectorhq.com/opportunity",
+      "requiredHeaders": [
+        "token-id",
+        "version",
+        "content-type"
+      ],
+      "example": "### Create Opportunity\n\n```bash\ncurl -X POST \\\n  \"$BASE_URL/opportunity\" \\\n  -H \"token-id: $TOKEN_ID\" \\\n  -H \"version: $VERSION\" \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Accept: application/json\"\n```\n\n",
+      "javascriptExample": "\nconst client = new GHLAPIClient(tokenId);\nconst result = await client.create opportunity;\n"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/campaign",
+      "name": "Get Campaign",
+      "auth": "token-id",
+      "description": "Get campaign information",
+      "fullUrl": "https://backend.leadconnectorhq.com/campaign",
+      "requiredHeaders": [
+        "token-id",
+        "version",
+        "content-type"
+      ],
+      "example": "### Get Campaign\n\n```bash\ncurl -X GET \\\n  \"$BASE_URL/campaign\" \\\n  -H \"token-id: $TOKEN_ID\" \\\n  -H \"version: $VERSION\" \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Accept: application/json\"\n```\n\n",
+      "javascriptExample": "\nconst client = new GHLAPIClient(tokenId);\nconst result = await client.get campaign;\n"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/campaigns",
+      "name": "List Campaigns",
+      "auth": "token-id",
+      "description": "List all campaigns",
+      "fullUrl": "https://backend.leadconnectorhq.com/campaigns",
+      "requiredHeaders": [
+        "token-id",
+        "version",
+        "content-type"
+      ],
+      "example": "### List Campaigns\n\n```bash\ncurl -X GET \\\n  \"$BASE_URL/campaigns\" \\\n  -H \"token-id: $TOKEN_ID\" \\\n  -H \"version: $VERSION\" \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Accept: application/json\"\n```\n\n",
+      "javascriptExample": "\nconst client = new GHLAPIClient(tokenId);\nconst result = await client.list campaigns;\n"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/campaigns",
+      "name": "Create Campaign",
+      "auth": "token-id",
+      "description": "Create new campaign",
+      "fullUrl": "https://backend.leadconnectorhq.com/campaigns",
+      "requiredHeaders": [
+        "token-id",
+        "version",
+        "content-type"
+      ],
+      "example": "### Create Campaign\n\n```bash\ncurl -X POST \\\n  \"$BASE_URL/campaigns\" \\\n  -H \"token-id: $TOKEN_ID\" \\\n  -H \"version: $VERSION\" \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Accept: application/json\"\n```\n\n",
+      "javascriptExample": "\nconst client = new GHLAPIClient(tokenId);\nconst result = await client.create campaign;\n"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/funnel",
+      "name": "List Funnels",
+      "auth": "token-id",
+      "description": "List all funnels/automations",
+      "fullUrl": "https://backend.leadconnectorhq.com/funnel",
+      "requiredHeaders": [
+        "token-id",
+        "version",
+        "content-type"
+      ],
+      "example": "### List Funnels\n\n```bash\ncurl -X GET \\\n  \"$BASE_URL/funnel\" \\\n  -H \"token-id: $TOKEN_ID\" \\\n  -H \"version: $VERSION\" \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Accept: application/json\"\n```\n\n",
+      "javascriptExample": "\nconst client = new GHLAPIClient(tokenId);\nconst result = await client.list funnels;\n"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/page",
+      "name": "List Pages",
+      "auth": "token-id",
+      "description": "List all landing pages",
+      "fullUrl": "https://backend.leadconnectorhq.com/page",
+      "requiredHeaders": [
+        "token-id",
+        "version",
+        "content-type"
+      ],
+      "example": "### List Pages\n\n```bash\ncurl -X GET \\\n  \"$BASE_URL/page\" \\\n  -H \"token-id: $TOKEN_ID\" \\\n  -H \"version: $VERSION\" \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Accept: application/json\"\n```\n\n",
+      "javascriptExample": "\nconst client = new GHLAPIClient(tokenId);\nconst result = await client.list pages;\n"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/page/{id}",
+      "name": "Get Page",
+      "auth": "token-id",
+      "description": "Get page by ID",
+      "fullUrl": "https://backend.leadconnectorhq.com/page/{id}",
+      "requiredHeaders": [
+        "token-id",
+        "version",
+        "content-type"
+      ],
+      "example": "### Get Page\n\n```bash\ncurl -X GET \\\n  \"$BASE_URL/page/{id}\" \\\n  -H \"token-id: $TOKEN_ID\" \\\n  -H \"version: $VERSION\" \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Accept: application/json\"\n```\n\n",
+      "javascriptExample": "\nconst client = new GHLAPIClient(tokenId);\nconst result = await client.get page;\n"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/page",
+      "name": "Create Page",
+      "auth": "token-id",
+      "description": "Create new landing page",
+      "fullUrl": "https://backend.leadconnectorhq.com/page",
+      "requiredHeaders": [
+        "token-id",
+        "version",
+        "content-type"
+      ],
+      "example": "### Create Page\n\n```bash\ncurl -X POST \\\n  \"$BASE_URL/page\" \\\n  -H \"token-id: $TOKEN_ID\" \\\n  -H \"version: $VERSION\" \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Accept: application/json\"\n```\n\n",
+      "javascriptExample": "\nconst client = new GHLAPIClient(tokenId);\nconst result = await client.create page;\n"
+    },
+    {
+      "method": "PUT",
+      "endpoint": "/page/{id}",
+      "name": "Update Page",
+      "auth": "token-id",
+      "description": "Update page",
+      "fullUrl": "https://backend.leadconnectorhq.com/page/{id}",
+      "requiredHeaders": [
+        "token-id",
+        "version",
+        "content-type"
+      ],
+      "example": "### Update Page\n\n```bash\ncurl -X PUT \\\n  \"$BASE_URL/page/{id}\" \\\n  -H \"token-id: $TOKEN_ID\" \\\n  -H \"version: $VERSION\" \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Accept: application/json\"\n```\n\n",
+      "javascriptExample": "\nconst client = new GHLAPIClient(tokenId);\nconst result = await client.update page;\n"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/page/{id}/publish",
+      "name": "Publish Page",
+      "auth": "token-id",
+      "description": "Publish page to live",
+      "fullUrl": "https://backend.leadconnectorhq.com/page/{id}/publish",
+      "requiredHeaders": [
+        "token-id",
+        "version",
+        "content-type"
+      ],
+      "example": "### Publish Page\n\n```bash\ncurl -X POST \\\n  \"$BASE_URL/page/{id}/publish\" \\\n  -H \"token-id: $TOKEN_ID\" \\\n  -H \"version: $VERSION\" \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Accept: application/json\"\n```\n\n",
+      "javascriptExample": "\nconst client = new GHLAPIClient(tokenId);\nconst result = await client.publish page;\n"
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/page/{id}",
+      "name": "Delete Page",
+      "auth": "token-id",
+      "description": "Delete page",
+      "fullUrl": "https://backend.leadconnectorhq.com/page/{id}",
+      "requiredHeaders": [
+        "token-id",
+        "version",
+        "content-type"
+      ],
+      "example": "### Delete Page\n\n```bash\ncurl -X DELETE \\\n  \"$BASE_URL/page/{id}\" \\\n  -H \"token-id: $TOKEN_ID\" \\\n  -H \"version: $VERSION\" \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Accept: application/json\"\n```\n\n",
+      "javascriptExample": "\nconst client = new GHLAPIClient(tokenId);\nconst result = await client.delete page;\n"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/webhook",
+      "name": "List Webhooks",
+      "auth": "token-id",
+      "description": "List all webhooks",
+      "fullUrl": "https://backend.leadconnectorhq.com/webhook",
+      "requiredHeaders": [
+        "token-id",
+        "version",
+        "content-type"
+      ],
+      "example": "### List Webhooks\n\n```bash\ncurl -X GET \\\n  \"$BASE_URL/webhook\" \\\n  -H \"token-id: $TOKEN_ID\" \\\n  -H \"version: $VERSION\" \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Accept: application/json\"\n```\n\n",
+      "javascriptExample": "\nconst client = new GHLAPIClient(tokenId);\nconst result = await client.list webhooks;\n"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/webhook",
+      "name": "Create Webhook",
+      "auth": "token-id",
+      "description": "Create new webhook",
+      "fullUrl": "https://backend.leadconnectorhq.com/webhook",
+      "requiredHeaders": [
+        "token-id",
+        "version",
+        "content-type"
+      ],
+      "example": "### Create Webhook\n\n```bash\ncurl -X POST \\\n  \"$BASE_URL/webhook\" \\\n  -H \"token-id: $TOKEN_ID\" \\\n  -H \"version: $VERSION\" \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Accept: application/json\"\n```\n\n",
+      "javascriptExample": "\nconst client = new GHLAPIClient(tokenId);\nconst result = await client.create webhook;\n"
+    },
+    {
+      "method": "DELETE",
+      "endpoint": "/webhook/{id}",
+      "name": "Delete Webhook",
+      "auth": "token-id",
+      "description": "Delete webhook",
+      "fullUrl": "https://backend.leadconnectorhq.com/webhook/{id}",
+      "requiredHeaders": [
+        "token-id",
+        "version",
+        "content-type"
+      ],
+      "example": "### Delete Webhook\n\n```bash\ncurl -X DELETE \\\n  \"$BASE_URL/webhook/{id}\" \\\n  -H \"token-id: $TOKEN_ID\" \\\n  -H \"version: $VERSION\" \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Accept: application/json\"\n```\n\n",
+      "javascriptExample": "\nconst client = new GHLAPIClient(tokenId);\nconst result = await client.delete webhook;\n"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "name": "ghl-api-inspector",
+  "version": "1.0.0",
+  "description": "GoHighLevel Browser API Inspector - Puppeteer-based automated API capture",
+  "main": "puppeteer-capture.js",
+  "type": "commonjs",
+  "scripts": {
+    "inspect": "node puppeteer-capture.js",
+    "inspect:debug": "node puppeteer-capture.js --output ghl-capture-debug.json 2>&1 | tee ghl-capture-debug.log",
+    "inspect:headless": "node puppeteer-capture.js --headless true",
+    "inspect:interactive": "node puppeteer-capture.js --headless false"
+  },
+  "dependencies": {
+    "puppeteer": "^21.0.0",
+    "dotenv": "^16.0.0"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "gohighlevel",
+    "api",
+    "puppeteer",
+    "browser-automation",
+    "api-capture",
+    "network-inspection"
+  ],
+  "author": "Platform Architect",
+  "license": "MIT"
+}

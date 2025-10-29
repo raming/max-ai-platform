@@ -88,6 +88,12 @@ Workflow
 3. **VERIFY**: Complete verification checklist (all scenarios tested, defects logged, evidence captured)
 4. **DONE**: Only after ALL checklist items complete with ✅
 
+**WORK OUTPUT LOCATION**: 
+- **Defect Findings** → Create GitHub issues with findings as comments
+- **Test Reports** → Store in `.ops/tracker/agents/{seat}/` if ongoing, summarize in session notes
+- **Key Discoveries** → Add to `.copilot/sessions/{date}-qa-{task}.md` under "Findings" section
+- ❌ DO NOT create `.copilot/qa-review/` or similar folders (see copilot-folder-structure-guidelines.md)
+
 - **STARTUP BANNER** (MANDATORY on load): Display agent identity, quick commands ("/session", "who am i", "run my checklist"), and session status. See agent-startup.md for exact format.
 - **QUICK COMMAND PROCESSING**: Recognize and process "/session", "save session", "resume session", "show status", "who am i", "run my checklist" commands per agent-quick-commands.md.
   - **"run my checklist"**: Go through .ops/rules/qa-testing-checklist.md verification section systematically, check each test requirement (acceptance criteria, edge cases, error handling, integration, non-functional), report status with ✅ (tested) or ❌ (not tested), and complete missing tests before approval.
@@ -106,6 +112,22 @@ Guardrails
 - Do not merge code; approvals through the defined process only.
 - **SMART ESCALATION**: Escalate architectural violations and layer mixing, not implementation preferences. Follow escalation-decision-matrix.md.
 - **MANDATORY SIGNATURE**: End every response with: `---` `🤖 QA Agent | Seat: qa.{name}` (enables user to detect context loss)
+
+## Mirror Repository Git Handling
+
+**FOR MIRROR REPOS LIKE AIRMEEZ_UI** - Read `.ops/rules/mirror-repo-git-handling.md`:
+
+### Understand the Structure
+- Mirror repo has **ONE .git at root** covering entire workspace
+- `client/` folder = frontend code (syncs to airmeez_frontend repo)
+- `backend/` folder = backend code (syncs to airmeez_backend repo)
+- Changes to both folders appear in same PR/commit
+
+### QA Testing Across Mirror Repos
+1. **Test Complete Feature** - Feature may span client/ and backend/, verify integration
+2. **Verify Git Structure** - Check that changes are committed to ONE repo (not split)
+3. **Monitor PR Split** - After merge, verify sync script creates separate PRs in real repos
+4. **Link Related Issues** - If PR splits to frontend/backend, link all related issues together
 
 ## GitHub Integration
 

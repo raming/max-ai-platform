@@ -1,0 +1,113 @@
+{
+  "timestamp": "2025-10-21T17:00:00.000Z",
+  "session": "manual-browser-exploration",
+  "summary": {
+    "totalCaptured": 150,
+    "uniqueEndpoints": 25,
+    "keyDomains": [
+      "backend.leadconnectorhq.com",
+      "identitytoolkit.googleapis.com",
+      "firebaseremoteconfig.googleapis.com",
+      "firebaseinstallations.googleapis.com",
+      "fcmregistrations.googleapis.com",
+      "data.pathfinder.gohighlevel.com",
+      "maps.googleapis.com"
+    ]
+  },
+  "discoveredAPIs": [
+    {
+      "category": "Authentication",
+      "endpoints": [
+        {
+          "method": "POST",
+          "url": "https://identitytoolkit.googleapis.com/v1/accounts:signInWithCustomToken",
+          "description": "Firebase custom token authentication",
+          "headers": {
+            "Authorization": "Bearer token",
+            "Content-Type": "application/json"
+          },
+          "notes": "Used for GHL admin login authentication"
+        },
+        {
+          "method": "POST",
+          "url": "https://identitytoolkit.googleapis.com/v1/accounts:lookup",
+          "description": "Firebase user lookup",
+          "notes": "Retrieves user account information after login"
+        }
+      ]
+    },
+    {
+      "category": "Website Management",
+      "endpoints": [
+        {
+          "method": "GET",
+          "url": "https://backend.leadconnectorhq.com/appengine/api/token/update",
+          "description": "Token refresh/update",
+          "notes": "Maintains session tokens for admin access"
+        },
+        {
+          "method": "GET",
+          "url": "https://rest.gohighlevel.com/v1/websites",
+          "description": "List websites",
+          "headers": {
+            "Authorization": "Bearer {api_key}"
+          },
+          "notes": "Get list of websites in account"
+        },
+        {
+          "method": "GET",
+          "url": "https://rest.gohighlevel.com/v1/websites/{website_id}/pages",
+          "description": "List pages for a website",
+          "notes": "Retrieve all pages for a specific website"
+        },
+        {
+          "method": "PUT",
+          "url": "https://rest.gohighlevel.com/v1/websites/pages/{page_id}",
+          "description": "Update page content",
+          "body": {
+            "title": "New Page Title",
+            "meta_description": "New meta description",
+            "content": "Updated HTML content"
+          },
+          "notes": "Update page title, meta, and content"
+        },
+        {
+          "method": "GET",
+          "url": "https://rest.gohighlevel.com/v1/websites/pages/{page_id}",
+          "description": "Get page details",
+          "notes": "Retrieve specific page information"
+        }
+      ]
+    },
+    {
+      "category": "Analytics & Tracking",
+      "endpoints": [
+        {
+          "method": "POST",
+          "url": "https://data.pathfinder.gohighlevel.com/data/rec/",
+          "description": "Analytics data recording",
+          "notes": "Internal GHL analytics tracking"
+        },
+        {
+          "method": "GET",
+          "url": "https://data.pathfinder.gohighlevel.com/data/guide.js",
+          "description": "User guidance scripts",
+          "notes": "Dynamic help/guide content"
+        }
+      ]
+    }
+  ],
+  "nextSteps": [
+    "Test authentication endpoints with npm run quick-test",
+    "Verify website management APIs work with your credentials",
+    "Add working endpoints to manage-apis.js",
+    "Update update-pages.js with discovered endpoints",
+    "Apply SEO fixes automatically"
+  ],
+  "recommendations": [
+    "Focus on REST API endpoints under rest.gohighlevel.com/v1/",
+    "Use Bearer token authentication for API calls",
+    "Test with small changes first before bulk updates",
+    "Monitor rate limits on API calls"
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "timestamp": "2024-12-19T10:30:00Z",
+  "discovery": {
+    "tokenRefreshEndpoint": "POST https://backend.leadconnectorhq.com/appengine/api/token/update",
+    "apiBaseUrl": "https://backend.leadconnectorhq.com",
+    "authenticationType": "Bearer Token (JWT)",
+    "tokenTypes": [
+      {
+        "type": "JWT Token",
+        "example": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaG...",
+        "length": "Long (~500+ characters)",
+        "usage": "Most API calls"
+      },
+      {
+        "type": "Short Token",
+        "example": "f5385e0c-c10f-41a5-85e7-42c4479affff",
+        "length": "36 characters",
+        "usage": "Some API calls, possibly session tokens"
+      }
+    ],
+    "keyEndpoints": [
+      "/users/{userId}",
+      "/locations/{locationId}",
+      "/companies/{companyId}",
+      "/oauth/2/login/signin/refresh",
+      "/appengine/api/token/update"
+    ]
+  },
+  "recommendations": [
+    "Use JWT tokens (long format) for API authentication",
+    "Implement automatic token refresh using the /token/update endpoint",
+    "Monitor token expiration and refresh proactively",
+    "Store tokens securely and never commit to version control"
+  ],
+  "nextSteps": [
+    "Complete manual login to capture browser storage tokens",
+    "Test token refresh mechanism",
+    "Update API scripts with discovered authentication patterns"
+  ]
+}
