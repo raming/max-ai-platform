@@ -15,9 +15,10 @@ Content Editing Integration enables users to create, edit, and manage rich text 
 
 | Document | Purpose | Audience |
 |----------|---------|----------|
-| [DEV-UI-08 Specification](./DEV-UI-08-specification.md) | Complete architectural design | Architects, Team Leads, Developers |
-| [Development Tasks](#development-tasks) | Breakdown into implementation stories | Developers |
-| [API Contracts](./contracts/) | OpenAPI/JSON Schema validation | Developers, QA |
+| [DEV-UI-08 Specification](./DEV-UI-08-specification.md) | Complete architectural design (1,176 lines, 3-4 pages) | Architects, Team Leads, Developers |
+| [Team Lead Handoff](./TEAM-LEAD-HANDOFF.md) | Task breakdown & creation instructions | Team Lead, Dev Lead |
+| [Development Tasks](#development-tasks) | 7 GitHub issues (to be created by Team Lead) | Developers |
+| [API Contracts](./contracts/) | OpenAPI/JSON Schema validation (TBD) | Developers, QA |
 
 ## Architecture Layers
 
