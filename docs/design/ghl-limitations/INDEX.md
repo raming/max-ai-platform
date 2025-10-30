@@ -1,9 +1,10 @@
 # GHL Limitations Assessment - Complete Index
 
 **Issue**: #14 - GHL Limitations and Standalone Feasibility Assessment  
-**Status**: ✅ COMPLETE (UPDATED: Workflow & Payment APIs)  
-**Date**: 2025-10-29 (Updated from 2025-10-24)  
-**Total Lines**: 6,200+ lines of comprehensive documentation  
+**Status**: ✅ INVESTIGATION COMPLETE (Invoice Creation Capability Verified: ❌ NOT FOUND)  
+**Date**: 2025-10-30 (Investigation completed)  
+**Total Lines**: 9,200+ lines of comprehensive documentation  
+**Investigation Result**: Confirmed - No invoice creation capability via REST API, UI API, or workflows. Autonomous invoicing NOT FEASIBLE. Original analysis validated.  
 
 ---
 
@@ -144,26 +145,84 @@
 
 ---
 
-## 🎯 Quick Start Guide
+### 7. **06-ui-api-invoice-discovery.md** (1,100+ lines) - Investigation Framework: UI API & Workflow Invoicing
+**Purpose**: Framework for investigating how GHL UI creates invoices and whether workflows support invoicing  
+**Status**: Investigation framework (executed successfully)  
+**Key Content**:
+- Executive summary: The critical gap in our analysis
+- Admin-token authentication and UI API discovery  
+- Hypothetical invoice endpoints (for network inspection)
+- Workflow-based invoice creation possibility
+- Stripe direct integration as fallback
+- **Investigation plan with immediate actions**:
+  - Puppeteer network inspection process
+  - Step-by-step guide to capture invoice creation API calls
+  - How to analyze captured data
+  - Testing workflow invoice actions
+- Expected outcomes (4 scenarios with implications)
+- Architecture decision points
+- Risk mitigation strategies
+- Success criteria for investigation
+
+**Note**: This document provides the investigation methodology. See Document 8 for findings.
+
+**Read For**: Understanding the gap in previous analysis, investigation methodology
+
+---
+
+### 8. **07-invoice-investigation-findings.md** (NEW - 2,000+ lines) - ✅ COMPLETED INVESTIGATION: Invoice Creation Capability Verified
+**Purpose**: Final findings from comprehensive investigation of invoice creation capability  
+**Status**: ✅ INVESTIGATION COMPLETE & FINDINGS DOCUMENTED  
+**Key Content**:
+- **Executive Summary**: Confirmed - No invoice creation capability found
+- Investigation methodology (5 phases completed)
+- Findings by category:
+  - REST API payment endpoints (all READ-ONLY)
+  - Workflow actions (no invoice support)
+  - Authentication capabilities (admin-token doesn't override design)
+- Critical analysis: User's hypothesis vs. investigation findings
+- Why invoice APIs don't exist (GHL design decision)
+- Investigation outcomes vs. expectations (all questions answered)
+- Impact on feasibility analysis (original conclusion validated)
+- **Recommended architecture**: Hybrid Billing Workflow (Manual Invoice + AI Workflows)
+- Alternative: Direct Stripe integration (if full autonomy required)
+- Implementation roadmap (Phase 1: Hybrid, Phase 2: Optional Stripe, Phase 3: Full Automation)
+- Conclusion and next steps
+
+**✅ KEY FINDING**: **Autonomous invoicing NOT FEASIBLE** - Confirmed via:
+  - ✅ No POST /invoices endpoint in REST API
+  - ✅ No invoice action type in workflows  
+  - ✅ All billing endpoints are READ-ONLY
+  - ✅ Admin-token doesn't override API design
+  - ✅ UI invoice creation uses backend, not APIs
+
+**RECOMMENDATION**: Implement **Hybrid Billing Workflow** for Phase 1 (Manual invoice creation in GHL UI + AI-driven workflow automation)
+
+**Read First For**: Final verdict on invoice capability, decision framework, architecture recommendation
+
+---
+
+## 🎯 Quick Start Guide (UPDATED)
 
 ### For Project Managers (20 min)
-Read in order: **00-overview** → **05-workflow-payment-apis** (Sections 1-3, 14) → **03-rate-limits**
-- Focus: Feasibility verdict + workflow/billing constraints + customer scenarios
-- Output: Complete business understanding including workflow/billing blockers
+Read in order: **00-overview** → **07-invoice-investigation-findings** (Sections 11-12) → **05-workflow-payment-apis** (Sections 2-5)
+- Focus: Original feasibility + investigation findings + final recommendation
+- Output: Business understanding of final verdict and recommended hybrid approach
 
-### For Backend Engineers (2.5 hours)
-Read in order: **01-api-specification** → **02-authentication** → **03-rate-limits** → **05-workflow-payment-apis** (Sections 4, 7, 13)
-- Focus: Implementation details + workflow/payment limitations + testing strategy
-- Output: Technical implementation strategy with workflow/payment architecture
+### For Backend Engineers (2 hours)
+Read in order: **01-api-specification** → **02-authentication** → **07-invoice-investigation-findings** (Sections 1-10) → **05-workflow-payment-apis** (Sections 1-4)
+- Focus: Investigation methodology, what was found/not found, architecture recommendation
+- Output: Ready to implement hybrid billing workflow
 
-### For Architects (2 hours)
-Read in order: **00-overview** → **05-workflow-payment-apis** (Sections 2-9) → **04-crm-port-comparison** → **02-authentication**
-- Focus: Workflow constraints, billing gaps, hybrid approach, decision framework
-- Output: Complete design decisions including workflow/payment architecture
+### For Architects (1.5 hours)
+Read in order: **00-overview** → **07-invoice-investigation-findings** (Sections 1, 6, 8-11) → **05-workflow-payment-apis** (Sections 2-3)
+- Focus: Final verdict, decision framework, how conclusion was verified
+- Output: Complete understanding of constraints and recommended architecture
 
-### For Full Review (4-5 hours)
-Read all documents in order: **00** → **01** → **02** → **03** → **04** → **05**
-- Output: Complete technical expertise, design authority, customer communication ready
+### For Full Review (2-3 hours)
+Read in order: **00** → **01** → **02** → **03** → **04** → **05** → **06** → **07**
+- Total: Complete investigation trail from initial assessment through final verification
+- Output: Complete technical authority with verified findings
 
 ---
 
