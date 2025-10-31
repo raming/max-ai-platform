@@ -73,9 +73,9 @@ export type UpdateContentInput = z.infer<typeof UpdateContentSchema>;
  * Validates: format (html|markdown|json|text), includeMetadata (optional)
  */
 export const ExportContentSchema = z.object({
-  format: z.enum(['html', 'markdown', 'json', 'text'], {
-    errorMap: () => ({ message: 'Format must be one of: html, markdown, json, text' }),
-  }),
+  format: z
+    .enum(['html', 'markdown', 'json', 'text'])
+    .catch('html'),
 
   includeMetadata: z.boolean().optional().default(false),
 });
@@ -103,16 +103,12 @@ export const ListContentSchema = z.object({
     .optional(),
 
   sortBy: z
-    .enum(['created_at', 'updated_at', 'title'], {
-      errorMap: () => ({ message: 'Sort by must be one of: created_at, updated_at, title' }),
-    })
+    .enum(['created_at', 'updated_at', 'title'])
     .default('updated_at')
     .optional(),
 
   order: z
-    .enum(['asc', 'desc'], {
-      errorMap: () => ({ message: 'Order must be asc or desc' }),
-    })
+    .enum(['asc', 'desc'])
     .default('desc')
     .optional(),
 });
@@ -146,7 +142,7 @@ export function validateInput<T>(schema: z.ZodSchema<T>, data: unknown): T {
 
   if (!result.success) {
     const errors: Record<string, unknown> = {};
-    result.error.errors.forEach((err) => {
+    result.error.issues.forEach((err) => {
       const path = err.path.join('.');
       errors[path] = err.message;
     });
