@@ -165,8 +165,13 @@ export class ContentService implements IContentService {
       updatePayload.content_type = validatedInput.contentType;
     }
 
+    // Ensure we have something to update - at least one of content/title/contentType
+    if (!validatedInput.content && !validatedInput.title && !validatedInput.contentType) {
+      throw new ValidationError('content', {}, 'At least one of title or content must be provided');
+    }
+
     // Update content (increments version)
-    const updatedRow = await this.repository.update(contentId, updatePayload);
+    const updatedRow = await this.repository.update(contentId, updatePayload as Parameters<typeof this.repository.update>[1]);
 
     // Create version snapshot
     await this.repository.saveVersion(contentId, {

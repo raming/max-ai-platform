@@ -26,8 +26,7 @@ export const CreateContentSchema = z.object({
     .max(CONTENT_CONSTRAINTS.MAX_CONTENT_LENGTH, `Content cannot exceed ${CONTENT_CONSTRAINTS.MAX_CONTENT_LENGTH} characters (1MB)`),
 
   contentType: z
-    .string()
-    .max(CONTENT_CONSTRAINTS.MAX_CONTENT_TYPE_LENGTH, `Content type cannot exceed ${CONTENT_CONSTRAINTS.MAX_CONTENT_TYPE_LENGTH} characters`)
+    .enum(['text/html', 'text/plain', 'text/markdown', 'application/json'])
     .default('text/html')
     .optional(),
 
@@ -58,8 +57,7 @@ export const UpdateContentSchema = z.object({
     .optional(),
 
   contentType: z
-    .string()
-    .max(CONTENT_CONSTRAINTS.MAX_CONTENT_TYPE_LENGTH, `Content type cannot exceed ${CONTENT_CONSTRAINTS.MAX_CONTENT_TYPE_LENGTH} characters`)
+    .enum(['text/html', 'text/plain', 'text/markdown', 'application/json'])
     .optional(),
 
   changeMessage: z
@@ -78,9 +76,7 @@ export type UpdateContentInput = z.infer<typeof UpdateContentSchema>;
  * Validates: format (html|markdown|json|text), includeMetadata (optional)
  */
 export const ExportContentSchema = z.object({
-  format: z.enum(['html', 'markdown', 'json', 'text'], {
-    errorMap: () => ({ message: 'Format must be one of: html, markdown, json, text' }),
-  }),
+  format: z.enum(['html', 'markdown', 'json', 'text']),
 
   includeMetadata: z.boolean().optional().default(false),
 });
@@ -92,36 +88,29 @@ export type ExportContentInput = z.infer<typeof ExportContentSchema>;
  * Validates: limit (1-100), offset (≥0), sortBy, order
  */
 export const ListContentSchema = z.object({
-  limit: z
-    .union([z.number(), z.string()])
-    .pipe(z.coerce.number())
+  limit: z.coerce
+    .number()
     .int()
     .min(1, 'Limit must be at least 1')
-    .max(100, 'Limit cannot exceed 100')
-    .default(50)
-    .optional(),
+    .optional()
+    .default(50),
 
-  offset: z
-    .union([z.number(), z.string()])
-    .pipe(z.coerce.number())
+  offset: z.coerce
+    .number()
     .int()
     .min(0, 'Offset cannot be negative')
-    .default(0)
-    .optional(),
+    .optional()
+    .default(0),
 
   sortBy: z
-    .enum(['created_at', 'updated_at', 'title'], {
-      errorMap: () => ({ message: 'sortBy must be one of: created_at, updated_at, title' }),
-    })
-    .default('updated_at')
-    .optional(),
+    .enum(['created_at', 'updated_at', 'title'])
+    .optional()
+    .default('updated_at'),
 
   order: z
-    .enum(['asc', 'desc'], {
-      errorMap: () => ({ message: 'order must be one of: asc, desc' }),
-    })
-    .default('desc')
-    .optional(),
+    .enum(['asc', 'desc'])
+    .optional()
+    .default('desc'),
 });
 
 export type ListContentInput = z.infer<typeof ListContentSchema>;

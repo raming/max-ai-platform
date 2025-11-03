@@ -5,6 +5,14 @@
  * Coverage Target: 95%+
  */
 
+// Mock isomorphic-dompurify before importing the adapter
+jest.mock('isomorphic-dompurify', () => ({
+  __esModule: true,
+  default: {
+    sanitize: jest.fn((html: string) => html),
+  },
+}));
+
 import { DOMPurifyAdapter } from '../services/sanitizer.adapter';
 
 describe('DOMPurifyAdapter', () => {
