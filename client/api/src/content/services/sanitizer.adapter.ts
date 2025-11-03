@@ -116,6 +116,7 @@ export class DOMPurifyAdapter implements ISanitizer {
     // Common XSS patterns
     const xssPatterns = [
       /<script[^>]*>[\s\S]*?<\/script>/gi, // Script tags
+      /<style[^>]*>[\s\S]*?<\/style>/gi, // Style tags
       /on\w+\s*=/gi, // Event handlers (onclick, onerror, etc.)
       /javascript:/gi, // JavaScript protocol
       /<iframe[^>]*>/gi, // Iframes
