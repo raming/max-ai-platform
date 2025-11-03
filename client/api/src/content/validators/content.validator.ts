@@ -7,6 +7,7 @@
 
 import { z } from 'zod';
 import { CONTENT_CONSTRAINTS } from '../../types/content';
+import { ValidationError } from '../ports/content.service';
 
 /**
  * Create Content Request Schema
@@ -40,7 +41,7 @@ export type CreateContentInput = z.infer<typeof CreateContentSchema>;
 
 /**
  * Update Content Request Schema
- * Validates: title (optional), content (required, max 1MB), contentType (optional)
+ * Validates: title (optional), content (optional), contentType (optional)
  */
 export const UpdateContentSchema = z.object({
   title: z
@@ -53,7 +54,8 @@ export const UpdateContentSchema = z.object({
   content: z
     .string()
     .min(1, 'Content cannot be empty')
-    .max(CONTENT_CONSTRAINTS.MAX_CONTENT_LENGTH, `Content cannot exceed ${CONTENT_CONSTRAINTS.MAX_CONTENT_LENGTH} characters (1MB)`),
+    .max(CONTENT_CONSTRAINTS.MAX_CONTENT_LENGTH, `Content cannot exceed ${CONTENT_CONSTRAINTS.MAX_CONTENT_LENGTH} characters (1MB)`)
+    .optional(),
 
   contentType: z
     .string()
@@ -64,7 +66,10 @@ export const UpdateContentSchema = z.object({
     .string()
     .max(CONTENT_CONSTRAINTS.MAX_CHANGE_MESSAGE_LENGTH, `Change message cannot exceed ${CONTENT_CONSTRAINTS.MAX_CHANGE_MESSAGE_LENGTH} characters`)
     .optional(),
-});
+}).refine(
+  (data) => data.title !== undefined || data.content !== undefined,
+  { message: 'At least one of title or content must be provided' }
+);
 
 export type UpdateContentInput = z.infer<typeof UpdateContentSchema>;
 
@@ -73,9 +78,9 @@ export type UpdateContentInput = z.infer<typeof UpdateContentSchema>;
  * Validates: format (html|markdown|json|text), includeMetadata (optional)
  */
 export const ExportContentSchema = z.object({
-  format: z
-    .enum(['html', 'markdown', 'json', 'text'])
-    .catch('html'),
+  format: z.enum(['html', 'markdown', 'json', 'text'], {
+    errorMap: () => ({ message: 'Format must be one of: html, markdown, json, text' }),
+  }),
 
   includeMetadata: z.boolean().optional().default(false),
 });
@@ -88,7 +93,8 @@ export type ExportContentInput = z.infer<typeof ExportContentSchema>;
  */
 export const ListContentSchema = z.object({
   limit: z
-    .number()
+    .union([z.number(), z.string()])
+    .pipe(z.coerce.number())
     .int()
     .min(1, 'Limit must be at least 1')
     .max(100, 'Limit cannot exceed 100')
@@ -96,19 +102,24 @@ export const ListContentSchema = z.object({
     .optional(),
 
   offset: z
-    .number()
+    .union([z.number(), z.string()])
+    .pipe(z.coerce.number())
     .int()
     .min(0, 'Offset cannot be negative')
     .default(0)
     .optional(),
 
   sortBy: z
-    .enum(['created_at', 'updated_at', 'title'])
+    .enum(['created_at', 'updated_at', 'title'], {
+      errorMap: () => ({ message: 'sortBy must be one of: created_at, updated_at, title' }),
+    })
     .default('updated_at')
     .optional(),
 
   order: z
-    .enum(['asc', 'desc'])
+    .enum(['asc', 'desc'], {
+      errorMap: () => ({ message: 'order must be one of: asc, desc' }),
+    })
     .default('desc')
     .optional(),
 });
@@ -142,15 +153,15 @@ export function validateInput<T>(schema: z.ZodSchema<T>, data: unknown): T {
 
   if (!result.success) {
     const errors: Record<string, unknown> = {};
-    result.error.issues.forEach((err) => {
+    let firstField = '';
+
+    result.error.issues.forEach((err, index) => {
       const path = err.path.join('.');
       errors[path] = err.message;
+      if (index === 0) firstField = path;
     });
 
-    const error = new Error('Validation failed');
-    (error as any).code = 'VALIDATION_ERROR';
-    (error as any).details = errors;
-    throw error;
+    throw new ValidationError(firstField, errors, 'Validation failed');
   }
 
   return result.data;

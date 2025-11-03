@@ -140,30 +140,44 @@ export class ContentService implements IContentService {
       throw new NotFoundError(`Content not found: ${contentId}`);
     }
 
-    // Sanitize new content
-    const sanitizationResult = this.sanitizer.sanitize(validatedInput.content);
+    // Prepare update payload
+    const updatePayload: Record<string, unknown> = {};
+    let sanitizedContent = contentRow.sanitized_content; // Use existing if not updating
 
-    console.log(
-      `[DEBUG] Sanitizing HTML: input=${sanitizationResult.inputLength} chars, output=${sanitizationResult.outputLength} chars, tags removed: ${sanitizationResult.tagsRemovedCount}`
-    );
+    // Sanitize new content if provided
+    if (validatedInput.content !== undefined) {
+      const sanitizationResult = this.sanitizer.sanitize(validatedInput.content);
+      sanitizedContent = sanitizationResult.content;
+
+      console.log(
+        `[DEBUG] Sanitizing HTML: input=${sanitizationResult.inputLength} chars, output=${sanitizationResult.outputLength} chars, tags removed: ${sanitizationResult.tagsRemovedCount}`
+      );
+
+      updatePayload.content = validatedInput.content;
+      updatePayload.sanitized_content = sanitizedContent;
+    }
+
+    if (validatedInput.title !== undefined) {
+      updatePayload.title = validatedInput.title;
+    }
+
+    if (validatedInput.contentType !== undefined) {
+      updatePayload.content_type = validatedInput.contentType;
+    }
 
     // Update content (increments version)
-    const updatedRow = await this.repository.update(contentId, {
-      title: validatedInput.title,
-      content: validatedInput.content,
-      sanitized_content: sanitizationResult.content,
-    });
+    const updatedRow = await this.repository.update(contentId, updatePayload);
 
     // Create version snapshot
     await this.repository.saveVersion(contentId, {
       version: updatedRow.version,
-      content: validatedInput.content,
+      content: validatedInput.content || contentRow.content,
       change_message: validatedInput.changeMessage || `Updated to version ${updatedRow.version}`,
       created_by: userId,
     });
 
     console.log(
-      `[DEBUG] PUT /api/content/:id: updated contentId=${contentId}, new version=${updatedRow.version}, contentLength=${validatedInput.content.length}`
+      `[DEBUG] PUT /api/content/:id: updated contentId=${contentId}, new version=${updatedRow.version}, contentLength=${(validatedInput.content || contentRow.content).length}`
     );
 
     return mapContentRowToDTO(updatedRow);

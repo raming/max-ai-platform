@@ -7,4 +7,7 @@ export default {
   },
   moduleFileExtensions: ['ts', 'js', 'html'],
   coverageDirectory: '../coverage/api',
+  transformIgnorePatterns: [
+    'node_modules/(?!(isomorphic-dompurify|jsdom)/)',
+  ],
 };
