@@ -319,10 +319,8 @@ describe('ContentService', () => {
         offset: 0,
       });
 
-      await service.listContent(userId, { limit: 200 });
-
-      // Repository should enforce max limit of 100
-      expect(mockRepository.listByUser).toHaveBeenCalled();
+      // Limit exceeding 100 should throw ValidationError
+      await expect(service.listContent(userId, { limit: 200 })).rejects.toThrow(ValidationError);
     });
   });
 
