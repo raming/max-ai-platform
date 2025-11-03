@@ -9,7 +9,14 @@
 jest.mock('isomorphic-dompurify', () => ({
   __esModule: true,
   default: {
-    sanitize: jest.fn((html: string) => html),
+    sanitize: jest.fn((html: string) => {
+      // Simple mock sanitizer that removes script tags and event handlers
+      let sanitized = html
+        .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
+        .replace(/\s*on\w+\s*=\s*["'][^"']*["']/gi, '')
+        .replace(/\s*on\w+\s*=\s*[^\s>]*/gi, '');
+      return sanitized;
+    }),
   },
 }));
 

@@ -92,6 +92,7 @@ export const ListContentSchema = z.object({
     .number()
     .int()
     .min(1, 'Limit must be at least 1')
+    .max(100, 'Limit cannot exceed 100')
     .optional()
     .default(50),
 

@@ -347,7 +347,7 @@ export class ContentService implements IContentService {
    */
   validateContent(input: CreateContentRequest | UpdateContentRequest): void {
     // Check content length
-    if (input.content.length > CONTENT_CONSTRAINTS.MAX_CONTENT_LENGTH) {
+    if (input.content && input.content.length > CONTENT_CONSTRAINTS.MAX_CONTENT_LENGTH) {
       throw new PayloadTooLargeError(
         input.content.length,
         CONTENT_CONSTRAINTS.MAX_CONTENT_LENGTH,
@@ -356,16 +356,19 @@ export class ContentService implements IContentService {
     }
 
     // Check title length (for create requests)
-    if ('title' in input && input.title) {
-      if (input.title.length < CONTENT_CONSTRAINTS.MIN_TITLE_LENGTH) {
-        throw new ValidationError('title', {}, 'Title cannot be empty');
-      }
-      if (input.title.length > CONTENT_CONSTRAINTS.MAX_TITLE_LENGTH) {
-        throw new ValidationError(
-          'title',
-          { max: CONTENT_CONSTRAINTS.MAX_TITLE_LENGTH, actual: input.title.length },
-          `Title cannot exceed ${CONTENT_CONSTRAINTS.MAX_TITLE_LENGTH} characters`
-        );
+    if ('title' in input) {
+      const title = (input as CreateContentRequest).title;
+      if (title !== undefined && title !== null) {
+        if (title.length < CONTENT_CONSTRAINTS.MIN_TITLE_LENGTH) {
+          throw new ValidationError('title', {}, 'Title cannot be empty');
+        }
+        if (title.length > CONTENT_CONSTRAINTS.MAX_TITLE_LENGTH) {
+          throw new ValidationError(
+            'title',
+            { max: CONTENT_CONSTRAINTS.MAX_TITLE_LENGTH, actual: title.length },
+            `Title cannot exceed ${CONTENT_CONSTRAINTS.MAX_TITLE_LENGTH} characters`
+          );
+        }
       }
     }
 
