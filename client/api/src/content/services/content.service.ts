@@ -39,6 +39,10 @@ import {
   ExportContentSchema,
   ListContentSchema,
   validateInput,
+  CreateContentInput,
+  UpdateContentInput,
+  ExportContentInput,
+  ListContentInput,
 } from '../validators/content.validator';
 
 /**
@@ -58,7 +62,7 @@ export class ContentService implements IContentService {
   async createContent(userId: string, input: CreateContentRequest): Promise<ContentDTO> {
     // Validate input
     this.validateContent(input);
-    const validatedInput = validateInput(CreateContentSchema, input);
+    const validatedInput: CreateContentInput = validateInput(CreateContentSchema, input);
 
     // Sanitize HTML
     const sanitizationResult = this.sanitizer.sanitize(validatedInput.content);
@@ -123,7 +127,7 @@ export class ContentService implements IContentService {
   async updateContent(userId: string, contentId: string, input: UpdateContentRequest): Promise<ContentDTO> {
     // Validate input
     this.validateContent(input);
-    const validatedInput = validateInput(UpdateContentSchema, input);
+    const validatedInput: UpdateContentInput = validateInput(UpdateContentSchema, input);
 
     // Load content with ownership check
     const contentRow = await this.repository.loadByOwner(contentId, userId);
@@ -222,7 +226,7 @@ export class ContentService implements IContentService {
     }
   ): Promise<ListContentResponse> {
     // Validate pagination options
-    const validatedOptions = validateInput(ListContentSchema, options || {});
+    const validatedOptions: ListContentInput = validateInput(ListContentSchema, options || {});
 
     const listOptions: ListOptions = {
       limit: validatedOptions.limit,
@@ -253,7 +257,7 @@ export class ContentService implements IContentService {
    */
   async exportContent(userId: string, contentId: string, format: 'html' | 'markdown' | 'json' | 'text'): Promise<ExportContentResponse> {
     // Validate format
-    const validatedInput = validateInput(ExportContentSchema, { format });
+    const validatedInput: ExportContentInput = validateInput(ExportContentSchema, { format });
 
     // Load content with ownership check
     const contentRow = await this.repository.loadByOwner(contentId, userId);

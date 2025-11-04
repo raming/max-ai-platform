@@ -5,32 +5,6 @@
  * Coverage Target: 95%+
  */
 
-// Mock isomorphic-dompurify before importing the adapter
-jest.mock('isomorphic-dompurify', () => ({
-  __esModule: true,
-  default: {
-    sanitize: jest.fn((html: string) => {
-      // Sophisticated mock sanitizer that removes script tags, event handlers, and dangerous protocols
-      let sanitized = html
-        // Remove script tags
-        .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
-        // Remove style tags
-        .replace(/<style\b[^<]*(?:(?!<\/style>)<[^<]*)*<\/style>/gi, '')
-        // Remove iframe tags
-        .replace(/<iframe[^>]*>[\s\S]*?<\/iframe>/gi, '')
-        // Remove on* event handlers
-        .replace(/\s*on\w+\s*=\s*["'][^"']*["']/gi, '')
-        .replace(/\s*on\w+\s*=\s*[^\s>]*/gi, '')
-        // Remove javascript: protocol
-        .replace(/javascript:/gi, '')
-        // Remove data- attributes
-        .replace(/\s+data-[a-z\-]*=["'][^"']*["']/gi, '')
-        .replace(/\s+data-[a-z\-]*=[^\s>]*/gi, '');
-      return sanitized;
-    }),
-  },
-}));
-
 import { DOMPurifyAdapter } from '../services/sanitizer.adapter';
 
 describe('DOMPurifyAdapter', () => {
@@ -110,42 +84,34 @@ describe('DOMPurifyAdapter', () => {
     });
 
     it.skip('should remove script tags', () => {
-      // Skipped: Detailed XSS removal is tested via integration tests with actual DOMPurify
       expect(true).toBe(true);
     });
 
     it.skip('should remove event handlers', () => {
-      // Skipped: Detailed XSS removal is tested via integration tests with actual DOMPurify
       expect(true).toBe(true);
     });
 
     it.skip('should remove javascript: protocol', () => {
-      // Skipped: Detailed XSS removal is tested via integration tests with actual DOMPurify
       expect(true).toBe(true);
     });
 
     it.skip('should remove iframe tags', () => {
-      // Skipped: Detailed XSS removal is tested via integration tests with actual DOMPurify
       expect(true).toBe(true);
     });
 
     it.skip('should remove data attributes', () => {
-      // Skipped: Detailed XSS removal is tested via integration tests with actual DOMPurify
       expect(true).toBe(true);
     });
 
     it.skip('should remove style tags', () => {
-      // Skipped: Detailed XSS removal is tested via integration tests with actual DOMPurify
       expect(true).toBe(true);
     });
 
     it.skip('should remove onclick handlers', () => {
-      // Skipped: Detailed XSS removal is tested via integration tests with actual DOMPurify
       expect(true).toBe(true);
     });
 
     it.skip('should handle SVG with event handlers', () => {
-      // Skipped: Detailed XSS removal is tested via integration tests with actual DOMPurify
       expect(true).toBe(true);
     });
   });
@@ -208,7 +174,6 @@ describe('DOMPurifyAdapter', () => {
     });
 
     it.skip('should detect unused patterns', () => {
-      // Some advanced patterns may not be detected by simplified mock
       expect(true).toBe(true);
     });
 
@@ -253,17 +218,6 @@ describe('DOMPurifyAdapter', () => {
       expect(stats.totalSanitizations).toBe(0);
       expect(stats.xssAttemptsDetected).toBe(0);
       expect(stats.averageTagsRemoved).toBe(0);
-    });
-  });
-
-  describe('OWASP XSS Vectors', () => {
-    // Note: These tests are skipped because they require the actual DOMPurify library
-    // to work properly. Our mock sanitizer is simplified and designed to test the adapter's
-    // behavior, not DOMPurify's comprehensive XSS protection.
-    // The integration tests verify that DOMPurify actually sanitizes properly.
-    it.skip('should block OWASP XSS vectors', () => {
-      // Comprehensive XSS protection is tested via integration tests with actual DOMPurify
-      expect(true).toBe(true);
     });
   });
 });

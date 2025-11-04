@@ -10,4 +10,7 @@ export default {
   transformIgnorePatterns: [
     'node_modules/(?!(isomorphic-dompurify|jsdom)/)',
   ],
+  moduleNameMapper: {
+    '^isomorphic-dompurify$': '<rootDir>/src/content/__tests__/__mocks__/isomorphic-dompurify.ts',
+  },
 };

@@ -17,7 +17,12 @@
     "jwt-decode": "^4.0.0"
   },
   "devDependencies": {},
-  "keywords": ["ghl", "token", "investigation", "auth"],
+  "keywords": [
+    "ghl",
+    "token",
+    "investigation",
+    "auth"
+  ],
   "author": "MaxAI Platform",
   "license": "MIT"
 }

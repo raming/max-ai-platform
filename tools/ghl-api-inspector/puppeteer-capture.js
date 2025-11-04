@@ -394,8 +394,8 @@ async function runInspection() {
       if (call.headers) {
         Object.keys(call.headers).forEach(header => {
           if (!header.toLowerCase().startsWith('content-') &&
-              !header.toLowerCase().startsWith('accept-') &&
-              header.toLowerCase() !== 'user-agent') {
+            !header.toLowerCase().startsWith('accept-') &&
+            header.toLowerCase() !== 'user-agent') {
             uniqueHeaders.add(header);
           }
         });

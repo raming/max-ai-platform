@@ -11,6 +11,7 @@ import {
   ExportContentSchema,
   ListContentSchema,
   validateInput,
+  CreateContentInput,
 } from '../validators/content.validator';
 import { ValidationError } from '../ports/content.service';
 
@@ -417,7 +418,7 @@ describe('Content Validators', () => {
         content: '<p>Content</p>',
       };
 
-      const result = validateInput(CreateContentSchema, input);
+      const result = validateInput(CreateContentSchema, input) as CreateContentInput;
 
       expect(result.title).toBe('Test');
       expect(result.content).toBe('<p>Content</p>');

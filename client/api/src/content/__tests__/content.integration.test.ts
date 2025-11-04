@@ -5,21 +5,6 @@
  * References: DEV-UI-08 specification
  */
 
-// Mock DOMPurify before importing the sanitizer
-jest.mock('isomorphic-dompurify', () => ({
-  __esModule: true,
-  default: {
-    sanitize: (html: string) => {
-      // Simple mock sanitizer that removes <script> tags
-      return html
-        .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
-        .replace(/on\w+\s*=\s*["'][^"']*["']/gi, '')
-        .replace(/on\w+\s*=\s*[^\s>]*/gi, '');
-    },
-    setConfig: jest.fn(),
-  },
-}));
-
 import { ContentService } from '../services/content.service';
 import { DOMPurifyAdapter } from '../services/sanitizer.adapter';
 import { MultiFormatExporter } from '../services/exporter.adapter';
