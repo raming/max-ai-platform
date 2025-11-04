@@ -8,7 +8,6 @@
 
 import {
   ContentDTO,
-  ContentListItemDTO,
   ContentVersionDTO,
   CreateContentRequest,
   UpdateContentRequest,
@@ -20,7 +19,6 @@ import {
 import {
   IContentService,
   ValidationError,
-  UnauthorizedError,
   ForbiddenError,
   NotFoundError,
   PayloadTooLargeError,

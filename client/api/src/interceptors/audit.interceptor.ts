@@ -1,4 +1,5 @@
 import { CallHandler, ExecutionContext, Injectable, NestInterceptor } from '@nestjs/common';
+import { Request, Response } from 'express';
 import { Observable } from 'rxjs';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -13,11 +14,11 @@ function genCid(): string {
 
 @Injectable()
 export class AuditInterceptor implements NestInterceptor {
-  intercept(context: ExecutionContext, next: CallHandler): Observable<any> {
-    const req: any = context.switchToHttp().getRequest();
-    const res: any = context.switchToHttp().getResponse();
+  intercept(context: ExecutionContext, next: CallHandler): Observable<unknown> {
+    const req = context.switchToHttp().getRequest<Request>();
+    const res = context.switchToHttp().getResponse<Response>();
 
-    let cid = req.headers['x-correlation-id'] || req.headers['X-Correlation-Id'];
+    let cid = (req.headers['x-correlation-id'] || req.headers['X-Correlation-Id']) as string | undefined;
     if (!cid) {
       cid = genCid();
       req.headers['x-correlation-id'] = cid;

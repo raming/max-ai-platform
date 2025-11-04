@@ -197,17 +197,20 @@ export class MultiFormatExporter implements IExporter {
       case 'html':
         return Buffer.byteLength(content, 'utf-8');
 
-      case 'markdown':
+      case 'markdown': {
         const markdown = this.htmlToMarkdown(content);
         return Buffer.byteLength(markdown, 'utf-8');
+      }
 
-      case 'json':
+      case 'json': {
         const json = JSON.stringify({ content }, null, 2);
         return Buffer.byteLength(json, 'utf-8');
+      }
 
-      case 'text':
+      case 'text': {
         const text = this.htmlToText(content);
         return Buffer.byteLength(text, 'utf-8');
+      }
 
       default:
         return 0;

@@ -9,9 +9,12 @@ import { Router, Request, Response, NextFunction } from 'express';
 import { IContentService } from '../ports/content.service';
 
 /**
- * Extend Express Request to include user from JWT middleware
+ * Extend Express Request interface to include user from JWT middleware
+ * Using namespace for Express type augmentation is necessary and is the standard pattern.
  */
 declare global {
+  // Using namespace is required for Express type augmentation pattern
+  // eslint-disable-next-line @typescript-eslint/no-namespace
   namespace Express {
     interface Request {
       user?: {
@@ -21,6 +24,7 @@ declare global {
     }
   }
 }
+
 import {
   ValidationError,
   UnauthorizedError,
@@ -28,7 +32,6 @@ import {
   NotFoundError,
   PayloadTooLargeError,
 } from '../ports/content.service';
-import { mapContentRowToDTO } from '../entities/content.entity';
 
 /**
  * Create content routes
@@ -365,48 +368,52 @@ export function createContentRoutes(service: IContentService): Router {
  * Error handling middleware for content routes
  * Converts domain errors to HTTP responses
  */
-export function contentErrorHandler(err: Error, req: Request, res: Response, next: NextFunction) {
+export function contentErrorHandler(err: Error, _req: Request, res: Response, _next: NextFunction): void {
   console.error(`[ERROR] ${err.name}: ${err.message}`);
 
   if (err instanceof ValidationError) {
-    return res.status(400).json({
+    res.status(400).json({
       error: {
         code: 'INVALID_INPUT',
         message: err.message,
         details: err.details,
       },
     });
+    return;
   }
 
   if (err instanceof UnauthorizedError) {
-    return res.status(401).json({
+    res.status(401).json({
       error: {
         code: 'UNAUTHORIZED',
         message: err.message,
       },
     });
+    return;
   }
 
   if (err instanceof ForbiddenError) {
-    return res.status(403).json({
+    res.status(403).json({
       error: {
         code: 'FORBIDDEN',
         message: err.message,
       },
     });
+    return;
   }
 
   if (err instanceof NotFoundError) {
-    return res.status(404).json({
+    res.status(404).json({
       error: {
         code: 'NOT_FOUND',
         message: err.message,
       },
     });
+    return;
   }
 
   if (err instanceof PayloadTooLargeError) {
-    return res.status(413).json({
+    res.status(413).json({
       error: {
         code: 'PAYLOAD_TOO_LARGE',
         message: err.message,
@@ -417,6 +424,7 @@ export function contentErrorHandler(err: Error, req: Request, res: Response, nex
         },
       },
     });
+    return;
   }
 
   // Generic server error

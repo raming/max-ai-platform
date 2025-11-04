@@ -6,7 +6,7 @@
  * References: DEV-UI-08 specification (Section 5.2)
  */
 
-import { Pool, QueryResult } from 'pg';
+import { Pool } from 'pg';
 import {
   ContentRow,
   ContentVersionRow,
@@ -14,7 +14,7 @@ import {
   ContentListItemDTO,
 } from '../../types/content';
 import { IContentRepository, ListOptions } from '../ports/content.repository';
-import { mapContentRowToListItemDTO, mapVersionRowToDTO } from '../entities/content.entity';
+import { mapContentRowToListItemDTO } from '../entities/content.entity';
 
 /**
  * PostgreSQL implementation of IContentRepository

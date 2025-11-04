@@ -132,7 +132,11 @@ export class DOMPurifyAdapter implements ISanitizer {
   /**
    * Get sanitization statistics
    */
-  getStatistics() {
+  getStatistics(): {
+    totalSanitizations: number;
+    averageTagsRemoved: number;
+    xssAttemptsDetected: number;
+  } {
     const averageTagsRemoved =
       this.stats.totalSanitizations > 0
         ? Math.round(this.stats.totalTagsRemoved / this.stats.totalSanitizations)

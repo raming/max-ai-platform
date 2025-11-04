@@ -8,14 +8,12 @@
 
 import {
   ContentDTO,
-  ContentListItemDTO,
   ContentVersionDTO,
   CreateContentRequest,
   UpdateContentRequest,
   ExportContentRequest,
   ListContentResponse,
   ExportContentResponse,
-  PaginatedResponse,
   ContentStatistics,
 } from '../../types/content';
 

@@ -4,7 +4,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ResourceController } from './resource.controller';
 import { ResourceService } from './resource.service';
-import { IResourceProvider, ITokenStore } from 'token-proxy-core';
+import type { IResourceProvider as _IResourceProvider, ITokenStore as _ITokenStore } from 'token-proxy-core';
 import { MemoryTokenStore } from '../adapters/token-store.memory';
 import { SupabaseProvider } from '../providers/supabase.provider';
 import { AuditInterceptor } from '../interceptors/audit.interceptor';

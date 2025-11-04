@@ -75,7 +75,13 @@ export function mapVersionRowToDTO(row: ContentVersionRow): ContentVersionDTO {
  * @param content HTML or text content
  * @returns Statistics object
  */
-export function calculateContentStatistics(content: string) {
+export function calculateContentStatistics(content: string): {
+  characterCount: number;
+  characterCountWithoutWhitespace: number;
+  wordCount: number;
+  paragraphCount: number;
+  estimatedReadingTimeSeconds: number;
+} {
   // Strip HTML tags for text analysis, replacing tags with spaces
   const plainText = content.replace(/<[^>]*>/g, ' ').trim();
 
