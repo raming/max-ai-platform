@@ -8,7 +8,7 @@ const config: Config = {
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   moduleNameMapper: {
-    '^@/(.*)$': '<rootDir>/$1',
+    '^@/(.*)$': '<rootDir>/src/$1',
   },
   coverageDirectory: '../coverage/web',
   testEnvironment: 'jsdom',
@@ -28,6 +28,8 @@ const config: Config = {
   collectCoverageFrom: [
     'src/lib/**/*.ts',
     'src/lib/**/*.tsx',
+    'src/stores/**/*.ts',
+    'src/stores/**/*.tsx',
     'src/app/**/*.ts',
     'src/app/**/*.tsx',
     'app/**/*.ts',
