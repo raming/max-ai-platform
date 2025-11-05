@@ -9,7 +9,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-and-test:
+  lint-type-test:
+    name: Lint, Type Check, and Test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -26,12 +27,24 @@ jobs:
         working-directory: client
         run: npm install
 
-      - name: Run core tests
+      - name: Run linting
         working-directory: client
-        run: ./nx test token-proxy-core --skip-nx-cache
+        run: npm run lint
+        continue-on-error: false
 
-      - name: Run api tests
+      - name: Type check
+        working-directory: client
+        run: npx tsc --noEmit
+        continue-on-error: false
+
+      - name: Run core tests with coverage
+        working-directory: client
+        run: ./nx test token-proxy-core --skip-nx-cache --coverage --bail
+        continue-on-error: false
+
+      - name: Run api tests with coverage
         working-directory: client
         env:
           CI: 'true'
-        run: ./nx test api --skip-nx-cache
+        run: ./nx test api --skip-nx-cache --coverage --bail
+        continue-on-error: false
