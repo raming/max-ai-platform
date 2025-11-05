@@ -1,0 +1,317 @@
+{
+  "pages": [
+    {
+      "index": 1,
+      "name": "Homepage",
+      "url": "https://maxaiassistant.com/",
+      "ghlPageId": "[TO_BE_FILLED]",
+      "currentScore": 16,
+      "targetScore": 50,
+      "updates": {
+        "seo": {
+          "title": {
+            "before": "[EMPTY]",
+            "after": "AI Assistant & Marketing Automation | Max AI",
+            "length": 60,
+            "keywords": ["ai assistant", "marketing automation"],
+            "explanation": "Added primary keywords, kept under 60 chars for mobile display"
+          },
+          "description": {
+            "before": "[EMPTY]",
+            "after": "Automate customer engagement, manage reviews, and generate leads with AI. Real-time chat, reputation management & marketing automation in one platform.",
+            "length": 155,
+            "keywords": ["ai", "customer engagement", "reputation management", "marketing automation"],
+            "explanation": "155 chars fits Google snippet, includes all 4 primary keywords naturally"
+          },
+          "canonical": {
+            "before": "[NOT SET]",
+            "after": "https://maxaiassistant.com/",
+            "explanation": "Self-referencing canonical to prevent duplicate content issues"
+          }
+        },
+        "headings": {
+          "h1": {
+            "before": "[MISSING]",
+            "after": "Your AI Assistant for Comprehensive Business Automation",
+            "keywords": ["ai assistant", "business automation"],
+            "explanation": "Single H1 with primary keyword in natural context"
+          },
+          "h2": {
+            "before": "[Multiple H1 tags - WRONG]",
+            "after": ["AI Web Chat", "Review Management", "Customer Engagement", "Automation Features"],
+            "explanation": "Convert competing H1s to proper H2 hierarchy"
+          }
+        },
+        "schema": {
+          "before": "[NONE]",
+          "type": "LocalBusiness + Product",
+          "after": {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Max AI Assistant",
+            "url": "https://maxaiassistant.com",
+            "description": "Automate customer engagement, manage reviews, and generate leads with AI.",
+            "image": "https://maxaiassistant.com/logo.png",
+            "priceRange": "$$",
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "US"
+            }
+          },
+          "explanation": "LocalBusiness schema enables rich snippets, shows business info in search results"
+        },
+        "socialMedia": {
+          "ogTitle": {
+            "before": "[NOT SET]",
+            "after": "AI Assistant & Marketing Automation | Max AI",
+            "explanation": "Same as page title for consistent social sharing"
+          },
+          "ogDescription": {
+            "before": "[NOT SET]",
+            "after": "Automate customer engagement, manage reviews, and generate leads with AI.",
+            "explanation": "Compelling description for social previews"
+          },
+          "ogImage": {
+            "before": "[NOT SET]",
+            "after": "https://maxaiassistant.com/hero-image.jpg",
+            "explanation": "High-quality image for social sharing (1200x630px recommended)"
+          }
+        },
+        "content": {
+          "body": {
+            "before": "Currently mentions features but lacks target keywords",
+            "after": "Updated to naturally include: 'ai assistant', 'local seo', 'ai marketing tools', 'reputation management software'",
+            "changes": [
+              "Added 'ai assistant' to opening paragraph",
+              "Added 'local seo' to benefits section",
+              "Added 'ai marketing tools' to features section",
+              "Added 'reputation management software' to review section"
+            ],
+            "density": "0.5-1% per keyword (natural, not spammy)",
+            "explanation": "Keywords woven naturally into existing content sections"
+          }
+        }
+      },
+      "status": "pending",
+      "ghlApiEndpoint": "PUT /page/{id}",
+      "estimatedImpactScore": "+34 points (16 → 50)"
+    },
+    {
+      "index": 2,
+      "name": "/homepage (Duplicate)",
+      "url": "https://maxaiassistant.com/homepage",
+      "ghlPageId": "[TO_BE_FILLED]",
+      "currentScore": 16,
+      "targetScore": 50,
+      "note": "Apply same updates as Homepage",
+      "status": "pending"
+    },
+    {
+      "index": 3,
+      "name": "Truck Services",
+      "url": "https://maxaiassistant.com/truck-services",
+      "ghlPageId": "[TO_BE_FILLED]",
+      "currentScore": 34,
+      "targetScore": 58,
+      "updates": {
+        "seo": {
+          "title": {
+            "before": "Truck Services (14 chars - TOO SHORT)",
+            "after": "AI-Powered Truck Services Management | Max AI Assistant",
+            "length": 56,
+            "keywords": ["ai", "truck services", "management"],
+            "explanation": "Expanded to include keywords, now 56 chars"
+          },
+          "description": {
+            "before": "[MISSING]",
+            "after": "Automate truck service operations, manage customer relationships, and boost reviews with AI. Local SEO optimization & marketing automation for fleet businesses.",
+            "length": 155,
+            "keywords": ["truck services", "ai", "customer relationships", "local seo", "marketing automation"],
+            "explanation": "Added missing description with service-specific keywords"
+          }
+        },
+        "headings": {
+          "h1": {
+            "before": "[Multiple H1s - 13 total]",
+            "after": "AI Assistant for Truck Services & Fleet Management",
+            "explanation": "Convert all H1s to single primary H1 with keywords"
+          },
+          "h2": {
+            "before": "[Multiple H1 tags need conversion]",
+            "after": ["Real-Time Customer Chat", "Automated Review Management", "Marketing Automation", "Local SEO Boost"]
+          }
+        }
+      },
+      "status": "pending",
+      "estimatedImpactScore": "+24 points (34 → 58)"
+    },
+    {
+      "index": 4,
+      "name": "Auto Repair",
+      "url": "https://maxaiassistant.com/auto-repair",
+      "ghlPageId": "[TO_BE_FILLED]",
+      "currentScore": 24,
+      "targetScore": 48,
+      "updates": {
+        "seo": {
+          "title": {
+            "before": "Auto RepairPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6 (71 chars - BROKEN)",
+            "after": "AI Auto Repair Management Software | Max AI",
+            "length": 51,
+            "explanation": "Fix broken title, add keywords, reduce to proper length"
+          },
+          "description": {
+            "before": "[MISSING]",
+            "after": "Streamline auto repair operations with AI. Manage customer engagement, automate reminders, build reputation. Marketing automation for repair shops & local SEO.",
+            "length": 150
+          }
+        },
+        "headings": {
+          "h1": {
+            "before": "[Multiple H1s - 6 total, includes broken text]",
+            "after": "AI Assistant for Auto Repair & Shop Management"
+          }
+        }
+      },
+      "status": "pending",
+      "estimatedImpactScore": "+24 points (24 → 48)"
+    },
+    {
+      "index": 5,
+      "name": "Automotive Services",
+      "url": "https://maxaiassistant.com/automotive-services",
+      "ghlPageId": "[TO_BE_FILLED]",
+      "currentScore": 26,
+      "targetScore": 50,
+      "applyTemplate": true,
+      "templateParams": {
+        "serviceType": "Automotive Services",
+        "keywords": ["ai assistant", "automotive", "local seo", "marketing automation"],
+        "serviceCategory": "automotive"
+      },
+      "status": "pending"
+    },
+    {
+      "index": 6,
+      "name": "Auto Collision",
+      "url": "https://maxaiassistant.com/auto-collision",
+      "ghlPageId": "[TO_BE_FILLED]",
+      "currentScore": 24,
+      "targetScore": 48,
+      "applyTemplate": true,
+      "templateParams": {
+        "serviceType": "Auto Collision",
+        "keywords": ["ai assistant", "collision repair", "local seo", "marketing automation"]
+      },
+      "status": "pending"
+    },
+    {
+      "index": 7,
+      "name": "Auto Part Stores",
+      "url": "https://maxaiassistant.com/auto-part-stores",
+      "ghlPageId": "[TO_BE_FILLED]",
+      "currentScore": "~24",
+      "targetScore": 48,
+      "applyTemplate": true,
+      "status": "pending"
+    },
+    {
+      "index": 8,
+      "name": "Tire Dealers",
+      "url": "https://maxaiassistant.com/tire-dealers",
+      "ghlPageId": "[TO_BE_FILLED]",
+      "applyTemplate": true,
+      "status": "pending"
+    },
+    {
+      "index": 9,
+      "name": "Motorcycle Shops",
+      "url": "https://maxaiassistant.com/motorcyle-shops",
+      "ghlPageId": "[TO_BE_FILLED]",
+      "applyTemplate": true,
+      "status": "pending"
+    },
+    {
+      "index": 10,
+      "name": "Appliance Repair",
+      "url": "https://maxaiassistant.com/appliance-repair",
+      "ghlPageId": "[TO_BE_FILLED]",
+      "applyTemplate": true,
+      "status": "pending"
+    },
+    {
+      "index": 11,
+      "name": "Home Services",
+      "url": "https://maxaiassistant.com/home-services",
+      "ghlPageId": "[TO_BE_FILLED]",
+      "applyTemplate": true,
+      "status": "pending"
+    },
+    {
+      "index": 12,
+      "name": "Plumbing",
+      "url": "https://maxaiassistant.com/plumbing",
+      "ghlPageId": "[TO_BE_FILLED]",
+      "applyTemplate": true,
+      "status": "pending"
+    },
+    {
+      "index": 13,
+      "name": "HVAC",
+      "url": "https://maxaiassistant.com/hvac",
+      "ghlPageId": "[TO_BE_FILLED]",
+      "applyTemplate": true,
+      "status": "pending"
+    },
+    {
+      "index": 14,
+      "name": "Electrical",
+      "url": "https://maxaiassistant.com/electrical",
+      "ghlPageId": "[TO_BE_FILLED]",
+      "applyTemplate": true,
+      "status": "pending"
+    },
+    {
+      "index": 15,
+      "name": "Landscaping",
+      "url": "https://maxaiassistant.com/landscaping",
+      "ghlPageId": "[TO_BE_FILLED]",
+      "applyTemplate": true,
+      "status": "pending"
+    }
+  ],
+  "template": {
+    "servicePageStructure": {
+      "seo": {
+        "title": "AI [ServiceType] Management Software | Max AI",
+        "titleLength": "50-55 characters",
+        "description": "Automate [service type] operations with AI. Manage customer engagement, automate reminders, build reputation. Marketing automation & local SEO for [business type].",
+        "descriptionLength": "150-160 characters",
+        "canonical": "https://maxaiassistant.com/[service-slug]/"
+      },
+      "headings": {
+        "h1": "AI Assistant for [Service Type] & Business Management",
+        "h2": ["Customer Engagement", "Review Management", "Marketing Automation", "Local SEO Optimization"]
+      },
+      "schema": {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Max AI Assistant - [Service Type]",
+        "serviceType": "[Service Type] Management",
+        "url": "https://maxaiassistant.com/[service-slug]"
+      },
+      "keywords": ["ai assistant", "local seo", "ai marketing tools", "reputation management software"]
+    }
+  },
+  "summary": {
+    "totalPages": 15,
+    "criticalPages": 2,
+    "standardPages": 13,
+    "currentAverageScore": "25/100",
+    "targetAverageScore": "50/100",
+    "totalScoreIncrease": "+375 points (25×15 → 50×15)",
+    "estimatedTimePerPage": "1-3 minutes",
+    "totalTimeEstimate": "45 minutes",
+    "phase": "Phase 1: Critical Metadata Fixes"
+  }
+}

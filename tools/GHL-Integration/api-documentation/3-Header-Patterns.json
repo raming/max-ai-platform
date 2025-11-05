@@ -1,0 +1,146 @@
+{
+  "generatedAt": "2025-10-21T23:31:47.585Z",
+  "critical": {
+    "token-id": {
+      "required": true,
+      "description": "Authentication token",
+      "pattern": "JWT token string",
+      "examples": [
+        "eyJhbGc..."
+      ]
+    },
+    "version": {
+      "required": true,
+      "description": "API version",
+      "pattern": "Numeric string or semantic version",
+      "examples": [
+        "1",
+        "1.0",
+        "2.0"
+      ],
+      "note": "Often just \"1\" or \"1.0\" - the one causing validation errors"
+    },
+    "content-type": {
+      "required": true,
+      "description": "Content type for requests with body",
+      "pattern": "application/json",
+      "examples": [
+        "application/json"
+      ]
+    }
+  },
+  "optional": {
+    "authorization": {
+      "required": false,
+      "description": "Alternative auth header",
+      "pattern": "Bearer {token} or other schemes",
+      "examples": [
+        "Bearer eyJhbGc..."
+      ]
+    },
+    "channel": {
+      "required": false,
+      "description": "Channel identifier",
+      "pattern": "string",
+      "examples": [
+        "web",
+        "mobile",
+        "api"
+      ]
+    },
+    "source": {
+      "required": false,
+      "description": "Request source identifier",
+      "pattern": "string",
+      "examples": [
+        "dashboard",
+        "api-client",
+        "mobile-app"
+      ]
+    },
+    "user-agent": {
+      "required": false,
+      "description": "User agent string",
+      "pattern": "string",
+      "examples": [
+        "GHL-API-Client/1.0",
+        "Mozilla/5.0..."
+      ]
+    }
+  },
+  "standardHeaders": {
+    "token-id": {
+      "required": true,
+      "description": "Authentication token",
+      "pattern": "JWT token string",
+      "examples": [
+        "eyJhbGc..."
+      ]
+    },
+    "version": {
+      "required": true,
+      "description": "API version",
+      "pattern": "Numeric string or semantic version",
+      "examples": [
+        "1",
+        "1.0",
+        "2.0"
+      ],
+      "note": "Often just \"1\" or \"1.0\" - the one causing validation errors"
+    },
+    "content-type": {
+      "required": true,
+      "description": "Content type for requests with body",
+      "pattern": "application/json",
+      "examples": [
+        "application/json"
+      ]
+    },
+    "accept": {
+      "required": false,
+      "description": "Accepted response format",
+      "pattern": "application/json",
+      "examples": [
+        "application/json"
+      ]
+    },
+    "authorization": {
+      "required": false,
+      "description": "Alternative auth header",
+      "pattern": "Bearer {token} or other schemes",
+      "examples": [
+        "Bearer eyJhbGc..."
+      ]
+    },
+    "channel": {
+      "required": false,
+      "description": "Channel identifier",
+      "pattern": "string",
+      "examples": [
+        "web",
+        "mobile",
+        "api"
+      ]
+    },
+    "source": {
+      "required": false,
+      "description": "Request source identifier",
+      "pattern": "string",
+      "examples": [
+        "dashboard",
+        "api-client",
+        "mobile-app"
+      ]
+    },
+    "user-agent": {
+      "required": false,
+      "description": "User agent string",
+      "pattern": "string",
+      "examples": [
+        "GHL-API-Client/1.0",
+        "Mozilla/5.0..."
+      ]
+    }
+  },
+  "versionHeaderNote": "The \"version\" header often causes validation errors. Try: \"1\", \"1.0\", \"2\", \"2.0\""
+}

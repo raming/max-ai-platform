@@ -1,0 +1,2685 @@
+{
+  "currentIntegrations": [
+    {
+      "path": "analyze-site.js",
+      "name": "analyze-site.js",
+      "type": ".js",
+      "category": "General"
+    },
+    {
+      "path": "discover-apis.js",
+      "name": "discover-apis.js",
+      "type": ".js",
+      "category": "API Integration"
+    },
+    {
+      "path": "explore-admin.js",
+      "name": "explore-admin.js",
+      "type": ".js",
+      "category": "General"
+    },
+    {
+      "path": "manage-apis.js",
+      "name": "manage-apis.js",
+      "type": ".js",
+      "category": "API Integration"
+    },
+    {
+      "path": "package-lock.json",
+      "name": "package-lock.json",
+      "type": ".json",
+      "category": "General"
+    },
+    {
+      "path": "package.json",
+      "name": "package.json",
+      "type": ".json",
+      "category": "General"
+    },
+    {
+      "path": "quick-test.js",
+      "name": "quick-test.js",
+      "type": ".js",
+      "category": "General"
+    },
+    {
+      "path": "scrape-website.js",
+      "name": "scrape-website.js",
+      "type": ".js",
+      "category": "Website Management"
+    },
+    {
+      "path": "scraped-data/action-plan.json",
+      "name": "action-plan.json",
+      "type": ".json",
+      "category": "General"
+    },
+    {
+      "path": "scraped-data/analysis-execution.json",
+      "name": "analysis-execution.json",
+      "type": ".json",
+      "category": "General"
+    },
+    {
+      "path": "scraped-data/api-discovery-results.json",
+      "name": "api-discovery-results.json",
+      "type": ".json",
+      "category": "API Integration"
+    },
+    {
+      "path": "scraped-data/api-discovery.json",
+      "name": "api-discovery.json",
+      "type": ".json",
+      "category": "API Integration"
+    },
+    {
+      "path": "scraped-data/api-endpoints-simple.json",
+      "name": "api-endpoints-simple.json",
+      "type": ".json",
+      "category": "API Integration"
+    },
+    {
+      "path": "scraped-data/api-test-results.json",
+      "name": "api-test-results.json",
+      "type": ".json",
+      "category": "API Integration"
+    },
+    {
+      "path": "scraped-data/comprehensive-report.json",
+      "name": "comprehensive-report.json",
+      "type": ".json",
+      "category": "General"
+    },
+    {
+      "path": "scraped-data/pages-data.json",
+      "name": "pages-data.json",
+      "type": ".json",
+      "category": "Website Management"
+    },
+    {
+      "path": "scraped-data/seo-audit-results.json",
+      "name": "seo-audit-results.json",
+      "type": ".json",
+      "category": "SEO Tools"
+    },
+    {
+      "path": "scraped-data/update-results.json",
+      "name": "update-results.json",
+      "type": ".json",
+      "category": "General"
+    },
+    {
+      "path": "seo-audit.js",
+      "name": "seo-audit.js",
+      "type": ".js",
+      "category": "SEO Tools"
+    },
+    {
+      "path": "simple-scraper.js",
+      "name": "simple-scraper.js",
+      "type": ".js",
+      "category": "General"
+    },
+    {
+      "path": "test-apis.js",
+      "name": "test-apis.js",
+      "type": ".js",
+      "category": "API Integration"
+    },
+    {
+      "path": "update-pages.js",
+      "name": "update-pages.js",
+      "type": ".js",
+      "category": "Website Management"
+    },
+    {
+      "path": "../../asana_launcher.py",
+      "name": "asana_launcher.py",
+      "type": ".py",
+      "category": "General"
+    },
+    {
+      "path": "../../scripts/__init__.py",
+      "name": "__init__.py",
+      "type": ".py",
+      "category": "General"
+    },
+    {
+      "path": "../../scripts/asana/__init__.py",
+      "name": "__init__.py",
+      "type": ".py",
+      "category": "General"
+    },
+    {
+      "path": "../../scripts/asana/asana_integration.py",
+      "name": "asana_integration.py",
+      "type": ".py",
+      "category": "API Integration"
+    },
+    {
+      "path": "../../scripts/asana/seo_asana_workflow.py",
+      "name": "seo_asana_workflow.py",
+      "type": ".py",
+      "category": "SEO Tools"
+    },
+    {
+      "path": "../../scripts/asana/setup.py",
+      "name": "setup.py",
+      "type": ".py",
+      "category": "General"
+    },
+    {
+      "path": "../../scripts/asana/test_asana.py",
+      "name": "test_asana.py",
+      "type": ".py",
+      "category": "General"
+    },
+    {
+      "path": "../../scripts/ghl-seo/analyze-site.js",
+      "name": "analyze-site.js",
+      "type": ".js",
+      "category": "General"
+    },
+    {
+      "path": "../../scripts/ghl-seo/discover-apis.js",
+      "name": "discover-apis.js",
+      "type": ".js",
+      "category": "API Integration"
+    },
+    {
+      "path": "../../scripts/ghl-seo/explore-admin.js",
+      "name": "explore-admin.js",
+      "type": ".js",
+      "category": "General"
+    },
+    {
+      "path": "../../scripts/ghl-seo/manage-apis.js",
+      "name": "manage-apis.js",
+      "type": ".js",
+      "category": "API Integration"
+    },
+    {
+      "path": "../../scripts/ghl-seo/package-lock.json",
+      "name": "package-lock.json",
+      "type": ".json",
+      "category": "General"
+    },
+    {
+      "path": "../../scripts/ghl-seo/package.json",
+      "name": "package.json",
+      "type": ".json",
+      "category": "General"
+    },
+    {
+      "path": "../../scripts/ghl-seo/quick-test.js",
+      "name": "quick-test.js",
+      "type": ".js",
+      "category": "General"
+    },
+    {
+      "path": "../../scripts/ghl-seo/scrape-website.js",
+      "name": "scrape-website.js",
+      "type": ".js",
+      "category": "Website Management"
+    },
+    {
+      "path": "../../scripts/ghl-seo/scraped-data/action-plan.json",
+      "name": "action-plan.json",
+      "type": ".json",
+      "category": "General"
+    },
+    {
+      "path": "../../scripts/ghl-seo/scraped-data/analysis-execution.json",
+      "name": "analysis-execution.json",
+      "type": ".json",
+      "category": "General"
+    },
+    {
+      "path": "../../scripts/ghl-seo/scraped-data/api-discovery-results.json",
+      "name": "api-discovery-results.json",
+      "type": ".json",
+      "category": "API Integration"
+    },
+    {
+      "path": "../../scripts/ghl-seo/scraped-data/api-discovery.json",
+      "name": "api-discovery.json",
+      "type": ".json",
+      "category": "API Integration"
+    },
+    {
+      "path": "../../scripts/ghl-seo/scraped-data/api-endpoints-simple.json",
+      "name": "api-endpoints-simple.json",
+      "type": ".json",
+      "category": "API Integration"
+    },
+    {
+      "path": "../../scripts/ghl-seo/scraped-data/api-test-results.json",
+      "name": "api-test-results.json",
+      "type": ".json",
+      "category": "API Integration"
+    },
+    {
+      "path": "../../scripts/ghl-seo/scraped-data/comprehensive-report.json",
+      "name": "comprehensive-report.json",
+      "type": ".json",
+      "category": "General"
+    },
+    {
+      "path": "../../scripts/ghl-seo/scraped-data/pages-data.json",
+      "name": "pages-data.json",
+      "type": ".json",
+      "category": "Website Management"
+    },
+    {
+      "path": "../../scripts/ghl-seo/scraped-data/seo-audit-results.json",
+      "name": "seo-audit-results.json",
+      "type": ".json",
+      "category": "SEO Tools"
+    },
+    {
+      "path": "../../scripts/ghl-seo/scraped-data/update-results.json",
+      "name": "update-results.json",
+      "type": ".json",
+      "category": "General"
+    },
+    {
+      "path": "../../scripts/ghl-seo/seo-audit.js",
+      "name": "seo-audit.js",
+      "type": ".js",
+      "category": "SEO Tools"
+    },
+    {
+      "path": "../../scripts/ghl-seo/simple-scraper.js",
+      "name": "simple-scraper.js",
+      "type": ".js",
+      "category": "General"
+    },
+    {
+      "path": "../../scripts/ghl-seo/test-apis.js",
+      "name": "test-apis.js",
+      "type": ".js",
+      "category": "API Integration"
+    },
+    {
+      "path": "../../scripts/ghl-seo/update-pages.js",
+      "name": "update-pages.js",
+      "type": ".js",
+      "category": "Website Management"
+    }
+  ],
+  "apiPatterns": [
+    {
+      "file": "analyze-site.js",
+      "path": "analyze-site.js",
+      "patterns": [
+        {
+          "type": "auth_header",
+          "value": "Token: config.sessionToken || process.env.GHL_SESSION_TOKEN,"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionToken"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionToken"
+        },
+        {
+          "type": "session_token",
+          "value": "SESSION_TOKEN"
+        }
+      ],
+      "type": "authentication"
+    },
+    {
+      "file": "discover-apis.js",
+      "path": "discover-apis.js",
+      "patterns": [
+        {
+          "type": "auth_header",
+          "value": "Authorization|Bearer|Token|API-Key)[^"
+        },
+        {
+          "type": "auth_header",
+          "value": "tokens"
+        },
+        {
+          "type": "auth_header",
+          "value": "token|sessionId|session_id/gi;"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionId"
+        },
+        {
+          "type": "session_token",
+          "value": "session_id"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        }
+      ],
+      "type": "authentication"
+    },
+    {
+      "file": "manage-apis.js",
+      "path": "manage-apis.js",
+      "patterns": [
+        {
+          "type": "auth_header",
+          "value": "Authorization header (or press enter): "
+        },
+        {
+          "type": "auth_header",
+          "value": "Authorization: Bearer yrMl7UtmMqo31qLMP76W"
+        }
+      ],
+      "type": "authentication"
+    },
+    {
+      "file": "package-lock.json",
+      "path": "package-lock.json",
+      "patterns": [
+        {
+          "type": "auth_header",
+          "value": "tokens"
+        },
+        {
+          "type": "auth_header",
+          "value": "tokens"
+        },
+        {
+          "type": "auth_header",
+          "value": "tokens/-/js-tokens-4.0.0.tgz"
+        }
+      ],
+      "type": "authentication"
+    },
+    {
+      "file": "quick-test.js",
+      "path": "quick-test.js",
+      "patterns": [
+        {
+          "type": "auth_header",
+          "value": "Authorization"
+        },
+        {
+          "type": "auth_header",
+          "value": "Bearer ${this.apiKey}`,"
+        }
+      ],
+      "type": "authentication"
+    },
+    {
+      "file": "scrape-website.js",
+      "path": "scrape-website.js",
+      "patterns": [
+        {
+          "type": "auth_header",
+          "value": "Token: config.sessionToken || process.env.GHL_SESSION_TOKEN,"
+        },
+        {
+          "type": "auth_header",
+          "value": "token if provided"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token) {"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token,"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token: process.env.GHL_SESSION_TOKEN"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionToken"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionToken"
+        },
+        {
+          "type": "session_token",
+          "value": "SESSION_TOKEN"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionToken"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionToken"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionToken"
+        },
+        {
+          "type": "session_token",
+          "value": "SESSION_TOKEN"
+        }
+      ],
+      "type": "authentication"
+    },
+    {
+      "file": "api-discovery-results.json",
+      "path": "scraped-data/api-discovery-results.json",
+      "patterns": [
+        {
+          "type": "auth_header",
+          "value": "Token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token authentication"
+        },
+        {
+          "type": "auth_header",
+          "value": "Authorization"
+        },
+        {
+          "type": "auth_header",
+          "value": "Bearer token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token/update"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token refresh/update"
+        },
+        {
+          "type": "auth_header",
+          "value": "tokens for admin access"
+        },
+        {
+          "type": "auth_header",
+          "value": "Authorization"
+        },
+        {
+          "type": "auth_header",
+          "value": "Bearer {api_key}"
+        },
+        {
+          "type": "auth_header",
+          "value": "Bearer token authentication for API calls"
+        }
+      ],
+      "type": "authentication"
+    },
+    {
+      "file": "api-discovery.json",
+      "path": "scraped-data/api-discovery.json",
+      "patterns": [
+        {
+          "type": "auth_header",
+          "value": "Token: config.sessionToken || process.env.GHL_SESSION_TOKEN,"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "TOKEN"
+        },
+        {
+          "type": "auth_header",
+          "value": "Authorization|Bearer|Token|API-Key)[^"
+        },
+        {
+          "type": "auth_header",
+          "value": "tokens"
+        },
+        {
+          "type": "auth_header",
+          "value": "token|sessionId|session_id/gi;"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "tokens"
+        },
+        {
+          "type": "auth_header",
+          "value": "tokens"
+        },
+        {
+          "type": "auth_header",
+          "value": "tokens/-/js-tokens-4.0.0.tgz"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token: config.sessionToken || process.env.GHL_SESSION_TOKEN,"
+        },
+        {
+          "type": "auth_header",
+          "value": "token if provided"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token) {"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token,"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token: process.env.GHL_SESSION_TOKEN"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "TOKEN"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "TOKEN"
+        },
+        {
+          "type": "auth_header",
+          "value": "Authorization"
+        },
+        {
+          "type": "auth_header",
+          "value": "Bearer ${this.config.apiKey}`,"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token from https://app.asana.com/0/developer-console"
+        },
+        {
+          "type": "auth_header",
+          "value": "TOKEN environment variable or update the TOKEN variable below"
+        },
+        {
+          "type": "auth_header",
+          "value": "token: str = None):"
+        },
+        {
+          "type": "auth_header",
+          "value": "token: Asana Personal Access Token. If None, will try to get from environment."
+        },
+        {
+          "type": "auth_header",
+          "value": "token = token or os.getenv("
+        },
+        {
+          "type": "auth_header",
+          "value": "TOKEN"
+        },
+        {
+          "type": "auth_header",
+          "value": "token:"
+        },
+        {
+          "type": "auth_header",
+          "value": "token is required. Set ASANA_TOKEN environment variable or pass token parameter."
+        },
+        {
+          "type": "auth_header",
+          "value": "Authorization"
+        },
+        {
+          "type": "auth_header",
+          "value": "Bearer {self.token}"
+        },
+        {
+          "type": "auth_header",
+          "value": "TOKEN environment variable)"
+        },
+        {
+          "type": "auth_header",
+          "value": "token = input("
+        },
+        {
+          "type": "auth_header",
+          "value": "Token: "
+        },
+        {
+          "type": "auth_header",
+          "value": "TOKEN={token}\\\\n"
+        },
+        {
+          "type": "auth_header",
+          "value": "token."
+        },
+        {
+          "type": "auth_header",
+          "value": "token first by running:"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token:"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token)"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token = os.getenv("
+        },
+        {
+          "type": "auth_header",
+          "value": "TOKEN"
+        },
+        {
+          "type": "auth_header",
+          "value": "token:"
+        },
+        {
+          "type": "auth_header",
+          "value": "TOKEN found (length: {len(token)})"
+        },
+        {
+          "type": "auth_header",
+          "value": "TOKEN not found in environment"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token: config.sessionToken || process.env.GHL_SESSION_TOKEN,"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "TOKEN"
+        },
+        {
+          "type": "auth_header",
+          "value": "Authorization|Bearer|Token|API-Key)[^"
+        },
+        {
+          "type": "auth_header",
+          "value": "tokens"
+        },
+        {
+          "type": "auth_header",
+          "value": "token|sessionId|session_id/gi;"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "tokens"
+        },
+        {
+          "type": "auth_header",
+          "value": "tokens"
+        },
+        {
+          "type": "auth_header",
+          "value": "tokens/-/js-tokens-4.0.0.tgz"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token: config.sessionToken || process.env.GHL_SESSION_TOKEN,"
+        },
+        {
+          "type": "auth_header",
+          "value": "token if provided"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token) {"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token,"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token: process.env.GHL_SESSION_TOKEN"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "TOKEN"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "TOKEN"
+        },
+        {
+          "type": "auth_header",
+          "value": "Authorization"
+        },
+        {
+          "type": "auth_header",
+          "value": "Bearer ${this.config.apiKey}`,"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionToken"
+        },
+        {
+          "type": "session_token",
+          "value": "SESSION_TOKEN"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionToken"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionToken"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "SESSION_TOKEN"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionId"
+        },
+        {
+          "type": "session_token",
+          "value": "session_id"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionId"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "session_id"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionToken"
+        },
+        {
+          "type": "session_token",
+          "value": "SESSION_TOKEN"
+        },
+        {
+          "type": "session_token",
+          "value": "SESSION_TOKEN"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionToken"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionToken"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "SESSION_TOKEN"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionToken"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionToken"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionToken"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "SESSION_TOKEN"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionToken"
+        },
+        {
+          "type": "session_token",
+          "value": "SESSION_TOKEN"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionToken"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionToken"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "SESSION_TOKEN"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionId"
+        },
+        {
+          "type": "session_token",
+          "value": "session_id"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionId"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "session_id"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionToken"
+        },
+        {
+          "type": "session_token",
+          "value": "SESSION_TOKEN"
+        },
+        {
+          "type": "session_token",
+          "value": "SESSION_TOKEN"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionToken"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionToken"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "SESSION_TOKEN"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionToken"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionToken"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionToken"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "SESSION_TOKEN"
+        }
+      ],
+      "type": "authentication"
+    },
+    {
+      "file": "api-endpoints-simple.json",
+      "path": "scraped-data/api-endpoints-simple.json",
+      "patterns": [
+        {
+          "type": "auth_header",
+          "value": "Token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token/update"
+        }
+      ],
+      "type": "authentication"
+    },
+    {
+      "file": "api-test-results.json",
+      "path": "scraped-data/api-test-results.json",
+      "patterns": [
+        {
+          "type": "auth_header",
+          "value": "Token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token."
+        },
+        {
+          "type": "auth_header",
+          "value": "Token Authentication"
+        },
+        {
+          "type": "session_token",
+          "value": "SessionToken"
+        }
+      ],
+      "type": "authentication"
+    },
+    {
+      "file": "test-apis.js",
+      "path": "test-apis.js",
+      "patterns": [
+        {
+          "type": "auth_header",
+          "value": "Token: process.env.GHL_SESSION_TOKEN,"
+        },
+        {
+          "type": "auth_header",
+          "value": "Authorization"
+        },
+        {
+          "type": "auth_header",
+          "value": "Bearer ${this.config.apiKey}`"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token Authentication"
+        },
+        {
+          "type": "auth_header",
+          "value": "Authorization"
+        },
+        {
+          "type": "auth_header",
+          "value": "Bearer ${this.config.sessionToken}`"
+        },
+        {
+          "type": "auth_header",
+          "value": "Authorization"
+        },
+        {
+          "type": "auth_header",
+          "value": "Bearer ${this.config.apiKey}` }"
+        },
+        {
+          "type": "auth_header",
+          "value": "Authorization"
+        },
+        {
+          "type": "auth_header",
+          "value": "Bearer ${this.config.apiKey}` }"
+        },
+        {
+          "type": "auth_header",
+          "value": "Authorization"
+        },
+        {
+          "type": "auth_header",
+          "value": "Bearer ${this.config.apiKey}` }"
+        },
+        {
+          "type": "auth_header",
+          "value": "Authorization"
+        },
+        {
+          "type": "auth_header",
+          "value": "Bearer ${this.config.apiKey}`,"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token: !!this.config.sessionToken"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionToken"
+        },
+        {
+          "type": "session_token",
+          "value": "SESSION_TOKEN"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionToken"
+        },
+        {
+          "type": "session_token",
+          "value": "SessionToken"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionToken"
+        }
+      ],
+      "type": "authentication"
+    },
+    {
+      "file": "update-pages.js",
+      "path": "update-pages.js",
+      "patterns": [
+        {
+          "type": "auth_header",
+          "value": "Authorization"
+        },
+        {
+          "type": "auth_header",
+          "value": "Bearer ${this.config.apiKey}`,"
+        }
+      ],
+      "type": "authentication"
+    },
+    {
+      "file": "asana_integration.py",
+      "path": "../../scripts/asana/asana_integration.py",
+      "patterns": [
+        {
+          "type": "auth_header",
+          "value": "Token from https://app.asana.com/0/developer-console"
+        },
+        {
+          "type": "auth_header",
+          "value": "TOKEN environment variable or update the TOKEN variable below"
+        },
+        {
+          "type": "auth_header",
+          "value": "token: str = None):"
+        },
+        {
+          "type": "auth_header",
+          "value": "token: Asana Personal Access Token. If None, will try to get from environment."
+        },
+        {
+          "type": "auth_header",
+          "value": "token = token or os.getenv("
+        },
+        {
+          "type": "auth_header",
+          "value": "TOKEN"
+        },
+        {
+          "type": "auth_header",
+          "value": "token:"
+        },
+        {
+          "type": "auth_header",
+          "value": "token is required. Set ASANA_TOKEN environment variable or pass token parameter."
+        },
+        {
+          "type": "auth_header",
+          "value": "Authorization"
+        },
+        {
+          "type": "auth_header",
+          "value": "Bearer {self.token}"
+        },
+        {
+          "type": "auth_header",
+          "value": "TOKEN environment variable)"
+        },
+        {
+          "type": "auth_header",
+          "value": "token = input("
+        },
+        {
+          "type": "auth_header",
+          "value": "Token: "
+        },
+        {
+          "type": "auth_header",
+          "value": "TOKEN={token}\\n"
+        },
+        {
+          "type": "auth_header",
+          "value": "token."
+        }
+      ],
+      "type": "authentication"
+    },
+    {
+      "file": "seo_asana_workflow.py",
+      "path": "../../scripts/asana/seo_asana_workflow.py",
+      "patterns": [
+        {
+          "type": "auth_header",
+          "value": "token first by running:"
+        }
+      ],
+      "type": "authentication"
+    },
+    {
+      "file": "setup.py",
+      "path": "../../scripts/asana/setup.py",
+      "patterns": [
+        {
+          "type": "auth_header",
+          "value": "Token:"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token)"
+        }
+      ],
+      "type": "authentication"
+    },
+    {
+      "file": "test_asana.py",
+      "path": "../../scripts/asana/test_asana.py",
+      "patterns": [
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token = os.getenv("
+        },
+        {
+          "type": "auth_header",
+          "value": "TOKEN"
+        },
+        {
+          "type": "auth_header",
+          "value": "token:"
+        },
+        {
+          "type": "auth_header",
+          "value": "TOKEN found (length: {len(token)})"
+        },
+        {
+          "type": "auth_header",
+          "value": "TOKEN not found in environment"
+        }
+      ],
+      "type": "authentication"
+    },
+    {
+      "file": "analyze-site.js",
+      "path": "../../scripts/ghl-seo/analyze-site.js",
+      "patterns": [
+        {
+          "type": "auth_header",
+          "value": "Token: config.sessionToken || process.env.GHL_SESSION_TOKEN,"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionToken"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionToken"
+        },
+        {
+          "type": "session_token",
+          "value": "SESSION_TOKEN"
+        }
+      ],
+      "type": "authentication"
+    },
+    {
+      "file": "discover-apis.js",
+      "path": "../../scripts/ghl-seo/discover-apis.js",
+      "patterns": [
+        {
+          "type": "auth_header",
+          "value": "Authorization|Bearer|Token|API-Key)[^"
+        },
+        {
+          "type": "auth_header",
+          "value": "tokens"
+        },
+        {
+          "type": "auth_header",
+          "value": "token|sessionId|session_id/gi;"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionId"
+        },
+        {
+          "type": "session_token",
+          "value": "session_id"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        }
+      ],
+      "type": "authentication"
+    },
+    {
+      "file": "manage-apis.js",
+      "path": "../../scripts/ghl-seo/manage-apis.js",
+      "patterns": [
+        {
+          "type": "auth_header",
+          "value": "Authorization header (or press enter): "
+        },
+        {
+          "type": "auth_header",
+          "value": "Authorization: Bearer yrMl7UtmMqo31qLMP76W"
+        }
+      ],
+      "type": "authentication"
+    },
+    {
+      "file": "package-lock.json",
+      "path": "../../scripts/ghl-seo/package-lock.json",
+      "patterns": [
+        {
+          "type": "auth_header",
+          "value": "tokens"
+        },
+        {
+          "type": "auth_header",
+          "value": "tokens"
+        },
+        {
+          "type": "auth_header",
+          "value": "tokens/-/js-tokens-4.0.0.tgz"
+        }
+      ],
+      "type": "authentication"
+    },
+    {
+      "file": "quick-test.js",
+      "path": "../../scripts/ghl-seo/quick-test.js",
+      "patterns": [
+        {
+          "type": "auth_header",
+          "value": "Authorization"
+        },
+        {
+          "type": "auth_header",
+          "value": "Bearer ${this.apiKey}`,"
+        }
+      ],
+      "type": "authentication"
+    },
+    {
+      "file": "scrape-website.js",
+      "path": "../../scripts/ghl-seo/scrape-website.js",
+      "patterns": [
+        {
+          "type": "auth_header",
+          "value": "Token: config.sessionToken || process.env.GHL_SESSION_TOKEN,"
+        },
+        {
+          "type": "auth_header",
+          "value": "token if provided"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token) {"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token,"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token: process.env.GHL_SESSION_TOKEN"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionToken"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionToken"
+        },
+        {
+          "type": "session_token",
+          "value": "SESSION_TOKEN"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionToken"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionToken"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionToken"
+        },
+        {
+          "type": "session_token",
+          "value": "SESSION_TOKEN"
+        }
+      ],
+      "type": "authentication"
+    },
+    {
+      "file": "api-discovery-results.json",
+      "path": "../../scripts/ghl-seo/scraped-data/api-discovery-results.json",
+      "patterns": [
+        {
+          "type": "auth_header",
+          "value": "Token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token authentication"
+        },
+        {
+          "type": "auth_header",
+          "value": "Authorization"
+        },
+        {
+          "type": "auth_header",
+          "value": "Bearer token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token/update"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token refresh/update"
+        },
+        {
+          "type": "auth_header",
+          "value": "tokens for admin access"
+        },
+        {
+          "type": "auth_header",
+          "value": "Authorization"
+        },
+        {
+          "type": "auth_header",
+          "value": "Bearer {api_key}"
+        },
+        {
+          "type": "auth_header",
+          "value": "Bearer token authentication for API calls"
+        }
+      ],
+      "type": "authentication"
+    },
+    {
+      "file": "api-discovery.json",
+      "path": "../../scripts/ghl-seo/scraped-data/api-discovery.json",
+      "patterns": [
+        {
+          "type": "auth_header",
+          "value": "Token: config.sessionToken || process.env.GHL_SESSION_TOKEN,"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "TOKEN"
+        },
+        {
+          "type": "auth_header",
+          "value": "Authorization|Bearer|Token|API-Key)[^"
+        },
+        {
+          "type": "auth_header",
+          "value": "tokens"
+        },
+        {
+          "type": "auth_header",
+          "value": "token|sessionId|session_id/gi;"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "tokens"
+        },
+        {
+          "type": "auth_header",
+          "value": "tokens"
+        },
+        {
+          "type": "auth_header",
+          "value": "tokens/-/js-tokens-4.0.0.tgz"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token: config.sessionToken || process.env.GHL_SESSION_TOKEN,"
+        },
+        {
+          "type": "auth_header",
+          "value": "token if provided"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token) {"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token,"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token: process.env.GHL_SESSION_TOKEN"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "TOKEN"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "TOKEN"
+        },
+        {
+          "type": "auth_header",
+          "value": "Authorization"
+        },
+        {
+          "type": "auth_header",
+          "value": "Bearer ${this.config.apiKey}`,"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token from https://app.asana.com/0/developer-console"
+        },
+        {
+          "type": "auth_header",
+          "value": "TOKEN environment variable or update the TOKEN variable below"
+        },
+        {
+          "type": "auth_header",
+          "value": "token: str = None):"
+        },
+        {
+          "type": "auth_header",
+          "value": "token: Asana Personal Access Token. If None, will try to get from environment."
+        },
+        {
+          "type": "auth_header",
+          "value": "token = token or os.getenv("
+        },
+        {
+          "type": "auth_header",
+          "value": "TOKEN"
+        },
+        {
+          "type": "auth_header",
+          "value": "token:"
+        },
+        {
+          "type": "auth_header",
+          "value": "token is required. Set ASANA_TOKEN environment variable or pass token parameter."
+        },
+        {
+          "type": "auth_header",
+          "value": "Authorization"
+        },
+        {
+          "type": "auth_header",
+          "value": "Bearer {self.token}"
+        },
+        {
+          "type": "auth_header",
+          "value": "TOKEN environment variable)"
+        },
+        {
+          "type": "auth_header",
+          "value": "token = input("
+        },
+        {
+          "type": "auth_header",
+          "value": "Token: "
+        },
+        {
+          "type": "auth_header",
+          "value": "TOKEN={token}\\\\n"
+        },
+        {
+          "type": "auth_header",
+          "value": "token."
+        },
+        {
+          "type": "auth_header",
+          "value": "token first by running:"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token:"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token)"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token = os.getenv("
+        },
+        {
+          "type": "auth_header",
+          "value": "TOKEN"
+        },
+        {
+          "type": "auth_header",
+          "value": "token:"
+        },
+        {
+          "type": "auth_header",
+          "value": "TOKEN found (length: {len(token)})"
+        },
+        {
+          "type": "auth_header",
+          "value": "TOKEN not found in environment"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token: config.sessionToken || process.env.GHL_SESSION_TOKEN,"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "TOKEN"
+        },
+        {
+          "type": "auth_header",
+          "value": "Authorization|Bearer|Token|API-Key)[^"
+        },
+        {
+          "type": "auth_header",
+          "value": "tokens"
+        },
+        {
+          "type": "auth_header",
+          "value": "token|sessionId|session_id/gi;"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "tokens"
+        },
+        {
+          "type": "auth_header",
+          "value": "tokens"
+        },
+        {
+          "type": "auth_header",
+          "value": "tokens/-/js-tokens-4.0.0.tgz"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token: config.sessionToken || process.env.GHL_SESSION_TOKEN,"
+        },
+        {
+          "type": "auth_header",
+          "value": "token if provided"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token) {"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token,"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token: process.env.GHL_SESSION_TOKEN"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "TOKEN"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token"
+        },
+        {
+          "type": "auth_header",
+          "value": "TOKEN"
+        },
+        {
+          "type": "auth_header",
+          "value": "Authorization"
+        },
+        {
+          "type": "auth_header",
+          "value": "Bearer ${this.config.apiKey}`,"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionToken"
+        },
+        {
+          "type": "session_token",
+          "value": "SESSION_TOKEN"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionToken"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionToken"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "SESSION_TOKEN"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionId"
+        },
+        {
+          "type": "session_token",
+          "value": "session_id"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionId"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "session_id"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionToken"
+        },
+        {
+          "type": "session_token",
+          "value": "SESSION_TOKEN"
+        },
+        {
+          "type": "session_token",
+          "value": "SESSION_TOKEN"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionToken"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionToken"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "SESSION_TOKEN"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionToken"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionToken"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionToken"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "SESSION_TOKEN"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionToken"
+        },
+        {
+          "type": "session_token",
+          "value": "SESSION_TOKEN"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionToken"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionToken"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "SESSION_TOKEN"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionId"
+        },
+        {
+          "type": "session_token",
+          "value": "session_id"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionId"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "session_id"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionToken"
+        },
+        {
+          "type": "session_token",
+          "value": "SESSION_TOKEN"
+        },
+        {
+          "type": "session_token",
+          "value": "SESSION_TOKEN"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionToken"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionToken"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "SESSION_TOKEN"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionToken"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionToken"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionToken"
+        },
+        {
+          "type": "session_token",
+          "value": "session_token"
+        },
+        {
+          "type": "session_token",
+          "value": "SESSION_TOKEN"
+        }
+      ],
+      "type": "authentication"
+    },
+    {
+      "file": "api-endpoints-simple.json",
+      "path": "../../scripts/ghl-seo/scraped-data/api-endpoints-simple.json",
+      "patterns": [
+        {
+          "type": "auth_header",
+          "value": "Token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token/update"
+        }
+      ],
+      "type": "authentication"
+    },
+    {
+      "file": "api-test-results.json",
+      "path": "../../scripts/ghl-seo/scraped-data/api-test-results.json",
+      "patterns": [
+        {
+          "type": "auth_header",
+          "value": "Token"
+        },
+        {
+          "type": "auth_header",
+          "value": "token."
+        },
+        {
+          "type": "auth_header",
+          "value": "Token Authentication"
+        },
+        {
+          "type": "session_token",
+          "value": "SessionToken"
+        }
+      ],
+      "type": "authentication"
+    },
+    {
+      "file": "test-apis.js",
+      "path": "../../scripts/ghl-seo/test-apis.js",
+      "patterns": [
+        {
+          "type": "auth_header",
+          "value": "Token: process.env.GHL_SESSION_TOKEN,"
+        },
+        {
+          "type": "auth_header",
+          "value": "Authorization"
+        },
+        {
+          "type": "auth_header",
+          "value": "Bearer ${this.config.apiKey}`"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token Authentication"
+        },
+        {
+          "type": "auth_header",
+          "value": "Authorization"
+        },
+        {
+          "type": "auth_header",
+          "value": "Bearer ${this.config.sessionToken}`"
+        },
+        {
+          "type": "auth_header",
+          "value": "Authorization"
+        },
+        {
+          "type": "auth_header",
+          "value": "Bearer ${this.config.apiKey}` }"
+        },
+        {
+          "type": "auth_header",
+          "value": "Authorization"
+        },
+        {
+          "type": "auth_header",
+          "value": "Bearer ${this.config.apiKey}` }"
+        },
+        {
+          "type": "auth_header",
+          "value": "Authorization"
+        },
+        {
+          "type": "auth_header",
+          "value": "Bearer ${this.config.apiKey}` }"
+        },
+        {
+          "type": "auth_header",
+          "value": "Authorization"
+        },
+        {
+          "type": "auth_header",
+          "value": "Bearer ${this.config.apiKey}`,"
+        },
+        {
+          "type": "auth_header",
+          "value": "Token: !!this.config.sessionToken"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionToken"
+        },
+        {
+          "type": "session_token",
+          "value": "SESSION_TOKEN"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionToken"
+        },
+        {
+          "type": "session_token",
+          "value": "SessionToken"
+        },
+        {
+          "type": "session_token",
+          "value": "sessionToken"
+        }
+      ],
+      "type": "authentication"
+    },
+    {
+      "file": "update-pages.js",
+      "path": "../../scripts/ghl-seo/update-pages.js",
+      "patterns": [
+        {
+          "type": "auth_header",
+          "value": "Authorization"
+        },
+        {
+          "type": "auth_header",
+          "value": "Bearer ${this.config.apiKey}`,"
+        }
+      ],
+      "type": "authentication"
+    }
+  ],
+  "recommendations": [
+    {
+      "priority": "high",
+      "title": "API Endpoints Unknown",
+      "description": "No API endpoints discovered in existing code",
+      "action": "Use browser developer tools to capture API calls during website editing"
+    },
+    {
+      "priority": "medium",
+      "title": "Website Modification APIs",
+      "description": "Need to identify APIs for updating page content, meta tags, and SEO elements",
+      "action": "Navigate to website editor and monitor network requests"
+    },
+    {
+      "priority": "medium",
+      "title": "Page Management APIs",
+      "description": "Understand how to create, update, and delete pages programmatically",
+      "action": "Explore page management interface and capture CRUD operations"
+    }
+  ],
+  "nextSteps": [
+    {
+      "step": 1,
+      "title": "Manual GHL Admin Exploration",
+      "description": "Navigate through GHL admin interface manually while monitoring network requests",
+      "tools": [
+        "Browser Developer Tools",
+        "Network tab"
+      ],
+      "goal": "Identify API endpoints for website management"
+    },
+    {
+      "step": 2,
+      "title": "Authentication Analysis",
+      "description": "Understand how GHL handles authentication and session management",
+      "tools": [
+        "Browser DevTools Application tab",
+        "Session storage inspection"
+      ],
+      "goal": "Determine best authentication method for API calls"
+    },
+    {
+      "step": 3,
+      "title": "Page Editing Workflow",
+      "description": "Go through the process of editing a page to capture all API calls",
+      "tools": [
+        "Network monitoring",
+        "API request/response analysis"
+      ],
+      "goal": "Map out complete page update workflow"
+    },
+    {
+      "step": 4,
+      "title": "SEO-Specific APIs",
+      "description": "Focus on APIs related to meta tags, titles, descriptions, and structured data",
+      "tools": [
+        "Targeted network filtering",
+        "Request payload analysis"
+      ],
+      "goal": "Identify endpoints for SEO element updates"
+    },
+    {
+      "step": 5,
+      "title": "Build Integration Script",
+      "description": "Create automated script using discovered API patterns",
+      "tools": [
+        "Node.js",
+        "Axios/Fetch",
+        "Discovered API endpoints"
+      ],
+      "goal": "Implement programmatic website updates"
+    }
+  ]
+}

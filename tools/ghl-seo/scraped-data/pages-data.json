@@ -1,0 +1,4922 @@
+[
+  {
+    "url": "https://maxaiassistant.com/",
+    "title": "Homepage",
+    "meta": {
+      "title": "",
+      "description": null,
+      "keywords": null,
+      "ogTitle": null,
+      "ogDescription": null,
+      "ogImage": null,
+      "twitterCard": null,
+      "viewport": "width=device-width, initial-scale=1",
+      "robots": null
+    },
+    "headings": {
+      "h1": [],
+      "h2": [
+        "AI Web Chat",
+        "Answer questions, book jobs, and filter out junk with AI web chat",
+        "Review Management",
+        "Automate review requests and a stellar reputation",
+        "Customer Engagement",
+        "Guide customers through every step of their journey"
+      ],
+      "h3": []
+    },
+    "links": {
+      "total": 58,
+      "internal": 55,
+      "external": 3,
+      "list": [
+        {
+          "text": "",
+          "href": "https://maxaiassistant.com",
+          "isInternal": false
+        },
+        {
+          "text": "HOME",
+          "href": "https://maxaiassistant.com/homepage",
+          "isInternal": true
+        },
+        {
+          "text": "Automotive Services",
+          "href": "https://maxaiassistant.com/automotive-services",
+          "isInternal": true
+        },
+        {
+          "text": "Auto Repair",
+          "href": "https://maxaiassistant.com/auto-repair",
+          "isInternal": true
+        },
+        {
+          "text": "Auto Collision",
+          "href": "https://maxaiassistant.com/auto-collision",
+          "isInternal": true
+        },
+        {
+          "text": "Auto Part Stores",
+          "href": "https://maxaiassistant.com/auto-part-stores",
+          "isInternal": true
+        },
+        {
+          "text": "Truck services",
+          "href": "https://maxaiassistant.com/truck-services",
+          "isInternal": true
+        },
+        {
+          "text": "Tire Dealers",
+          "href": "https://maxaiassistant.com/tire-dealers",
+          "isInternal": true
+        },
+        {
+          "text": "Motorcyle Shops",
+          "href": "https://maxaiassistant.com/motorcylce-shops",
+          "isInternal": true
+        },
+        {
+          "text": "Appliance Repair",
+          "href": "https://maxaiassistant.com/appliance-repair",
+          "isInternal": true
+        },
+        {
+          "text": "Carpet Cleaning",
+          "href": "https://maxaiassistant.com/carpet-cleaning",
+          "isInternal": true
+        },
+        {
+          "text": "Damage Restoration",
+          "href": "https://maxaiassistant.com/damage-restoration",
+          "isInternal": true
+        },
+        {
+          "text": "Drywall",
+          "href": "https://maxaiassistant.com/drywall",
+          "isInternal": true
+        },
+        {
+          "text": "Dumpster Rental",
+          "href": "https://maxaiassistant.com/dumpster-rental",
+          "isInternal": true
+        },
+        {
+          "text": "Electrician",
+          "href": "https://maxaiassistant.com/electrician",
+          "isInternal": true
+        },
+        {
+          "text": "Engineering",
+          "href": "https://maxaiassistant.com/engineering",
+          "isInternal": true
+        },
+        {
+          "text": "Excavation",
+          "href": "https://maxaiassistant.com/excavation",
+          "isInternal": true
+        },
+        {
+          "text": "Flooring",
+          "href": "https://maxaiassistant.com/flooring",
+          "isInternal": true
+        },
+        {
+          "text": "Garage Door",
+          "href": "https://maxaiassistant.com/gargage-door",
+          "isInternal": true
+        },
+        {
+          "text": "General Contracting",
+          "href": "https://maxaiassistant.com/general-contracting",
+          "isInternal": true
+        },
+        {
+          "text": "Handyman",
+          "href": "https://maxaiassistant.com/homepage",
+          "isInternal": true
+        },
+        {
+          "text": "Home Inspector",
+          "href": "https://maxaiassistant.com/home-inspector",
+          "isInternal": true
+        },
+        {
+          "text": "Home Remodeling",
+          "href": "https://maxaiassistant.com/home-remodeling",
+          "isInternal": true
+        },
+        {
+          "text": "HVAC",
+          "href": "https://maxaiassistant.com/hvac",
+          "isInternal": true
+        },
+        {
+          "text": "Junk Removal",
+          "href": "#new-menu-item",
+          "isInternal": false
+        },
+        {
+          "text": "Landscaping",
+          "href": "https://maxaiassistant.com/landscaping",
+          "isInternal": true
+        },
+        {
+          "text": "Moving & Storage",
+          "href": "https://maxaiassistant.com/moving--storage",
+          "isInternal": true
+        },
+        {
+          "text": "Painting",
+          "href": "https://maxaiassistant.com/painting",
+          "isInternal": true
+        },
+        {
+          "text": "Pest Control",
+          "href": "https://maxaiassistant.com/pest-control",
+          "isInternal": true
+        },
+        {
+          "text": "Plumbing",
+          "href": "https://maxaiassistant.com/plumbing",
+          "isInternal": true
+        },
+        {
+          "text": "Pool & Spa",
+          "href": "https://maxaiassistant.com/pool--spa",
+          "isInternal": true
+        },
+        {
+          "text": "Roofing",
+          "href": "https://maxaiassistant.com/roofing",
+          "isInternal": true
+        },
+        {
+          "text": "Solar Contractor",
+          "href": "https://maxaiassistant.com/solar-contractor",
+          "isInternal": true
+        },
+        {
+          "text": "Tool Rental",
+          "href": "https://maxaiassistant.com/tool-rental",
+          "isInternal": true
+        },
+        {
+          "text": "Window & Glass",
+          "href": "https://maxaiassistant.com/window--glass",
+          "isInternal": true
+        },
+        {
+          "text": "Law Firms",
+          "href": "https://maxaiassistant.com/law-firms",
+          "isInternal": true
+        },
+        {
+          "text": "Dental Practices",
+          "href": "https://maxaiassistant.com/dental-practices",
+          "isInternal": true
+        },
+        {
+          "text": "Animal Trainer",
+          "href": "https://maxaiassistant.com/animal-trainer",
+          "isInternal": true
+        },
+        {
+          "text": "Pet Boarding",
+          "href": "https://maxaiassistant.com/pet-boarding",
+          "isInternal": true
+        },
+        {
+          "text": "Pet Grooming",
+          "href": "https://maxaiassistant.com/pet-grooming",
+          "isInternal": true
+        },
+        {
+          "text": "Veterinarian",
+          "href": "https://maxaiassistant.com/veterinarian",
+          "isInternal": true
+        },
+        {
+          "text": "Reviews",
+          "href": "https://maxaiassistant.com/reviews-278029",
+          "isInternal": true
+        },
+        {
+          "text": "Local SEO",
+          "href": "https://maxaiassistant.com/local-seo",
+          "isInternal": true
+        },
+        {
+          "text": "Social Media Manager",
+          "href": "https://maxaiassistant.com/social-media-manager",
+          "isInternal": true
+        },
+        {
+          "text": "Conversations AI",
+          "href": "https://maxaiassistant.com/conversations-ai",
+          "isInternal": true
+        },
+        {
+          "text": "Web Chat",
+          "href": "https://maxaiassistant.com/webchat",
+          "isInternal": true
+        },
+        {
+          "text": "Campaigns",
+          "href": "https://maxaiassistant.com/campaigns",
+          "isInternal": true
+        },
+        {
+          "text": "Contact",
+          "href": "https://maxaiassistant.com/contact",
+          "isInternal": true
+        },
+        {
+          "text": "LOGIN",
+          "href": "https://app.getchatt.com",
+          "isInternal": false
+        },
+        {
+          "text": "Get a Demo →",
+          "href": "https://maxaiassistant.com/plans",
+          "isInternal": true
+        },
+        {
+          "text": "Learn more →",
+          "href": "https://maxaiassistant.com/contact",
+          "isInternal": true
+        },
+        {
+          "text": "Learn more →",
+          "href": "https://maxaiassistant.com/contact",
+          "isInternal": true
+        },
+        {
+          "text": "Learn more →",
+          "href": "https://maxaiassistant.com/contact",
+          "isInternal": true
+        },
+        {
+          "text": "Learn more →",
+          "href": "https://maxaiassistant.com/automotive-services",
+          "isInternal": true
+        },
+        {
+          "text": "Learn more →",
+          "href": "https://maxaiassistant.com/home-services",
+          "isInternal": true
+        },
+        {
+          "text": "Learn more →",
+          "href": "https://maxaiassistant.com/pet-services",
+          "isInternal": true
+        },
+        {
+          "text": "Privacy Policy",
+          "href": "https://maxaiassistant.com/privacy",
+          "isInternal": true
+        },
+        {
+          "text": "Terms of Service",
+          "href": "https://maxaiassistant.com/terms-of-service",
+          "isInternal": true
+        }
+      ]
+    },
+    "images": {
+      "total": 39,
+      "withAlt": 0,
+      "withoutAlt": 39,
+      "list": [
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/83d20699-c44d-4245-899f-721d8e9732cd.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/673c3d1a15ee061d5abff400.webp",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/673c3a8817d9a97d51443b25.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/673c527d15ee066e11bffd11.webp",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/673c527d15ee066d74bffd0f.webp",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/673c527d15ee06b5f3bffd10.webp",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/673c536a17d9a94aa0444776.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/673c551ed88b41af68f51bb9.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/673c551e17d9a979ae44495b.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://storage.googleapis.com/msgsndr/yrMl7UtmMqo31qLMP76W/media/673d8a14a4764ddb1521e762.png",
+          "alt": "",
+          "width": "751",
+          "height": "751",
+          "hasAlt": false
+        },
+        {
+          "src": "https://storage.googleapis.com/msgsndr/yrMl7UtmMqo31qLMP76W/media/673d710fd88b4165bdf6eaf2.png",
+          "alt": "",
+          "width": "767",
+          "height": "766",
+          "hasAlt": false
+        },
+        {
+          "src": "https://storage.googleapis.com/msgsndr/yrMl7UtmMqo31qLMP76W/media/673d710f17d9a9f10546129a.png",
+          "alt": "",
+          "width": "751",
+          "height": "751",
+          "hasAlt": false
+        },
+        {
+          "src": "https://storage.googleapis.com/msgsndr/yrMl7UtmMqo31qLMP76W/media/673d710f15ee065737c1a602.png",
+          "alt": "",
+          "width": "822",
+          "height": "759",
+          "hasAlt": false
+        },
+        {
+          "src": "https://storage.googleapis.com/msgsndr/yrMl7UtmMqo31qLMP76W/media/673d710fa4764d272f21aea9.png",
+          "alt": "",
+          "width": "751",
+          "height": "849",
+          "hasAlt": false
+        },
+        {
+          "src": "https://broadly.com/wp-content/uploads/2024/10/Get-found-when-customers-search-nearby-img.png",
+          "alt": "",
+          "width": "751",
+          "height": "751",
+          "hasAlt": false
+        },
+        {
+          "src": "https://broadly.com/wp-content/uploads/2024/10/Get-listed-on-top-search-sites-img.png",
+          "alt": "",
+          "width": "767",
+          "height": "766",
+          "hasAlt": false
+        },
+        {
+          "src": "https://broadly.com/wp-content/uploads/2024/10/Keep-your-listings-up-to-date-img.png",
+          "alt": "",
+          "width": "751",
+          "height": "751",
+          "hasAlt": false
+        },
+        {
+          "src": "https://broadly.com/wp-content/uploads/2024/10/Let-AI-write-your-review-responses-img.png",
+          "alt": "",
+          "width": "822",
+          "height": "759",
+          "hasAlt": false
+        },
+        {
+          "src": "https://broadly.com/wp-content/uploads/2024/10/Track-your-ROI-on-digital-advertising-img.png",
+          "alt": "",
+          "width": "751",
+          "height": "849",
+          "hasAlt": false
+        },
+        {
+          "src": "https://storage.googleapis.com/msgsndr/yrMl7UtmMqo31qLMP76W/media/673d8af315ee06d3e2c20435.png",
+          "alt": "",
+          "width": "817",
+          "height": "751",
+          "hasAlt": false
+        },
+        {
+          "src": "https://storage.googleapis.com/msgsndr/yrMl7UtmMqo31qLMP76W/media/673d8af4a4764d8d5421eed5.png",
+          "alt": "",
+          "width": "886",
+          "height": "751",
+          "hasAlt": false
+        },
+        {
+          "src": "https://storage.googleapis.com/msgsndr/yrMl7UtmMqo31qLMP76W/media/673d8af617d9a97c89465f82.png",
+          "alt": "",
+          "width": "838",
+          "height": "751",
+          "hasAlt": false
+        },
+        {
+          "src": "https://storage.googleapis.com/msgsndr/yrMl7UtmMqo31qLMP76W/media/673d8af315ee06d3e2c20435.png",
+          "alt": "",
+          "width": "817",
+          "height": "751",
+          "hasAlt": false
+        },
+        {
+          "src": "https://storage.googleapis.com/msgsndr/yrMl7UtmMqo31qLMP76W/media/673d8af4a4764d8d5421eed5.png",
+          "alt": "",
+          "width": "886",
+          "height": "751",
+          "hasAlt": false
+        },
+        {
+          "src": "https://storage.googleapis.com/msgsndr/yrMl7UtmMqo31qLMP76W/media/673d8af617d9a97c89465f82.png",
+          "alt": "",
+          "width": "838",
+          "height": "751",
+          "hasAlt": false
+        },
+        {
+          "src": "https://storage.googleapis.com/msgsndr/yrMl7UtmMqo31qLMP76W/media/673d8b8a15ee0678ffc2051c.png",
+          "alt": "",
+          "width": "841",
+          "height": "751",
+          "hasAlt": false
+        },
+        {
+          "src": "https://storage.googleapis.com/msgsndr/yrMl7UtmMqo31qLMP76W/media/673d8b8a17d9a959fa46609f.png",
+          "alt": "",
+          "width": "856",
+          "height": "826",
+          "hasAlt": false
+        },
+        {
+          "src": "https://storage.googleapis.com/msgsndr/yrMl7UtmMqo31qLMP76W/media/673d8b8aa4764d285921ef8a.png",
+          "alt": "",
+          "width": "802",
+          "height": "751",
+          "hasAlt": false
+        },
+        {
+          "src": "https://storage.googleapis.com/msgsndr/yrMl7UtmMqo31qLMP76W/media/673d8b8ab9e1c04e134622ed.png",
+          "alt": "",
+          "width": "788",
+          "height": "751",
+          "hasAlt": false
+        },
+        {
+          "src": "https://storage.googleapis.com/msgsndr/yrMl7UtmMqo31qLMP76W/media/673d8b8a15ee0678ffc2051c.png",
+          "alt": "",
+          "width": "802",
+          "height": "751",
+          "hasAlt": false
+        },
+        {
+          "src": "https://storage.googleapis.com/msgsndr/yrMl7UtmMqo31qLMP76W/media/673d8b8a17d9a959fa46609f.png",
+          "alt": "",
+          "width": "841",
+          "height": "751",
+          "hasAlt": false
+        },
+        {
+          "src": "https://storage.googleapis.com/msgsndr/yrMl7UtmMqo31qLMP76W/media/673d8b8aa4764d285921ef8a.png",
+          "alt": "",
+          "width": "856",
+          "height": "826",
+          "hasAlt": false
+        },
+        {
+          "src": "https://storage.googleapis.com/msgsndr/yrMl7UtmMqo31qLMP76W/media/673d8b8ab9e1c04e134622ed.png",
+          "alt": "",
+          "width": "788",
+          "height": "751",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/aa5964da-51fe-44a0-84ce-f12849adf23c.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/0d1bba30-850c-481b-ad71-b9309f5535b2.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/bb8c9742-ef3c-448d-a325-caf2de481567.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/a2dfd27c-4872-441a-ad9b-18e44991faea.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/a2d6182a-e02b-42a2-988e-cabb79ff11d0.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/673f44d1e35b7638ea392152.png",
+          "alt": "",
+          "hasAlt": false
+        }
+      ]
+    },
+    "content": {
+      "wordCount": 3403,
+      "hasH1": false,
+      "h1Count": 0,
+      "paragraphCount": 38
+    },
+    "structuredData": [],
+    "canonical": null,
+    "response": {
+      "status": 200,
+      "headers": {
+        "date": "Tue, 21 Oct 2025 19:05:40 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive",
+        "cache-control": "public, max-age=60, s-maxage=120",
+        "vary": "Accept-Encoding",
+        "via": "1.1 google",
+        "cf-cache-status": "REVALIDATED",
+        "server-timing": "cfCacheStatus;desc=\"REVALIDATED\", cfOrigin;dur=18,cfEdge;dur=45",
+        "server": "cloudflare",
+        "cf-ray": "9923071e394eb1a2-YYZ"
+      },
+      "contentLength": 480332
+    }
+  },
+  {
+    "url": "https://maxaiassistant.com/",
+    "title": "/homepage",
+    "meta": {
+      "title": "",
+      "description": null,
+      "keywords": null,
+      "ogTitle": null,
+      "ogDescription": null,
+      "ogImage": null,
+      "twitterCard": null,
+      "viewport": "width=device-width, initial-scale=1",
+      "robots": null
+    },
+    "headings": {
+      "h1": [],
+      "h2": [
+        "AI Web Chat",
+        "Answer questions, book jobs, and filter out junk with AI web chat",
+        "Review Management",
+        "Automate review requests and a stellar reputation",
+        "Customer Engagement",
+        "Guide customers through every step of their journey"
+      ],
+      "h3": []
+    },
+    "links": {
+      "total": 58,
+      "internal": 55,
+      "external": 3,
+      "list": [
+        {
+          "text": "",
+          "href": "https://maxaiassistant.com",
+          "isInternal": false
+        },
+        {
+          "text": "HOME",
+          "href": "https://maxaiassistant.com/homepage",
+          "isInternal": true
+        },
+        {
+          "text": "Automotive Services",
+          "href": "https://maxaiassistant.com/automotive-services",
+          "isInternal": true
+        },
+        {
+          "text": "Auto Repair",
+          "href": "https://maxaiassistant.com/auto-repair",
+          "isInternal": true
+        },
+        {
+          "text": "Auto Collision",
+          "href": "https://maxaiassistant.com/auto-collision",
+          "isInternal": true
+        },
+        {
+          "text": "Auto Part Stores",
+          "href": "https://maxaiassistant.com/auto-part-stores",
+          "isInternal": true
+        },
+        {
+          "text": "Truck services",
+          "href": "https://maxaiassistant.com/truck-services",
+          "isInternal": true
+        },
+        {
+          "text": "Tire Dealers",
+          "href": "https://maxaiassistant.com/tire-dealers",
+          "isInternal": true
+        },
+        {
+          "text": "Motorcyle Shops",
+          "href": "https://maxaiassistant.com/motorcylce-shops",
+          "isInternal": true
+        },
+        {
+          "text": "Appliance Repair",
+          "href": "https://maxaiassistant.com/appliance-repair",
+          "isInternal": true
+        },
+        {
+          "text": "Carpet Cleaning",
+          "href": "https://maxaiassistant.com/carpet-cleaning",
+          "isInternal": true
+        },
+        {
+          "text": "Damage Restoration",
+          "href": "https://maxaiassistant.com/damage-restoration",
+          "isInternal": true
+        },
+        {
+          "text": "Drywall",
+          "href": "https://maxaiassistant.com/drywall",
+          "isInternal": true
+        },
+        {
+          "text": "Dumpster Rental",
+          "href": "https://maxaiassistant.com/dumpster-rental",
+          "isInternal": true
+        },
+        {
+          "text": "Electrician",
+          "href": "https://maxaiassistant.com/electrician",
+          "isInternal": true
+        },
+        {
+          "text": "Engineering",
+          "href": "https://maxaiassistant.com/engineering",
+          "isInternal": true
+        },
+        {
+          "text": "Excavation",
+          "href": "https://maxaiassistant.com/excavation",
+          "isInternal": true
+        },
+        {
+          "text": "Flooring",
+          "href": "https://maxaiassistant.com/flooring",
+          "isInternal": true
+        },
+        {
+          "text": "Garage Door",
+          "href": "https://maxaiassistant.com/gargage-door",
+          "isInternal": true
+        },
+        {
+          "text": "General Contracting",
+          "href": "https://maxaiassistant.com/general-contracting",
+          "isInternal": true
+        },
+        {
+          "text": "Handyman",
+          "href": "https://maxaiassistant.com/homepage",
+          "isInternal": true
+        },
+        {
+          "text": "Home Inspector",
+          "href": "https://maxaiassistant.com/home-inspector",
+          "isInternal": true
+        },
+        {
+          "text": "Home Remodeling",
+          "href": "https://maxaiassistant.com/home-remodeling",
+          "isInternal": true
+        },
+        {
+          "text": "HVAC",
+          "href": "https://maxaiassistant.com/hvac",
+          "isInternal": true
+        },
+        {
+          "text": "Junk Removal",
+          "href": "#new-menu-item",
+          "isInternal": false
+        },
+        {
+          "text": "Landscaping",
+          "href": "https://maxaiassistant.com/landscaping",
+          "isInternal": true
+        },
+        {
+          "text": "Moving & Storage",
+          "href": "https://maxaiassistant.com/moving--storage",
+          "isInternal": true
+        },
+        {
+          "text": "Painting",
+          "href": "https://maxaiassistant.com/painting",
+          "isInternal": true
+        },
+        {
+          "text": "Pest Control",
+          "href": "https://maxaiassistant.com/pest-control",
+          "isInternal": true
+        },
+        {
+          "text": "Plumbing",
+          "href": "https://maxaiassistant.com/plumbing",
+          "isInternal": true
+        },
+        {
+          "text": "Pool & Spa",
+          "href": "https://maxaiassistant.com/pool--spa",
+          "isInternal": true
+        },
+        {
+          "text": "Roofing",
+          "href": "https://maxaiassistant.com/roofing",
+          "isInternal": true
+        },
+        {
+          "text": "Solar Contractor",
+          "href": "https://maxaiassistant.com/solar-contractor",
+          "isInternal": true
+        },
+        {
+          "text": "Tool Rental",
+          "href": "https://maxaiassistant.com/tool-rental",
+          "isInternal": true
+        },
+        {
+          "text": "Window & Glass",
+          "href": "https://maxaiassistant.com/window--glass",
+          "isInternal": true
+        },
+        {
+          "text": "Law Firms",
+          "href": "https://maxaiassistant.com/law-firms",
+          "isInternal": true
+        },
+        {
+          "text": "Dental Practices",
+          "href": "https://maxaiassistant.com/dental-practices",
+          "isInternal": true
+        },
+        {
+          "text": "Animal Trainer",
+          "href": "https://maxaiassistant.com/animal-trainer",
+          "isInternal": true
+        },
+        {
+          "text": "Pet Boarding",
+          "href": "https://maxaiassistant.com/pet-boarding",
+          "isInternal": true
+        },
+        {
+          "text": "Pet Grooming",
+          "href": "https://maxaiassistant.com/pet-grooming",
+          "isInternal": true
+        },
+        {
+          "text": "Veterinarian",
+          "href": "https://maxaiassistant.com/veterinarian",
+          "isInternal": true
+        },
+        {
+          "text": "Reviews",
+          "href": "https://maxaiassistant.com/reviews-278029",
+          "isInternal": true
+        },
+        {
+          "text": "Local SEO",
+          "href": "https://maxaiassistant.com/local-seo",
+          "isInternal": true
+        },
+        {
+          "text": "Social Media Manager",
+          "href": "https://maxaiassistant.com/social-media-manager",
+          "isInternal": true
+        },
+        {
+          "text": "Conversations AI",
+          "href": "https://maxaiassistant.com/conversations-ai",
+          "isInternal": true
+        },
+        {
+          "text": "Web Chat",
+          "href": "https://maxaiassistant.com/webchat",
+          "isInternal": true
+        },
+        {
+          "text": "Campaigns",
+          "href": "https://maxaiassistant.com/campaigns",
+          "isInternal": true
+        },
+        {
+          "text": "Contact",
+          "href": "https://maxaiassistant.com/contact",
+          "isInternal": true
+        },
+        {
+          "text": "LOGIN",
+          "href": "https://app.getchatt.com",
+          "isInternal": false
+        },
+        {
+          "text": "Get a Demo →",
+          "href": "https://maxaiassistant.com/plans",
+          "isInternal": true
+        },
+        {
+          "text": "Learn more →",
+          "href": "https://maxaiassistant.com/contact",
+          "isInternal": true
+        },
+        {
+          "text": "Learn more →",
+          "href": "https://maxaiassistant.com/contact",
+          "isInternal": true
+        },
+        {
+          "text": "Learn more →",
+          "href": "https://maxaiassistant.com/contact",
+          "isInternal": true
+        },
+        {
+          "text": "Learn more →",
+          "href": "https://maxaiassistant.com/automotive-services",
+          "isInternal": true
+        },
+        {
+          "text": "Learn more →",
+          "href": "https://maxaiassistant.com/home-services",
+          "isInternal": true
+        },
+        {
+          "text": "Learn more →",
+          "href": "https://maxaiassistant.com/pet-services",
+          "isInternal": true
+        },
+        {
+          "text": "Privacy Policy",
+          "href": "https://maxaiassistant.com/privacy",
+          "isInternal": true
+        },
+        {
+          "text": "Terms of Service",
+          "href": "https://maxaiassistant.com/terms-of-service",
+          "isInternal": true
+        }
+      ]
+    },
+    "images": {
+      "total": 39,
+      "withAlt": 0,
+      "withoutAlt": 39,
+      "list": [
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/83d20699-c44d-4245-899f-721d8e9732cd.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/673c3d1a15ee061d5abff400.webp",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/673c3a8817d9a97d51443b25.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/673c527d15ee066e11bffd11.webp",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/673c527d15ee066d74bffd0f.webp",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/673c527d15ee06b5f3bffd10.webp",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/673c536a17d9a94aa0444776.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/673c551ed88b41af68f51bb9.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/673c551e17d9a979ae44495b.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://storage.googleapis.com/msgsndr/yrMl7UtmMqo31qLMP76W/media/673d8a14a4764ddb1521e762.png",
+          "alt": "",
+          "width": "751",
+          "height": "751",
+          "hasAlt": false
+        },
+        {
+          "src": "https://storage.googleapis.com/msgsndr/yrMl7UtmMqo31qLMP76W/media/673d710fd88b4165bdf6eaf2.png",
+          "alt": "",
+          "width": "767",
+          "height": "766",
+          "hasAlt": false
+        },
+        {
+          "src": "https://storage.googleapis.com/msgsndr/yrMl7UtmMqo31qLMP76W/media/673d710f17d9a9f10546129a.png",
+          "alt": "",
+          "width": "751",
+          "height": "751",
+          "hasAlt": false
+        },
+        {
+          "src": "https://storage.googleapis.com/msgsndr/yrMl7UtmMqo31qLMP76W/media/673d710f15ee065737c1a602.png",
+          "alt": "",
+          "width": "822",
+          "height": "759",
+          "hasAlt": false
+        },
+        {
+          "src": "https://storage.googleapis.com/msgsndr/yrMl7UtmMqo31qLMP76W/media/673d710fa4764d272f21aea9.png",
+          "alt": "",
+          "width": "751",
+          "height": "849",
+          "hasAlt": false
+        },
+        {
+          "src": "https://broadly.com/wp-content/uploads/2024/10/Get-found-when-customers-search-nearby-img.png",
+          "alt": "",
+          "width": "751",
+          "height": "751",
+          "hasAlt": false
+        },
+        {
+          "src": "https://broadly.com/wp-content/uploads/2024/10/Get-listed-on-top-search-sites-img.png",
+          "alt": "",
+          "width": "767",
+          "height": "766",
+          "hasAlt": false
+        },
+        {
+          "src": "https://broadly.com/wp-content/uploads/2024/10/Keep-your-listings-up-to-date-img.png",
+          "alt": "",
+          "width": "751",
+          "height": "751",
+          "hasAlt": false
+        },
+        {
+          "src": "https://broadly.com/wp-content/uploads/2024/10/Let-AI-write-your-review-responses-img.png",
+          "alt": "",
+          "width": "822",
+          "height": "759",
+          "hasAlt": false
+        },
+        {
+          "src": "https://broadly.com/wp-content/uploads/2024/10/Track-your-ROI-on-digital-advertising-img.png",
+          "alt": "",
+          "width": "751",
+          "height": "849",
+          "hasAlt": false
+        },
+        {
+          "src": "https://storage.googleapis.com/msgsndr/yrMl7UtmMqo31qLMP76W/media/673d8af315ee06d3e2c20435.png",
+          "alt": "",
+          "width": "817",
+          "height": "751",
+          "hasAlt": false
+        },
+        {
+          "src": "https://storage.googleapis.com/msgsndr/yrMl7UtmMqo31qLMP76W/media/673d8af4a4764d8d5421eed5.png",
+          "alt": "",
+          "width": "886",
+          "height": "751",
+          "hasAlt": false
+        },
+        {
+          "src": "https://storage.googleapis.com/msgsndr/yrMl7UtmMqo31qLMP76W/media/673d8af617d9a97c89465f82.png",
+          "alt": "",
+          "width": "838",
+          "height": "751",
+          "hasAlt": false
+        },
+        {
+          "src": "https://storage.googleapis.com/msgsndr/yrMl7UtmMqo31qLMP76W/media/673d8af315ee06d3e2c20435.png",
+          "alt": "",
+          "width": "817",
+          "height": "751",
+          "hasAlt": false
+        },
+        {
+          "src": "https://storage.googleapis.com/msgsndr/yrMl7UtmMqo31qLMP76W/media/673d8af4a4764d8d5421eed5.png",
+          "alt": "",
+          "width": "886",
+          "height": "751",
+          "hasAlt": false
+        },
+        {
+          "src": "https://storage.googleapis.com/msgsndr/yrMl7UtmMqo31qLMP76W/media/673d8af617d9a97c89465f82.png",
+          "alt": "",
+          "width": "838",
+          "height": "751",
+          "hasAlt": false
+        },
+        {
+          "src": "https://storage.googleapis.com/msgsndr/yrMl7UtmMqo31qLMP76W/media/673d8b8a15ee0678ffc2051c.png",
+          "alt": "",
+          "width": "841",
+          "height": "751",
+          "hasAlt": false
+        },
+        {
+          "src": "https://storage.googleapis.com/msgsndr/yrMl7UtmMqo31qLMP76W/media/673d8b8a17d9a959fa46609f.png",
+          "alt": "",
+          "width": "856",
+          "height": "826",
+          "hasAlt": false
+        },
+        {
+          "src": "https://storage.googleapis.com/msgsndr/yrMl7UtmMqo31qLMP76W/media/673d8b8aa4764d285921ef8a.png",
+          "alt": "",
+          "width": "802",
+          "height": "751",
+          "hasAlt": false
+        },
+        {
+          "src": "https://storage.googleapis.com/msgsndr/yrMl7UtmMqo31qLMP76W/media/673d8b8ab9e1c04e134622ed.png",
+          "alt": "",
+          "width": "788",
+          "height": "751",
+          "hasAlt": false
+        },
+        {
+          "src": "https://storage.googleapis.com/msgsndr/yrMl7UtmMqo31qLMP76W/media/673d8b8a15ee0678ffc2051c.png",
+          "alt": "",
+          "width": "802",
+          "height": "751",
+          "hasAlt": false
+        },
+        {
+          "src": "https://storage.googleapis.com/msgsndr/yrMl7UtmMqo31qLMP76W/media/673d8b8a17d9a959fa46609f.png",
+          "alt": "",
+          "width": "841",
+          "height": "751",
+          "hasAlt": false
+        },
+        {
+          "src": "https://storage.googleapis.com/msgsndr/yrMl7UtmMqo31qLMP76W/media/673d8b8aa4764d285921ef8a.png",
+          "alt": "",
+          "width": "856",
+          "height": "826",
+          "hasAlt": false
+        },
+        {
+          "src": "https://storage.googleapis.com/msgsndr/yrMl7UtmMqo31qLMP76W/media/673d8b8ab9e1c04e134622ed.png",
+          "alt": "",
+          "width": "788",
+          "height": "751",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/aa5964da-51fe-44a0-84ce-f12849adf23c.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/0d1bba30-850c-481b-ad71-b9309f5535b2.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/bb8c9742-ef3c-448d-a325-caf2de481567.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/a2dfd27c-4872-441a-ad9b-18e44991faea.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/a2d6182a-e02b-42a2-988e-cabb79ff11d0.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/673f44d1e35b7638ea392152.png",
+          "alt": "",
+          "hasAlt": false
+        }
+      ]
+    },
+    "content": {
+      "wordCount": 3403,
+      "hasH1": false,
+      "h1Count": 0,
+      "paragraphCount": 38
+    },
+    "structuredData": [],
+    "canonical": null,
+    "response": {
+      "status": 200,
+      "headers": {
+        "date": "Tue, 21 Oct 2025 19:05:41 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive",
+        "cache-control": "public, max-age=60, s-maxage=120",
+        "vary": "Accept-Encoding",
+        "via": "1.1 google",
+        "cf-cache-status": "MISS",
+        "server-timing": "cfCacheStatus;desc=\"MISS\", cfOrigin;dur=53,cfEdge;dur=55",
+        "server": "cloudflare",
+        "cf-ray": "9923071f3c93b1a2-YYZ"
+      },
+      "contentLength": 479882
+    }
+  },
+  {
+    "url": "https://maxaiassistant.com/",
+    "title": "Truck Services",
+    "meta": {
+      "title": "Truck Services",
+      "description": null,
+      "keywords": null,
+      "ogTitle": "Truck Services",
+      "ogDescription": null,
+      "ogImage": null,
+      "twitterCard": null,
+      "viewport": "width=device-width, initial-scale=1",
+      "robots": null
+    },
+    "headings": {
+      "h1": [
+        "",
+        "",
+        "",
+        "How Max Ai helps you grow your business",
+        "Dashboard",
+        "interact with customers",
+        "3X",
+        "95%",
+        "10X",
+        "3X",
+        "95%",
+        "10X",
+        "Explore A Better Way To Grow"
+      ],
+      "h2": [
+        "Industries we serve"
+      ],
+      "h3": [
+        "Digital advertising strategies for electricians",
+        "3 common pest control business mistakes to avoid in 2023",
+        "The top HVAC blogs of 2023",
+        "How to plan your blog calendar for maximum growth",
+        "Top roofing Blogs",
+        "Pest control email marketing strategies to grow your business",
+        "Tips for creating a customer experience framework for your business",
+        "Best invoicing software for construction"
+      ]
+    },
+    "links": {
+      "total": 73,
+      "internal": 56,
+      "external": 17,
+      "list": [
+        {
+          "text": "",
+          "href": "https://maxaiassistant.com",
+          "isInternal": false
+        },
+        {
+          "text": "HOME",
+          "href": "https://maxaiassistant.com/homepage",
+          "isInternal": true
+        },
+        {
+          "text": "Automotive Services",
+          "href": "https://maxaiassistant.com/automotive-services",
+          "isInternal": true
+        },
+        {
+          "text": "Auto Repair",
+          "href": "https://maxaiassistant.com/auto-repair",
+          "isInternal": true
+        },
+        {
+          "text": "Auto Collision",
+          "href": "https://maxaiassistant.com/auto-collision",
+          "isInternal": true
+        },
+        {
+          "text": "Auto Part Stores",
+          "href": "https://maxaiassistant.com/auto-part-stores",
+          "isInternal": true
+        },
+        {
+          "text": "Truck services",
+          "href": "https://maxaiassistant.com/truck-services",
+          "isInternal": true
+        },
+        {
+          "text": "Tire Dealers",
+          "href": "https://maxaiassistant.com/tire-dealers",
+          "isInternal": true
+        },
+        {
+          "text": "Motorcyle Shops",
+          "href": "https://maxaiassistant.com/motorcylce-shops",
+          "isInternal": true
+        },
+        {
+          "text": "Appliance Repair",
+          "href": "https://maxaiassistant.com/appliance-repair",
+          "isInternal": true
+        },
+        {
+          "text": "Carpet Cleaning",
+          "href": "https://maxaiassistant.com/carpet-cleaning",
+          "isInternal": true
+        },
+        {
+          "text": "Damage Restoration",
+          "href": "https://maxaiassistant.com/damage-restoration",
+          "isInternal": true
+        },
+        {
+          "text": "Drywall",
+          "href": "https://maxaiassistant.com/drywall",
+          "isInternal": true
+        },
+        {
+          "text": "Dumpster Rental",
+          "href": "https://maxaiassistant.com/dumpster-rental",
+          "isInternal": true
+        },
+        {
+          "text": "Electrician",
+          "href": "https://maxaiassistant.com/electrician",
+          "isInternal": true
+        },
+        {
+          "text": "Engineering",
+          "href": "https://maxaiassistant.com/engineering",
+          "isInternal": true
+        },
+        {
+          "text": "Excavation",
+          "href": "https://maxaiassistant.com/excavation",
+          "isInternal": true
+        },
+        {
+          "text": "Flooring",
+          "href": "https://maxaiassistant.com/flooring",
+          "isInternal": true
+        },
+        {
+          "text": "Garage Door",
+          "href": "https://maxaiassistant.com/gargage-door",
+          "isInternal": true
+        },
+        {
+          "text": "General Contracting",
+          "href": "https://maxaiassistant.com/general-contracting",
+          "isInternal": true
+        },
+        {
+          "text": "Handyman",
+          "href": "https://maxaiassistant.com/homepage",
+          "isInternal": true
+        },
+        {
+          "text": "Home Inspector",
+          "href": "https://maxaiassistant.com/home-inspector",
+          "isInternal": true
+        },
+        {
+          "text": "Home Remodeling",
+          "href": "https://maxaiassistant.com/home-remodeling",
+          "isInternal": true
+        },
+        {
+          "text": "HVAC",
+          "href": "https://maxaiassistant.com/hvac",
+          "isInternal": true
+        },
+        {
+          "text": "Junk Removal",
+          "href": "#new-menu-item",
+          "isInternal": false
+        },
+        {
+          "text": "Landscaping",
+          "href": "https://maxaiassistant.com/landscaping",
+          "isInternal": true
+        },
+        {
+          "text": "Moving & Storage",
+          "href": "https://maxaiassistant.com/moving--storage",
+          "isInternal": true
+        },
+        {
+          "text": "Painting",
+          "href": "https://maxaiassistant.com/painting",
+          "isInternal": true
+        },
+        {
+          "text": "Pest Control",
+          "href": "https://maxaiassistant.com/pest-control",
+          "isInternal": true
+        },
+        {
+          "text": "Plumbing",
+          "href": "https://maxaiassistant.com/plumbing",
+          "isInternal": true
+        },
+        {
+          "text": "Pool & Spa",
+          "href": "https://maxaiassistant.com/pool--spa",
+          "isInternal": true
+        },
+        {
+          "text": "Roofing",
+          "href": "https://maxaiassistant.com/roofing",
+          "isInternal": true
+        },
+        {
+          "text": "Solar Contractor",
+          "href": "https://maxaiassistant.com/solar-contractor",
+          "isInternal": true
+        },
+        {
+          "text": "Tool Rental",
+          "href": "https://maxaiassistant.com/tool-rental",
+          "isInternal": true
+        },
+        {
+          "text": "Window & Glass",
+          "href": "https://maxaiassistant.com/window--glass",
+          "isInternal": true
+        },
+        {
+          "text": "Law Firms",
+          "href": "https://maxaiassistant.com/law-firms",
+          "isInternal": true
+        },
+        {
+          "text": "Dental Practices",
+          "href": "https://maxaiassistant.com/dental-practices",
+          "isInternal": true
+        },
+        {
+          "text": "Animal Trainer",
+          "href": "https://maxaiassistant.com/animal-trainer",
+          "isInternal": true
+        },
+        {
+          "text": "Pet Boarding",
+          "href": "https://maxaiassistant.com/pet-boarding",
+          "isInternal": true
+        },
+        {
+          "text": "Pet Grooming",
+          "href": "https://maxaiassistant.com/pet-grooming",
+          "isInternal": true
+        },
+        {
+          "text": "Veterinarian",
+          "href": "https://maxaiassistant.com/veterinarian",
+          "isInternal": true
+        },
+        {
+          "text": "Reviews",
+          "href": "https://maxaiassistant.com/reviews-278029",
+          "isInternal": true
+        },
+        {
+          "text": "Local SEO",
+          "href": "https://maxaiassistant.com/local-seo",
+          "isInternal": true
+        },
+        {
+          "text": "Social Media Manager",
+          "href": "https://maxaiassistant.com/social-media-manager",
+          "isInternal": true
+        },
+        {
+          "text": "Conversations AI",
+          "href": "https://maxaiassistant.com/conversations-ai",
+          "isInternal": true
+        },
+        {
+          "text": "Web Chat",
+          "href": "https://maxaiassistant.com/webchat",
+          "isInternal": true
+        },
+        {
+          "text": "Campaigns",
+          "href": "https://maxaiassistant.com/campaigns",
+          "isInternal": true
+        },
+        {
+          "text": "Contact",
+          "href": "https://maxaiassistant.com/contact",
+          "isInternal": true
+        },
+        {
+          "text": "LOGIN",
+          "href": "https://app.getchatt.com",
+          "isInternal": false
+        },
+        {
+          "text": "Request a demo →",
+          "href": "https://maxaiassistant.com/plans",
+          "isInternal": true
+        },
+        {
+          "text": "Learn More →",
+          "href": "https://maxaiassistant.com/plans",
+          "isInternal": true
+        },
+        {
+          "text": "Learn More →",
+          "href": "https://maxaiassistant.com/plans",
+          "isInternal": true
+        },
+        {
+          "text": "Learn More →",
+          "href": "https://maxaiassistant.com/plans",
+          "isInternal": true
+        },
+        {
+          "text": "Auto Repair",
+          "href": "#",
+          "isInternal": false
+        },
+        {
+          "text": "Auto Collision",
+          "href": "#",
+          "isInternal": false
+        },
+        {
+          "text": "Auto Parts Stores",
+          "href": "#",
+          "isInternal": false
+        },
+        {
+          "text": "Truck Services",
+          "href": "#",
+          "isInternal": false
+        },
+        {
+          "text": "Tire Dealers",
+          "href": "#",
+          "isInternal": false
+        },
+        {
+          "text": "Motorcycle Shops",
+          "href": "#",
+          "isInternal": false
+        },
+        {
+          "text": "Learn more →",
+          "href": "https://maxaiassistant.com/contact",
+          "isInternal": true
+        },
+        {
+          "text": "Learn more →",
+          "href": "https://maxaiassistant.com/contact",
+          "isInternal": true
+        },
+        {
+          "text": "Learn more →",
+          "href": "https://maxaiassistant.com/contact",
+          "isInternal": true
+        },
+        {
+          "text": "Learn more →",
+          "href": "#",
+          "isInternal": false
+        },
+        {
+          "text": "Learn more →",
+          "href": "#",
+          "isInternal": false
+        },
+        {
+          "text": "Learn more →",
+          "href": "#",
+          "isInternal": false
+        },
+        {
+          "text": "Learn more →",
+          "href": "#",
+          "isInternal": false
+        },
+        {
+          "text": "Learn more →",
+          "href": "#",
+          "isInternal": false
+        },
+        {
+          "text": "Learn more →",
+          "href": "#",
+          "isInternal": false
+        },
+        {
+          "text": "Learn more →",
+          "href": "#",
+          "isInternal": false
+        },
+        {
+          "text": "Learn more →",
+          "href": "#",
+          "isInternal": false
+        },
+        {
+          "text": "GET STARTED →",
+          "href": "https://maxaiassistant.com/plans",
+          "isInternal": true
+        },
+        {
+          "text": "GET STARTED →",
+          "href": "https://maxaiassistant.com/plans",
+          "isInternal": true
+        },
+        {
+          "text": "[email protected]",
+          "href": "/cdn-cgi/l/email-protection",
+          "isInternal": true
+        }
+      ]
+    },
+    "images": {
+      "total": 23,
+      "withAlt": 0,
+      "withoutAlt": 23,
+      "list": [
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/83d20699-c44d-4245-899f-721d8e9732cd.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/68e5d39e1d56c3846ea57e07.jpeg",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/673d9ab79dd64107b108a3c3.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/673da1a8f70e3172e5c6c1df.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/673da1e51b64960972357103.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/673da2da9dd6414cf808a89b.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/673da6801b649660ff357599.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/673da6806e5e971e05816757.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/673da6809dd641623908ad33.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/673da6806e5e976433816756.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/673da680f70e319327c6c5fc.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/673daa05689e40dcacef5846.svg",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/673daa05689e404d7fef5847.svg",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/673daa05f70e3139f8c6c7b9.svg",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/5fbefa0a-5d6f-496b-9e69-ffba92e6a284.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/9c04d54a-29d8-4a6e-b0cd-1b8edfc7addd.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/c4a0911b-dfe8-4d5e-ae12-39a1efb706c1.jpeg",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/eebd25d4-e154-4b5b-9d8d-0e80a569145d.jpeg",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/aa5964da-51fe-44a0-84ce-f12849adf23c.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/0d1bba30-850c-481b-ad71-b9309f5535b2.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/bb8c9742-ef3c-448d-a325-caf2de481567.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/a2dfd27c-4872-441a-ad9b-18e44991faea.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/a2d6182a-e02b-42a2-988e-cabb79ff11d0.png",
+          "alt": "",
+          "hasAlt": false
+        }
+      ]
+    },
+    "content": {
+      "wordCount": 1977,
+      "hasH1": true,
+      "h1Count": 13,
+      "paragraphCount": 70
+    },
+    "structuredData": [],
+    "canonical": null,
+    "response": {
+      "status": 200,
+      "headers": {
+        "date": "Tue, 21 Oct 2025 19:05:42 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive",
+        "cache-control": "public, max-age=60, s-maxage=120",
+        "vary": "Accept-Encoding",
+        "via": "1.1 google",
+        "age": "30",
+        "cf-cache-status": "HIT",
+        "server-timing": "cfCacheStatus;desc=\"HIT\", cfOrigin;dur=0,cfEdge;dur=42",
+        "server": "cloudflare",
+        "cf-ray": "99230726a859b1a2-YYZ"
+      },
+      "contentLength": 683378
+    }
+  },
+  {
+    "url": "https://maxaiassistant.com/",
+    "title": "Auto RepairPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6",
+    "meta": {
+      "title": "Auto RepairPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6",
+      "description": null,
+      "keywords": null,
+      "ogTitle": "Auto Repair",
+      "ogDescription": null,
+      "ogImage": null,
+      "twitterCard": null,
+      "viewport": "width=device-width, initial-scale=1",
+      "robots": null
+    },
+    "headings": {
+      "h1": [
+        "Auto Repair Reputation Management Software",
+        "",
+        "Why Managing Your Online Reputation Matters for Auto Repair Shops",
+        "How Max AI Powers Complete Marketing Solutions for Auto Repair Shops",
+        "Let Max AI take the wheel—streamline your growth effortlessly",
+        "Explore A Better Way To Grow"
+      ],
+      "h2": [
+        "Unlimited Review",
+        "Request",
+        "Automated",
+        "Web Chat",
+        "Consolidated team",
+        "inbox",
+        "Text & email",
+        "communication",
+        "Saved Replies &",
+        "templated",
+        "messages",
+        "Text-to-pay mobile",
+        "invoicing",
+        "Pay Over Time",
+        "customer financing",
+        "",
+        "Dashboard &",
+        "Reports"
+      ],
+      "h3": []
+    },
+    "links": {
+      "total": 55,
+      "internal": 52,
+      "external": 3,
+      "list": [
+        {
+          "text": "",
+          "href": "https://maxaiassistant.com",
+          "isInternal": false
+        },
+        {
+          "text": "HOME",
+          "href": "https://maxaiassistant.com/homepage",
+          "isInternal": true
+        },
+        {
+          "text": "Automotive Services",
+          "href": "https://maxaiassistant.com/automotive-services",
+          "isInternal": true
+        },
+        {
+          "text": "Auto Repair",
+          "href": "https://maxaiassistant.com/auto-repair",
+          "isInternal": true
+        },
+        {
+          "text": "Auto Collision",
+          "href": "https://maxaiassistant.com/auto-collision",
+          "isInternal": true
+        },
+        {
+          "text": "Auto Part Stores",
+          "href": "https://maxaiassistant.com/auto-part-stores",
+          "isInternal": true
+        },
+        {
+          "text": "Truck services",
+          "href": "https://maxaiassistant.com/truck-services",
+          "isInternal": true
+        },
+        {
+          "text": "Tire Dealers",
+          "href": "https://maxaiassistant.com/tire-dealers",
+          "isInternal": true
+        },
+        {
+          "text": "Motorcyle Shops",
+          "href": "https://maxaiassistant.com/motorcylce-shops",
+          "isInternal": true
+        },
+        {
+          "text": "Appliance Repair",
+          "href": "https://maxaiassistant.com/appliance-repair",
+          "isInternal": true
+        },
+        {
+          "text": "Carpet Cleaning",
+          "href": "https://maxaiassistant.com/carpet-cleaning",
+          "isInternal": true
+        },
+        {
+          "text": "Damage Restoration",
+          "href": "https://maxaiassistant.com/damage-restoration",
+          "isInternal": true
+        },
+        {
+          "text": "Drywall",
+          "href": "https://maxaiassistant.com/drywall",
+          "isInternal": true
+        },
+        {
+          "text": "Dumpster Rental",
+          "href": "https://maxaiassistant.com/dumpster-rental",
+          "isInternal": true
+        },
+        {
+          "text": "Electrician",
+          "href": "https://maxaiassistant.com/electrician",
+          "isInternal": true
+        },
+        {
+          "text": "Engineering",
+          "href": "https://maxaiassistant.com/engineering",
+          "isInternal": true
+        },
+        {
+          "text": "Excavation",
+          "href": "https://maxaiassistant.com/excavation",
+          "isInternal": true
+        },
+        {
+          "text": "Flooring",
+          "href": "https://maxaiassistant.com/flooring",
+          "isInternal": true
+        },
+        {
+          "text": "Garage Door",
+          "href": "https://maxaiassistant.com/gargage-door",
+          "isInternal": true
+        },
+        {
+          "text": "General Contracting",
+          "href": "https://maxaiassistant.com/general-contracting",
+          "isInternal": true
+        },
+        {
+          "text": "Handyman",
+          "href": "https://maxaiassistant.com/homepage",
+          "isInternal": true
+        },
+        {
+          "text": "Home Inspector",
+          "href": "https://maxaiassistant.com/home-inspector",
+          "isInternal": true
+        },
+        {
+          "text": "Home Remodeling",
+          "href": "https://maxaiassistant.com/home-remodeling",
+          "isInternal": true
+        },
+        {
+          "text": "HVAC",
+          "href": "https://maxaiassistant.com/hvac",
+          "isInternal": true
+        },
+        {
+          "text": "Junk Removal",
+          "href": "#new-menu-item",
+          "isInternal": false
+        },
+        {
+          "text": "Landscaping",
+          "href": "https://maxaiassistant.com/landscaping",
+          "isInternal": true
+        },
+        {
+          "text": "Moving & Storage",
+          "href": "https://maxaiassistant.com/moving--storage",
+          "isInternal": true
+        },
+        {
+          "text": "Painting",
+          "href": "https://maxaiassistant.com/painting",
+          "isInternal": true
+        },
+        {
+          "text": "Pest Control",
+          "href": "https://maxaiassistant.com/pest-control",
+          "isInternal": true
+        },
+        {
+          "text": "Plumbing",
+          "href": "https://maxaiassistant.com/plumbing",
+          "isInternal": true
+        },
+        {
+          "text": "Pool & Spa",
+          "href": "https://maxaiassistant.com/pool--spa",
+          "isInternal": true
+        },
+        {
+          "text": "Roofing",
+          "href": "https://maxaiassistant.com/roofing",
+          "isInternal": true
+        },
+        {
+          "text": "Solar Contractor",
+          "href": "https://maxaiassistant.com/solar-contractor",
+          "isInternal": true
+        },
+        {
+          "text": "Tool Rental",
+          "href": "https://maxaiassistant.com/tool-rental",
+          "isInternal": true
+        },
+        {
+          "text": "Window & Glass",
+          "href": "https://maxaiassistant.com/window--glass",
+          "isInternal": true
+        },
+        {
+          "text": "Law Firms",
+          "href": "https://maxaiassistant.com/law-firms",
+          "isInternal": true
+        },
+        {
+          "text": "Dental Practices",
+          "href": "https://maxaiassistant.com/dental-practices",
+          "isInternal": true
+        },
+        {
+          "text": "Animal Trainer",
+          "href": "https://maxaiassistant.com/animal-trainer",
+          "isInternal": true
+        },
+        {
+          "text": "Pet Boarding",
+          "href": "https://maxaiassistant.com/pet-boarding",
+          "isInternal": true
+        },
+        {
+          "text": "Pet Grooming",
+          "href": "https://maxaiassistant.com/pet-grooming",
+          "isInternal": true
+        },
+        {
+          "text": "Veterinarian",
+          "href": "https://maxaiassistant.com/veterinarian",
+          "isInternal": true
+        },
+        {
+          "text": "Reviews",
+          "href": "https://maxaiassistant.com/reviews-278029",
+          "isInternal": true
+        },
+        {
+          "text": "Local SEO",
+          "href": "https://maxaiassistant.com/local-seo",
+          "isInternal": true
+        },
+        {
+          "text": "Social Media Manager",
+          "href": "https://maxaiassistant.com/social-media-manager",
+          "isInternal": true
+        },
+        {
+          "text": "Conversations AI",
+          "href": "https://maxaiassistant.com/conversations-ai",
+          "isInternal": true
+        },
+        {
+          "text": "Web Chat",
+          "href": "https://maxaiassistant.com/webchat",
+          "isInternal": true
+        },
+        {
+          "text": "Campaigns",
+          "href": "https://maxaiassistant.com/campaigns",
+          "isInternal": true
+        },
+        {
+          "text": "Contact",
+          "href": "https://maxaiassistant.com/contact",
+          "isInternal": true
+        },
+        {
+          "text": "LOGIN",
+          "href": "https://app.getchatt.com",
+          "isInternal": false
+        },
+        {
+          "text": "Request a demo →",
+          "href": "https://maxaiassistant.com/plans",
+          "isInternal": true
+        },
+        {
+          "text": "Learn More →",
+          "href": "https://maxaiassistant.com/contact",
+          "isInternal": true
+        },
+        {
+          "text": "Learn More →",
+          "href": "https://maxaiassistant.com/contact",
+          "isInternal": true
+        },
+        {
+          "text": "Request a demo →",
+          "href": "https://maxaiassistant.com/plans",
+          "isInternal": true
+        },
+        {
+          "text": "GET STARTED →",
+          "href": "https://maxaiassistant.com/plans",
+          "isInternal": true
+        },
+        {
+          "text": "[email protected]",
+          "href": "/cdn-cgi/l/email-protection",
+          "isInternal": true
+        }
+      ]
+    },
+    "images": {
+      "total": 7,
+      "withAlt": 0,
+      "withoutAlt": 7,
+      "list": [
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/83d20699-c44d-4245-899f-721d8e9732cd.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/68ec61eab0fd867de47b2a4a.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/673ec22be03c1166e2cba844.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/673da1e51b64960972357103.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/68ec70c214f4a581ff931ffc.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/c4a0911b-dfe8-4d5e-ae12-39a1efb706c1.jpeg",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/eebd25d4-e154-4b5b-9d8d-0e80a569145d.jpeg",
+          "alt": "",
+          "hasAlt": false
+        }
+      ]
+    },
+    "content": {
+      "wordCount": 2495,
+      "hasH1": true,
+      "h1Count": 6,
+      "paragraphCount": 34
+    },
+    "structuredData": [],
+    "canonical": null,
+    "response": {
+      "status": 200,
+      "headers": {
+        "date": "Tue, 21 Oct 2025 19:05:43 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive",
+        "cache-control": "public, max-age=60, s-maxage=120",
+        "vary": "Accept-Encoding",
+        "via": "1.1 google",
+        "age": "30",
+        "cf-cache-status": "HIT",
+        "server-timing": "cfCacheStatus;desc=\"HIT\", cfOrigin;dur=0,cfEdge;dur=61",
+        "server": "cloudflare",
+        "cf-ray": "9923072db9a9b1a2-YYZ"
+      },
+      "contentLength": 472160
+    }
+  },
+  {
+    "url": "https://maxaiassistant.com/",
+    "title": "Auto CollisionPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6",
+    "meta": {
+      "title": "Auto CollisionPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6",
+      "description": null,
+      "keywords": null,
+      "ogTitle": "Auto Collision",
+      "ogDescription": null,
+      "ogImage": null,
+      "twitterCard": null,
+      "viewport": "width=device-width, initial-scale=1",
+      "robots": null
+    },
+    "headings": {
+      "h1": [
+        "Software for Managing the Reputation of Auto Collision Shops",
+        "Why Managing Your Online Reputation Matters for Auto Repair Shops",
+        "How Max AI Powers Complete Marketing Solutions for Auto Repair Shops",
+        "Let Max AI take the wheel—streamline your growth effortlessly",
+        "Explore A Better Way To Grow"
+      ],
+      "h2": [
+        "Unlimited Review",
+        "Request",
+        "Automated",
+        "Web Chat",
+        "Consolidated team",
+        "inbox",
+        "Text & email",
+        "communication",
+        "Saved Replies &",
+        "templated",
+        "messages",
+        "Text-to-pay mobile",
+        "invoicing",
+        "Pay Over Time",
+        "customer financing",
+        "",
+        "Dashboard &",
+        "Reports"
+      ],
+      "h3": []
+    },
+    "links": {
+      "total": 55,
+      "internal": 52,
+      "external": 3,
+      "list": [
+        {
+          "text": "",
+          "href": "https://maxaiassistant.com",
+          "isInternal": false
+        },
+        {
+          "text": "HOME",
+          "href": "https://maxaiassistant.com/homepage",
+          "isInternal": true
+        },
+        {
+          "text": "Automotive Services",
+          "href": "https://maxaiassistant.com/automotive-services",
+          "isInternal": true
+        },
+        {
+          "text": "Auto Repair",
+          "href": "https://maxaiassistant.com/auto-repair",
+          "isInternal": true
+        },
+        {
+          "text": "Auto Collision",
+          "href": "https://maxaiassistant.com/auto-collision",
+          "isInternal": true
+        },
+        {
+          "text": "Auto Part Stores",
+          "href": "https://maxaiassistant.com/auto-part-stores",
+          "isInternal": true
+        },
+        {
+          "text": "Truck services",
+          "href": "https://maxaiassistant.com/truck-services",
+          "isInternal": true
+        },
+        {
+          "text": "Tire Dealers",
+          "href": "https://maxaiassistant.com/tire-dealers",
+          "isInternal": true
+        },
+        {
+          "text": "Motorcyle Shops",
+          "href": "https://maxaiassistant.com/motorcylce-shops",
+          "isInternal": true
+        },
+        {
+          "text": "Appliance Repair",
+          "href": "https://maxaiassistant.com/appliance-repair",
+          "isInternal": true
+        },
+        {
+          "text": "Carpet Cleaning",
+          "href": "https://maxaiassistant.com/carpet-cleaning",
+          "isInternal": true
+        },
+        {
+          "text": "Damage Restoration",
+          "href": "https://maxaiassistant.com/damage-restoration",
+          "isInternal": true
+        },
+        {
+          "text": "Drywall",
+          "href": "https://maxaiassistant.com/drywall",
+          "isInternal": true
+        },
+        {
+          "text": "Dumpster Rental",
+          "href": "https://maxaiassistant.com/dumpster-rental",
+          "isInternal": true
+        },
+        {
+          "text": "Electrician",
+          "href": "https://maxaiassistant.com/electrician",
+          "isInternal": true
+        },
+        {
+          "text": "Engineering",
+          "href": "https://maxaiassistant.com/engineering",
+          "isInternal": true
+        },
+        {
+          "text": "Excavation",
+          "href": "https://maxaiassistant.com/excavation",
+          "isInternal": true
+        },
+        {
+          "text": "Flooring",
+          "href": "https://maxaiassistant.com/flooring",
+          "isInternal": true
+        },
+        {
+          "text": "Garage Door",
+          "href": "https://maxaiassistant.com/gargage-door",
+          "isInternal": true
+        },
+        {
+          "text": "General Contracting",
+          "href": "https://maxaiassistant.com/general-contracting",
+          "isInternal": true
+        },
+        {
+          "text": "Handyman",
+          "href": "https://maxaiassistant.com/homepage",
+          "isInternal": true
+        },
+        {
+          "text": "Home Inspector",
+          "href": "https://maxaiassistant.com/home-inspector",
+          "isInternal": true
+        },
+        {
+          "text": "Home Remodeling",
+          "href": "https://maxaiassistant.com/home-remodeling",
+          "isInternal": true
+        },
+        {
+          "text": "HVAC",
+          "href": "https://maxaiassistant.com/hvac",
+          "isInternal": true
+        },
+        {
+          "text": "Junk Removal",
+          "href": "#new-menu-item",
+          "isInternal": false
+        },
+        {
+          "text": "Landscaping",
+          "href": "https://maxaiassistant.com/landscaping",
+          "isInternal": true
+        },
+        {
+          "text": "Moving & Storage",
+          "href": "https://maxaiassistant.com/moving--storage",
+          "isInternal": true
+        },
+        {
+          "text": "Painting",
+          "href": "https://maxaiassistant.com/painting",
+          "isInternal": true
+        },
+        {
+          "text": "Pest Control",
+          "href": "https://maxaiassistant.com/pest-control",
+          "isInternal": true
+        },
+        {
+          "text": "Plumbing",
+          "href": "https://maxaiassistant.com/plumbing",
+          "isInternal": true
+        },
+        {
+          "text": "Pool & Spa",
+          "href": "https://maxaiassistant.com/pool--spa",
+          "isInternal": true
+        },
+        {
+          "text": "Roofing",
+          "href": "https://maxaiassistant.com/roofing",
+          "isInternal": true
+        },
+        {
+          "text": "Solar Contractor",
+          "href": "https://maxaiassistant.com/solar-contractor",
+          "isInternal": true
+        },
+        {
+          "text": "Tool Rental",
+          "href": "https://maxaiassistant.com/tool-rental",
+          "isInternal": true
+        },
+        {
+          "text": "Window & Glass",
+          "href": "https://maxaiassistant.com/window--glass",
+          "isInternal": true
+        },
+        {
+          "text": "Law Firms",
+          "href": "https://maxaiassistant.com/law-firms",
+          "isInternal": true
+        },
+        {
+          "text": "Dental Practices",
+          "href": "https://maxaiassistant.com/dental-practices",
+          "isInternal": true
+        },
+        {
+          "text": "Animal Trainer",
+          "href": "https://maxaiassistant.com/animal-trainer",
+          "isInternal": true
+        },
+        {
+          "text": "Pet Boarding",
+          "href": "https://maxaiassistant.com/pet-boarding",
+          "isInternal": true
+        },
+        {
+          "text": "Pet Grooming",
+          "href": "https://maxaiassistant.com/pet-grooming",
+          "isInternal": true
+        },
+        {
+          "text": "Veterinarian",
+          "href": "https://maxaiassistant.com/veterinarian",
+          "isInternal": true
+        },
+        {
+          "text": "Reviews",
+          "href": "https://maxaiassistant.com/reviews-278029",
+          "isInternal": true
+        },
+        {
+          "text": "Local SEO",
+          "href": "https://maxaiassistant.com/local-seo",
+          "isInternal": true
+        },
+        {
+          "text": "Social Media Manager",
+          "href": "https://maxaiassistant.com/social-media-manager",
+          "isInternal": true
+        },
+        {
+          "text": "Conversations AI",
+          "href": "https://maxaiassistant.com/conversations-ai",
+          "isInternal": true
+        },
+        {
+          "text": "Web Chat",
+          "href": "https://maxaiassistant.com/webchat",
+          "isInternal": true
+        },
+        {
+          "text": "Campaigns",
+          "href": "https://maxaiassistant.com/campaigns",
+          "isInternal": true
+        },
+        {
+          "text": "Contact",
+          "href": "https://maxaiassistant.com/contact",
+          "isInternal": true
+        },
+        {
+          "text": "LOGIN",
+          "href": "https://app.getchatt.com",
+          "isInternal": false
+        },
+        {
+          "text": "Request a demo →",
+          "href": "https://maxaiassistant.com/plans",
+          "isInternal": true
+        },
+        {
+          "text": "Learn More →",
+          "href": "https://maxaiassistant.com/contact",
+          "isInternal": true
+        },
+        {
+          "text": "Learn More →",
+          "href": "https://maxaiassistant.com/contact",
+          "isInternal": true
+        },
+        {
+          "text": "Request a demo →",
+          "href": "https://maxaiassistant.com/plans",
+          "isInternal": true
+        },
+        {
+          "text": "GET STARTED →",
+          "href": "https://maxaiassistant.com/plans",
+          "isInternal": true
+        },
+        {
+          "text": "[email protected]",
+          "href": "/cdn-cgi/l/email-protection",
+          "isInternal": true
+        }
+      ]
+    },
+    "images": {
+      "total": 7,
+      "withAlt": 0,
+      "withoutAlt": 7,
+      "list": [
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/83d20699-c44d-4245-899f-721d8e9732cd.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/68ec61eab0fd867de47b2a4a.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/673ec22be03c1166e2cba844.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/673da1e51b64960972357103.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/68ec70c214f4a581ff931ffc.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/c4a0911b-dfe8-4d5e-ae12-39a1efb706c1.jpeg",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/eebd25d4-e154-4b5b-9d8d-0e80a569145d.jpeg",
+          "alt": "",
+          "hasAlt": false
+        }
+      ]
+    },
+    "content": {
+      "wordCount": 2501,
+      "hasH1": true,
+      "h1Count": 5,
+      "paragraphCount": 34
+    },
+    "structuredData": [],
+    "canonical": null,
+    "response": {
+      "status": 200,
+      "headers": {
+        "date": "Tue, 21 Oct 2025 19:05:44 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive",
+        "cache-control": "public, max-age=60, s-maxage=120",
+        "vary": "Accept-Encoding",
+        "via": "1.1 google",
+        "cf-cache-status": "REVALIDATED",
+        "server-timing": "cfCacheStatus;desc=\"REVALIDATED\", cfOrigin;dur=34,cfEdge;dur=90",
+        "server": "cloudflare",
+        "cf-ray": "99230734a83fb1a2-YYZ"
+      },
+      "contentLength": 472709
+    }
+  },
+  {
+    "url": "https://maxaiassistant.com/",
+    "title": "Auto Part StoresPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6",
+    "meta": {
+      "title": "Auto Part StoresPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6",
+      "description": null,
+      "keywords": null,
+      "ogTitle": "Auto Part Stores",
+      "ogDescription": null,
+      "ogImage": null,
+      "twitterCard": null,
+      "viewport": "width=device-width, initial-scale=1",
+      "robots": null
+    },
+    "headings": {
+      "h1": [
+        "Software for Managing the Reputation of Auto Parts Stores",
+        "Why Managing Your Online Reputation Matters for Auto Repair Shops",
+        "How Max AI Powers Complete Marketing Solutions for Auto Repair Shops",
+        "Let Max AI take the wheel—streamline your growth effortlessly",
+        "Explore A Better Way To Grow"
+      ],
+      "h2": [
+        "Unlimited Review",
+        "Request",
+        "Automated",
+        "Web Chat",
+        "Consolidated team",
+        "inbox",
+        "Text & email",
+        "communication",
+        "Saved Replies &",
+        "templated",
+        "messages",
+        "Text-to-pay mobile",
+        "invoicing",
+        "Pay Over Time",
+        "customer financing",
+        "",
+        "Dashboard &",
+        "Reports"
+      ],
+      "h3": []
+    },
+    "links": {
+      "total": 55,
+      "internal": 52,
+      "external": 3,
+      "list": [
+        {
+          "text": "",
+          "href": "https://maxaiassistant.com",
+          "isInternal": false
+        },
+        {
+          "text": "HOME",
+          "href": "https://maxaiassistant.com/homepage",
+          "isInternal": true
+        },
+        {
+          "text": "Automotive Services",
+          "href": "https://maxaiassistant.com/automotive-services",
+          "isInternal": true
+        },
+        {
+          "text": "Auto Repair",
+          "href": "https://maxaiassistant.com/auto-repair",
+          "isInternal": true
+        },
+        {
+          "text": "Auto Collision",
+          "href": "https://maxaiassistant.com/auto-collision",
+          "isInternal": true
+        },
+        {
+          "text": "Auto Part Stores",
+          "href": "https://maxaiassistant.com/auto-part-stores",
+          "isInternal": true
+        },
+        {
+          "text": "Truck services",
+          "href": "https://maxaiassistant.com/truck-services",
+          "isInternal": true
+        },
+        {
+          "text": "Tire Dealers",
+          "href": "https://maxaiassistant.com/tire-dealers",
+          "isInternal": true
+        },
+        {
+          "text": "Motorcyle Shops",
+          "href": "https://maxaiassistant.com/motorcylce-shops",
+          "isInternal": true
+        },
+        {
+          "text": "Appliance Repair",
+          "href": "https://maxaiassistant.com/appliance-repair",
+          "isInternal": true
+        },
+        {
+          "text": "Carpet Cleaning",
+          "href": "https://maxaiassistant.com/carpet-cleaning",
+          "isInternal": true
+        },
+        {
+          "text": "Damage Restoration",
+          "href": "https://maxaiassistant.com/damage-restoration",
+          "isInternal": true
+        },
+        {
+          "text": "Drywall",
+          "href": "https://maxaiassistant.com/drywall",
+          "isInternal": true
+        },
+        {
+          "text": "Dumpster Rental",
+          "href": "https://maxaiassistant.com/dumpster-rental",
+          "isInternal": true
+        },
+        {
+          "text": "Electrician",
+          "href": "https://maxaiassistant.com/electrician",
+          "isInternal": true
+        },
+        {
+          "text": "Engineering",
+          "href": "https://maxaiassistant.com/engineering",
+          "isInternal": true
+        },
+        {
+          "text": "Excavation",
+          "href": "https://maxaiassistant.com/excavation",
+          "isInternal": true
+        },
+        {
+          "text": "Flooring",
+          "href": "https://maxaiassistant.com/flooring",
+          "isInternal": true
+        },
+        {
+          "text": "Garage Door",
+          "href": "https://maxaiassistant.com/gargage-door",
+          "isInternal": true
+        },
+        {
+          "text": "General Contracting",
+          "href": "https://maxaiassistant.com/general-contracting",
+          "isInternal": true
+        },
+        {
+          "text": "Handyman",
+          "href": "https://maxaiassistant.com/homepage",
+          "isInternal": true
+        },
+        {
+          "text": "Home Inspector",
+          "href": "https://maxaiassistant.com/home-inspector",
+          "isInternal": true
+        },
+        {
+          "text": "Home Remodeling",
+          "href": "https://maxaiassistant.com/home-remodeling",
+          "isInternal": true
+        },
+        {
+          "text": "HVAC",
+          "href": "https://maxaiassistant.com/hvac",
+          "isInternal": true
+        },
+        {
+          "text": "Junk Removal",
+          "href": "#new-menu-item",
+          "isInternal": false
+        },
+        {
+          "text": "Landscaping",
+          "href": "https://maxaiassistant.com/landscaping",
+          "isInternal": true
+        },
+        {
+          "text": "Moving & Storage",
+          "href": "https://maxaiassistant.com/moving--storage",
+          "isInternal": true
+        },
+        {
+          "text": "Painting",
+          "href": "https://maxaiassistant.com/painting",
+          "isInternal": true
+        },
+        {
+          "text": "Pest Control",
+          "href": "https://maxaiassistant.com/pest-control",
+          "isInternal": true
+        },
+        {
+          "text": "Plumbing",
+          "href": "https://maxaiassistant.com/plumbing",
+          "isInternal": true
+        },
+        {
+          "text": "Pool & Spa",
+          "href": "https://maxaiassistant.com/pool--spa",
+          "isInternal": true
+        },
+        {
+          "text": "Roofing",
+          "href": "https://maxaiassistant.com/roofing",
+          "isInternal": true
+        },
+        {
+          "text": "Solar Contractor",
+          "href": "https://maxaiassistant.com/solar-contractor",
+          "isInternal": true
+        },
+        {
+          "text": "Tool Rental",
+          "href": "https://maxaiassistant.com/tool-rental",
+          "isInternal": true
+        },
+        {
+          "text": "Window & Glass",
+          "href": "https://maxaiassistant.com/window--glass",
+          "isInternal": true
+        },
+        {
+          "text": "Law Firms",
+          "href": "https://maxaiassistant.com/law-firms",
+          "isInternal": true
+        },
+        {
+          "text": "Dental Practices",
+          "href": "https://maxaiassistant.com/dental-practices",
+          "isInternal": true
+        },
+        {
+          "text": "Animal Trainer",
+          "href": "https://maxaiassistant.com/animal-trainer",
+          "isInternal": true
+        },
+        {
+          "text": "Pet Boarding",
+          "href": "https://maxaiassistant.com/pet-boarding",
+          "isInternal": true
+        },
+        {
+          "text": "Pet Grooming",
+          "href": "https://maxaiassistant.com/pet-grooming",
+          "isInternal": true
+        },
+        {
+          "text": "Veterinarian",
+          "href": "https://maxaiassistant.com/veterinarian",
+          "isInternal": true
+        },
+        {
+          "text": "Reviews",
+          "href": "https://maxaiassistant.com/reviews-278029",
+          "isInternal": true
+        },
+        {
+          "text": "Local SEO",
+          "href": "https://maxaiassistant.com/local-seo",
+          "isInternal": true
+        },
+        {
+          "text": "Social Media Manager",
+          "href": "https://maxaiassistant.com/social-media-manager",
+          "isInternal": true
+        },
+        {
+          "text": "Conversations AI",
+          "href": "https://maxaiassistant.com/conversations-ai",
+          "isInternal": true
+        },
+        {
+          "text": "Web Chat",
+          "href": "https://maxaiassistant.com/webchat",
+          "isInternal": true
+        },
+        {
+          "text": "Campaigns",
+          "href": "https://maxaiassistant.com/campaigns",
+          "isInternal": true
+        },
+        {
+          "text": "Contact",
+          "href": "https://maxaiassistant.com/contact",
+          "isInternal": true
+        },
+        {
+          "text": "LOGIN",
+          "href": "https://app.getchatt.com",
+          "isInternal": false
+        },
+        {
+          "text": "Request a demo →",
+          "href": "https://maxaiassistant.com/plans",
+          "isInternal": true
+        },
+        {
+          "text": "Learn More →",
+          "href": "https://maxaiassistant.com/contact",
+          "isInternal": true
+        },
+        {
+          "text": "Learn More →",
+          "href": "https://maxaiassistant.com/contact",
+          "isInternal": true
+        },
+        {
+          "text": "Request a demo →",
+          "href": "https://maxaiassistant.com/plans",
+          "isInternal": true
+        },
+        {
+          "text": "GET STARTED →",
+          "href": "https://maxaiassistant.com/plans",
+          "isInternal": true
+        },
+        {
+          "text": "[email protected]",
+          "href": "/cdn-cgi/l/email-protection",
+          "isInternal": true
+        }
+      ]
+    },
+    "images": {
+      "total": 7,
+      "withAlt": 0,
+      "withoutAlt": 7,
+      "list": [
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/83d20699-c44d-4245-899f-721d8e9732cd.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/68ec61eab0fd867de47b2a4a.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/673ec22be03c1166e2cba844.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/673da1e51b64960972357103.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/68ec70c214f4a581ff931ffc.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/c4a0911b-dfe8-4d5e-ae12-39a1efb706c1.jpeg",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/eebd25d4-e154-4b5b-9d8d-0e80a569145d.jpeg",
+          "alt": "",
+          "hasAlt": false
+        }
+      ]
+    },
+    "content": {
+      "wordCount": 2493,
+      "hasH1": true,
+      "h1Count": 5,
+      "paragraphCount": 34
+    },
+    "structuredData": [],
+    "canonical": null,
+    "response": {
+      "status": 200,
+      "headers": {
+        "date": "Tue, 21 Oct 2025 19:05:45 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive",
+        "cache-control": "public, max-age=60, s-maxage=120",
+        "vary": "Accept-Encoding",
+        "via": "1.1 google",
+        "age": "30",
+        "cf-cache-status": "HIT",
+        "server-timing": "cfCacheStatus;desc=\"HIT\", cfOrigin;dur=0,cfEdge;dur=40",
+        "server": "cloudflare",
+        "cf-ray": "9923073c1f00b1a2-YYZ"
+      },
+      "contentLength": 473071
+    }
+  },
+  {
+    "url": "https://maxaiassistant.com/",
+    "title": "Auto Part StoresPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6",
+    "meta": {
+      "title": "Auto Part StoresPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6",
+      "description": null,
+      "keywords": null,
+      "ogTitle": "Auto Part Stores",
+      "ogDescription": null,
+      "ogImage": null,
+      "twitterCard": null,
+      "viewport": "width=device-width, initial-scale=1",
+      "robots": null
+    },
+    "headings": {
+      "h1": [
+        "Reputation Management Software for Truck Service Businesses",
+        "Why Managing Your Online Reputation Matters for Auto Repair Shops",
+        "How Max AI Powers Complete Marketing Solutions for Auto Repair Shops",
+        "Let Max AI take the wheel—streamline your growth effortlessly",
+        "Explore A Better Way To Grow"
+      ],
+      "h2": [
+        "Unlimited Review",
+        "Request",
+        "Automated",
+        "Web Chat",
+        "Consolidated team",
+        "inbox",
+        "Text & email",
+        "communication",
+        "Saved Replies &",
+        "templated",
+        "messages",
+        "Text-to-pay mobile",
+        "invoicing",
+        "Pay Over Time",
+        "customer financing",
+        "",
+        "Dashboard &",
+        "Reports"
+      ],
+      "h3": []
+    },
+    "links": {
+      "total": 55,
+      "internal": 52,
+      "external": 3,
+      "list": [
+        {
+          "text": "",
+          "href": "https://maxaiassistant.com",
+          "isInternal": false
+        },
+        {
+          "text": "HOME",
+          "href": "https://maxaiassistant.com/homepage",
+          "isInternal": true
+        },
+        {
+          "text": "Automotive Services",
+          "href": "https://maxaiassistant.com/automotive-services",
+          "isInternal": true
+        },
+        {
+          "text": "Auto Repair",
+          "href": "https://maxaiassistant.com/auto-repair",
+          "isInternal": true
+        },
+        {
+          "text": "Auto Collision",
+          "href": "https://maxaiassistant.com/auto-collision",
+          "isInternal": true
+        },
+        {
+          "text": "Auto Part Stores",
+          "href": "https://maxaiassistant.com/auto-part-stores",
+          "isInternal": true
+        },
+        {
+          "text": "Truck services",
+          "href": "https://maxaiassistant.com/truck-services",
+          "isInternal": true
+        },
+        {
+          "text": "Tire Dealers",
+          "href": "https://maxaiassistant.com/tire-dealers",
+          "isInternal": true
+        },
+        {
+          "text": "Motorcyle Shops",
+          "href": "https://maxaiassistant.com/motorcylce-shops",
+          "isInternal": true
+        },
+        {
+          "text": "Appliance Repair",
+          "href": "https://maxaiassistant.com/appliance-repair",
+          "isInternal": true
+        },
+        {
+          "text": "Carpet Cleaning",
+          "href": "https://maxaiassistant.com/carpet-cleaning",
+          "isInternal": true
+        },
+        {
+          "text": "Damage Restoration",
+          "href": "https://maxaiassistant.com/damage-restoration",
+          "isInternal": true
+        },
+        {
+          "text": "Drywall",
+          "href": "https://maxaiassistant.com/drywall",
+          "isInternal": true
+        },
+        {
+          "text": "Dumpster Rental",
+          "href": "https://maxaiassistant.com/dumpster-rental",
+          "isInternal": true
+        },
+        {
+          "text": "Electrician",
+          "href": "https://maxaiassistant.com/electrician",
+          "isInternal": true
+        },
+        {
+          "text": "Engineering",
+          "href": "https://maxaiassistant.com/engineering",
+          "isInternal": true
+        },
+        {
+          "text": "Excavation",
+          "href": "https://maxaiassistant.com/excavation",
+          "isInternal": true
+        },
+        {
+          "text": "Flooring",
+          "href": "https://maxaiassistant.com/flooring",
+          "isInternal": true
+        },
+        {
+          "text": "Garage Door",
+          "href": "https://maxaiassistant.com/gargage-door",
+          "isInternal": true
+        },
+        {
+          "text": "General Contracting",
+          "href": "https://maxaiassistant.com/general-contracting",
+          "isInternal": true
+        },
+        {
+          "text": "Handyman",
+          "href": "https://maxaiassistant.com/homepage",
+          "isInternal": true
+        },
+        {
+          "text": "Home Inspector",
+          "href": "https://maxaiassistant.com/home-inspector",
+          "isInternal": true
+        },
+        {
+          "text": "Home Remodeling",
+          "href": "https://maxaiassistant.com/home-remodeling",
+          "isInternal": true
+        },
+        {
+          "text": "HVAC",
+          "href": "https://maxaiassistant.com/hvac",
+          "isInternal": true
+        },
+        {
+          "text": "Junk Removal",
+          "href": "#new-menu-item",
+          "isInternal": false
+        },
+        {
+          "text": "Landscaping",
+          "href": "https://maxaiassistant.com/landscaping",
+          "isInternal": true
+        },
+        {
+          "text": "Moving & Storage",
+          "href": "https://maxaiassistant.com/moving--storage",
+          "isInternal": true
+        },
+        {
+          "text": "Painting",
+          "href": "https://maxaiassistant.com/painting",
+          "isInternal": true
+        },
+        {
+          "text": "Pest Control",
+          "href": "https://maxaiassistant.com/pest-control",
+          "isInternal": true
+        },
+        {
+          "text": "Plumbing",
+          "href": "https://maxaiassistant.com/plumbing",
+          "isInternal": true
+        },
+        {
+          "text": "Pool & Spa",
+          "href": "https://maxaiassistant.com/pool--spa",
+          "isInternal": true
+        },
+        {
+          "text": "Roofing",
+          "href": "https://maxaiassistant.com/roofing",
+          "isInternal": true
+        },
+        {
+          "text": "Solar Contractor",
+          "href": "https://maxaiassistant.com/solar-contractor",
+          "isInternal": true
+        },
+        {
+          "text": "Tool Rental",
+          "href": "https://maxaiassistant.com/tool-rental",
+          "isInternal": true
+        },
+        {
+          "text": "Window & Glass",
+          "href": "https://maxaiassistant.com/window--glass",
+          "isInternal": true
+        },
+        {
+          "text": "Law Firms",
+          "href": "https://maxaiassistant.com/law-firms",
+          "isInternal": true
+        },
+        {
+          "text": "Dental Practices",
+          "href": "https://maxaiassistant.com/dental-practices",
+          "isInternal": true
+        },
+        {
+          "text": "Animal Trainer",
+          "href": "https://maxaiassistant.com/animal-trainer",
+          "isInternal": true
+        },
+        {
+          "text": "Pet Boarding",
+          "href": "https://maxaiassistant.com/pet-boarding",
+          "isInternal": true
+        },
+        {
+          "text": "Pet Grooming",
+          "href": "https://maxaiassistant.com/pet-grooming",
+          "isInternal": true
+        },
+        {
+          "text": "Veterinarian",
+          "href": "https://maxaiassistant.com/veterinarian",
+          "isInternal": true
+        },
+        {
+          "text": "Reviews",
+          "href": "https://maxaiassistant.com/reviews-278029",
+          "isInternal": true
+        },
+        {
+          "text": "Local SEO",
+          "href": "https://maxaiassistant.com/local-seo",
+          "isInternal": true
+        },
+        {
+          "text": "Social Media Manager",
+          "href": "https://maxaiassistant.com/social-media-manager",
+          "isInternal": true
+        },
+        {
+          "text": "Conversations AI",
+          "href": "https://maxaiassistant.com/conversations-ai",
+          "isInternal": true
+        },
+        {
+          "text": "Web Chat",
+          "href": "https://maxaiassistant.com/webchat",
+          "isInternal": true
+        },
+        {
+          "text": "Campaigns",
+          "href": "https://maxaiassistant.com/campaigns",
+          "isInternal": true
+        },
+        {
+          "text": "Contact",
+          "href": "https://maxaiassistant.com/contact",
+          "isInternal": true
+        },
+        {
+          "text": "LOGIN",
+          "href": "https://app.getchatt.com",
+          "isInternal": false
+        },
+        {
+          "text": "Request a demo →",
+          "href": "https://maxaiassistant.com/plans",
+          "isInternal": true
+        },
+        {
+          "text": "Learn More →",
+          "href": "https://maxaiassistant.com/contact",
+          "isInternal": true
+        },
+        {
+          "text": "Learn More →",
+          "href": "https://maxaiassistant.com/contact",
+          "isInternal": true
+        },
+        {
+          "text": "Request a demo →",
+          "href": "https://maxaiassistant.com/plans",
+          "isInternal": true
+        },
+        {
+          "text": "GET STARTED →",
+          "href": "https://maxaiassistant.com/plans",
+          "isInternal": true
+        },
+        {
+          "text": "[email protected]",
+          "href": "/cdn-cgi/l/email-protection",
+          "isInternal": true
+        }
+      ]
+    },
+    "images": {
+      "total": 7,
+      "withAlt": 0,
+      "withoutAlt": 7,
+      "list": [
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/83d20699-c44d-4245-899f-721d8e9732cd.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/68ec61eab0fd867de47b2a4a.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/673ec22be03c1166e2cba844.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/673da1e51b64960972357103.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/68ec70c214f4a581ff931ffc.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/c4a0911b-dfe8-4d5e-ae12-39a1efb706c1.jpeg",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/eebd25d4-e154-4b5b-9d8d-0e80a569145d.jpeg",
+          "alt": "",
+          "hasAlt": false
+        }
+      ]
+    },
+    "content": {
+      "wordCount": 2495,
+      "hasH1": true,
+      "h1Count": 5,
+      "paragraphCount": 34
+    },
+    "structuredData": [],
+    "canonical": null,
+    "response": {
+      "status": 200,
+      "headers": {
+        "date": "Tue, 21 Oct 2025 19:05:46 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive",
+        "cache-control": "public, max-age=60, s-maxage=120",
+        "vary": "Accept-Encoding",
+        "via": "1.1 google",
+        "cf-cache-status": "MISS",
+        "server-timing": "cfCacheStatus;desc=\"MISS\", cfOrigin;dur=40,cfEdge;dur=40",
+        "server": "cloudflare",
+        "cf-ray": "99230742e80ab1a2-YYZ"
+      },
+      "contentLength": 472924
+    }
+  },
+  {
+    "url": "https://maxaiassistant.com/",
+    "title": "Tire DealersPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6",
+    "meta": {
+      "title": "Tire DealersPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6",
+      "description": null,
+      "keywords": null,
+      "ogTitle": "Tire Dealers",
+      "ogDescription": null,
+      "ogImage": null,
+      "twitterCard": null,
+      "viewport": "width=device-width, initial-scale=1",
+      "robots": null
+    },
+    "headings": {
+      "h1": [
+        "Reputation Management Software for Tire Shops",
+        "Why Managing Your Online Reputation Matters for Auto Repair Shops",
+        "How Max AI Powers Complete Marketing Solutions for Auto Repair Shops",
+        "Let Max AI take the wheel—streamline your growth effortlessly",
+        "Explore A Better Way To Grow"
+      ],
+      "h2": [
+        "Unlimited Review",
+        "Request",
+        "Automated",
+        "Web Chat",
+        "Consolidated team",
+        "inbox",
+        "Text & email",
+        "communication",
+        "Saved Replies &",
+        "templated",
+        "messages",
+        "Text-to-pay mobile",
+        "invoicing",
+        "Pay Over Time",
+        "customer financing",
+        "",
+        "Dashboard &",
+        "Reports"
+      ],
+      "h3": []
+    },
+    "links": {
+      "total": 55,
+      "internal": 52,
+      "external": 3,
+      "list": [
+        {
+          "text": "",
+          "href": "https://maxaiassistant.com",
+          "isInternal": false
+        },
+        {
+          "text": "HOME",
+          "href": "https://maxaiassistant.com/homepage",
+          "isInternal": true
+        },
+        {
+          "text": "Automotive Services",
+          "href": "https://maxaiassistant.com/automotive-services",
+          "isInternal": true
+        },
+        {
+          "text": "Auto Repair",
+          "href": "https://maxaiassistant.com/auto-repair",
+          "isInternal": true
+        },
+        {
+          "text": "Auto Collision",
+          "href": "https://maxaiassistant.com/auto-collision",
+          "isInternal": true
+        },
+        {
+          "text": "Auto Part Stores",
+          "href": "https://maxaiassistant.com/auto-part-stores",
+          "isInternal": true
+        },
+        {
+          "text": "Truck services",
+          "href": "https://maxaiassistant.com/truck-services",
+          "isInternal": true
+        },
+        {
+          "text": "Tire Dealers",
+          "href": "https://maxaiassistant.com/tire-dealers",
+          "isInternal": true
+        },
+        {
+          "text": "Motorcyle Shops",
+          "href": "https://maxaiassistant.com/motorcylce-shops",
+          "isInternal": true
+        },
+        {
+          "text": "Appliance Repair",
+          "href": "https://maxaiassistant.com/appliance-repair",
+          "isInternal": true
+        },
+        {
+          "text": "Carpet Cleaning",
+          "href": "https://maxaiassistant.com/carpet-cleaning",
+          "isInternal": true
+        },
+        {
+          "text": "Damage Restoration",
+          "href": "https://maxaiassistant.com/damage-restoration",
+          "isInternal": true
+        },
+        {
+          "text": "Drywall",
+          "href": "https://maxaiassistant.com/drywall",
+          "isInternal": true
+        },
+        {
+          "text": "Dumpster Rental",
+          "href": "https://maxaiassistant.com/dumpster-rental",
+          "isInternal": true
+        },
+        {
+          "text": "Electrician",
+          "href": "https://maxaiassistant.com/electrician",
+          "isInternal": true
+        },
+        {
+          "text": "Engineering",
+          "href": "https://maxaiassistant.com/engineering",
+          "isInternal": true
+        },
+        {
+          "text": "Excavation",
+          "href": "https://maxaiassistant.com/excavation",
+          "isInternal": true
+        },
+        {
+          "text": "Flooring",
+          "href": "https://maxaiassistant.com/flooring",
+          "isInternal": true
+        },
+        {
+          "text": "Garage Door",
+          "href": "https://maxaiassistant.com/gargage-door",
+          "isInternal": true
+        },
+        {
+          "text": "General Contracting",
+          "href": "https://maxaiassistant.com/general-contracting",
+          "isInternal": true
+        },
+        {
+          "text": "Handyman",
+          "href": "https://maxaiassistant.com/homepage",
+          "isInternal": true
+        },
+        {
+          "text": "Home Inspector",
+          "href": "https://maxaiassistant.com/home-inspector",
+          "isInternal": true
+        },
+        {
+          "text": "Home Remodeling",
+          "href": "https://maxaiassistant.com/home-remodeling",
+          "isInternal": true
+        },
+        {
+          "text": "HVAC",
+          "href": "https://maxaiassistant.com/hvac",
+          "isInternal": true
+        },
+        {
+          "text": "Junk Removal",
+          "href": "#new-menu-item",
+          "isInternal": false
+        },
+        {
+          "text": "Landscaping",
+          "href": "https://maxaiassistant.com/landscaping",
+          "isInternal": true
+        },
+        {
+          "text": "Moving & Storage",
+          "href": "https://maxaiassistant.com/moving--storage",
+          "isInternal": true
+        },
+        {
+          "text": "Painting",
+          "href": "https://maxaiassistant.com/painting",
+          "isInternal": true
+        },
+        {
+          "text": "Pest Control",
+          "href": "https://maxaiassistant.com/pest-control",
+          "isInternal": true
+        },
+        {
+          "text": "Plumbing",
+          "href": "https://maxaiassistant.com/plumbing",
+          "isInternal": true
+        },
+        {
+          "text": "Pool & Spa",
+          "href": "https://maxaiassistant.com/pool--spa",
+          "isInternal": true
+        },
+        {
+          "text": "Roofing",
+          "href": "https://maxaiassistant.com/roofing",
+          "isInternal": true
+        },
+        {
+          "text": "Solar Contractor",
+          "href": "https://maxaiassistant.com/solar-contractor",
+          "isInternal": true
+        },
+        {
+          "text": "Tool Rental",
+          "href": "https://maxaiassistant.com/tool-rental",
+          "isInternal": true
+        },
+        {
+          "text": "Window & Glass",
+          "href": "https://maxaiassistant.com/window--glass",
+          "isInternal": true
+        },
+        {
+          "text": "Law Firms",
+          "href": "https://maxaiassistant.com/law-firms",
+          "isInternal": true
+        },
+        {
+          "text": "Dental Practices",
+          "href": "https://maxaiassistant.com/dental-practices",
+          "isInternal": true
+        },
+        {
+          "text": "Animal Trainer",
+          "href": "https://maxaiassistant.com/animal-trainer",
+          "isInternal": true
+        },
+        {
+          "text": "Pet Boarding",
+          "href": "https://maxaiassistant.com/pet-boarding",
+          "isInternal": true
+        },
+        {
+          "text": "Pet Grooming",
+          "href": "https://maxaiassistant.com/pet-grooming",
+          "isInternal": true
+        },
+        {
+          "text": "Veterinarian",
+          "href": "https://maxaiassistant.com/veterinarian",
+          "isInternal": true
+        },
+        {
+          "text": "Reviews",
+          "href": "https://maxaiassistant.com/reviews-278029",
+          "isInternal": true
+        },
+        {
+          "text": "Local SEO",
+          "href": "https://maxaiassistant.com/local-seo",
+          "isInternal": true
+        },
+        {
+          "text": "Social Media Manager",
+          "href": "https://maxaiassistant.com/social-media-manager",
+          "isInternal": true
+        },
+        {
+          "text": "Conversations AI",
+          "href": "https://maxaiassistant.com/conversations-ai",
+          "isInternal": true
+        },
+        {
+          "text": "Web Chat",
+          "href": "https://maxaiassistant.com/webchat",
+          "isInternal": true
+        },
+        {
+          "text": "Campaigns",
+          "href": "https://maxaiassistant.com/campaigns",
+          "isInternal": true
+        },
+        {
+          "text": "Contact",
+          "href": "https://maxaiassistant.com/contact",
+          "isInternal": true
+        },
+        {
+          "text": "LOGIN",
+          "href": "https://app.getchatt.com",
+          "isInternal": false
+        },
+        {
+          "text": "Request a demo →",
+          "href": "https://maxaiassistant.com/plans",
+          "isInternal": true
+        },
+        {
+          "text": "Learn More →",
+          "href": "https://maxaiassistant.com/contact",
+          "isInternal": true
+        },
+        {
+          "text": "Learn More →",
+          "href": "https://maxaiassistant.com/contact",
+          "isInternal": true
+        },
+        {
+          "text": "Request a demo →",
+          "href": "https://maxaiassistant.com/plans",
+          "isInternal": true
+        },
+        {
+          "text": "GET STARTED →",
+          "href": "https://maxaiassistant.com/plans",
+          "isInternal": true
+        },
+        {
+          "text": "[email protected]",
+          "href": "/cdn-cgi/l/email-protection",
+          "isInternal": true
+        }
+      ]
+    },
+    "images": {
+      "total": 7,
+      "withAlt": 0,
+      "withoutAlt": 7,
+      "list": [
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/83d20699-c44d-4245-899f-721d8e9732cd.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/68ec61eab0fd867de47b2a4a.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/673ec22be03c1166e2cba844.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/673da1e51b64960972357103.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/68ec70c214f4a581ff931ffc.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/c4a0911b-dfe8-4d5e-ae12-39a1efb706c1.jpeg",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/eebd25d4-e154-4b5b-9d8d-0e80a569145d.jpeg",
+          "alt": "",
+          "hasAlt": false
+        }
+      ]
+    },
+    "content": {
+      "wordCount": 2483,
+      "hasH1": true,
+      "h1Count": 5,
+      "paragraphCount": 34
+    },
+    "structuredData": [],
+    "canonical": null,
+    "response": {
+      "status": 200,
+      "headers": {
+        "date": "Tue, 21 Oct 2025 19:05:48 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive",
+        "cache-control": "public, max-age=60, s-maxage=120",
+        "vary": "Accept-Encoding",
+        "via": "1.1 google",
+        "cf-cache-status": "MISS",
+        "server-timing": "cfCacheStatus;desc=\"MISS\", cfOrigin;dur=122,cfEdge;dur=56",
+        "server": "cloudflare",
+        "cf-ray": "9923074a2ab0b1a2-YYZ"
+      },
+      "contentLength": 472842
+    }
+  },
+  {
+    "url": "https://maxaiassistant.com/",
+    "title": "Motorcycke shopsPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6",
+    "meta": {
+      "title": "Motorcycke shopsPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6",
+      "description": null,
+      "keywords": null,
+      "ogTitle": "Motorcycke shops",
+      "ogDescription": null,
+      "ogImage": null,
+      "twitterCard": null,
+      "viewport": "width=device-width, initial-scale=1",
+      "robots": null
+    },
+    "headings": {
+      "h1": [
+        "Motorcycle Shop Reputation Management Software",
+        "Why Managing Your Online Reputation Matters for Auto Repair Shops",
+        "How Max AI Powers Complete Marketing Solutions for Auto Repair Shops",
+        "Let Max AI take the wheel—streamline your growth effortlessly",
+        "Explore A Better Way To Grow"
+      ],
+      "h2": [
+        "Unlimited Review",
+        "Request",
+        "Automated",
+        "Web Chat",
+        "Consolidated team",
+        "inbox",
+        "Text & email",
+        "communication",
+        "Saved Replies &",
+        "templated",
+        "messages",
+        "Text-to-pay mobile",
+        "invoicing",
+        "Pay Over Time",
+        "customer financing",
+        "",
+        "Dashboard &",
+        "Reports"
+      ],
+      "h3": []
+    },
+    "links": {
+      "total": 55,
+      "internal": 52,
+      "external": 3,
+      "list": [
+        {
+          "text": "",
+          "href": "https://maxaiassistant.com",
+          "isInternal": false
+        },
+        {
+          "text": "HOME",
+          "href": "https://maxaiassistant.com/homepage",
+          "isInternal": true
+        },
+        {
+          "text": "Automotive Services",
+          "href": "https://maxaiassistant.com/automotive-services",
+          "isInternal": true
+        },
+        {
+          "text": "Auto Repair",
+          "href": "https://maxaiassistant.com/auto-repair",
+          "isInternal": true
+        },
+        {
+          "text": "Auto Collision",
+          "href": "https://maxaiassistant.com/auto-collision",
+          "isInternal": true
+        },
+        {
+          "text": "Auto Part Stores",
+          "href": "https://maxaiassistant.com/auto-part-stores",
+          "isInternal": true
+        },
+        {
+          "text": "Truck services",
+          "href": "https://maxaiassistant.com/truck-services",
+          "isInternal": true
+        },
+        {
+          "text": "Tire Dealers",
+          "href": "https://maxaiassistant.com/tire-dealers",
+          "isInternal": true
+        },
+        {
+          "text": "Motorcyle Shops",
+          "href": "https://maxaiassistant.com/motorcylce-shops",
+          "isInternal": true
+        },
+        {
+          "text": "Appliance Repair",
+          "href": "https://maxaiassistant.com/appliance-repair",
+          "isInternal": true
+        },
+        {
+          "text": "Carpet Cleaning",
+          "href": "https://maxaiassistant.com/carpet-cleaning",
+          "isInternal": true
+        },
+        {
+          "text": "Damage Restoration",
+          "href": "https://maxaiassistant.com/damage-restoration",
+          "isInternal": true
+        },
+        {
+          "text": "Drywall",
+          "href": "https://maxaiassistant.com/drywall",
+          "isInternal": true
+        },
+        {
+          "text": "Dumpster Rental",
+          "href": "https://maxaiassistant.com/dumpster-rental",
+          "isInternal": true
+        },
+        {
+          "text": "Electrician",
+          "href": "https://maxaiassistant.com/electrician",
+          "isInternal": true
+        },
+        {
+          "text": "Engineering",
+          "href": "https://maxaiassistant.com/engineering",
+          "isInternal": true
+        },
+        {
+          "text": "Excavation",
+          "href": "https://maxaiassistant.com/excavation",
+          "isInternal": true
+        },
+        {
+          "text": "Flooring",
+          "href": "https://maxaiassistant.com/flooring",
+          "isInternal": true
+        },
+        {
+          "text": "Garage Door",
+          "href": "https://maxaiassistant.com/gargage-door",
+          "isInternal": true
+        },
+        {
+          "text": "General Contracting",
+          "href": "https://maxaiassistant.com/general-contracting",
+          "isInternal": true
+        },
+        {
+          "text": "Handyman",
+          "href": "https://maxaiassistant.com/homepage",
+          "isInternal": true
+        },
+        {
+          "text": "Home Inspector",
+          "href": "https://maxaiassistant.com/home-inspector",
+          "isInternal": true
+        },
+        {
+          "text": "Home Remodeling",
+          "href": "https://maxaiassistant.com/home-remodeling",
+          "isInternal": true
+        },
+        {
+          "text": "HVAC",
+          "href": "https://maxaiassistant.com/hvac",
+          "isInternal": true
+        },
+        {
+          "text": "Junk Removal",
+          "href": "#new-menu-item",
+          "isInternal": false
+        },
+        {
+          "text": "Landscaping",
+          "href": "https://maxaiassistant.com/landscaping",
+          "isInternal": true
+        },
+        {
+          "text": "Moving & Storage",
+          "href": "https://maxaiassistant.com/moving--storage",
+          "isInternal": true
+        },
+        {
+          "text": "Painting",
+          "href": "https://maxaiassistant.com/painting",
+          "isInternal": true
+        },
+        {
+          "text": "Pest Control",
+          "href": "https://maxaiassistant.com/pest-control",
+          "isInternal": true
+        },
+        {
+          "text": "Plumbing",
+          "href": "https://maxaiassistant.com/plumbing",
+          "isInternal": true
+        },
+        {
+          "text": "Pool & Spa",
+          "href": "https://maxaiassistant.com/pool--spa",
+          "isInternal": true
+        },
+        {
+          "text": "Roofing",
+          "href": "https://maxaiassistant.com/roofing",
+          "isInternal": true
+        },
+        {
+          "text": "Solar Contractor",
+          "href": "https://maxaiassistant.com/solar-contractor",
+          "isInternal": true
+        },
+        {
+          "text": "Tool Rental",
+          "href": "https://maxaiassistant.com/tool-rental",
+          "isInternal": true
+        },
+        {
+          "text": "Window & Glass",
+          "href": "https://maxaiassistant.com/window--glass",
+          "isInternal": true
+        },
+        {
+          "text": "Law Firms",
+          "href": "https://maxaiassistant.com/law-firms",
+          "isInternal": true
+        },
+        {
+          "text": "Dental Practices",
+          "href": "https://maxaiassistant.com/dental-practices",
+          "isInternal": true
+        },
+        {
+          "text": "Animal Trainer",
+          "href": "https://maxaiassistant.com/animal-trainer",
+          "isInternal": true
+        },
+        {
+          "text": "Pet Boarding",
+          "href": "https://maxaiassistant.com/pet-boarding",
+          "isInternal": true
+        },
+        {
+          "text": "Pet Grooming",
+          "href": "https://maxaiassistant.com/pet-grooming",
+          "isInternal": true
+        },
+        {
+          "text": "Veterinarian",
+          "href": "https://maxaiassistant.com/veterinarian",
+          "isInternal": true
+        },
+        {
+          "text": "Reviews",
+          "href": "https://maxaiassistant.com/reviews-278029",
+          "isInternal": true
+        },
+        {
+          "text": "Local SEO",
+          "href": "https://maxaiassistant.com/local-seo",
+          "isInternal": true
+        },
+        {
+          "text": "Social Media Manager",
+          "href": "https://maxaiassistant.com/social-media-manager",
+          "isInternal": true
+        },
+        {
+          "text": "Conversations AI",
+          "href": "https://maxaiassistant.com/conversations-ai",
+          "isInternal": true
+        },
+        {
+          "text": "Web Chat",
+          "href": "https://maxaiassistant.com/webchat",
+          "isInternal": true
+        },
+        {
+          "text": "Campaigns",
+          "href": "https://maxaiassistant.com/campaigns",
+          "isInternal": true
+        },
+        {
+          "text": "Contact",
+          "href": "https://maxaiassistant.com/contact",
+          "isInternal": true
+        },
+        {
+          "text": "LOGIN",
+          "href": "https://app.getchatt.com",
+          "isInternal": false
+        },
+        {
+          "text": "Request a demo →",
+          "href": "https://maxaiassistant.com/plans",
+          "isInternal": true
+        },
+        {
+          "text": "Learn More →",
+          "href": "https://maxaiassistant.com/contact",
+          "isInternal": true
+        },
+        {
+          "text": "Learn More →",
+          "href": "https://maxaiassistant.com/contact",
+          "isInternal": true
+        },
+        {
+          "text": "Request a demo →",
+          "href": "https://maxaiassistant.com/plans",
+          "isInternal": true
+        },
+        {
+          "text": "GET STARTED →",
+          "href": "https://maxaiassistant.com/plans",
+          "isInternal": true
+        },
+        {
+          "text": "[email protected]",
+          "href": "/cdn-cgi/l/email-protection",
+          "isInternal": true
+        }
+      ]
+    },
+    "images": {
+      "total": 7,
+      "withAlt": 0,
+      "withoutAlt": 7,
+      "list": [
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/83d20699-c44d-4245-899f-721d8e9732cd.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/68ec61eab0fd867de47b2a4a.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/673ec22be03c1166e2cba844.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/673da1e51b64960972357103.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/68ec70c214f4a581ff931ffc.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/c4a0911b-dfe8-4d5e-ae12-39a1efb706c1.jpeg",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/eebd25d4-e154-4b5b-9d8d-0e80a569145d.jpeg",
+          "alt": "",
+          "hasAlt": false
+        }
+      ]
+    },
+    "content": {
+      "wordCount": 2486,
+      "hasH1": true,
+      "h1Count": 5,
+      "paragraphCount": 34
+    },
+    "structuredData": [],
+    "canonical": null,
+    "response": {
+      "status": 200,
+      "headers": {
+        "date": "Tue, 21 Oct 2025 19:05:49 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive",
+        "cache-control": "public, max-age=60, s-maxage=120",
+        "vary": "Accept-Encoding",
+        "via": "1.1 google",
+        "cf-cache-status": "MISS",
+        "server-timing": "cfCacheStatus;desc=\"MISS\", cfOrigin;dur=21,cfEdge;dur=35",
+        "server": "cloudflare",
+        "cf-ray": "99230751fe89b1a2-YYZ"
+      },
+      "contentLength": 472898
+    }
+  },
+  {
+    "url": "https://maxaiassistant.com/",
+    "title": "Appliance RepairPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6",
+    "meta": {
+      "title": "Appliance RepairPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6",
+      "description": null,
+      "keywords": null,
+      "ogTitle": "Appliance Repair",
+      "ogDescription": null,
+      "ogImage": null,
+      "twitterCard": null,
+      "viewport": "width=device-width, initial-scale=1",
+      "robots": null
+    },
+    "headings": {
+      "h1": [
+        "Reputation Management Software for Appliance Repair Businesses",
+        "Why Managing Your Online Reputation Matters for Auto Repair Shops",
+        "How Max AI Powers Complete Marketing Solutions for Auto Repair Shops",
+        "Let Max AI take the wheel—streamline your growth effortlessly",
+        "Explore A Better Way To Grow"
+      ],
+      "h2": [
+        "Unlimited Review",
+        "Request",
+        "Automated",
+        "Web Chat",
+        "Consolidated team",
+        "inbox",
+        "Text & email",
+        "communication",
+        "Saved Replies &",
+        "templated",
+        "messages",
+        "Text-to-pay mobile",
+        "invoicing",
+        "Pay Over Time",
+        "customer financing",
+        "",
+        "Dashboard &",
+        "Reports"
+      ],
+      "h3": []
+    },
+    "links": {
+      "total": 55,
+      "internal": 52,
+      "external": 3,
+      "list": [
+        {
+          "text": "",
+          "href": "https://maxaiassistant.com",
+          "isInternal": false
+        },
+        {
+          "text": "HOME",
+          "href": "https://maxaiassistant.com/homepage",
+          "isInternal": true
+        },
+        {
+          "text": "Automotive Services",
+          "href": "https://maxaiassistant.com/automotive-services",
+          "isInternal": true
+        },
+        {
+          "text": "Auto Repair",
+          "href": "https://maxaiassistant.com/auto-repair",
+          "isInternal": true
+        },
+        {
+          "text": "Auto Collision",
+          "href": "https://maxaiassistant.com/auto-collision",
+          "isInternal": true
+        },
+        {
+          "text": "Auto Part Stores",
+          "href": "https://maxaiassistant.com/auto-part-stores",
+          "isInternal": true
+        },
+        {
+          "text": "Truck services",
+          "href": "https://maxaiassistant.com/truck-services",
+          "isInternal": true
+        },
+        {
+          "text": "Tire Dealers",
+          "href": "https://maxaiassistant.com/tire-dealers",
+          "isInternal": true
+        },
+        {
+          "text": "Motorcyle Shops",
+          "href": "https://maxaiassistant.com/motorcylce-shops",
+          "isInternal": true
+        },
+        {
+          "text": "Appliance Repair",
+          "href": "https://maxaiassistant.com/appliance-repair",
+          "isInternal": true
+        },
+        {
+          "text": "Carpet Cleaning",
+          "href": "https://maxaiassistant.com/carpet-cleaning",
+          "isInternal": true
+        },
+        {
+          "text": "Damage Restoration",
+          "href": "https://maxaiassistant.com/damage-restoration",
+          "isInternal": true
+        },
+        {
+          "text": "Drywall",
+          "href": "https://maxaiassistant.com/drywall",
+          "isInternal": true
+        },
+        {
+          "text": "Dumpster Rental",
+          "href": "https://maxaiassistant.com/dumpster-rental",
+          "isInternal": true
+        },
+        {
+          "text": "Electrician",
+          "href": "https://maxaiassistant.com/electrician",
+          "isInternal": true
+        },
+        {
+          "text": "Engineering",
+          "href": "https://maxaiassistant.com/engineering",
+          "isInternal": true
+        },
+        {
+          "text": "Excavation",
+          "href": "https://maxaiassistant.com/excavation",
+          "isInternal": true
+        },
+        {
+          "text": "Flooring",
+          "href": "https://maxaiassistant.com/flooring",
+          "isInternal": true
+        },
+        {
+          "text": "Garage Door",
+          "href": "https://maxaiassistant.com/gargage-door",
+          "isInternal": true
+        },
+        {
+          "text": "General Contracting",
+          "href": "https://maxaiassistant.com/general-contracting",
+          "isInternal": true
+        },
+        {
+          "text": "Handyman",
+          "href": "https://maxaiassistant.com/homepage",
+          "isInternal": true
+        },
+        {
+          "text": "Home Inspector",
+          "href": "https://maxaiassistant.com/home-inspector",
+          "isInternal": true
+        },
+        {
+          "text": "Home Remodeling",
+          "href": "https://maxaiassistant.com/home-remodeling",
+          "isInternal": true
+        },
+        {
+          "text": "HVAC",
+          "href": "https://maxaiassistant.com/hvac",
+          "isInternal": true
+        },
+        {
+          "text": "Junk Removal",
+          "href": "#new-menu-item",
+          "isInternal": false
+        },
+        {
+          "text": "Landscaping",
+          "href": "https://maxaiassistant.com/landscaping",
+          "isInternal": true
+        },
+        {
+          "text": "Moving & Storage",
+          "href": "https://maxaiassistant.com/moving--storage",
+          "isInternal": true
+        },
+        {
+          "text": "Painting",
+          "href": "https://maxaiassistant.com/painting",
+          "isInternal": true
+        },
+        {
+          "text": "Pest Control",
+          "href": "https://maxaiassistant.com/pest-control",
+          "isInternal": true
+        },
+        {
+          "text": "Plumbing",
+          "href": "https://maxaiassistant.com/plumbing",
+          "isInternal": true
+        },
+        {
+          "text": "Pool & Spa",
+          "href": "https://maxaiassistant.com/pool--spa",
+          "isInternal": true
+        },
+        {
+          "text": "Roofing",
+          "href": "https://maxaiassistant.com/roofing",
+          "isInternal": true
+        },
+        {
+          "text": "Solar Contractor",
+          "href": "https://maxaiassistant.com/solar-contractor",
+          "isInternal": true
+        },
+        {
+          "text": "Tool Rental",
+          "href": "https://maxaiassistant.com/tool-rental",
+          "isInternal": true
+        },
+        {
+          "text": "Window & Glass",
+          "href": "https://maxaiassistant.com/window--glass",
+          "isInternal": true
+        },
+        {
+          "text": "Law Firms",
+          "href": "https://maxaiassistant.com/law-firms",
+          "isInternal": true
+        },
+        {
+          "text": "Dental Practices",
+          "href": "https://maxaiassistant.com/dental-practices",
+          "isInternal": true
+        },
+        {
+          "text": "Animal Trainer",
+          "href": "https://maxaiassistant.com/animal-trainer",
+          "isInternal": true
+        },
+        {
+          "text": "Pet Boarding",
+          "href": "https://maxaiassistant.com/pet-boarding",
+          "isInternal": true
+        },
+        {
+          "text": "Pet Grooming",
+          "href": "https://maxaiassistant.com/pet-grooming",
+          "isInternal": true
+        },
+        {
+          "text": "Veterinarian",
+          "href": "https://maxaiassistant.com/veterinarian",
+          "isInternal": true
+        },
+        {
+          "text": "Reviews",
+          "href": "https://maxaiassistant.com/reviews-278029",
+          "isInternal": true
+        },
+        {
+          "text": "Local SEO",
+          "href": "https://maxaiassistant.com/local-seo",
+          "isInternal": true
+        },
+        {
+          "text": "Social Media Manager",
+          "href": "https://maxaiassistant.com/social-media-manager",
+          "isInternal": true
+        },
+        {
+          "text": "Conversations AI",
+          "href": "https://maxaiassistant.com/conversations-ai",
+          "isInternal": true
+        },
+        {
+          "text": "Web Chat",
+          "href": "https://maxaiassistant.com/webchat",
+          "isInternal": true
+        },
+        {
+          "text": "Campaigns",
+          "href": "https://maxaiassistant.com/campaigns",
+          "isInternal": true
+        },
+        {
+          "text": "Contact",
+          "href": "https://maxaiassistant.com/contact",
+          "isInternal": true
+        },
+        {
+          "text": "LOGIN",
+          "href": "https://app.getchatt.com",
+          "isInternal": false
+        },
+        {
+          "text": "Request a demo →",
+          "href": "https://maxaiassistant.com/plans",
+          "isInternal": true
+        },
+        {
+          "text": "Learn More →",
+          "href": "https://maxaiassistant.com/contact",
+          "isInternal": true
+        },
+        {
+          "text": "Learn More →",
+          "href": "https://maxaiassistant.com/contact",
+          "isInternal": true
+        },
+        {
+          "text": "Request a demo →",
+          "href": "https://maxaiassistant.com/plans",
+          "isInternal": true
+        },
+        {
+          "text": "GET STARTED →",
+          "href": "https://maxaiassistant.com/plans",
+          "isInternal": true
+        },
+        {
+          "text": "[email protected]",
+          "href": "/cdn-cgi/l/email-protection",
+          "isInternal": true
+        }
+      ]
+    },
+    "images": {
+      "total": 7,
+      "withAlt": 0,
+      "withoutAlt": 7,
+      "list": [
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/83d20699-c44d-4245-899f-721d8e9732cd.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/68ec61eab0fd867de47b2a4a.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/673ec22be03c1166e2cba844.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/673da1e51b64960972357103.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/68ec70c214f4a581ff931ffc.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/c4a0911b-dfe8-4d5e-ae12-39a1efb706c1.jpeg",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/eebd25d4-e154-4b5b-9d8d-0e80a569145d.jpeg",
+          "alt": "",
+          "hasAlt": false
+        }
+      ]
+    },
+    "content": {
+      "wordCount": 2489,
+      "hasH1": true,
+      "h1Count": 5,
+      "paragraphCount": 34
+    },
+    "structuredData": [],
+    "canonical": null,
+    "response": {
+      "status": 200,
+      "headers": {
+        "date": "Tue, 21 Oct 2025 19:05:50 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive",
+        "cache-control": "public, max-age=60, s-maxage=120",
+        "vary": "Accept-Encoding",
+        "via": "1.1 google",
+        "cf-cache-status": "HIT",
+        "age": "28",
+        "server-timing": "cfCacheStatus;desc=\"HIT\", cfOrigin;dur=0,cfEdge;dur=20",
+        "server": "cloudflare",
+        "cf-ray": "99230758efd3b1a2-YYZ"
+      },
+      "contentLength": 472926
+    }
+  },
+  {
+    "url": "https://maxaiassistant.com/",
+    "title": "Carpet CleaningPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6",
+    "meta": {
+      "title": "Carpet CleaningPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6",
+      "description": null,
+      "keywords": null,
+      "ogTitle": "Carpet Cleaning",
+      "ogDescription": null,
+      "ogImage": null,
+      "twitterCard": null,
+      "viewport": "width=device-width, initial-scale=1",
+      "robots": null
+    },
+    "headings": {
+      "h1": [
+        "Carpet Cleaner Reputation Management Software",
+        "Why Managing Your Online Reputation Matters for Auto Repair Shops",
+        "How Max AI Powers Complete Marketing Solutions for Auto Repair Shops",
+        "Let Max AI take the wheel—streamline your growth effortlessly",
+        "Explore A Better Way To Grow"
+      ],
+      "h2": [
+        "Unlimited Review",
+        "Request",
+        "Automated",
+        "Web Chat",
+        "Consolidated team",
+        "inbox",
+        "Text & email",
+        "communication",
+        "Saved Replies &",
+        "templated",
+        "messages",
+        "Text-to-pay mobile",
+        "invoicing",
+        "Pay Over Time",
+        "customer financing",
+        "",
+        "Dashboard &",
+        "Reports"
+      ],
+      "h3": []
+    },
+    "links": {
+      "total": 55,
+      "internal": 52,
+      "external": 3,
+      "list": [
+        {
+          "text": "",
+          "href": "https://maxaiassistant.com",
+          "isInternal": false
+        },
+        {
+          "text": "HOME",
+          "href": "https://maxaiassistant.com/homepage",
+          "isInternal": true
+        },
+        {
+          "text": "Automotive Services",
+          "href": "https://maxaiassistant.com/automotive-services",
+          "isInternal": true
+        },
+        {
+          "text": "Auto Repair",
+          "href": "https://maxaiassistant.com/auto-repair",
+          "isInternal": true
+        },
+        {
+          "text": "Auto Collision",
+          "href": "https://maxaiassistant.com/auto-collision",
+          "isInternal": true
+        },
+        {
+          "text": "Auto Part Stores",
+          "href": "https://maxaiassistant.com/auto-part-stores",
+          "isInternal": true
+        },
+        {
+          "text": "Truck services",
+          "href": "https://maxaiassistant.com/truck-services",
+          "isInternal": true
+        },
+        {
+          "text": "Tire Dealers",
+          "href": "https://maxaiassistant.com/tire-dealers",
+          "isInternal": true
+        },
+        {
+          "text": "Motorcyle Shops",
+          "href": "https://maxaiassistant.com/motorcylce-shops",
+          "isInternal": true
+        },
+        {
+          "text": "Appliance Repair",
+          "href": "https://maxaiassistant.com/appliance-repair",
+          "isInternal": true
+        },
+        {
+          "text": "Carpet Cleaning",
+          "href": "https://maxaiassistant.com/carpet-cleaning",
+          "isInternal": true
+        },
+        {
+          "text": "Damage Restoration",
+          "href": "https://maxaiassistant.com/damage-restoration",
+          "isInternal": true
+        },
+        {
+          "text": "Drywall",
+          "href": "https://maxaiassistant.com/drywall",
+          "isInternal": true
+        },
+        {
+          "text": "Dumpster Rental",
+          "href": "https://maxaiassistant.com/dumpster-rental",
+          "isInternal": true
+        },
+        {
+          "text": "Electrician",
+          "href": "https://maxaiassistant.com/electrician",
+          "isInternal": true
+        },
+        {
+          "text": "Engineering",
+          "href": "https://maxaiassistant.com/engineering",
+          "isInternal": true
+        },
+        {
+          "text": "Excavation",
+          "href": "https://maxaiassistant.com/excavation",
+          "isInternal": true
+        },
+        {
+          "text": "Flooring",
+          "href": "https://maxaiassistant.com/flooring",
+          "isInternal": true
+        },
+        {
+          "text": "Garage Door",
+          "href": "https://maxaiassistant.com/gargage-door",
+          "isInternal": true
+        },
+        {
+          "text": "General Contracting",
+          "href": "https://maxaiassistant.com/general-contracting",
+          "isInternal": true
+        },
+        {
+          "text": "Handyman",
+          "href": "https://maxaiassistant.com/homepage",
+          "isInternal": true
+        },
+        {
+          "text": "Home Inspector",
+          "href": "https://maxaiassistant.com/home-inspector",
+          "isInternal": true
+        },
+        {
+          "text": "Home Remodeling",
+          "href": "https://maxaiassistant.com/home-remodeling",
+          "isInternal": true
+        },
+        {
+          "text": "HVAC",
+          "href": "https://maxaiassistant.com/hvac",
+          "isInternal": true
+        },
+        {
+          "text": "Junk Removal",
+          "href": "#new-menu-item",
+          "isInternal": false
+        },
+        {
+          "text": "Landscaping",
+          "href": "https://maxaiassistant.com/landscaping",
+          "isInternal": true
+        },
+        {
+          "text": "Moving & Storage",
+          "href": "https://maxaiassistant.com/moving--storage",
+          "isInternal": true
+        },
+        {
+          "text": "Painting",
+          "href": "https://maxaiassistant.com/painting",
+          "isInternal": true
+        },
+        {
+          "text": "Pest Control",
+          "href": "https://maxaiassistant.com/pest-control",
+          "isInternal": true
+        },
+        {
+          "text": "Plumbing",
+          "href": "https://maxaiassistant.com/plumbing",
+          "isInternal": true
+        },
+        {
+          "text": "Pool & Spa",
+          "href": "https://maxaiassistant.com/pool--spa",
+          "isInternal": true
+        },
+        {
+          "text": "Roofing",
+          "href": "https://maxaiassistant.com/roofing",
+          "isInternal": true
+        },
+        {
+          "text": "Solar Contractor",
+          "href": "https://maxaiassistant.com/solar-contractor",
+          "isInternal": true
+        },
+        {
+          "text": "Tool Rental",
+          "href": "https://maxaiassistant.com/tool-rental",
+          "isInternal": true
+        },
+        {
+          "text": "Window & Glass",
+          "href": "https://maxaiassistant.com/window--glass",
+          "isInternal": true
+        },
+        {
+          "text": "Law Firms",
+          "href": "https://maxaiassistant.com/law-firms",
+          "isInternal": true
+        },
+        {
+          "text": "Dental Practices",
+          "href": "https://maxaiassistant.com/dental-practices",
+          "isInternal": true
+        },
+        {
+          "text": "Animal Trainer",
+          "href": "https://maxaiassistant.com/animal-trainer",
+          "isInternal": true
+        },
+        {
+          "text": "Pet Boarding",
+          "href": "https://maxaiassistant.com/pet-boarding",
+          "isInternal": true
+        },
+        {
+          "text": "Pet Grooming",
+          "href": "https://maxaiassistant.com/pet-grooming",
+          "isInternal": true
+        },
+        {
+          "text": "Veterinarian",
+          "href": "https://maxaiassistant.com/veterinarian",
+          "isInternal": true
+        },
+        {
+          "text": "Reviews",
+          "href": "https://maxaiassistant.com/reviews-278029",
+          "isInternal": true
+        },
+        {
+          "text": "Local SEO",
+          "href": "https://maxaiassistant.com/local-seo",
+          "isInternal": true
+        },
+        {
+          "text": "Social Media Manager",
+          "href": "https://maxaiassistant.com/social-media-manager",
+          "isInternal": true
+        },
+        {
+          "text": "Conversations AI",
+          "href": "https://maxaiassistant.com/conversations-ai",
+          "isInternal": true
+        },
+        {
+          "text": "Web Chat",
+          "href": "https://maxaiassistant.com/webchat",
+          "isInternal": true
+        },
+        {
+          "text": "Campaigns",
+          "href": "https://maxaiassistant.com/campaigns",
+          "isInternal": true
+        },
+        {
+          "text": "Contact",
+          "href": "https://maxaiassistant.com/contact",
+          "isInternal": true
+        },
+        {
+          "text": "LOGIN",
+          "href": "https://app.getchatt.com",
+          "isInternal": false
+        },
+        {
+          "text": "Request a demo →",
+          "href": "https://maxaiassistant.com/plans",
+          "isInternal": true
+        },
+        {
+          "text": "Learn More →",
+          "href": "https://maxaiassistant.com/contact",
+          "isInternal": true
+        },
+        {
+          "text": "Learn More →",
+          "href": "https://maxaiassistant.com/contact",
+          "isInternal": true
+        },
+        {
+          "text": "Request a demo →",
+          "href": "https://maxaiassistant.com/plans",
+          "isInternal": true
+        },
+        {
+          "text": "GET STARTED →",
+          "href": "https://maxaiassistant.com/plans",
+          "isInternal": true
+        },
+        {
+          "text": "[email protected]",
+          "href": "/cdn-cgi/l/email-protection",
+          "isInternal": true
+        }
+      ]
+    },
+    "images": {
+      "total": 7,
+      "withAlt": 0,
+      "withoutAlt": 7,
+      "list": [
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/83d20699-c44d-4245-899f-721d8e9732cd.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/68ec61eab0fd867de47b2a4a.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/673ec22be03c1166e2cba844.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/673da1e51b64960972357103.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/68ec70c214f4a581ff931ffc.png",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/c4a0911b-dfe8-4d5e-ae12-39a1efb706c1.jpeg",
+          "alt": "",
+          "hasAlt": false
+        },
+        {
+          "src": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/yrMl7UtmMqo31qLMP76W/media/eebd25d4-e154-4b5b-9d8d-0e80a569145d.jpeg",
+          "alt": "",
+          "hasAlt": false
+        }
+      ]
+    },
+    "content": {
+      "wordCount": 2487,
+      "hasH1": true,
+      "h1Count": 5,
+      "paragraphCount": 34
+    },
+    "structuredData": [],
+    "canonical": null,
+    "response": {
+      "status": 200,
+      "headers": {
+        "date": "Tue, 21 Oct 2025 19:05:51 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive",
+        "cache-control": "public, max-age=60, s-maxage=120",
+        "vary": "Accept-Encoding",
+        "via": "1.1 google",
+        "age": "27",
+        "cf-cache-status": "HIT",
+        "server-timing": "cfCacheStatus;desc=\"HIT\", cfOrigin;dur=0,cfEdge;dur=44",
+        "server": "cloudflare",
+        "cf-ray": "9923075fc93ab1a2-YYZ"
+      },
+      "contentLength": 473004
+    }
+  }
+]

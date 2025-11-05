@@ -2,6 +2,7 @@
 
 # Node
 node_modules/
+tools/**/node_modules
 client/node_modules/
 *.log
 npm-debug.log*

@@ -1,0 +1,1509 @@
+{
+  "timestamp": "2025-10-21T19:05:52.399Z",
+  "website": "https://maxaiassistant.com/",
+  "pages": [
+    {
+      "url": "https://maxaiassistant.com/",
+      "title": "Homepage",
+      "issues": {
+        "critical": [
+          {
+            "type": "missing_title",
+            "message": "Missing title tag",
+            "impact": "high",
+            "fix": "Add a descriptive title tag (50-60 characters)"
+          },
+          {
+            "type": "missing_description",
+            "message": "Missing meta description",
+            "impact": "high",
+            "fix": "Add compelling meta description (150-160 characters)"
+          },
+          {
+            "type": "missing_h1",
+            "message": "Missing H1 tag",
+            "impact": "high",
+            "fix": "Add exactly one H1 tag with primary keyword"
+          }
+        ],
+        "warnings": [
+          {
+            "type": "missing_alt_text",
+            "message": "39 images missing alt text",
+            "impact": "medium",
+            "fix": "Add descriptive alt text to all images"
+          }
+        ],
+        "opportunities": [
+          {
+            "type": "missing_open_graph",
+            "message": "Missing Open Graph tags",
+            "impact": "low",
+            "fix": "Add og:title, og:description, and og:image for better social sharing"
+          },
+          {
+            "type": "missing_canonical",
+            "message": "Missing canonical URL",
+            "impact": "medium",
+            "fix": "Add canonical URL to prevent duplicate content issues"
+          },
+          {
+            "type": "no_structured_data",
+            "message": "No structured data found",
+            "impact": "medium",
+            "fix": "Add Schema.org markup for rich snippets"
+          },
+          {
+            "type": "keyword_not_in_content",
+            "message": "Target keyword \"ai assistant\" not found in content",
+            "impact": "high",
+            "fix": "Include \"ai assistant\" naturally in content (aim for 0.5-1% density)"
+          },
+          {
+            "type": "keyword_not_in_content",
+            "message": "Target keyword \"local seo\" not found in content",
+            "impact": "high",
+            "fix": "Include \"local seo\" naturally in content (aim for 0.5-1% density)"
+          },
+          {
+            "type": "keyword_not_in_content",
+            "message": "Target keyword \"ai marketing tools\" not found in content",
+            "impact": "high",
+            "fix": "Include \"ai marketing tools\" naturally in content (aim for 0.5-1% density)"
+          },
+          {
+            "type": "keyword_not_in_content",
+            "message": "Target keyword \"reputation management software\" not found in content",
+            "impact": "high",
+            "fix": "Include \"reputation management software\" naturally in content (aim for 0.5-1% density)"
+          }
+        ]
+      },
+      "score": 16
+    },
+    {
+      "url": "https://maxaiassistant.com/",
+      "title": "/homepage",
+      "issues": {
+        "critical": [
+          {
+            "type": "missing_title",
+            "message": "Missing title tag",
+            "impact": "high",
+            "fix": "Add a descriptive title tag (50-60 characters)"
+          },
+          {
+            "type": "missing_description",
+            "message": "Missing meta description",
+            "impact": "high",
+            "fix": "Add compelling meta description (150-160 characters)"
+          },
+          {
+            "type": "missing_h1",
+            "message": "Missing H1 tag",
+            "impact": "high",
+            "fix": "Add exactly one H1 tag with primary keyword"
+          }
+        ],
+        "warnings": [
+          {
+            "type": "missing_alt_text",
+            "message": "39 images missing alt text",
+            "impact": "medium",
+            "fix": "Add descriptive alt text to all images"
+          }
+        ],
+        "opportunities": [
+          {
+            "type": "missing_open_graph",
+            "message": "Missing Open Graph tags",
+            "impact": "low",
+            "fix": "Add og:title, og:description, and og:image for better social sharing"
+          },
+          {
+            "type": "missing_canonical",
+            "message": "Missing canonical URL",
+            "impact": "medium",
+            "fix": "Add canonical URL to prevent duplicate content issues"
+          },
+          {
+            "type": "no_structured_data",
+            "message": "No structured data found",
+            "impact": "medium",
+            "fix": "Add Schema.org markup for rich snippets"
+          },
+          {
+            "type": "keyword_not_in_content",
+            "message": "Target keyword \"ai assistant\" not found in content",
+            "impact": "high",
+            "fix": "Include \"ai assistant\" naturally in content (aim for 0.5-1% density)"
+          },
+          {
+            "type": "keyword_not_in_content",
+            "message": "Target keyword \"local seo\" not found in content",
+            "impact": "high",
+            "fix": "Include \"local seo\" naturally in content (aim for 0.5-1% density)"
+          },
+          {
+            "type": "keyword_not_in_content",
+            "message": "Target keyword \"ai marketing tools\" not found in content",
+            "impact": "high",
+            "fix": "Include \"ai marketing tools\" naturally in content (aim for 0.5-1% density)"
+          },
+          {
+            "type": "keyword_not_in_content",
+            "message": "Target keyword \"reputation management software\" not found in content",
+            "impact": "high",
+            "fix": "Include \"reputation management software\" naturally in content (aim for 0.5-1% density)"
+          }
+        ]
+      },
+      "score": 16
+    },
+    {
+      "url": "https://maxaiassistant.com/",
+      "title": "Truck Services",
+      "issues": {
+        "critical": [
+          {
+            "type": "missing_description",
+            "message": "Missing meta description",
+            "impact": "high",
+            "fix": "Add compelling meta description (150-160 characters)"
+          }
+        ],
+        "warnings": [
+          {
+            "type": "title_too_short",
+            "message": "Title too short (14 chars)",
+            "impact": "medium",
+            "fix": "Expand title to 50-60 characters"
+          },
+          {
+            "type": "multiple_h1",
+            "message": "Multiple H1 tags found (13)",
+            "impact": "medium",
+            "fix": "Use only one H1 tag per page"
+          },
+          {
+            "type": "missing_alt_text",
+            "message": "23 images missing alt text",
+            "impact": "medium",
+            "fix": "Add descriptive alt text to all images"
+          }
+        ],
+        "opportunities": [
+          {
+            "type": "title_no_target_keywords",
+            "message": "Title does not include target keywords",
+            "impact": "high",
+            "fix": "Include primary keywords: ai assistant, local seo"
+          },
+          {
+            "type": "missing_open_graph",
+            "message": "Missing Open Graph tags",
+            "impact": "low",
+            "fix": "Add og:title, og:description, and og:image for better social sharing"
+          },
+          {
+            "type": "missing_canonical",
+            "message": "Missing canonical URL",
+            "impact": "medium",
+            "fix": "Add canonical URL to prevent duplicate content issues"
+          },
+          {
+            "type": "no_structured_data",
+            "message": "No structured data found",
+            "impact": "medium",
+            "fix": "Add Schema.org markup for rich snippets"
+          },
+          {
+            "type": "keyword_not_in_content",
+            "message": "Target keyword \"ai assistant\" not found in content",
+            "impact": "high",
+            "fix": "Include \"ai assistant\" naturally in content (aim for 0.5-1% density)"
+          },
+          {
+            "type": "keyword_not_in_content",
+            "message": "Target keyword \"local seo\" not found in content",
+            "impact": "high",
+            "fix": "Include \"local seo\" naturally in content (aim for 0.5-1% density)"
+          },
+          {
+            "type": "keyword_not_in_content",
+            "message": "Target keyword \"ai marketing tools\" not found in content",
+            "impact": "high",
+            "fix": "Include \"ai marketing tools\" naturally in content (aim for 0.5-1% density)"
+          },
+          {
+            "type": "keyword_not_in_content",
+            "message": "Target keyword \"reputation management software\" not found in content",
+            "impact": "high",
+            "fix": "Include \"reputation management software\" naturally in content (aim for 0.5-1% density)"
+          }
+        ]
+      },
+      "score": 34
+    },
+    {
+      "url": "https://maxaiassistant.com/",
+      "title": "Auto RepairPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6",
+      "issues": {
+        "critical": [
+          {
+            "type": "missing_description",
+            "message": "Missing meta description",
+            "impact": "high",
+            "fix": "Add compelling meta description (150-160 characters)"
+          }
+        ],
+        "warnings": [
+          {
+            "type": "title_too_long",
+            "message": "Title too long (71 chars)",
+            "impact": "medium",
+            "fix": "Shorten title to under 60 characters"
+          },
+          {
+            "type": "multiple_h1",
+            "message": "Multiple H1 tags found (6)",
+            "impact": "medium",
+            "fix": "Use only one H1 tag per page"
+          },
+          {
+            "type": "missing_alt_text",
+            "message": "7 images missing alt text",
+            "impact": "medium",
+            "fix": "Add descriptive alt text to all images"
+          }
+        ],
+        "opportunities": [
+          {
+            "type": "title_no_target_keywords",
+            "message": "Title does not include target keywords",
+            "impact": "high",
+            "fix": "Include primary keywords: ai assistant, local seo"
+          },
+          {
+            "type": "missing_open_graph",
+            "message": "Missing Open Graph tags",
+            "impact": "low",
+            "fix": "Add og:title, og:description, and og:image for better social sharing"
+          },
+          {
+            "type": "missing_canonical",
+            "message": "Missing canonical URL",
+            "impact": "medium",
+            "fix": "Add canonical URL to prevent duplicate content issues"
+          },
+          {
+            "type": "no_structured_data",
+            "message": "No structured data found",
+            "impact": "medium",
+            "fix": "Add Schema.org markup for rich snippets"
+          },
+          {
+            "type": "keyword_not_in_content",
+            "message": "Target keyword \"ai assistant\" not found in content",
+            "impact": "high",
+            "fix": "Include \"ai assistant\" naturally in content (aim for 0.5-1% density)"
+          },
+          {
+            "type": "keyword_not_in_content",
+            "message": "Target keyword \"local seo\" not found in content",
+            "impact": "high",
+            "fix": "Include \"local seo\" naturally in content (aim for 0.5-1% density)"
+          },
+          {
+            "type": "keyword_not_in_content",
+            "message": "Target keyword \"ai marketing tools\" not found in content",
+            "impact": "high",
+            "fix": "Include \"ai marketing tools\" naturally in content (aim for 0.5-1% density)"
+          }
+        ]
+      },
+      "score": 36
+    },
+    {
+      "url": "https://maxaiassistant.com/",
+      "title": "Auto CollisionPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6",
+      "issues": {
+        "critical": [
+          {
+            "type": "missing_description",
+            "message": "Missing meta description",
+            "impact": "high",
+            "fix": "Add compelling meta description (150-160 characters)"
+          }
+        ],
+        "warnings": [
+          {
+            "type": "title_too_long",
+            "message": "Title too long (74 chars)",
+            "impact": "medium",
+            "fix": "Shorten title to under 60 characters"
+          },
+          {
+            "type": "multiple_h1",
+            "message": "Multiple H1 tags found (5)",
+            "impact": "medium",
+            "fix": "Use only one H1 tag per page"
+          },
+          {
+            "type": "missing_alt_text",
+            "message": "7 images missing alt text",
+            "impact": "medium",
+            "fix": "Add descriptive alt text to all images"
+          }
+        ],
+        "opportunities": [
+          {
+            "type": "title_no_target_keywords",
+            "message": "Title does not include target keywords",
+            "impact": "high",
+            "fix": "Include primary keywords: ai assistant, local seo"
+          },
+          {
+            "type": "missing_open_graph",
+            "message": "Missing Open Graph tags",
+            "impact": "low",
+            "fix": "Add og:title, og:description, and og:image for better social sharing"
+          },
+          {
+            "type": "missing_canonical",
+            "message": "Missing canonical URL",
+            "impact": "medium",
+            "fix": "Add canonical URL to prevent duplicate content issues"
+          },
+          {
+            "type": "no_structured_data",
+            "message": "No structured data found",
+            "impact": "medium",
+            "fix": "Add Schema.org markup for rich snippets"
+          },
+          {
+            "type": "keyword_not_in_content",
+            "message": "Target keyword \"ai assistant\" not found in content",
+            "impact": "high",
+            "fix": "Include \"ai assistant\" naturally in content (aim for 0.5-1% density)"
+          },
+          {
+            "type": "keyword_not_in_content",
+            "message": "Target keyword \"local seo\" not found in content",
+            "impact": "high",
+            "fix": "Include \"local seo\" naturally in content (aim for 0.5-1% density)"
+          },
+          {
+            "type": "keyword_not_in_content",
+            "message": "Target keyword \"ai marketing tools\" not found in content",
+            "impact": "high",
+            "fix": "Include \"ai marketing tools\" naturally in content (aim for 0.5-1% density)"
+          },
+          {
+            "type": "keyword_not_in_content",
+            "message": "Target keyword \"reputation management software\" not found in content",
+            "impact": "high",
+            "fix": "Include \"reputation management software\" naturally in content (aim for 0.5-1% density)"
+          }
+        ]
+      },
+      "score": 34
+    },
+    {
+      "url": "https://maxaiassistant.com/",
+      "title": "Auto Part StoresPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6",
+      "issues": {
+        "critical": [
+          {
+            "type": "missing_description",
+            "message": "Missing meta description",
+            "impact": "high",
+            "fix": "Add compelling meta description (150-160 characters)"
+          }
+        ],
+        "warnings": [
+          {
+            "type": "title_too_long",
+            "message": "Title too long (76 chars)",
+            "impact": "medium",
+            "fix": "Shorten title to under 60 characters"
+          },
+          {
+            "type": "multiple_h1",
+            "message": "Multiple H1 tags found (5)",
+            "impact": "medium",
+            "fix": "Use only one H1 tag per page"
+          },
+          {
+            "type": "missing_alt_text",
+            "message": "7 images missing alt text",
+            "impact": "medium",
+            "fix": "Add descriptive alt text to all images"
+          }
+        ],
+        "opportunities": [
+          {
+            "type": "title_no_target_keywords",
+            "message": "Title does not include target keywords",
+            "impact": "high",
+            "fix": "Include primary keywords: ai assistant, local seo"
+          },
+          {
+            "type": "missing_open_graph",
+            "message": "Missing Open Graph tags",
+            "impact": "low",
+            "fix": "Add og:title, og:description, and og:image for better social sharing"
+          },
+          {
+            "type": "missing_canonical",
+            "message": "Missing canonical URL",
+            "impact": "medium",
+            "fix": "Add canonical URL to prevent duplicate content issues"
+          },
+          {
+            "type": "no_structured_data",
+            "message": "No structured data found",
+            "impact": "medium",
+            "fix": "Add Schema.org markup for rich snippets"
+          },
+          {
+            "type": "keyword_not_in_content",
+            "message": "Target keyword \"ai assistant\" not found in content",
+            "impact": "high",
+            "fix": "Include \"ai assistant\" naturally in content (aim for 0.5-1% density)"
+          },
+          {
+            "type": "keyword_not_in_content",
+            "message": "Target keyword \"local seo\" not found in content",
+            "impact": "high",
+            "fix": "Include \"local seo\" naturally in content (aim for 0.5-1% density)"
+          },
+          {
+            "type": "keyword_not_in_content",
+            "message": "Target keyword \"ai marketing tools\" not found in content",
+            "impact": "high",
+            "fix": "Include \"ai marketing tools\" naturally in content (aim for 0.5-1% density)"
+          },
+          {
+            "type": "keyword_not_in_content",
+            "message": "Target keyword \"reputation management software\" not found in content",
+            "impact": "high",
+            "fix": "Include \"reputation management software\" naturally in content (aim for 0.5-1% density)"
+          }
+        ]
+      },
+      "score": 34
+    },
+    {
+      "url": "https://maxaiassistant.com/",
+      "title": "Auto Part StoresPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6",
+      "issues": {
+        "critical": [
+          {
+            "type": "missing_description",
+            "message": "Missing meta description",
+            "impact": "high",
+            "fix": "Add compelling meta description (150-160 characters)"
+          }
+        ],
+        "warnings": [
+          {
+            "type": "title_too_long",
+            "message": "Title too long (76 chars)",
+            "impact": "medium",
+            "fix": "Shorten title to under 60 characters"
+          },
+          {
+            "type": "multiple_h1",
+            "message": "Multiple H1 tags found (5)",
+            "impact": "medium",
+            "fix": "Use only one H1 tag per page"
+          },
+          {
+            "type": "missing_alt_text",
+            "message": "7 images missing alt text",
+            "impact": "medium",
+            "fix": "Add descriptive alt text to all images"
+          }
+        ],
+        "opportunities": [
+          {
+            "type": "title_no_target_keywords",
+            "message": "Title does not include target keywords",
+            "impact": "high",
+            "fix": "Include primary keywords: ai assistant, local seo"
+          },
+          {
+            "type": "missing_open_graph",
+            "message": "Missing Open Graph tags",
+            "impact": "low",
+            "fix": "Add og:title, og:description, and og:image for better social sharing"
+          },
+          {
+            "type": "missing_canonical",
+            "message": "Missing canonical URL",
+            "impact": "medium",
+            "fix": "Add canonical URL to prevent duplicate content issues"
+          },
+          {
+            "type": "no_structured_data",
+            "message": "No structured data found",
+            "impact": "medium",
+            "fix": "Add Schema.org markup for rich snippets"
+          },
+          {
+            "type": "keyword_not_in_content",
+            "message": "Target keyword \"ai assistant\" not found in content",
+            "impact": "high",
+            "fix": "Include \"ai assistant\" naturally in content (aim for 0.5-1% density)"
+          },
+          {
+            "type": "keyword_not_in_content",
+            "message": "Target keyword \"local seo\" not found in content",
+            "impact": "high",
+            "fix": "Include \"local seo\" naturally in content (aim for 0.5-1% density)"
+          },
+          {
+            "type": "keyword_not_in_content",
+            "message": "Target keyword \"ai marketing tools\" not found in content",
+            "impact": "high",
+            "fix": "Include \"ai marketing tools\" naturally in content (aim for 0.5-1% density)"
+          }
+        ]
+      },
+      "score": 36
+    },
+    {
+      "url": "https://maxaiassistant.com/",
+      "title": "Tire DealersPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6",
+      "issues": {
+        "critical": [
+          {
+            "type": "missing_description",
+            "message": "Missing meta description",
+            "impact": "high",
+            "fix": "Add compelling meta description (150-160 characters)"
+          }
+        ],
+        "warnings": [
+          {
+            "type": "title_too_long",
+            "message": "Title too long (72 chars)",
+            "impact": "medium",
+            "fix": "Shorten title to under 60 characters"
+          },
+          {
+            "type": "multiple_h1",
+            "message": "Multiple H1 tags found (5)",
+            "impact": "medium",
+            "fix": "Use only one H1 tag per page"
+          },
+          {
+            "type": "missing_alt_text",
+            "message": "7 images missing alt text",
+            "impact": "medium",
+            "fix": "Add descriptive alt text to all images"
+          }
+        ],
+        "opportunities": [
+          {
+            "type": "title_no_target_keywords",
+            "message": "Title does not include target keywords",
+            "impact": "high",
+            "fix": "Include primary keywords: ai assistant, local seo"
+          },
+          {
+            "type": "missing_open_graph",
+            "message": "Missing Open Graph tags",
+            "impact": "low",
+            "fix": "Add og:title, og:description, and og:image for better social sharing"
+          },
+          {
+            "type": "missing_canonical",
+            "message": "Missing canonical URL",
+            "impact": "medium",
+            "fix": "Add canonical URL to prevent duplicate content issues"
+          },
+          {
+            "type": "no_structured_data",
+            "message": "No structured data found",
+            "impact": "medium",
+            "fix": "Add Schema.org markup for rich snippets"
+          },
+          {
+            "type": "keyword_not_in_content",
+            "message": "Target keyword \"ai assistant\" not found in content",
+            "impact": "high",
+            "fix": "Include \"ai assistant\" naturally in content (aim for 0.5-1% density)"
+          },
+          {
+            "type": "keyword_not_in_content",
+            "message": "Target keyword \"local seo\" not found in content",
+            "impact": "high",
+            "fix": "Include \"local seo\" naturally in content (aim for 0.5-1% density)"
+          },
+          {
+            "type": "keyword_not_in_content",
+            "message": "Target keyword \"ai marketing tools\" not found in content",
+            "impact": "high",
+            "fix": "Include \"ai marketing tools\" naturally in content (aim for 0.5-1% density)"
+          }
+        ]
+      },
+      "score": 36
+    },
+    {
+      "url": "https://maxaiassistant.com/",
+      "title": "Motorcycke shopsPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6",
+      "issues": {
+        "critical": [
+          {
+            "type": "missing_description",
+            "message": "Missing meta description",
+            "impact": "high",
+            "fix": "Add compelling meta description (150-160 characters)"
+          }
+        ],
+        "warnings": [
+          {
+            "type": "title_too_long",
+            "message": "Title too long (76 chars)",
+            "impact": "medium",
+            "fix": "Shorten title to under 60 characters"
+          },
+          {
+            "type": "multiple_h1",
+            "message": "Multiple H1 tags found (5)",
+            "impact": "medium",
+            "fix": "Use only one H1 tag per page"
+          },
+          {
+            "type": "missing_alt_text",
+            "message": "7 images missing alt text",
+            "impact": "medium",
+            "fix": "Add descriptive alt text to all images"
+          }
+        ],
+        "opportunities": [
+          {
+            "type": "title_no_target_keywords",
+            "message": "Title does not include target keywords",
+            "impact": "high",
+            "fix": "Include primary keywords: ai assistant, local seo"
+          },
+          {
+            "type": "missing_open_graph",
+            "message": "Missing Open Graph tags",
+            "impact": "low",
+            "fix": "Add og:title, og:description, and og:image for better social sharing"
+          },
+          {
+            "type": "missing_canonical",
+            "message": "Missing canonical URL",
+            "impact": "medium",
+            "fix": "Add canonical URL to prevent duplicate content issues"
+          },
+          {
+            "type": "no_structured_data",
+            "message": "No structured data found",
+            "impact": "medium",
+            "fix": "Add Schema.org markup for rich snippets"
+          },
+          {
+            "type": "keyword_not_in_content",
+            "message": "Target keyword \"ai assistant\" not found in content",
+            "impact": "high",
+            "fix": "Include \"ai assistant\" naturally in content (aim for 0.5-1% density)"
+          },
+          {
+            "type": "keyword_not_in_content",
+            "message": "Target keyword \"local seo\" not found in content",
+            "impact": "high",
+            "fix": "Include \"local seo\" naturally in content (aim for 0.5-1% density)"
+          },
+          {
+            "type": "keyword_not_in_content",
+            "message": "Target keyword \"ai marketing tools\" not found in content",
+            "impact": "high",
+            "fix": "Include \"ai marketing tools\" naturally in content (aim for 0.5-1% density)"
+          }
+        ]
+      },
+      "score": 36
+    },
+    {
+      "url": "https://maxaiassistant.com/",
+      "title": "Appliance RepairPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6",
+      "issues": {
+        "critical": [
+          {
+            "type": "missing_description",
+            "message": "Missing meta description",
+            "impact": "high",
+            "fix": "Add compelling meta description (150-160 characters)"
+          }
+        ],
+        "warnings": [
+          {
+            "type": "title_too_long",
+            "message": "Title too long (76 chars)",
+            "impact": "medium",
+            "fix": "Shorten title to under 60 characters"
+          },
+          {
+            "type": "multiple_h1",
+            "message": "Multiple H1 tags found (5)",
+            "impact": "medium",
+            "fix": "Use only one H1 tag per page"
+          },
+          {
+            "type": "missing_alt_text",
+            "message": "7 images missing alt text",
+            "impact": "medium",
+            "fix": "Add descriptive alt text to all images"
+          }
+        ],
+        "opportunities": [
+          {
+            "type": "title_no_target_keywords",
+            "message": "Title does not include target keywords",
+            "impact": "high",
+            "fix": "Include primary keywords: ai assistant, local seo"
+          },
+          {
+            "type": "missing_open_graph",
+            "message": "Missing Open Graph tags",
+            "impact": "low",
+            "fix": "Add og:title, og:description, and og:image for better social sharing"
+          },
+          {
+            "type": "missing_canonical",
+            "message": "Missing canonical URL",
+            "impact": "medium",
+            "fix": "Add canonical URL to prevent duplicate content issues"
+          },
+          {
+            "type": "no_structured_data",
+            "message": "No structured data found",
+            "impact": "medium",
+            "fix": "Add Schema.org markup for rich snippets"
+          },
+          {
+            "type": "keyword_not_in_content",
+            "message": "Target keyword \"ai assistant\" not found in content",
+            "impact": "high",
+            "fix": "Include \"ai assistant\" naturally in content (aim for 0.5-1% density)"
+          },
+          {
+            "type": "keyword_not_in_content",
+            "message": "Target keyword \"local seo\" not found in content",
+            "impact": "high",
+            "fix": "Include \"local seo\" naturally in content (aim for 0.5-1% density)"
+          },
+          {
+            "type": "keyword_not_in_content",
+            "message": "Target keyword \"ai marketing tools\" not found in content",
+            "impact": "high",
+            "fix": "Include \"ai marketing tools\" naturally in content (aim for 0.5-1% density)"
+          }
+        ]
+      },
+      "score": 36
+    },
+    {
+      "url": "https://maxaiassistant.com/",
+      "title": "Carpet CleaningPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6",
+      "issues": {
+        "critical": [
+          {
+            "type": "missing_description",
+            "message": "Missing meta description",
+            "impact": "high",
+            "fix": "Add compelling meta description (150-160 characters)"
+          }
+        ],
+        "warnings": [
+          {
+            "type": "title_too_long",
+            "message": "Title too long (75 chars)",
+            "impact": "medium",
+            "fix": "Shorten title to under 60 characters"
+          },
+          {
+            "type": "multiple_h1",
+            "message": "Multiple H1 tags found (5)",
+            "impact": "medium",
+            "fix": "Use only one H1 tag per page"
+          },
+          {
+            "type": "missing_alt_text",
+            "message": "7 images missing alt text",
+            "impact": "medium",
+            "fix": "Add descriptive alt text to all images"
+          }
+        ],
+        "opportunities": [
+          {
+            "type": "title_no_target_keywords",
+            "message": "Title does not include target keywords",
+            "impact": "high",
+            "fix": "Include primary keywords: ai assistant, local seo"
+          },
+          {
+            "type": "missing_open_graph",
+            "message": "Missing Open Graph tags",
+            "impact": "low",
+            "fix": "Add og:title, og:description, and og:image for better social sharing"
+          },
+          {
+            "type": "missing_canonical",
+            "message": "Missing canonical URL",
+            "impact": "medium",
+            "fix": "Add canonical URL to prevent duplicate content issues"
+          },
+          {
+            "type": "no_structured_data",
+            "message": "No structured data found",
+            "impact": "medium",
+            "fix": "Add Schema.org markup for rich snippets"
+          },
+          {
+            "type": "keyword_not_in_content",
+            "message": "Target keyword \"ai assistant\" not found in content",
+            "impact": "high",
+            "fix": "Include \"ai assistant\" naturally in content (aim for 0.5-1% density)"
+          },
+          {
+            "type": "keyword_not_in_content",
+            "message": "Target keyword \"local seo\" not found in content",
+            "impact": "high",
+            "fix": "Include \"local seo\" naturally in content (aim for 0.5-1% density)"
+          },
+          {
+            "type": "keyword_not_in_content",
+            "message": "Target keyword \"ai marketing tools\" not found in content",
+            "impact": "high",
+            "fix": "Include \"ai marketing tools\" naturally in content (aim for 0.5-1% density)"
+          }
+        ]
+      },
+      "score": 36
+    }
+  ],
+  "overall": {
+    "averageScore": 32,
+    "totalIssues": 124,
+    "issueCounts": {
+      "critical": 62,
+      "warnings": 51,
+      "opportunities": 11
+    },
+    "grade": "F"
+  },
+  "recommendations": [
+    {
+      "priority": "high",
+      "issue": "Missing title tag",
+      "affectedPages": 2,
+      "pages": [
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Homepage"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "/homepage"
+        }
+      ],
+      "solution": "Add a descriptive title tag (50-60 characters)",
+      "impact": "high"
+    },
+    {
+      "priority": "high",
+      "issue": "Missing meta description",
+      "affectedPages": 11,
+      "pages": [
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Homepage"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "/homepage"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Truck Services"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto RepairPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto CollisionPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto Part StoresPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto Part StoresPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Tire DealersPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Motorcycke shopsPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Appliance RepairPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Carpet CleaningPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        }
+      ],
+      "solution": "Add compelling meta description (150-160 characters)",
+      "impact": "high"
+    },
+    {
+      "priority": "high",
+      "issue": "Missing H1 tag",
+      "affectedPages": 2,
+      "pages": [
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Homepage"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "/homepage"
+        }
+      ],
+      "solution": "Add exactly one H1 tag with primary keyword",
+      "impact": "high"
+    },
+    {
+      "priority": "high",
+      "issue": "Target keyword \"ai assistant\" not found in content",
+      "affectedPages": 38,
+      "pages": [
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Homepage"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Homepage"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Homepage"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Homepage"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "/homepage"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "/homepage"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "/homepage"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "/homepage"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Truck Services"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Truck Services"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Truck Services"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Truck Services"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto RepairPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto RepairPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto RepairPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto CollisionPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto CollisionPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto CollisionPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto CollisionPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto Part StoresPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto Part StoresPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto Part StoresPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto Part StoresPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto Part StoresPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto Part StoresPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto Part StoresPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Tire DealersPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Tire DealersPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Tire DealersPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Motorcycke shopsPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Motorcycke shopsPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Motorcycke shopsPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Appliance RepairPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Appliance RepairPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Appliance RepairPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Carpet CleaningPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Carpet CleaningPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Carpet CleaningPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        }
+      ],
+      "solution": "Include \"ai assistant\" naturally in content (aim for 0.5-1% density)",
+      "impact": "high"
+    },
+    {
+      "priority": "high",
+      "issue": "Title does not include target keywords",
+      "affectedPages": 9,
+      "pages": [
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Truck Services"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto RepairPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto CollisionPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto Part StoresPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto Part StoresPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Tire DealersPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Motorcycke shopsPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Appliance RepairPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Carpet CleaningPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        }
+      ],
+      "solution": "Include primary keywords: ai assistant, local seo",
+      "impact": "high"
+    },
+    {
+      "priority": "medium",
+      "issue": "39 images missing alt text",
+      "affectedPages": 11,
+      "pages": [
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Homepage"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "/homepage"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Truck Services"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto RepairPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto CollisionPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto Part StoresPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto Part StoresPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Tire DealersPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Motorcycke shopsPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Appliance RepairPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Carpet CleaningPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        }
+      ],
+      "solution": "Add descriptive alt text to all images",
+      "impact": "medium"
+    },
+    {
+      "priority": "medium",
+      "issue": "Missing canonical URL",
+      "affectedPages": 11,
+      "pages": [
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Homepage"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "/homepage"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Truck Services"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto RepairPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto CollisionPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto Part StoresPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto Part StoresPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Tire DealersPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Motorcycke shopsPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Appliance RepairPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Carpet CleaningPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        }
+      ],
+      "solution": "Add canonical URL to prevent duplicate content issues",
+      "impact": "medium"
+    },
+    {
+      "priority": "medium",
+      "issue": "No structured data found",
+      "affectedPages": 11,
+      "pages": [
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Homepage"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "/homepage"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Truck Services"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto RepairPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto CollisionPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto Part StoresPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto Part StoresPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Tire DealersPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Motorcycke shopsPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Appliance RepairPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Carpet CleaningPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        }
+      ],
+      "solution": "Add Schema.org markup for rich snippets",
+      "impact": "medium"
+    },
+    {
+      "priority": "medium",
+      "issue": "Title too short (14 chars)",
+      "affectedPages": 1,
+      "pages": [
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Truck Services"
+        }
+      ],
+      "solution": "Expand title to 50-60 characters",
+      "impact": "medium"
+    },
+    {
+      "priority": "medium",
+      "issue": "Multiple H1 tags found (13)",
+      "affectedPages": 9,
+      "pages": [
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Truck Services"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto RepairPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto CollisionPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto Part StoresPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto Part StoresPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Tire DealersPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Motorcycke shopsPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Appliance RepairPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Carpet CleaningPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        }
+      ],
+      "solution": "Use only one H1 tag per page",
+      "impact": "medium"
+    },
+    {
+      "priority": "medium",
+      "issue": "Title too long (71 chars)",
+      "affectedPages": 8,
+      "pages": [
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto RepairPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto CollisionPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto Part StoresPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto Part StoresPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Tire DealersPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Motorcycke shopsPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Appliance RepairPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Carpet CleaningPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        }
+      ],
+      "solution": "Shorten title to under 60 characters",
+      "impact": "medium"
+    },
+    {
+      "priority": "low",
+      "issue": "Missing Open Graph tags",
+      "affectedPages": 11,
+      "pages": [
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Homepage"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "/homepage"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Truck Services"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto RepairPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto CollisionPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto Part StoresPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Auto Part StoresPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Tire DealersPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Motorcycke shopsPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Appliance RepairPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        },
+        {
+          "url": "https://maxaiassistant.com/",
+          "title": "Carpet CleaningPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6"
+        }
+      ],
+      "solution": "Add og:title, og:description, and og:image for better social sharing",
+      "impact": "low"
+    }
+  ]
+}

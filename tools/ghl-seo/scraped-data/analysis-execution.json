@@ -1,0 +1,126 @@
+{
+  "timestamp": "2025-10-21T19:05:40.484Z",
+  "website": "https://maxaiassistant.com/",
+  "phases": [
+    {
+      "name": "Website Scraping",
+      "status": "completed",
+      "duration": "11.9s",
+      "description": "Refreshed existing data"
+    },
+    {
+      "name": "SEO Analysis",
+      "status": "completed",
+      "duration": "0.1s",
+      "description": "Completed SEO audit with actionable recommendations"
+    },
+    {
+      "name": "Results Loading",
+      "status": "completed",
+      "description": "Successfully loaded and processed all analysis data"
+    },
+    {
+      "name": "Report Generation",
+      "status": "completed",
+      "description": "Generated comprehensive analysis report and action plan"
+    }
+  ],
+  "summary": {
+    "totalDuration": "11.9s",
+    "status": "completed",
+    "phasesCompleted": 4
+  },
+  "scraping": {
+    "totalPages": 11,
+    "pages": [
+      {
+        "url": "https://maxaiassistant.com/",
+        "title": "Homepage",
+        "wordCount": 3403,
+        "h1Count": 0,
+        "images": 39
+      },
+      {
+        "url": "https://maxaiassistant.com/",
+        "title": "/homepage",
+        "wordCount": 3403,
+        "h1Count": 0,
+        "images": 39
+      },
+      {
+        "url": "https://maxaiassistant.com/",
+        "title": "Truck Services",
+        "wordCount": 1977,
+        "h1Count": 13,
+        "images": 23
+      },
+      {
+        "url": "https://maxaiassistant.com/",
+        "title": "Auto RepairPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6",
+        "wordCount": 2495,
+        "h1Count": 6,
+        "images": 7
+      },
+      {
+        "url": "https://maxaiassistant.com/",
+        "title": "Auto CollisionPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6",
+        "wordCount": 2501,
+        "h1Count": 5,
+        "images": 7
+      },
+      {
+        "url": "https://maxaiassistant.com/",
+        "title": "Auto Part StoresPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6",
+        "wordCount": 2493,
+        "h1Count": 5,
+        "images": 7
+      },
+      {
+        "url": "https://maxaiassistant.com/",
+        "title": "Auto Part StoresPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6",
+        "wordCount": 2495,
+        "h1Count": 5,
+        "images": 7
+      },
+      {
+        "url": "https://maxaiassistant.com/",
+        "title": "Tire DealersPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6",
+        "wordCount": 2483,
+        "h1Count": 5,
+        "images": 7
+      },
+      {
+        "url": "https://maxaiassistant.com/",
+        "title": "Motorcycke shopsPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6",
+        "wordCount": 2486,
+        "h1Count": 5,
+        "images": 7
+      },
+      {
+        "url": "https://maxaiassistant.com/",
+        "title": "Appliance RepairPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6",
+        "wordCount": 2489,
+        "h1Count": 5,
+        "images": 7
+      },
+      {
+        "url": "https://maxaiassistant.com/",
+        "title": "Carpet CleaningPath 3Path 2Group 2Group 3saved repliesGroup 5Group 4Group 6",
+        "wordCount": 2487,
+        "h1Count": 5,
+        "images": 7
+      }
+    ]
+  },
+  "audit": {
+    "overallScore": 32,
+    "grade": "F",
+    "totalIssues": 124,
+    "issueBreakdown": {
+      "critical": 62,
+      "warnings": 51,
+      "opportunities": 11
+    },
+    "recommendations": 12
+  }
+}

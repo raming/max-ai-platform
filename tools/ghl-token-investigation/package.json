@@ -1,0 +1,28 @@
+{
+  "name": "ghl-token-investigation",
+  "version": "1.0.0",
+  "description": "Tools for investigating and managing GHL token refresh mechanisms",
+  "main": "investigate-tokens.js",
+  "scripts": {
+    "investigate": "node investigate-tokens.js",
+    "analyze": "node analyze-tokens.js",
+    "auth-ghl": "node authenticate-ghl.js",
+    "inspect-apis": "node inspect-browser-apis.js",
+    "inspect-apis:headless": "HEADLESS=true DEVTOOLS=false node inspect-browser-apis.js"
+  },
+  "dependencies": {
+    "puppeteer": "^22.15.0",
+    "fs-extra": "^11.1.1",
+    "chalk": "^4.1.2",
+    "jwt-decode": "^4.0.0"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "ghl",
+    "token",
+    "investigation",
+    "auth"
+  ],
+  "author": "MaxAI Platform",
+  "license": "MIT"
+}

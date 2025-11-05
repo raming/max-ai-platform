@@ -1,0 +1,53 @@
+{
+  "timestamp": "2025-10-21T19:13:59.423Z",
+  "config": {
+    "hasApiKey": true,
+    "hasLocationId": true,
+    "hasSessionToken": false
+  },
+  "results": [
+    {
+      "test": "API Key Authentication",
+      "status": "failed",
+      "error": "Request failed with status code 401",
+      "response": {
+        "status": 401,
+        "data": {
+          "msg": "Unauthorized, Switch to the new API token."
+        }
+      }
+    },
+    {
+      "test": "Session Token Authentication",
+      "status": "failed",
+      "error": "Request failed with status code 404",
+      "response": {
+        "status": 404,
+        "data": {
+          "msg": "Not found"
+        }
+      }
+    },
+    {
+      "test": "Get Websites",
+      "status": "failed",
+      "url": "https://rest.gohighlevel.com/v1/locations/your_location_id_here/websites",
+      "method": "GET",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "test": "Get Pages",
+      "status": "failed",
+      "url": "https://rest.gohighlevel.com/v1/websites/your_location_id_here/pages",
+      "method": "GET",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "test": "Get Website Settings",
+      "status": "failed",
+      "url": "https://rest.gohighlevel.com/v1/websites/your_location_id_here",
+      "method": "GET",
+      "error": "Request failed with status code 404"
+    }
+  ]
+}

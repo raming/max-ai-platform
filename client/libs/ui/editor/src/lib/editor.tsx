@@ -10,9 +10,9 @@ const defaultToolbar = [
   [{ 'size': ['small', false, 'large', 'huge'] }],
   ['bold', 'italic', 'underline', 'strike'],
   [{ 'color': [] }, { 'background': [] }],
-  [{ 'script': 'sub'}, { 'script': 'super' }],
-  [{ 'list': 'ordered'}, { 'list': 'bullet' }],
-  [{ 'indent': '-1'}, { 'indent': '+1' }],
+  [{ 'script': 'sub' }, { 'script': 'super' }],
+  [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+  [{ 'indent': '-1' }, { 'indent': '+1' }],
   [{ 'align': [] }],
   ['blockquote', 'code-block'],
   ['link', 'image', 'video'],
@@ -41,7 +41,7 @@ export const QuillToolbar: React.FC<QuillToolbarProps> = ({
   );
 };
 
-export const QuillEditor = React.forwardRef<QuillEditorRef, QuillEditorProps>(({
+export const QuillEditor: React.FC<QuillEditorProps> = ({
   value = '',
   onChange,
   placeholder = 'Start writing...',
@@ -61,7 +61,7 @@ export const QuillEditor = React.forwardRef<QuillEditorRef, QuillEditorProps>(({
   onKeyUp,
   onSelection,
   tabIndex
-}, ref) => {
+}) => {
   const quillRef = useRef<ReactQuill>(null);
 
   // Sanitize content on change
@@ -101,41 +101,13 @@ export const QuillEditor = React.forwardRef<QuillEditorRef, QuillEditorProps>(({
       bindings: {
         tab: {
           key: 9,
-          handler: function(range: any, context: any): boolean {
+          handler: function (range: any, context: any): boolean {
             return true; // Allow default tab behavior
           }
         }
       }
     }
   }), [toolbar]);
-
-  // Expose methods via ref
-  useImperativeHandle(ref, (): QuillEditorRef => ({
-    focus: (): void => {
-      quillRef.current?.focus();
-    },
-    blur: (): void => {
-      quillRef.current?.blur();
-    },
-    getEditor: (): unknown => {
-      return quillRef.current?.getEditor();
-    },
-    getLength: (): number => {
-      return quillRef.current?.getEditor()?.getLength() || 0;
-    },
-    getText: (): string => {
-      return quillRef.current?.getEditor()?.getText() || '';
-    },
-    getContents: (): unknown => {
-      return quillRef.current?.getEditor()?.getContents();
-    },
-    setContents: (delta: unknown): void => {
-      quillRef.current?.getEditor()?.setContents(delta as any);
-    },
-    setText: (text: string): void => {
-      quillRef.current?.getEditor()?.setText(text);
-    }
-  }));
 
   return (
     <div className={`quill-editor-wrapper ${className}`} style={style}>
@@ -160,7 +132,7 @@ export const QuillEditor = React.forwardRef<QuillEditorRef, QuillEditorProps>(({
       />
     </div>
   );
-});
+};
 
 QuillEditor.displayName = 'QuillEditor';
 

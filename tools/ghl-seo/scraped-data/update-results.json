@@ -1,0 +1,7 @@
+{
+  "timestamp": "2025-10-21T20:16:37.703Z",
+  "pages": [],
+  "changes": [],
+  "status": "failed",
+  "error": "GoHighLevel API connection failed: Request failed with status code 401"
+}

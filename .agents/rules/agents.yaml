@@ -1,0 +1,37 @@
+# agents.yaml — agent seat mapping
+
+seats:
+  architect.morgan-lee:
+    name: Morgan Lee
+    github: raming
+    role: architect
+  team_lead.casey-brooks:
+    name: Casey Brooks
+    github: raming
+    role: team_lead
+  dev.avery-kim:
+    name: Avery Kim
+    github: raming
+    role: dev
+    specializations:
+      - Backend development (Node.js, Python, Go)
+      - Frontend development (React, Vue, Angular)
+      - Full-stack integration
+      - Testing and quality assurance
+  qa.mina-li:
+    name: Mina Li
+    github: raming
+    role: qa
+    responsibilities:
+      - Quality assurance and testing
+      - Documentation validation and compliance
+      - Implementation-documentation synchronization
+      - Multi-repo documentation oversight
+  release_manager.rohan-patel:
+    name: Rohan Patel
+    github: raming
+    role: release_manager
+  sre.devon-singh:
+    name: Devon Singh
+    github: raming
+    role: sre

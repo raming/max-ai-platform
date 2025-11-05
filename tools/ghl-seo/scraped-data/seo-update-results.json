@@ -1,0 +1,239 @@
+{
+  "timestamp": "2025-10-22T11:03:08.147Z",
+  "fetched": [
+    {
+      "_id": "4eCQwmGDLuGFEt1z5wZU",
+      "deleted": false,
+      "funnelId": "Khu05zZF68u4Ka2ZFdUC",
+      "locationId": "yrMl7UtmMqo31qLMP76W",
+      "name": "AI Follow Up",
+      "stepId": "fd5808c5-4a87-41dc-ab8e-d255d8036e54",
+      "updatedAt": "2024-10-17T11:39:34.379Z"
+    },
+    {
+      "_id": "9Ar39cnKa5wsrykko8c9",
+      "deleted": false,
+      "funnelId": "Khu05zZF68u4Ka2ZFdUC",
+      "locationId": "yrMl7UtmMqo31qLMP76W",
+      "name": "Affiliates",
+      "stepId": "f0d82f7e-1092-428f-ac84-bb175aeddefb",
+      "updatedAt": "2024-10-17T11:39:34.416Z"
+    },
+    {
+      "_id": "5SPggqbesqxGbr6l1S9T",
+      "deleted": false,
+      "funnelId": "Khu05zZF68u4Ka2ZFdUC",
+      "locationId": "yrMl7UtmMqo31qLMP76W",
+      "name": "Animal Trainer",
+      "stepId": "bbb25644-0d9c-41d7-be0a-8425e93cd6d4",
+      "updatedAt": "2025-10-17T02:43:02.365Z"
+    },
+    {
+      "_id": "t0yITrjy8P3oLFhCk2UM",
+      "deleted": false,
+      "funnelId": "Khu05zZF68u4Ka2ZFdUC",
+      "locationId": "yrMl7UtmMqo31qLMP76W",
+      "name": "Appliance Repair",
+      "stepId": "7e0a8a16-548c-429a-a158-0ceca3eda91c",
+      "updatedAt": "2025-10-20T02:13:37.460Z"
+    },
+    {
+      "_id": "hkyA60cowMCXO6Jf7d8m",
+      "deleted": false,
+      "funnelId": "Khu05zZF68u4Ka2ZFdUC",
+      "locationId": "yrMl7UtmMqo31qLMP76W",
+      "name": "Auto Collision",
+      "stepId": "1adda3ae-fff7-418b-96db-9d67c3ef7c84",
+      "updatedAt": "2025-10-14T04:01:03.376Z"
+    },
+    {
+      "_id": "Ibjh72wSmD6O51ShoAPB",
+      "deleted": false,
+      "funnelId": "Khu05zZF68u4Ka2ZFdUC",
+      "locationId": "yrMl7UtmMqo31qLMP76W",
+      "name": "Auto Part Stores",
+      "stepId": "db5f211e-0ce4-4d9c-878f-45e2eb45862c",
+      "updatedAt": "2025-10-14T04:20:03.588Z"
+    },
+    {
+      "_id": "gNhNIXU8xu2GhEpZyYR5",
+      "deleted": false,
+      "funnelId": "Khu05zZF68u4Ka2ZFdUC",
+      "locationId": "yrMl7UtmMqo31qLMP76W",
+      "name": "Auto Repair",
+      "stepId": "3dd5665f-b11e-4150-ad9e-a47155b619a9",
+      "updatedAt": "2025-10-14T03:47:09.140Z"
+    },
+    {
+      "_id": "h2RDjCLFu17oMESiHAHc",
+      "deleted": false,
+      "funnelId": "Khu05zZF68u4Ka2ZFdUC",
+      "locationId": "yrMl7UtmMqo31qLMP76W",
+      "name": "Automotive Services",
+      "stepId": "be8bf661-dbdc-4d95-8e4c-f4c4d1f3307b",
+      "updatedAt": "2025-10-16T02:36:36.690Z"
+    },
+    {
+      "_id": "pPZZQBQZweyEwXJy56X9",
+      "deleted": false,
+      "funnelId": "Khu05zZF68u4Ka2ZFdUC",
+      "locationId": "yrMl7UtmMqo31qLMP76W",
+      "name": "Campaigns",
+      "stepId": "6b0086f5-b859-4553-a27d-5752dbfbd6aa",
+      "updatedAt": "2025-10-10T03:22:14.350Z"
+    },
+    {
+      "_id": "ruEyIhpktQ0xD6FUxUNM",
+      "deleted": false,
+      "funnelId": "Khu05zZF68u4Ka2ZFdUC",
+      "locationId": "yrMl7UtmMqo31qLMP76W",
+      "name": "Carpet Cleaning",
+      "stepId": "687af537-211f-4858-ba49-d033ded33ed7",
+      "updatedAt": "2025-10-20T02:18:10.546Z"
+    },
+    {
+      "_id": "jw1sjuf9cC0uNHBk6Hbh",
+      "deleted": false,
+      "funnelId": "Khu05zZF68u4Ka2ZFdUC",
+      "locationId": "yrMl7UtmMqo31qLMP76W",
+      "name": "Contact",
+      "stepId": "6c4706ca-28c1-4afd-8ac5-0eb5cd588049",
+      "updatedAt": "2024-10-17T11:39:34.427Z"
+    },
+    {
+      "_id": "Mwnn0fwouDZLyTxOLd2R",
+      "deleted": false,
+      "funnelId": "Khu05zZF68u4Ka2ZFdUC",
+      "locationId": "yrMl7UtmMqo31qLMP76W",
+      "name": "Conversations AI",
+      "stepId": "37f7ebff-cf3b-4e3f-899e-23a1dd1414bf",
+      "updatedAt": "2025-10-09T03:57:36.722Z"
+    },
+    {
+      "_id": "9PVmqRayCjWoodRDdkI2",
+      "deleted": false,
+      "funnelId": "Khu05zZF68u4Ka2ZFdUC",
+      "locationId": "yrMl7UtmMqo31qLMP76W",
+      "name": "Damage Restoration",
+      "stepId": "f6e67e98-e542-4cdb-bed2-ffc18237b7b8",
+      "updatedAt": "2025-10-20T02:20:54.450Z"
+    },
+    {
+      "_id": "k5F0WU83cGJuOU8megMQ",
+      "deleted": false,
+      "funnelId": "Khu05zZF68u4Ka2ZFdUC",
+      "locationId": "yrMl7UtmMqo31qLMP76W",
+      "name": "Demo",
+      "stepId": "3ad2ebd6-0478-48e2-8720-2b3fa270bdb7",
+      "updatedAt": "2024-10-28T20:46:21.601Z"
+    },
+    {
+      "_id": "6mUAksTjYbLmovUNwD9k",
+      "deleted": false,
+      "funnelId": "Khu05zZF68u4Ka2ZFdUC",
+      "locationId": "yrMl7UtmMqo31qLMP76W",
+      "name": "Demo - Capture",
+      "stepId": "36b7a2b0-cec7-4054-af64-5cd2fd7e6dd4",
+      "updatedAt": "2024-11-07T20:59:13.649Z"
+    },
+    {
+      "_id": "TmgB8GDfMHfsd7CjOESh",
+      "deleted": false,
+      "funnelId": "Khu05zZF68u4Ka2ZFdUC",
+      "locationId": "yrMl7UtmMqo31qLMP76W",
+      "name": "Dental Practices",
+      "stepId": "67472e6a-e287-464e-b913-b85935f3f808",
+      "updatedAt": "2025-10-14T03:24:45.988Z"
+    },
+    {
+      "_id": "HeqfFCbbqmCxk6s7S4gU",
+      "deleted": false,
+      "funnelId": "Khu05zZF68u4Ka2ZFdUC",
+      "locationId": "yrMl7UtmMqo31qLMP76W",
+      "name": "Drywall",
+      "stepId": "1bc8f533-0bf4-4fab-94d4-698d904be66b",
+      "updatedAt": "2025-10-20T02:24:36.977Z"
+    },
+    {
+      "_id": "nObL5OMbKEo72OJ56vZ8",
+      "deleted": false,
+      "funnelId": "Khu05zZF68u4Ka2ZFdUC",
+      "locationId": "yrMl7UtmMqo31qLMP76W",
+      "name": "Dumpster Rental",
+      "stepId": "907ecce7-92cd-4d03-b709-f5e2eb1dc043",
+      "updatedAt": "2025-10-20T02:29:02.158Z"
+    },
+    {
+      "_id": "PtwY3Y6KA75jUrEIK0TC",
+      "deleted": false,
+      "funnelId": "Khu05zZF68u4Ka2ZFdUC",
+      "locationId": "yrMl7UtmMqo31qLMP76W",
+      "name": "Electrician",
+      "stepId": "71408fa7-48b5-48b7-bde7-6ad36f7ab801",
+      "updatedAt": "2025-10-20T02:32:59.907Z"
+    },
+    {
+      "_id": "0VYpZSKiVjGEprcKyIrf",
+      "deleted": false,
+      "funnelId": "Khu05zZF68u4Ka2ZFdUC",
+      "locationId": "yrMl7UtmMqo31qLMP76W",
+      "name": "Engineering",
+      "stepId": "8ee482f2-356c-454e-81aa-4c0fde43e424",
+      "updatedAt": "2025-10-20T02:47:05.858Z"
+    }
+  ],
+  "updated": [],
+  "failed": [
+    {
+      "pageId": "4eCQwmGDLuGFEt1z5wZU",
+      "pageTitle": "AI Follow Up",
+      "error": "[404] {\"message\":\"Cannot PUT /funnels/page/4eCQwmGDLuGFEt1z5wZU\",\"error\":\"Not Found\",\"statusCode\":404}"
+    },
+    {
+      "pageId": "9Ar39cnKa5wsrykko8c9",
+      "pageTitle": "Affiliates",
+      "error": "[404] {\"message\":\"Cannot PUT /funnels/page/9Ar39cnKa5wsrykko8c9\",\"error\":\"Not Found\",\"statusCode\":404}"
+    },
+    {
+      "pageId": "5SPggqbesqxGbr6l1S9T",
+      "pageTitle": "Animal Trainer",
+      "error": "[404] {\"message\":\"Cannot PUT /funnels/page/5SPggqbesqxGbr6l1S9T\",\"error\":\"Not Found\",\"statusCode\":404}"
+    },
+    {
+      "pageId": "t0yITrjy8P3oLFhCk2UM",
+      "pageTitle": "Appliance Repair",
+      "error": "[404] {\"message\":\"Cannot PUT /funnels/page/t0yITrjy8P3oLFhCk2UM\",\"error\":\"Not Found\",\"statusCode\":404}"
+    },
+    {
+      "pageId": "hkyA60cowMCXO6Jf7d8m",
+      "pageTitle": "Auto Collision",
+      "error": "[404] {\"message\":\"Cannot PUT /funnels/page/hkyA60cowMCXO6Jf7d8m\",\"error\":\"Not Found\",\"statusCode\":404}"
+    },
+    {
+      "pageId": "Ibjh72wSmD6O51ShoAPB",
+      "pageTitle": "Auto Part Stores",
+      "error": "[404] {\"message\":\"Cannot PUT /funnels/page/Ibjh72wSmD6O51ShoAPB\",\"error\":\"Not Found\",\"statusCode\":404}"
+    },
+    {
+      "pageId": "gNhNIXU8xu2GhEpZyYR5",
+      "pageTitle": "Auto Repair",
+      "error": "[404] {\"message\":\"Cannot PUT /funnels/page/gNhNIXU8xu2GhEpZyYR5\",\"error\":\"Not Found\",\"statusCode\":404}"
+    },
+    {
+      "pageId": "h2RDjCLFu17oMESiHAHc",
+      "pageTitle": "Automotive Services",
+      "error": "[404] {\"message\":\"Cannot PUT /funnels/page/h2RDjCLFu17oMESiHAHc\",\"error\":\"Not Found\",\"statusCode\":404}"
+    },
+    {
+      "pageId": "pPZZQBQZweyEwXJy56X9",
+      "pageTitle": "Campaigns",
+      "error": "[404] {\"message\":\"Cannot PUT /funnels/page/pPZZQBQZweyEwXJy56X9\",\"error\":\"Not Found\",\"statusCode\":404}"
+    },
+    {
+      "pageId": "ruEyIhpktQ0xD6FUxUNM",
+      "pageTitle": "Carpet Cleaning",
+      "error": "[404] {\"message\":\"Cannot PUT /funnels/page/ruEyIhpktQ0xD6FUxUNM\",\"error\":\"Not Found\",\"statusCode\":404}"
+    }
+  ],
+  "summary": {}
+}

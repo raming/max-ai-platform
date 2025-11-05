@@ -1,10 +1,14 @@
 import { IResourceProvider, ProviderResult, ResourceInitializationPlan } from 'token-proxy-core';
 import { Inject, Injectable, Logger } from '@nestjs/common';
 
+interface ITokenStore {
+  get(tokenId: string): Promise<{ provider: string; tenantId: string; secret?: string } | null>;
+}
+
 @Injectable()
 export class SupabaseProvider implements IResourceProvider {
   private readonly logger = new Logger(SupabaseProvider.name);
-  constructor(@Inject('ITokenStore') private readonly tokenStore: any) {}
+  constructor(@Inject('ITokenStore') private readonly tokenStore: ITokenStore) {}
 
   async init(plan: ResourceInitializationPlan, opts: { correlationId: string }): Promise<ProviderResult> {
     try {
@@ -20,9 +24,10 @@ export class SupabaseProvider implements IResourceProvider {
         this.logger.debug(JSON.stringify({ msg: 'supabase.op', op: op.op, correlationId: opts.correlationId }));
       }
       return { ok: true, status: 202 };
-    } catch (e: any) {
+    } catch (e) {
+      const error = e instanceof Error ? e : new Error(String(e));
       this.logger.error(JSON.stringify({ msg: 'supabase.error', correlationId: opts.correlationId }));
-      return { ok: false, status: 502, error: e?.message ?? 'proxy error' };
+      return { ok: false, status: 502, error: error.message ?? 'proxy error' };
     }
   }
 }
