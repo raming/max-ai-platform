@@ -7,7 +7,7 @@
     "build": "next build --turbopack",
     "start": "next start",
     "lint": "eslint",
-    "test": "jest"
+    "test": "npx jest"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
