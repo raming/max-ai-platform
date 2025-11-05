@@ -35,7 +35,7 @@ jobs:
       - name: Type check
         run: |
           cd client
-          npx tsc --noEmit
+          npx tsc --project tsconfig.base.json --noEmit
         continue-on-error: false
 
       - name: Run web tests with coverage

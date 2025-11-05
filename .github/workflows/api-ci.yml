@@ -34,7 +34,7 @@ jobs:
 
       - name: Type check
         working-directory: client
-        run: npx tsc --noEmit
+        run: npx tsc --project tsconfig.base.json --noEmit
         continue-on-error: false
 
       - name: Run core tests with coverage
