@@ -71,6 +71,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.5.4",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^30",
     "jest-environment-jsdom": "^30",
     "tailwindcss": "^4",

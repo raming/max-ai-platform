@@ -8,7 +8,9 @@ const config: Config = {
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   moduleNameMapper: {
-    '^@/(.*)$': '<rootDir>/src/$1',
+    '^@/(.*)$': '<rootDir>/$1',
+    '^@max-ai/ui-editor$': '<rootDir>/../libs/ui/editor/src/index.ts',
+    '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
   },
   coverageDirectory: '../coverage/web',
   testEnvironment: 'jsdom',
@@ -26,15 +28,10 @@ const config: Config = {
     '<rootDir>/src/**/*.spec.js'
   ],
   collectCoverageFrom: [
+    'tests/unit/**/*.ts',
+    'tests/unit/**/*.tsx',
     'src/lib/**/*.ts',
     'src/lib/**/*.tsx',
-    'src/stores/**/*.ts',
-    'src/stores/**/*.tsx',
-    'src/app/**/*.ts',
-    'src/app/**/*.tsx',
-    'app/**/*.ts',
-    'app/**/*.tsx',
-    'tests/unit/**/*.ts'
   ],
   coverageThreshold: {
     global: {
