@@ -15,6 +15,9 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
+    "jsx": "react-jsx",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
     "paths": {
       "@/*": ["web/src/*"],
       "@max-ai/ui-editor": ["libs/ui/editor/src/index.ts"],
