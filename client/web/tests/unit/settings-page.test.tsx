@@ -1,5 +1,3 @@
-import React from 'react';
-
 // Smoke tests to verify DEV-UI-08 components can be imported and rendered
 describe('DEV-UI-08 Content Editing Integration - Smoke Test', () => {
   test('QuillEditor can be imported from @max-ai/ui-editor', async () => {
@@ -20,10 +18,10 @@ describe('DEV-UI-08 Content Editing Integration - Smoke Test', () => {
 
   test('Editor library exports types', async () => {
     // Test that types are exported
-    const module = await import('@max-ai/ui-editor');
+    const editorModule = await import('@max-ai/ui-editor');
 
     // Verify component exports exist
-    expect(module.QuillEditor).toBeDefined();
-    expect(module.QuillToolbar).toBeDefined();
+    expect(editorModule.QuillEditor).toBeDefined();
+    expect(editorModule.QuillToolbar).toBeDefined();
   });
 });
