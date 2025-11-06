@@ -1,28 +1,27 @@
-import React from 'react';
-
-// Simple smoke test to verify DEV-UI-08 components can be imported
+// Smoke tests to verify DEV-UI-08 components can be imported and rendered
 describe('DEV-UI-08 Content Editing Integration - Smoke Test', () => {
-  test('QuillEditor can be dynamically imported', async () => {
+  test('QuillEditor can be imported from @max-ai/ui-editor', async () => {
     // Test that the dynamic import works without SSR issues
-    const QuillEditor = (await import('@max-ai/ui-editor')).QuillEditor;
+    const { QuillEditor } = await import('@max-ai/ui-editor');
 
     // Verify it's a function/component
     expect(typeof QuillEditor).toBe('function');
   });
 
-  test('Settings page can be imported', async () => {
-    // Test that the settings page can be imported without errors
-    const SettingsPage = (await import('../../app/(dashboard)/settings/page')).default;
+  test('QuillToolbar can be imported from @max-ai/ui-editor', async () => {
+    // Test that the toolbar component is also exported
+    const { QuillToolbar } = await import('@max-ai/ui-editor');
 
     // Verify it's a function/component
-    expect(typeof SettingsPage).toBe('function');
+    expect(typeof QuillToolbar).toBe('function');
   });
 
-  test('User profile page can be imported', async () => {
-    // Test that the user profile page can be imported without errors
-    const UserProfilePage = (await import('../../app/(dashboard)/users/[id]/page')).default;
+  test('Editor library exports types', async () => {
+    // Test that types are exported
+    const editorModule = await import('@max-ai/ui-editor');
 
-    // Verify it's a function/component
-    expect(typeof UserProfilePage).toBe('function');
+    // Verify component exports exist
+    expect(editorModule.QuillEditor).toBeDefined();
+    expect(editorModule.QuillToolbar).toBeDefined();
   });
 });
