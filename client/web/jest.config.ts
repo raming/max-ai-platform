@@ -8,7 +8,12 @@ const config: Config = {
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   moduleNameMapper: {
-    '^@/(.*)$': '<rootDir>/$1',
+    // Support three-tier structure: new root level + old src/ level
+    // Check new level first (app/, lib/), then fall back to src/ level
+    '^@/app/(.*)$': '<rootDir>/app/$1',
+    '^@/lib/services/(.*)$': '<rootDir>/src/lib/services/$1',  // old src/lib/services
+    '^@/lib/(.*)$': '<rootDir>/lib/$1',  // new root lib
+    '^@/(.*)$': '<rootDir>/src/$1',  // fallback for old src/ (stores, etc)
     '^@max-ai/ui-editor$': '<rootDir>/../libs/ui/editor/src/index.ts',
     '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
   },
@@ -27,9 +32,11 @@ const config: Config = {
     '<rootDir>/src/**/*.test.js',
     '<rootDir>/src/**/*.spec.js'
   ],
-  // Focus coverage on tested files: login page (100%) and contract-validation schemas
+  // Focus coverage on tested code only
+  // src/stores - has unit tests
+  // lib/contract-validation - has comprehensive tests  
   collectCoverageFrom: [
-    'app/auth/login/page.tsx',
+    'src/stores/**/*.ts',
     'lib/contract-validation.ts',
   ],
   // Realistic thresholds for current testing baseline
