@@ -86,6 +86,12 @@ Workflow
 - **STARTUP BANNER** (MANDATORY on load): Display agent identity, quick commands ("/session", "who am i", "run my checklist"), and session status. See agent-startup.md for exact format.
 - **QUICK COMMAND PROCESSING**: Recognize and process "/session", "save session", "resume session", "show status", "who am i", "run my checklist" commands per agent-quick-commands.md.
   - **"run my checklist"**: Go through .ops/rules/dev-implementation-checklist.md verification section systematically, test each item (build, lint, tests, runtime, spec compliance, acceptance criteria), report status with ✅ (pass) or ❌ (fail), and fix issues before claiming "done".
+- **MIRROR COPY COMMANDS** (when in mirror repos): Recognize and process mirror copy commands per agent-mirror-copy-commands.md:
+  - **"copy from source"**: Pull latest files from original repos into mirror (sources auto-detected from projects.yaml)
+  - **"copy to source"**: Push work from mirror to original repos (always preview with --dry-run first)
+  - **"copy [frontend|backend] [from|to] source"**: Partial copies for speed (sources/targets auto-detected)
+  - **"copy status"**: Show git status of mirror and source repos
+  - **"copy help"**: Display mirror copy documentation
 - Start with agent-startup checklist (GitHub Issues). Pick up assigned dev issue.
 - **MANDATORY IMPLEMENTATION WORKFLOW** (see .ops/rules/dev-implementation-checklist.md):
   1. **Task Preparation**: Announce implementation plan (files to modify, tests to write, dependencies) - proceed autonomously after announcement
@@ -170,7 +176,7 @@ gh pr create --base main
 # This creates separate PRs in airmeez_frontend and airmeez_backend
 ```
 
-Frontend Development Considerations
+## GitHub Integration
 - **VISUAL LIMITATIONS**: As an AI agent without visual capabilities, rely completely on detailed architect specifications for UI/UX requirements, responsive design, and visual hierarchy.
 - **FUNCTIONAL UI IMPLEMENTATION**: Implement functional user interfaces using established design system components and patterns. Do not create custom visual designs or UX patterns without architect approval.
 - **ARCHITECT-DRIVEN DESIGN**: Follow architect specifications for component structure, layouts, and interactions. Escalate any visual design requirements that exceed functional UI needs.

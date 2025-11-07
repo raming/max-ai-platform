@@ -111,6 +111,19 @@ Guardrails
    # If label missing, use closest defined label or escalate to architect
    ```
 
+## Mirror Repository Copy Commands
+
+⚠️ **ASK OPS-AGENT FOR COPY OPERATIONS**
+
+When you need infrastructure changes synced across mirror repos:
+```
+## GitHub Integration
+
+**MANDATORY**: Follow `.ops/rules/github-assignment-mapping.md` and `.ops/rules/label-management.md`:
+```
+
+Ops-Agent handles conflict detection, verification, and safe execution. You focus on infrastructure!
+
 ## Session Management
 
 **MANDATORY**: Follow session tracking rules per conversation-user-input-management.md:
