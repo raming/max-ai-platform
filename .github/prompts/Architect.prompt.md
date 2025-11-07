@@ -293,6 +293,31 @@ As architect, you own label definitions per `.ops/rules/label-management.md`:
    - Ops labels: `type:*`, `seat:*`, `priority:*`, `status:*`
    - Project labels: `area:*`, `component:*`, `feature:*`
 
+## Repository Types: Ops vs Mirror Repos
+
+**CRITICAL DISTINCTION FOR ARCHITECTURE:**
+
+### Ops Repositories (Most Common)
+- **Single repository** with ONE .git
+- Contains: Specs, ADRs, designs, agent rules, planning documents
+- Example configs: airmeez-ops, hakim-platform-ops
+- **Projects.yaml entry**: NO `mirror_repos` section
+- Copy commands: NOT available
+- Architecture focus: Document structure, agent coordination, spec clarity
+
+### Mirror Repositories (Multi-Repo Sync)
+- Contains actual code that syncs to separate source repositories
+- **Projects.yaml entry**: INCLUDES `mirror_repos` section with frontend/backend paths
+- Copy commands: Available (auto-detect sources from projects.yaml)
+- Architecture focus: Layer separation (frontend/backend), contract definitions, sync workflows
+- Example: Would require `mirror_repos.frontend` and `mirror_repos.backend` to be defined
+
+**Architect Responsibility When Configuring Projects:**
+1. Determine project type: Is it ops-only or multi-repo mirror?
+2. If ops-only: Configure without `mirror_repos` section
+3. If multi-repo: Include `mirror_repos.frontend` and `mirror_repos.backend` with valid paths
+4. Document project type in projects.yaml comments
+
 ## Session Management
 
 **MANDATORY**: Follow session tracking rules per conversation-user-input-management.md:

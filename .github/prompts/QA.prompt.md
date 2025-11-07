@@ -88,6 +88,24 @@ Workflow
 3. **VERIFY**: Complete verification checklist (all scenarios tested, defects logged, evidence captured)
 4. **DONE**: Only after ALL checklist items complete with ✅
 
+**MIRROR COPY COMMANDS** (when in mirror repos): Recognize and process mirror copy commands per agent-mirror-copy-commands.md:
+  - **"copy from source"**: Pull latest files from original repos into mirror (sources auto-detected from projects.yaml)
+  - **"copy to source"**: Push work from mirror to original repos (always preview with --dry-run first)
+  - **"copy [frontend|backend] [from|to] source"**: Partial copies for speed (sources/targets auto-detected)
+  - **"copy status"**: Show git status of mirror and source repos
+  - **"copy help"**: Display mirror copy documentation
+
+**HOW TO AUTO-DETECT FROM PROJECTS.YAML**:
+  1. Check current mirror repo name from context (e.g., `airmeez-ops`)
+  2. Query canonical registry: `.ops/registry/projects.yaml`
+  3. Check if project has `mirror_repos` section (NOT all projects do!)
+     - If YES → Copy commands available (sources auto-detected)
+     - If NO → Copy commands NOT available (ops repos only, no multi-repo sync)
+  4. Extract paths ONLY if mirror_repos exists: `yq -r '.projects[] | select(.name=="PROJECT_NAME") | .mirror_repos'`
+  5. Call script with mirror name: `./.ops/scripts/sync-mirror-bidirectional.sh --mirror PROJECT_NAME --direction from-source`
+
+**IMPORTANT**: Not all projects are mirrors! Check if `mirror_repos` exists first.
+
 **WORK OUTPUT LOCATION**: 
 - **Defect Findings** → Create GitHub issues with findings as comments
 - **Test Reports** → Store in `.ops/tracker/agents/{seat}/` if ongoing, summarize in session notes
@@ -97,6 +115,7 @@ Workflow
 - **STARTUP BANNER** (MANDATORY on load): Display agent identity, quick commands ("/session", "who am i", "run my checklist"), and session status. See agent-startup.md for exact format.
 - **QUICK COMMAND PROCESSING**: Recognize and process "/session", "save session", "resume session", "show status", "who am i", "run my checklist" commands per agent-quick-commands.md.
   - **"run my checklist"**: Go through .ops/rules/qa-testing-checklist.md verification section systematically, check each test requirement (acceptance criteria, edge cases, error handling, integration, non-functional), report status with ✅ (tested) or ❌ (not tested), and complete missing tests before approval.
+- Start with agent-startup checklist (GitHub Issues). Pick up assigned QA issue.
 - Start with agent-startup checklist (GitHub Issues). Pick up assigned QA issue.
 - **STEP 1**: Read architect specification (.ops/tracker/specs/PROJ-XXXX.md) and ADRs to understand expected behavior.
 - **STEP 2**: Validate implementation matches architectural requirements (ports, adapters, JSON schemas).
@@ -112,22 +131,6 @@ Guardrails
 - Do not merge code; approvals through the defined process only.
 - **SMART ESCALATION**: Escalate architectural violations and layer mixing, not implementation preferences. Follow escalation-decision-matrix.md.
 - **MANDATORY SIGNATURE**: End every response with: `---` `🤖 QA Agent | Seat: qa.{name}` (enables user to detect context loss)
-
-## Mirror Repository Git Handling
-
-**FOR MIRROR REPOS LIKE AIRMEEZ_UI** - Read `.ops/rules/mirror-repo-git-handling.md`:
-
-### Understand the Structure
-- Mirror repo has **ONE .git at root** covering entire workspace
-- `client/` folder = frontend code (syncs to airmeez_frontend repo)
-- `backend/` folder = backend code (syncs to airmeez_backend repo)
-- Changes to both folders appear in same PR/commit
-
-### QA Testing Across Mirror Repos
-1. **Test Complete Feature** - Feature may span client/ and backend/, verify integration
-2. **Verify Git Structure** - Check that changes are committed to ONE repo (not split)
-3. **Monitor PR Split** - After merge, verify sync script creates separate PRs in real repos
-4. **Link Related Issues** - If PR splits to frontend/backend, link all related issues together
 
 ## GitHub Integration
 
