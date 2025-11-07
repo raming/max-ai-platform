@@ -10,10 +10,10 @@ const config: Config = {
   moduleNameMapper: {
     // Support three-tier structure: new root level + old src/ level
     // Check new level first (app/, lib/), then fall back to src/ level
-    '^@/app/(.*)$': '<rootDir>/app/$1',
-    '^@/lib/services/(.*)$': '<rootDir>/src/lib/services/$1',  // old src/lib/services
-    '^@/lib/(.*)$': '<rootDir>/lib/$1',  // new root lib
-    '^@/(.*)$': '<rootDir>/src/$1',  // fallback for old src/ (stores, etc)
+    '^@/app/(.*)$': '<rootDir>/src/app/$1',
+    '^@/lib/services/(.*)$': '<rootDir>/src/lib/services/$1',
+    '^@/lib/(.*)$': '<rootDir>/src/lib/$1',
+    '^@/(.*)$': '<rootDir>/src/$1',
     '^@max-ai/ui-editor$': '<rootDir>/../libs/ui/editor/src/index.ts',
     '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
   },
