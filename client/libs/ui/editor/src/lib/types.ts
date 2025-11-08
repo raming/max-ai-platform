@@ -85,6 +85,10 @@ export interface QuillEditorProps {
   onKeyDown?: (event: any) => void;
   onKeyUp?: (event: any) => void;
   tabIndex?: number;
+  // Accessibility props
+  id?: string;
+  ariaLabel?: string;
+  ariaDescribedBy?: string;
 }
 
 export interface QuillToolbarProps {
