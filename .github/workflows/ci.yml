@@ -52,14 +52,14 @@ jobs:
           TIERS=$(cat .coverage-tiers.json)
           TIER_3_PACKAGES=$(echo "$TIERS" | jq -r '.tiers.tier_3_new_code.packages[]')
           TIER_3_THRESHOLD=$(echo "$TIERS" | jq -r '.tiers.tier_3_new_code.threshold')
-          
+
           echo "📊 Coverage Tier Validation"
           echo "================================"
           echo "Tier 3 (New Code) Threshold: ${TIER_3_THRESHOLD}%"
           echo "Tier 3 Packages:"
           echo "$TIER_3_PACKAGES" | sed 's/^/  - /'
           echo ""
-          
+
           # Parse coverage.json if it exists
           if [ -f "client/coverage/coverage-summary.json" ]; then
             echo "✅ Coverage summary found. Validating against thresholds..."

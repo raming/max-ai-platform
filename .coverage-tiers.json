@@ -1,41 +1,41 @@
 {
-  "coverage_strategy": "tiered-enforcement",
-  "description": "Coverage tiers enforce different thresholds based on project maturity. New code = 95%+, established = 85-90%, legacy = 60-70%",
-  "last_updated": "2025-11-08",
-  "tiers": {
-    "tier_3_new_code": {
-      "threshold": 95,
-      "description": "New packages and actively maintained core libraries",
-      "packages": [
-        "client/web",
-        "client/libs/ui/editor",
-        "client/api"
-      ],
-      "rationale": "Production standard. All new code must meet this threshold."
+    "coverage_strategy": "tiered-enforcement",
+    "description": "Coverage tiers enforce different thresholds based on project maturity. New code = 95%+, established = 85-90%, legacy = 60-70%",
+    "last_updated": "2025-11-08",
+    "tiers": {
+        "tier_3_new_code": {
+            "threshold": 95,
+            "description": "New packages and actively maintained core libraries",
+            "packages": [
+                "client/web",
+                "client/libs/ui/editor",
+                "client/api"
+            ],
+            "rationale": "Production standard. All new code must meet this threshold."
+        },
+        "tier_2_established": {
+            "threshold": 85,
+            "description": "Stable, well-tested packages (gradual improvement toward 95%)",
+            "packages": [],
+            "rationale": "Mature but not yet at new standard. Improvements tracked per PR."
+        },
+        "tier_1_legacy": {
+            "threshold": 60,
+            "description": "Older patches or maintenance-only modules (eventual migration planned)",
+            "packages": [],
+            "rationale": "Legacy code. No regression allowed, but not required to reach new standard."
+        }
     },
-    "tier_2_established": {
-      "threshold": 85,
-      "description": "Stable, well-tested packages (gradual improvement toward 95%)",
-      "packages": [],
-      "rationale": "Mature but not yet at new standard. Improvements tracked per PR."
+    "migration_path": [
+        "1. Legacy patches stay at Tier 1 (60-70%) until actively refactored",
+        "2. When a patch receives new features → classify as Tier 2 (85-90%)",
+        "3. When comprehensive tests added → promote to Tier 3 (95%+)",
+        "4. Review tiers quarterly; move mature packages up as ready"
+    ],
+    "ci_enforcement": {
+        "failure_condition": "New coverage is BELOW the tier threshold for the changed package",
+        "pass_condition": "Coverage meets or exceeds the tier threshold for ALL changed packages",
+        "baseline_comparison": "Compare PR coverage against main branch (no regression required)"
     },
-    "tier_1_legacy": {
-      "threshold": 60,
-      "description": "Older patches or maintenance-only modules (eventual migration planned)",
-      "packages": [],
-      "rationale": "Legacy code. No regression allowed, but not required to reach new standard."
-    }
-  },
-  "migration_path": [
-    "1. Legacy patches stay at Tier 1 (60-70%) until actively refactored",
-    "2. When a patch receives new features → classify as Tier 2 (85-90%)",
-    "3. When comprehensive tests added → promote to Tier 3 (95%+)",
-    "4. Review tiers quarterly; move mature packages up as ready"
-  ],
-  "ci_enforcement": {
-    "failure_condition": "New coverage is BELOW the tier threshold for the changed package",
-    "pass_condition": "Coverage meets or exceeds the tier threshold for ALL changed packages",
-    "baseline_comparison": "Compare PR coverage against main branch (no regression required)"
-  },
-  "notes": "Update this file when promoting/demoting packages between tiers. Changes tracked in git."
+    "notes": "Update this file when promoting/demoting packages between tiers. Changes tracked in git."
 }
