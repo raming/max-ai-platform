@@ -46,6 +46,66 @@ jobs:
           npx jest --config jest.simple.config.js --runInBand --coverage --bail
         continue-on-error: false
 
+      - name: Validate coverage meets tier requirements
+        run: |
+          # Load coverage tier configuration
+          TIERS=$(cat .coverage-tiers.json)
+          TIER_3_PACKAGES=$(echo "$TIERS" | jq -r '.tiers.tier_3_new_code.packages[]')
+          TIER_3_THRESHOLD=$(echo "$TIERS" | jq -r '.tiers.tier_3_new_code.threshold')
+          
+          echo "📊 Coverage Tier Validation"
+          echo "================================"
+          echo "Tier 3 (New Code) Threshold: ${TIER_3_THRESHOLD}%"
+          echo "Tier 3 Packages:"
+          echo "$TIER_3_PACKAGES" | sed 's/^/  - /'
+          echo ""
+          
+          # Parse coverage.json if it exists
+          if [ -f "client/coverage/coverage-summary.json" ]; then
+            echo "✅ Coverage summary found. Validating against thresholds..."
+            
+            # Extract global coverage metrics
+            LINES=$(jq -r '.total.lines.pct' client/coverage/coverage-summary.json)
+            STATEMENTS=$(jq -r '.total.statements.pct' client/coverage/coverage-summary.json)
+            FUNCTIONS=$(jq -r '.total.functions.pct' client/coverage/coverage-summary.json)
+            BRANCHES=$(jq -r '.total.branches.pct' client/coverage/coverage-summary.json)
+            
+            echo ""
+            echo "Current Coverage Metrics:"
+            echo "  Lines:      $LINES%"
+            echo "  Statements: $STATEMENTS%"
+            echo "  Functions:  $FUNCTIONS%"
+            echo "  Branches:   $BRANCHES%"
+            echo ""
+            
+            # Check if any metric is below threshold
+            THRESHOLD_INT=${TIER_3_THRESHOLD%.*}
+            BELOW_THRESHOLD=0
+            
+            for METRIC in "$LINES" "$STATEMENTS" "$FUNCTIONS" "$BRANCHES"; do
+              METRIC_INT=${METRIC%.*}
+              if [ "$METRIC_INT" -lt "$THRESHOLD_INT" ]; then
+                BELOW_THRESHOLD=1
+              fi
+            done
+            
+            if [ $BELOW_THRESHOLD -eq 1 ]; then
+              echo "❌ FAILURE: Coverage below ${TIER_3_THRESHOLD}% threshold"
+              echo ""
+              echo "📋 To fix this PR:"
+              echo "  1. Add/update tests to increase coverage"
+              echo "  2. Verify all code paths are tested"
+              echo "  3. Run: npm run test -- --coverage"
+              echo "  4. Check: coverage/coverage-summary.json"
+              exit 1
+            else
+              echo "✅ SUCCESS: Coverage meets ${TIER_3_THRESHOLD}% threshold"
+            fi
+          else
+            echo "⚠️  coverage-summary.json not found. Skipping validation."
+            echo "   (This is OK - local Jest runs will still enforce thresholds)"
+          fi
+
       - name: Upload coverage reports
         uses: codecov/codecov-action@v3
         with:

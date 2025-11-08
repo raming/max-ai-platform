@@ -39,14 +39,29 @@ const config: Config = {
     'src/stores/**/*.ts',
     'lib/contract-validation.ts',
   ],
-  // Realistic thresholds for current testing baseline
-  // Login: 100%, contract-validation: 56% avg, but constrained by feature flags
+  // TIER 3: New Code Coverage Enforcement (95% minimum)
+  // Rationale: 'web' is a production Next.js app with active development
+  // All new/modified files must maintain 95%+ coverage
+  // Legacy modules can be exempted with explicit PR justification
   coverageThreshold: {
     global: {
-      branches: 10,
-      functions: 50,
-      lines: 50,
-      statements: 50,
+      branches: 95,
+      functions: 95,
+      lines: 95,
+      statements: 95,
+    },
+    // Exemptions for legacy/complex areas (document in PR if modified)
+    './src/stores/**': {
+      branches: 100,
+      functions: 100,
+      lines: 100,
+      statements: 100,
+    },
+    './lib/contract-validation.ts': {
+      branches: 95,
+      functions: 95,
+      lines: 95,
+      statements: 95,
     },
   },
   forceExit: true,
