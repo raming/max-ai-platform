@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useState, useRef } from 'react';
-import { QuillEditor, QuillEditorRef } from '@max-ai/ui-editor';
+import React, { useState } from 'react';
+import { QuillEditor } from '@max-ai/ui-editor';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -21,7 +21,6 @@ export default function ContentPage() {
   const [content, setContent] = useState('<h1>Welcome to the Rich Text Editor</h1><p>This is a demonstration of the <strong>@max-ai/ui-editor</strong> component.</p><ul><li>Rich text editing</li><li>Content sanitization</li><li>Export capabilities</li></ul>');
   const [previewMode, setPreviewMode] = useState(false);
   const [exportFormat, setExportFormat] = useState<'html' | 'markdown' | 'json' | 'text'>('html');
-  const editorRef = useRef<QuillEditorRef>(null);
 
   const handleSave = () => {
     console.log('Saving content:', content);
@@ -30,14 +29,12 @@ export default function ContentPage() {
   };
 
   const handleExport = () => {
-    if (!editorRef.current) return;
-
-    const exportedContent = editorRef.current.getText();
-    const blob = new Blob([exportedContent], { type: 'text/plain' });
+    const plainText = content.replace(/<[^>]*>/g, '');
+    const blob = new Blob([plainText], { type: 'text/plain' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `content.${exportFormat}`;
+    a.download = `content.${exportFormat === 'markdown' ? 'md' : exportFormat === 'json' ? 'json' : exportFormat === 'html' ? 'html' : 'txt'}`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
@@ -45,8 +42,8 @@ export default function ContentPage() {
   };
 
   const getWordCount = () => {
-    if (!editorRef.current) return 0;
-    return editorRef.current.getLength();
+    const text = content.replace(/<[^>]*>/g, ''); // Strip HTML tags
+    return text.length;
   };
 
   const sampleContent = {
@@ -65,7 +62,7 @@ export default function ContentPage() {
           </p>
         </div>
         <div className="flex items-center space-x-2">
-          <Badge variant="outline" className="flex items-center space-x-1">
+          <Badge className="flex items-center space-x-1">
             <File className="h-3 w-3" />
             <span>{getWordCount()} characters</span>
           </Badge>
@@ -80,7 +77,7 @@ export default function ContentPage() {
         </div>
       </div>
 
-      <Tabs defaultValue="editor" className="space-y-6">
+      <Tabs className="space-y-6">
         <TabsList>
           <TabsTrigger value="editor">Editor</TabsTrigger>
           <TabsTrigger value="samples">Sample Content</TabsTrigger>
@@ -100,13 +97,14 @@ export default function ContentPage() {
             </CardHeader>
             <CardContent>
               {!previewMode ? (
-                <QuillEditor
-                  ref={editorRef}
-                  value={content}
-                  onChange={setContent}
-                  placeholder="Start writing your content here..."
-                  className="min-h-[400px]"
-                />
+                <div>
+                  <QuillEditor
+                    value={content}
+                    onChange={setContent}
+                    placeholder="Start writing your content here..."
+                    className="min-h-[400px]"
+                  />
+                </div>
               ) : (
                 <div
                   className="min-h-[400px] p-4 border rounded-md bg-muted/50 prose prose-sm max-w-none"
