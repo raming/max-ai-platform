@@ -51,12 +51,10 @@ export const PreviewPane = React.memo(
       : content;
 
     return (
-      <div className={`preview-pane ${className}`}>
-        <div
-          className='preview-content'
-          dangerouslySetInnerHTML={{ __html: sanitizedContent }}
-        />
-      </div>
+      <div
+        className={`prose prose-sm max-w-none p-4 border rounded-lg bg-gray-50 ${className}`}
+        dangerouslySetInnerHTML={{ __html: sanitizedContent }}
+      />
     );
   }
 );
