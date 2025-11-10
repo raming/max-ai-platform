@@ -55,6 +55,7 @@ Quick Commands:
   "show status"      - Show current session info
   "who am i"         - Display role and seat
   "run my checklist" - Verify current implementation against dev-implementation-checklist.md
+  "check my PRs"     - Check status of open PRs and close completed issues
 
 Session Status:
   📁 Current: [None - use "/session" to attach context]
@@ -84,8 +85,19 @@ Responsibilities
 
 Workflow
 - **STARTUP BANNER** (MANDATORY on load): Display agent identity, quick commands ("/session", "who am i", "run my checklist"), and session status. See agent-startup.md for exact format.
-- **QUICK COMMAND PROCESSING**: Recognize and process "/session", "save session", "resume session", "show status", "who am i", "run my checklist" commands per agent-quick-commands.md.
+- **QUICK COMMAND PROCESSING**: Recognize and process "/session", "save session", "resume session", "show status", "who am i", "run my checklist", "check my PRs" commands per agent-quick-commands.md.
   - **"run my checklist"**: Go through .ops/rules/dev-implementation-checklist.md verification section systematically, test each item (build, lint, tests, runtime, spec compliance, acceptance criteria), report status with ✅ (pass) or ❌ (fail), and fix issues before claiming "done".
+  - **"check my PRs"**: List all open PRs assigned to your seat, check merge status, identify merged PRs with open issues, and prompt to close those issues:
+    ```bash
+    # List my open PRs
+    gh pr list --assignee "@me" --json number,title,state,mergedAt,closedAt,url
+    
+    # For each merged PR, check linked issues
+    gh pr view <PR_NUMBER> --json closingIssuesReferences
+    
+    # Close any open issues linked to merged PRs
+    gh issue close <ISSUE_NUMBER> --comment "✅ PR #<PR_NUMBER> merged - Implementation complete"
+    ```
 - **MIRROR COPY COMMANDS** (when in mirror repos): Recognize and process mirror copy commands per agent-mirror-copy-commands.md:
   - **"copy from source"**: Pull latest files from original repos into mirror (sources auto-detected from projects.yaml)
   - **"copy to source"**: Push work from mirror to original repos (always preview with --dry-run first)
@@ -109,6 +121,18 @@ Workflow
 - **STEP 5**: Locally ensure build is green and tests pass (unit/integration/contract; smoke e2e only if required by spec). Do not hand off failing builds/tests.
 - **FRONTEND STEP 5.5**: Run frontend-specific tests including component tests, accessibility checks, and visual regression tests if available.
 - **STEP 6**: Before marking complete, verify implementation matches architectural constraints and run through dev-implementation-checklist.md completion verification.
+- **STEP 7 (POST-MERGE RESPONSIBILITY)**: When YOUR PR is merged (by QA/Release Manager OR by human), YOU must close the linked issue:
+  ```bash
+  # Check if issue is still open
+  gh issue view <ISSUE_NUMBER> --json state
+  
+  # If still open, close it
+  gh issue close <ISSUE_NUMBER> --comment "✅ PR merged: <PR_URL> - Complete"
+  
+  # Update .ops/tracker/ if using local task tracking
+  # Mark task [DONE], add completion date and PR reference
+  ```
+  **Why critical**: Open tasks pile up, agents waste time revisiting completed work, breaks automation. Always verify issue closure after merge.
 
 Branch Base Decision Checklist (when previous work is in QA)
 - DEFAULT: Create new branch from origin/main
